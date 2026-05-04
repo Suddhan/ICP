@@ -1,0 +1,38 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+Options:	
+Date:		Mon Apr 27 14:00:15 2026
+Host:		fransg-6 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[14:00:15.324441] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+[INFO] Loading PVS 21.10 fill procedures
+<CMD> win
+**ERROR: (IMPDBTCL-276):	Incorrect order of command options. Pattern '.name' should be after chain '*SPHS*'.
+
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Mon Apr 27 14:03:51 2026
+  Total CPU time:     0:01:03
+  Total real time:    0:03:38
+  Peak memory (main): 760.20MB
+
+
+*** Memory Usage v#1 (Current mem = 1057.629M, initial mem = 476.031M) ***
+*** Message Summary: 0 warning(s), 1 error(s)
+
+--- Ending "Innovus" (totcpu=0:01:03, real=0:03:36, mem=1057.6M) ---

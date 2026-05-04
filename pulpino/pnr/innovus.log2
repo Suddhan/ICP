@@ -1,0 +1,62 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+Options:	-files scripts/init.tcl 
+Date:		Mon Apr 27 14:08:34 2026
+Host:		fransg-6 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[14:08:34.324513] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+[INFO] Loading PVS 21.10 fill procedures
+Sourcing file "scripts/init.tcl" ...
+**ERROR: (IMPDBTCL-247):	'init_verilog' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+**ERROR: (IMPSYT-6692):	Invalid return code while executing 'scripts/init.tcl' was returned and script processing was stopped. Review the following error in 'scripts/init.tcl' then restart.
+Error info: scripts/init.tcl: 
+    while executing
+"set_db init_verilog {../synth/outputs/pulpino_top_netlist.v}"
+    (file "scripts/init.tcl" line 2)
+    invoked from within
+"::se_source_orig scripts/init.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel [concat ::se_source_orig $args]"
+    (procedure "source" line 188)
+    invoked from within
+"source scripts/init.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel #0 source scripts/init.tcl"
+    ("eval" body line 1)
+    invoked from within
+"eval {uplevel #0 source scripts/init.tcl}"
+    (in namespace inscope "::" script line 1)
+    invoked from within
+"namespace inscope :: eval "uplevel #0 source $fileName"".
+<CMD> win
+**ERROR: (IMPDBTCL-247):	'init_verilog' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+
+invalid command name "reset_design"
+**ERROR: (IMPDBTCL-247):	'design_flow_ready' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+
+<CMD> set init_verilog ../synth/outputs/pulpino_top_netlist.v
+invalid command name "read_design"
+**ERROR: (IMPDBTCL-247):	'init_verilog' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+
+
+*** Memory Usage v#1 (Current mem = 1047.215M, initial mem = 476.031M) ***
+*** Message Summary: 0 warning(s), 5 error(s)
+
+--- Ending "Innovus" (totcpu=0:01:52, real=0:07:14, mem=1047.2M) ---

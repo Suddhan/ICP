@@ -1,0 +1,83 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+Options:	-stylus 
+Date:		Mon Apr 27 14:32:33 2026
+Host:		fransg-6 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[14:32:33.324481] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_30741_fransg-6_su2577su-s_FQmwJE.
+
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[INFO] Loading PVS 21.10 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+@innovus 1> source scripts/init.tcl
+#@ Begin verbose source (pre): source scripts/init.tcl
+@file 1: # --- 1. Load Design & Tech Files ---
+@@file 2: set_db init_verilog {../synth/outputs/pulpino_top_netlist.v}
+**ERROR: (IMPDBTCL-247):	'init_verilog' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+**ERROR: (IMPSE-110):	File 'scripts/init.tcl' line 2: errors out.
+#@ End verbose source scripts/init.tcl
+
+
+@innovus 2> clean
+invalid command name "clean"
+invalid command name "clean"
+@innovus 3> delete_obj [get_db designs *]
+
+@innovus 4> set_db design_flow_ready false
+
+**ERROR: (IMPDBTCL-247):	'design_flow_ready' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+
+
+@innovus 5> set design_flow_ready false
+false
+@innovus 6> set design_flow_ready true
+true
+@innovus 7> source scripts/init.tcl
+
+#@ Begin verbose source (pre): source scripts/init.tcl
+@file 1: # --- 1. Load Design & Tech Files ---
+@@file 2: set_db init_verilog {../synth/outputs/pulpino_top_netlist.v}
+**ERROR: (IMPDBTCL-247):	'init_verilog' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+**ERROR: (IMPSE-110):	File 'scripts/init.tcl' line 2: errors out.
+#@ End verbose source scripts/init.tcl
+
+
+@innovus 8> gui_select -point {0.06300 0.05000}
+@innovus 9> 
+
+@innovus 9> source scripts/init.tcl
+
+#@ Begin verbose source (pre): source scripts/init.tcl
+@file 1: # --- 1. Load Design & Tech Files ---
+@@file 2: set_db init_verilog {../synth/outputs/pulpino_top_netlist.v}
+**ERROR: (IMPDBTCL-247):	'init_verilog' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+**ERROR: (IMPSE-110):	File 'scripts/init.tcl' line 2: errors out.
+#@ End verbose source scripts/init.tcl
+
+
+@innovus 10> gui_select -point {0.08300 0.02800}
+@innovus 11> 
+--------------------------------------------------------------------------------
+Exiting Innovus on Mon Apr 27 14:36:11 2026
+  Total CPU time:     0:01:05
+  Total real time:    0:03:39
+  Peak memory (main): 759.24MB
+
+
+*** Memory Usage v#1 (Current mem = 1060.234M, initial mem = 484.035M) ***
+*** Message Summary: 0 warning(s), 7 error(s)
+
+--- Ending "Innovus" (totcpu=0:01:05, real=0:03:38, mem=1060.2M) ---

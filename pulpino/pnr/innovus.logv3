@@ -1,0 +1,87 @@
+[04/27 14:15:54      0s] 
+[04/27 14:15:54      0s] Cadence Innovus(TM) Implementation System.
+[04/27 14:15:54      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[04/27 14:15:54      0s] 
+[04/27 14:15:54      0s] Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+[04/27 14:15:54      0s] Options:	-stylus 
+[04/27 14:15:54      0s] Date:		Mon Apr 27 14:15:54 2026
+[04/27 14:15:54      0s] Host:		fransg-6 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+[04/27 14:15:54      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[04/27 14:15:54      0s] 
+[04/27 14:15:54      0s] License:
+[04/27 14:15:54      0s] 		[14:15:54.324513] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+[04/27 14:15:54      0s] 
+[04/27 14:15:54      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[04/27 14:15:54      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[04/27 14:16:04      8s] 
+[04/27 14:16:04      8s] 
+[04/27 14:16:10     12s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+[04/27 14:16:13     15s] @(#)CDS: NanoRoute 21.35-s114_1 NR220912-2004/21_15-UB (database version 18.20.592_1) {superthreading v2.17}
+[04/27 14:16:13     15s] @(#)CDS: AAE 21.15-s039 (64bit) 10/13/2022 (Linux 3.10.0-693.el7.x86_64)
+[04/27 14:16:13     15s] @(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+[04/27 14:16:13     15s] @(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+[04/27 14:16:13     15s] @(#)CDS: CPE v21.15-s076
+[04/27 14:16:13     15s] @(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+[04/27 14:16:13     15s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[04/27 14:16:13     15s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[04/27 14:16:13     15s] @(#)CDS: RCDB 11.15.0
+[04/27 14:16:13     15s] @(#)CDS: STYLUS 21.12-s013_1 (08/15/2022 08:25 PDT)
+[04/27 14:16:13     15s] @(#)CDS: SystemPlanner-21.15Rel-8720 (21.15) (2022-08-22 18:31:54+0800)
+[04/27 14:16:13     15s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_25993_fransg-6_su2577su-s_YMmQQJ.
+
+[04/27 14:16:13     15s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_25993_fransg-6_su2577su-s_YMmQQJ.
+[04/27 14:16:13     15s] 
+[04/27 14:16:13     15s] Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[04/27 14:16:15     16s] [INFO] Loading PVS 21.10 fill procedures
+[04/27 14:16:16     17s] 
+[04/27 14:16:16     17s] **INFO:  MMMC transition support version v31-84 
+[04/27 14:16:16     17s] 
+[04/27 14:16:19     20s] @innovus 1> source scripts/init.tcl
+#@ Begin verbose source (pre): source scripts/init.tcl
+[04/27 14:18:18     47s] @file 1: # --- 1. Load Design & Tech Files ---
+[04/27 14:18:18     47s] @@file 2: set_db init_verilog {../synth/outputs/pulpino_top_netlist.v}
+[04/27 14:18:18     47s] **ERROR: (IMPDBTCL-247):	'init_verilog' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+[04/27 14:18:18     47s] **ERROR: (IMPSE-110):	File 'scripts/init.tcl' line 2: errors out.
+[04/27 14:18:18     47s] #@ End verbose source scripts/init.tcl
+[04/27 14:18:18     47s] 
+[04/27 14:18:18     47s] 
+[04/27 14:18:18     47s] @innovus 2> source scripts/init.tcl
+
+[04/27 14:18:56     56s] #@ Begin verbose source (pre): source scripts/init.tcl
+[04/27 14:18:56     56s] @file 1: # --- 1. Load Design & Tech Files ---
+[04/27 14:18:56     56s] @@file 2: set_db init_verilog {../synth/outputs/pulpino_top_netlist.v}
+[04/27 14:18:56     56s] **ERROR: (IMPDBTCL-247):	'init_verilog' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+[04/27 14:18:56     56s] **ERROR: (IMPSE-110):	File 'scripts/init.tcl' line 2: errors out.
+[04/27 14:18:56     56s] #@ End verbose source scripts/init.tcl
+[04/27 14:18:56     56s] 
+[04/27 14:18:56     56s] 
+[04/27 14:18:56     56s] @innovus 3> source scripts/init.tcl
+
+[04/27 14:20:35     79s] #@ Begin verbose source (pre): source scripts/init.tcl
+[04/27 14:20:35     79s] @file 1: # --- 1. Load Design & Tech Files ---
+[04/27 14:20:35     79s] @@file 2: set_db init_verilog {../synth/outputs/pulpino_top_netlist.v}
+[04/27 14:20:35     79s] **ERROR: (IMPDBTCL-247):	'init_verilog' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+[04/27 14:20:35     79s] **ERROR: (IMPSE-110):	File 'scripts/init.tcl' line 2: errors out.
+[04/27 14:20:35     79s] #@ End verbose source scripts/init.tcl
+[04/27 14:20:35     79s] 
+[04/27 14:20:35     79s] 
+[04/27 14:20:35     79s] @innovus 4> source scripts/init.tcl
+#@ Begin verbose source (pre): source scripts/init.tcl
+[04/27 14:21:27     91s] @file 1: # --- 1. Load Design & Tech Files ---
+[04/27 14:21:27     91s] @@file 2: set_db init_verilog {../synth/outputs/pulpino_top_netlist.v}
+[04/27 14:21:27     91s] **ERROR: (IMPDBTCL-247):	'init_verilog' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+[04/27 14:21:27     91s] **ERROR: (IMPSE-110):	File 'scripts/init.tcl' line 2: errors out.
+[04/27 14:21:27     91s] #@ End verbose source scripts/init.tcl
+[04/27 14:21:27     91s] 
+[04/27 14:21:27     91s] 
+[04/27 14:21:27     91s] @innovus 5> exit
+
+[04/27 14:21:39     93s] *** Memory Usage v#1 (Current mem = 1057.164M, initial mem = 484.035M) ***
+[04/27 14:21:39     93s] 
+[04/27 14:21:39     93s] *** Summary of all messages that are not suppressed in this session:
+[04/27 14:21:39     93s] Severity  ID               Count  Summary                                  
+[04/27 14:21:39     93s] ERROR     IMPSE-110            4  File '%s' line %s: %s.                   
+[04/27 14:21:39     93s] ERROR     IMPDBTCL-247         4  '%s' is not a recognized object or root ...
+[04/27 14:21:39     93s] *** Message Summary: 0 warning(s), 8 error(s)
+[04/27 14:21:39     93s] 
+[04/27 14:21:39     93s] --- Ending "Innovus" (totcpu=0:01:34, real=0:05:45, mem=1057.2M) ---

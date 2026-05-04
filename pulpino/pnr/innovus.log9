@@ -1,0 +1,33 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+Options:	
+Date:		Tue Apr 28 14:14:30 2026
+Host:		fransg-6 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[14:14:30.324457] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+[INFO] Loading PVS 21.10 fill procedures
+<CMD> win
+**ERROR: (IMPDBTCL-247):	'design_flow_ready' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+
+<CMD> is_common_ui_mode
+ERROR: This script requires common_ui to be active.
+
+*** Memory Usage v#1 (Current mem = 1051.199M, initial mem = 476.031M) ***
+*** Message Summary: 0 warning(s), 1 error(s)
+
+--- Ending "Innovus" (totcpu=0:01:05, real=0:03:50, mem=1051.2M) ---
