@@ -1,0 +1,45 @@
+library verilog;
+use verilog.vl_types.all;
+entity riscv_debug_unit is
+    port(
+        clk             : in     vl_logic;
+        rst_n           : in     vl_logic;
+        debug_req_i     : in     vl_logic;
+        debug_gnt_o     : out    vl_logic;
+        debug_rvalid_o  : out    vl_logic;
+        debug_addr_i    : in     vl_logic_vector(14 downto 0);
+        debug_we_i      : in     vl_logic;
+        debug_wdata_i   : in     vl_logic_vector(31 downto 0);
+        debug_rdata_o   : out    vl_logic_vector(31 downto 0);
+        debug_halted_o  : out    vl_logic;
+        debug_halt_i    : in     vl_logic;
+        debug_resume_i  : in     vl_logic;
+        settings_o      : out    vl_logic_vector(5 downto 0);
+        trap_i          : in     vl_logic;
+        exc_cause_i     : in     vl_logic_vector(5 downto 0);
+        stall_o         : out    vl_logic;
+        dbg_req_o       : out    vl_logic;
+        dbg_ack_i       : in     vl_logic;
+        regfile_rreq_o  : out    vl_logic;
+        regfile_raddr_o : out    vl_logic_vector(5 downto 0);
+        regfile_rdata_i : in     vl_logic_vector(31 downto 0);
+        regfile_wreq_o  : out    vl_logic;
+        regfile_waddr_o : out    vl_logic_vector(5 downto 0);
+        regfile_wdata_o : out    vl_logic_vector(31 downto 0);
+        csr_req_o       : out    vl_logic;
+        csr_addr_o      : out    vl_logic_vector(11 downto 0);
+        csr_we_o        : out    vl_logic;
+        csr_wdata_o     : out    vl_logic_vector(31 downto 0);
+        csr_rdata_i     : in     vl_logic_vector(31 downto 0);
+        pc_if_i         : in     vl_logic_vector(31 downto 0);
+        pc_id_i         : in     vl_logic_vector(31 downto 0);
+        pc_ex_i         : in     vl_logic_vector(31 downto 0);
+        data_load_event_i: in     vl_logic;
+        instr_valid_id_i: in     vl_logic;
+        sleeping_i      : in     vl_logic;
+        branch_in_ex_i  : in     vl_logic;
+        branch_taken_i  : in     vl_logic;
+        jump_req_o      : out    vl_logic;
+        jump_addr_o     : out    vl_logic_vector(31 downto 0)
+    );
+end riscv_debug_unit;

@@ -1,0 +1,45 @@
+library verilog;
+use verilog.vl_types.all;
+entity spi_master_apb_if_BUFFER_DEPTH8_APB_ADDR_WIDTH12 is
+    port(
+        HCLK            : in     vl_logic;
+        HRESETn         : in     vl_logic;
+        PADDR           : in     vl_logic_vector(11 downto 0);
+        PWDATA          : in     vl_logic_vector(31 downto 0);
+        PWRITE          : in     vl_logic;
+        PSEL            : in     vl_logic;
+        PENABLE         : in     vl_logic;
+        PRDATA          : out    vl_logic_vector(31 downto 0);
+        PREADY          : out    vl_logic;
+        PSLVERR         : out    vl_logic;
+        spi_clk_div     : out    vl_logic_vector(7 downto 0);
+        spi_clk_div_valid: out    vl_logic;
+        spi_status      : in     vl_logic_vector(31 downto 0);
+        spi_addr        : out    vl_logic_vector(31 downto 0);
+        spi_addr_len    : out    vl_logic_vector(5 downto 0);
+        spi_cmd         : out    vl_logic_vector(31 downto 0);
+        spi_cmd_len     : out    vl_logic_vector(5 downto 0);
+        spi_csreg       : out    vl_logic_vector(3 downto 0);
+        spi_data_len    : out    vl_logic_vector(15 downto 0);
+        spi_dummy_rd    : out    vl_logic_vector(15 downto 0);
+        spi_dummy_wr    : out    vl_logic_vector(15 downto 0);
+        spi_int_th_tx   : out    vl_logic_vector(4 downto 0);
+        spi_int_th_rx   : out    vl_logic_vector(4 downto 0);
+        spi_int_cnt_tx  : out    vl_logic_vector(4 downto 0);
+        spi_int_cnt_rx  : out    vl_logic_vector(4 downto 0);
+        spi_int_en      : out    vl_logic;
+        spi_int_cnt_en  : out    vl_logic;
+        spi_int_rd_sta  : out    vl_logic;
+        spi_swrst       : out    vl_logic;
+        spi_rd          : out    vl_logic;
+        spi_wr          : out    vl_logic;
+        spi_qrd         : out    vl_logic;
+        spi_qwr         : out    vl_logic;
+        spi_data_tx     : out    vl_logic_vector(31 downto 0);
+        spi_data_tx_valid: out    vl_logic;
+        spi_data_tx_ready: in     vl_logic;
+        spi_data_rx     : in     vl_logic_vector(31 downto 0);
+        spi_data_rx_valid: in     vl_logic;
+        spi_data_rx_ready: out    vl_logic
+    );
+end spi_master_apb_if_BUFFER_DEPTH8_APB_ADDR_WIDTH12;
