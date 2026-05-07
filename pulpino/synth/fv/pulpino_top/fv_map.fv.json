@@ -120233,20 +120233,20 @@
 "object":"/designs/pulpino_top/instances_hier/peripherals_i/instances_hier/genblk1[6].core_clock_gate/instances_seq/clk_en_reg",
 "type":"instance"},
 {"index": "1", 
- "date": "Mon May 04 10:29:09 UTC 2026",
- "seconds": 1777890549.4243648,
+ "date": "Thu May 07 09:11:49 UTC 2026",
+ "seconds": 1778145109.084411,
  "netlist": "fv/pulpino_top/fv_map.v.gz", 
  "netlist_exists": "1", 
  "netlist_normalize": "/h/d5/c/ne3026sr-s/ICProject/pulpino/synth/fv/pulpino_top/fv_map.v.gz", 
- "netlist_mtime": "1777890539", 
- "netlist_timestamp": "Mon May 04 10:28:59 UTC 2026", 
- "netlist_size": "734066", 
- "netlist_cksum": "1465672573", 
+ "netlist_mtime": "1778145099", 
+ "netlist_timestamp": "Thu May 07 09:11:39 UTC 2026", 
+ "netlist_size": "734067", 
+ "netlist_cksum": "71483251", 
  "design_name": "pulpino_top", 
  "synth_workdir": "/h/d5/c/ne3026sr-s/ICProject/pulpino/synth", 
  "synthesis_command":"",
  "current_label": "fv_map", 
  "previous_label": "rtl", 
- "write_verif_file_runtime": 9.643896999999999 
+ "write_verif_file_runtime": 9.526862 
  }
 ]

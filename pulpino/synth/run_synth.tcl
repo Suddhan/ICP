@@ -251,6 +251,8 @@ read_hdl -language vhdl {
   ../ips/apb/apb_uart/uart_baudgen.vhd
   ../ips/apb/apb_uart/apb_uart.vhd  
 }
+
+read_hdl -language sv ../rtl/pulp_pads_top.sv
 ##suspend
 elaborate $DESIGN
 
