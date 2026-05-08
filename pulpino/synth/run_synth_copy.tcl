@@ -2,9 +2,11 @@
 ## Setup, File read and RTL elaboration
 ####################################################################################################
 #set_db / .max_print_messages 100
-set_db [get_db designs pulpino_top] .multiple_driver_operation average
-# 1. Update Design Name
-set DESIGN pulpino_top ; # Set this to your top module name
+#set_db [get_db designs *] .multiple_driver_operation average
+
+# 1. Update Design Name (CRITICAL FIX: Points to your new pad wrapper)
+set DESIGN pulpino_chip
+
 set SYN_EFF medium 
 set MAP_EFF medium
 set OPT_EFF medium
@@ -13,13 +15,13 @@ set DATE [clock format [clock seconds] -format "%b%d-%T"]
 set _OUTPUTS_PATH outputs_${DATE}
 set _LOG_PATH logs_${DATE}
 
+# Ensure output directories exist before writing to them
+file mkdir $_OUTPUTS_PATH
+file mkdir ../pnr/genus_output
+
 set_db write_db_use_relative_filepath true
 
 # 2. Path to libraries
-#../../../../tech/stdcell/CLOCK65LPLVT/3.2/libs 			
-#../../../../tech/stdcell/PRHS65/7.1/libs \
-#../../../../tech/io/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs 
-
 set_db / .init_lib_search_path ". \
 /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs \
 /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs \
@@ -32,7 +34,7 @@ set_db / .init_lib_search_path ". \
 ../rtl/includes \
 "
 
-# 3. Path to your specific RTL (Add your wrapper here)		pulpino_top_pads.sv random_stalls.sv
+# 3. Path to your specific RTL
 set_db init_hdl_search_path ". ../rtl \
 ../rtl/components \
 ../rtl/includes \
@@ -56,7 +58,7 @@ set_db init_hdl_search_path ". ../rtl \
 ../ips/apb/apb_fll_if \
 ../ips/apb/apb_pulpino \
 ../ips/axi/axi_node \
-../ips/apb/apb_uart_sv \
+../ips/apb/apb_uart \
 ../ips/riscv/include \
 ../ips/apb/apb_event_unit/include \
 ../ips/riscv/include \
@@ -205,16 +207,18 @@ peripherals.sv \
 ram_mux.sv \
 pulpino_top.sv \
 " 
-# Note: synthesizing the whole SoC, keeping: "sp_ram_wrap.sv ..."
 
-set_db max_cpus_per_server 4
+set_db max_cpus_per_server 8
 set_db information_level 9
 set_db pbs_mmmc_flow true
 set_db tns_opto true 
 set_db lp_insert_clock_gating true 
-
+set_db auto_ungroup none 
 set_db init_ground_nets {GND GNDE}
 set_db init_power_nets {VDD VDDE}
+
+# Force Genus to ignore missing physical LEF data for the pads
+set_db lib_lef_consistency_check_enable false
 
 # 4. Read Constraints (Make sure mmmc.tcl defines your clock)
 read_mmmc mmmc.tcl
@@ -232,20 +236,39 @@ read_physical -lef " \
 
 # Set dont_use on cells 
 set_db [get_db lib_cells -if {.name == *CLOCK65*}] .dont_use true
+set_db [get_db lib_cells *HS65_LLP_CNHLS*] .dont_use false
+
 set_db [get_db lib_cells -if {.name == *_SDF*}] .dont_use true 
 set_db lp_insert_discrete_clock_gating_logic true
 
 # 6. READ AND ELABORATE
 read_hdl -language sv $rtlList
-#suspend
+read_hdl -language vhdl { 
+  ../ips/apb/apb_uart/slib_input_sync.vhd
+  ../ips/apb/apb_uart/slib_input_filter.vhd
+  ../ips/apb/apb_uart/slib_edge_detect.vhd
+  ../ips/apb/apb_uart/slib_fifo.vhd
+  ../ips/apb/apb_uart/slib_clock_div.vhd
+  ../ips/apb/apb_uart/uart_interrupt.vhd
+  ../ips/apb/apb_uart/uart_transmitter.vhd
+  ../ips/apb/apb_uart/uart_receiver.vhd
+  ../ips/apb/apb_uart/uart_baudgen.vhd
+  ../ips/apb/apb_uart/apb_uart.vhd  
+}
+
+# Read the wrapper file
+read_hdl -language sv ../rtl/pulp_pads_top.sv
+
+# Elaborate the hierarchy using the dynamic wrapper variable
 elaborate $DESIGN
 
-# 7. CRITICAL: Protect the SRAM Macros
-set_db [get_db designs:$DESIGN .insts rows[*].col[*].i_sram] .preserve true
+# 7. CRITICAL: Protect the SRAM Macros and Pads
+# Using wildcards to account for the new hierarchy depth inside the wrapper
+set_db [get_db insts *i_sram*] .preserve true
+set_db [get_db insts *pad*] .preserve true
 
 init_design
 check_design -all
-suspend
 
 ####################################################################################################
 ## Synthesizing the design
@@ -253,15 +276,15 @@ suspend
 
 # Generic Synthesis (RTL -> Generic Gates)
 syn_generic
-report_metric -format html -out_file metrics_generic.html
+report_metric -format html -out_file $_OUTPUTS_PATH/metrics_generic.html
 
 # Map Synthesis (Generic -> ST65nm Gates)
 syn_map
-report_metric -format html -out_file metrics_map.html
+report_metric -format html -out_file $_OUTPUTS_PATH/metrics_map.html
 
 # Optimization (Timing & Power)
 syn_opt
-report_metric -format html -out_file metrics_opt.html
+report_metric -format html -out_file $_OUTPUTS_PATH/metrics_opt.html
 
 ####################################################################################################
 ## Reporting & Handoff
@@ -273,10 +296,11 @@ report_area   > $_OUTPUTS_PATH/area.rpt
 report_power  > $_OUTPUTS_PATH/power.rpt
 report_gates  > $_OUTPUTS_PATH/gates.rpt
 
+# Explicitly write Verilog using the dynamic name
+write_hdl > ../pnr/genus_output/${DESIGN}_netlist.v
+
 # Handoff to Innovus (Place & Route)
 write_design -innovus -base_name ../pnr/genus_output/$DESIGN
-write_sdf -precision 4 > ../pnr/genus_output/$DESIGN.sdf
+write_sdf -precision 4 > ../pnr/genus_output/${DESIGN}.sdf
 
 puts "Synthesis Finished for $DESIGN"
-
-

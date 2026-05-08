@@ -1,0 +1,49 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+Options:	-stylus 
+Date:		Mon May  4 15:58:39 2026
+Host:		fransg-2 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[15:58:39.324601] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_28664_fransg-2_su2577su-s_LzFySN.
+
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[INFO] Loading PVS 21.10 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+@innovus 1> source pulpino_top.genus_init.tcl
+**ERROR: (IMPSE-112):	File 'pulpino_top.genus_init.tcl': couldn't read file "pulpino_top.genus_init.tcl": no such file or directory.
+
+
+@innovus 2> source genus_output/pulpino_top.genus_init.tcl
+#@ Begin verbose source (pre): source genus_output/pulpino_top.genus_init.tcl
+@file 1: ################################################################################
+@file 2: #
+@file 3: # Init setup file
+@file 4: # Created by Genus(TM) Synthesis Solution on 04/24/2026 12:54:02
+@file 5: #
+@file 6: ################################################################################
+@file 7: if { ![is_common_ui_mode] } {...}
+@file 8: ::legacy::set_attribute -quiet init_mmmc_version 2 /
+**ERROR: (IMPSE-110):	File 'genus_output/pulpino_top.genus_init.tcl' line 8: invalid command name "::legacy::set_attribute".
+#@ End verbose source genus_output/pulpino_top.genus_init.tcl
+invalid command name "::legacy::set_attribute"
+invalid command name "::legacy::set_attribute"
+@innovus 3> exit
+
+
+*** Memory Usage v#1 (Current mem = 1045.859M, initial mem = 484.035M) ***
+*** Message Summary: 0 warning(s), 2 error(s)
+
+--- Ending "Innovus" (totcpu=0:01:18, real=0:04:45, mem=1045.9M) ---

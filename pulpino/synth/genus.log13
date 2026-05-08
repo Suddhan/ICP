@@ -1,0 +1,39 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[13:44:17.324513] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+
+Version: 21.14-s082_1, built Thu Jun 23 05:32:08 PDT 2022
+Options: 
+Date:    Thu May 07 13:44:17 2026
+Host:    fransg-2 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*1physical cpu*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB) (16222476KB)
+PID:     10523
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+
+[13:44:17.441128] Periodic Lic check successful
+[13:44:17.441137] Feature usage summary:
+[13:44:17.441137] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (11 seconds elapsed).
+
+WARNING: This version of the tool is 1413 days old.
+@genus:root: 1> grep -irn ./netlist.v -e "BD2SCARUDQP"
+@genus:root: 2> exit
+
+Lic Summary:
+[13:45:14.101962] Cdslmd servers: auctor
+[13:45:14.101984] Feature usage summary:
+[13:45:14.101985] Genus_Synthesis
+
+Normal exit.

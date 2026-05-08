@@ -1,0 +1,66 @@
+[05/04 16:12:51      0s] 
+[05/04 16:12:51      0s] Cadence Innovus(TM) Implementation System.
+[05/04 16:12:51      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/04 16:12:51      0s] 
+[05/04 16:12:51      0s] Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+[05/04 16:12:51      0s] Options:	-common_ui 
+[05/04 16:12:51      0s] Date:		Mon May  4 16:12:51 2026
+[05/04 16:12:51      0s] Host:		fransg-2 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+[05/04 16:12:51      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[05/04 16:12:51      0s] 
+[05/04 16:12:51      0s] License:
+[05/04 16:12:51      0s] 		[16:12:51.324481] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+[05/04 16:12:51      0s] 
+[05/04 16:12:51      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[05/04 16:12:51      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[05/04 16:13:00      8s] 
+[05/04 16:13:00      8s] 
+[05/04 16:13:06     12s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+[05/04 16:13:09     14s] @(#)CDS: NanoRoute 21.35-s114_1 NR220912-2004/21_15-UB (database version 18.20.592_1) {superthreading v2.17}
+[05/04 16:13:09     14s] @(#)CDS: AAE 21.15-s039 (64bit) 10/13/2022 (Linux 3.10.0-693.el7.x86_64)
+[05/04 16:13:09     14s] @(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+[05/04 16:13:09     14s] @(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+[05/04 16:13:09     14s] @(#)CDS: CPE v21.15-s076
+[05/04 16:13:09     14s] @(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+[05/04 16:13:09     14s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[05/04 16:13:09     14s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[05/04 16:13:09     14s] @(#)CDS: RCDB 11.15.0
+[05/04 16:13:09     14s] @(#)CDS: STYLUS 21.12-s013_1 (08/15/2022 08:25 PDT)
+[05/04 16:13:09     14s] @(#)CDS: SystemPlanner-21.15Rel-8720 (21.15) (2022-08-22 18:31:54+0800)
+[05/04 16:13:09     14s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_670_fransg-2_su2577su-s_e1iTiN.
+
+[05/04 16:13:09     14s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_670_fransg-2_su2577su-s_e1iTiN.
+[05/04 16:13:09     14s] 
+[05/04 16:13:09     14s] Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[05/04 16:13:11     15s] [INFO] Loading PVS 21.10 fill procedures
+[05/04 16:13:12     17s] 
+[05/04 16:13:12     17s] **INFO:  MMMC transition support version v31-84 
+[05/04 16:13:12     17s] 
+[05/04 16:13:15     19s] @innovus 1> source genus_output/pulpino_top.genus_init.tcl
+#@ Begin verbose source (pre): source genus_output/pulpino_top.genus_init.tcl
+[05/04 16:13:31     23s] @file 1: ################################################################################
+[05/04 16:13:31     23s] @file 2: #
+[05/04 16:13:31     23s] @file 3: # Init setup file
+[05/04 16:13:31     23s] @file 4: # Created by Genus(TM) Synthesis Solution on 04/24/2026 12:54:02
+[05/04 16:13:31     23s] @file 5: #
+[05/04 16:13:31     23s] @file 6: ################################################################################
+[05/04 16:13:31     23s] @file 7: if { ![is_common_ui_mode] } {...}
+[05/04 16:13:31     23s] @file 8: ::legacy::set_attribute -quiet init_mmmc_version 2 /
+[05/04 16:13:31     23s] **ERROR: (IMPSE-110):	File 'genus_output/pulpino_top.genus_init.tcl' line 8: invalid command name "::legacy::set_attribute".
+[05/04 16:13:31     23s] #@ End verbose source genus_output/pulpino_top.genus_init.tcl
+[05/04 16:13:31     23s] invalid command name "::legacy::set_attribute"
+[05/04 16:13:31     23s] invalid command name "::legacy::set_attribute"
+[05/04 16:13:31     23s] @innovus 2> set_db design_flow_ready true
+
+[05/04 16:13:50     27s] **ERROR: (IMPDBTCL-247):	'design_flow_ready' is not a recognized object or root attribute. Run 'help root:' to get a list of all root attributes, or 'man get_db' for more information about accessing objects and attributes.
+[05/04 16:13:50     27s] 
+[05/04 16:13:50     27s] 
+[05/04 16:13:50     27s] @innovus 3> set db design_flow_ready true
+[25C
+[05/04 16:13:59     29s] wrong # args: should be "set varName ?newValue?"
+[05/04 16:13:59     29s] wrong # args: should be "set varName ?newValue?"
+[05/04 16:13:59     29s] @innovus 4> [05/04 16:30:07     30s] 
+[05/04 16:30:07     30s] *** Summary of all messages that are not suppressed in this session:
+[05/04 16:30:07     30s] Severity  ID               Count  Summary                                  
+[05/04 16:30:07     30s] ERROR     IMPSE-110            1  File '%s' line %s: %s.                   
+[05/04 16:30:07     30s] ERROR     IMPDBTCL-247         1  '%s' is not a recognized object or root ...

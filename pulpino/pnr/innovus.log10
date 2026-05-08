@@ -1,0 +1,536 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+Options:	-stylus 
+Date:		Fri May  8 12:41:52 2026
+Host:		fransg-2 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[12:41:52.324473] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_2238_fransg-2_su2577su-s_J5y3bC.
+
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[INFO] Loading PVS 21.10 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+@innovus 1> source genus_output/pulpino_chip.genus_init.tcl
+#@ Begin verbose source (pre): source genus_output/pulpino_chip.genus_init.tcl
+@file 1: ################################################################################
+@file 2: #
+@file 3: # Init setup file
+@file 4: # Created by Genus(TM) Synthesis Solution on 05/07/2026 14:47:06
+@file 5: #
+@file 6: ################################################################################
+@file 7: #if { ![is_common_ui_mode] } { error "ERROR: This script requires common_ui to be active."}
+@file 8: #::legacy::set_attribute -quiet init_mmmc_version 2 /
+@file 9:
+@@file 10: read_mmmc ../pnr/genus_output/pulpino_chip.mmmc.tcl
+#@ Begin verbose source ../pnr/genus_output/pulpino_chip.mmmc.tcl (pre)
+@file 1: #################################################################################
+@file 2: #
+@file 3: # Created by Genus(TM) Synthesis Solution 21.14-s082_1 on Thu May 07 14:47:01 CEST 2026
+@file 4: #
+@file 5: #################################################################################
+@file 6:
+@file 7: ## library_sets
+@@file 8: create_library_set -name wcl_slow \
+    -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_wc_1.00V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_wc_1.10V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_wc_1.00V_125C_10y.lib }
+@@file 15: create_library_set -name wcl_fast \
+    -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_bc_1.25V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_bc_1.25V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_bc_1.25V_1.95V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_bc_1.25V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_bc_1.30V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_bc_1.25V_m40C.lib }
+@@file 22: create_library_set -name wcl_typical \
+    -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_nom_1.10V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_nom_1.10V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_nom_1.10V_1.80V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_nom_1.10V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_nom_1.20V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_nom_1.10V_25C.lib }
+@file 29:
+@file 30: ## opcond
+@@file 31: create_opcond -name op_cond_wcl_slow \
+    -process 1.0 \
+    -voltage 1.0 \
+    -temperature 125.0
+@@file 35: create_opcond -name op_cond_wcl_fast \
+    -process 1.0 \
+    -voltage 1.25 \
+    -temperature -40.0
+@@file 39: create_opcond -name op_cond_wcl_typical \
+    -process 1.0 \
+    -voltage 1.1 \
+    -temperature 25.0
+@file 43:
+@file 44: ## timing_condition
+@@file 45: create_timing_condition -name timing_cond_wcl_slow \
+    -opcond op_cond_wcl_slow \
+    -library_sets { wcl_slow }
+@@file 48: create_timing_condition -name timing_cond_wcl_fast \
+    -opcond op_cond_wcl_fast \
+    -library_sets { wcl_fast }
+@@file 51: create_timing_condition -name timing_cond_wcl_typical \
+    -opcond op_cond_wcl_typical \
+    -library_sets { wcl_typical }
+@file 54:
+@file 55: ## rc_corner
+@@file 56: create_rc_corner -name rc_corner_typ \
+    -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCTYP/qrcTechFile \
+    -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCTYP.captable \
+    -pre_route_res 1.0 \
+    -pre_route_cap 1.0 \
+    -pre_route_clock_res 0.0 \
+    -pre_route_clock_cap 0.0 \
+    -post_route_res {1.0 1.0 1.0} \
+    -post_route_cap {1.0 1.0 1.0} \
+    -post_route_cross_cap {1.0 1.0 1.0} \
+    -post_route_clock_res {1.0 1.0 1.0} \
+    -post_route_clock_cap {1.0 1.0 1.0}
+@@file 68: create_rc_corner -name rc_corner_min \
+    -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMIN/qrcTechFile \
+    -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable \
+    -pre_route_res 1.0 \
+    -pre_route_cap 1.0 \
+    -pre_route_clock_res 0.0 \
+    -pre_route_clock_cap 0.0 \
+    -post_route_res {1.0 1.0 1.0} \
+    -post_route_cap {1.0 1.0 1.0} \
+    -post_route_cross_cap {1.0 1.0 1.0} \
+    -post_route_clock_res {1.0 1.0 1.0} \
+    -post_route_clock_cap {1.0 1.0 1.0}
+@@file 80: create_rc_corner -name rc_corner_max \
+    -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile \
+    -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable \
+    -pre_route_res 1.0 \
+    -pre_route_cap 1.0 \
+    -pre_route_clock_res 0.0 \
+    -pre_route_clock_cap 0.0 \
+    -post_route_res {1.0 1.0 1.0} \
+    -post_route_cap {1.0 1.0 1.0} \
+    -post_route_cross_cap {1.0 1.0 1.0} \
+    -post_route_clock_res {1.0 1.0 1.0} \
+    -post_route_clock_cap {1.0 1.0 1.0}
+@file 92:
+@file 93: ## delay_corner
+@@file 94: create_delay_corner -name delay_corner_wcl_slow \
+    -early_timing_condition { timing_cond_wcl_slow } \
+    -late_timing_condition { timing_cond_wcl_slow } \
+    -early_rc_corner rc_corner_min \
+    -late_rc_corner rc_corner_max
+@@file 99: create_delay_corner -name delay_corner_wcl_fast \
+    -early_timing_condition { timing_cond_wcl_fast } \
+    -late_timing_condition { timing_cond_wcl_fast } \
+    -early_rc_corner rc_corner_min \
+    -late_rc_corner rc_corner_max
+@@file 104: create_delay_corner -name delay_corner_wcl_typical \
+    -early_timing_condition { timing_cond_wcl_typical } \
+    -late_timing_condition { timing_cond_wcl_typical } \
+    -early_rc_corner rc_corner_typ \
+    -late_rc_corner rc_corner_typ
+@file 109:
+@file 110: ## constraint_mode
+@@file 111: create_constraint_mode -name functional_wcl_slow \
+    -sdc_files { ../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc }
+@@file 113: create_constraint_mode -name functional_wcl_fast \
+    -sdc_files { ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc }
+@@file 115: create_constraint_mode -name functional_wcl_typical \
+    -sdc_files { ../pnr/genus_output/pulpino_chip.functional_wcl_typical.sdc }
+@file 117:
+@file 118: ## analysis_view
+@@file 119: create_analysis_view -name view_wcl_slow \
+    -constraint_mode functional_wcl_slow \
+    -delay_corner delay_corner_wcl_slow
+@@file 122: create_analysis_view -name view_wcl_fast \
+    -constraint_mode functional_wcl_fast \
+    -delay_corner delay_corner_wcl_fast
+@@file 125: create_analysis_view -name view_wcl_typical \
+    -constraint_mode functional_wcl_typical \
+    -delay_corner delay_corner_wcl_typical
+@file 128:
+@file 129: ## set_analysis_view
+@@file 130: set_analysis_view -setup { view_wcl_slow } \
+                  -hold { view_wcl_fast }
+#@ End verbose source ../pnr/genus_output/pulpino_chip.mmmc.tcl
+Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib' ...
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1447)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1448)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1452)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1453)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3390)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3391)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3395)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3396)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5333)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5334)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5338)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5339)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7276)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7277)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7281)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7282)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7988)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7989)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7993)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7994)
+Message <TECHLIB-1204> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+Read 866 cells in library 'CORE65LPLVT' 
+Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_wc_1.00V_125C_10y.lib' ...
+Read 110 cells in library 'CLOCK65LPLVT' 
+Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib' ...
+Read 10 cells in library 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z' 
+Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib' ...
+Read 33 cells in library 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z' 
+Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_wc_1.10V_125C_10y.lib' ...
+Read 2 cells in library 'SPHS100909' 
+Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_wc_1.00V_125C_10y.lib' ...
+Read 10 cells in library 'PRHS65' 
+Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_bc_1.25V_m40C.lib' ...
+Read 866 cells in library 'CORE65LPLVT' 
+Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_bc_1.25V_m40C.lib' ...
+Read 110 cells in library 'CLOCK65LPLVT' 
+Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_bc_1.25V_1.95V_m40C.lib' ...
+Read 10 cells in library 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z' 
+Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_bc_1.25V_m40C.lib' ...
+Read 33 cells in library 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z' 
+Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_bc_1.30V_m40C.lib' ...
+Read 2 cells in library 'SPHS100909' 
+Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_bc_1.25V_m40C.lib' ...
+Read 10 cells in library 'PRHS65' 
+@file 11:
+@@file 12: read_physical -lef {/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/viarule_generate.lef /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/sites.lef /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/CADENCE/LEF/CORE65LPLVT_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/CADENCE/LEF/CLOCK65LPLVT_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/CADENCE/LEF/PRHS65_soc.lef /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/CADENCE/LEF/SPHS100909_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/CADENCE/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/CADENCE/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_soc.lef}
+**ERROR: (IMPIMEX-10):	Specified file cannot be found: /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/CADENCE/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_soc.lef.
+@file 13:
+@@file 14: read_netlist ../pnr/genus_output/pulpino_chip.v
+#% Begin Load netlist data ... (date=05/08 12:42:58, mem=812.2M)
+*** Begin netlist parsing (mem=1143.8M) ***
+Created 1031 new cells from 12 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../pnr/genus_output/pulpino_chip.v'
+
+*** Memory Usage v#1 (Current mem = 1149.824M, initial mem = 484.035M) ***
+*** End netlist parsing (cpu=0:00:00.4, real=0:00:01.0, mem=1149.8M) ***
+#% End Load netlist data ... (date=05/08 12:42:59, total cpu=0:00:00.4, real=0:00:01.0, peak res=862.7M, current mem=862.7M)
+Top level cell is pulpino_chip.
+Hooked 2062 DB cells to tlib cells.
+3 empty module found.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell pulpino_chip ...
+*** Netlist is unique.
+**WARN: (IMPTRN-1100):	Cannot determine standard cell height.  Assume it 10 IGU.
+**WARN: (IMPTRN-1101):	Could not determine power-rail locations in cells. Use default value GNDOnBtm.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g225 of the cell HS65_LL_IVX9 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g238__2398 of the cell HS65_LL_NOR2AX3 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g239__5107 of the cell HS65_LL_NAND2X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g240__6260 of the cell HS65_LL_AO12X9 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g241 of the cell HS65_LL_IVX9 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g379__4319 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g380__8428 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g381__5526 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g382__6783 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g383__3680 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g384__1617 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g385__2802 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g386__1705 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g387__5122 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g388__8246 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g389__7098 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g390__6131 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g391__1881 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g392__5115 of the cell HS65_LL_MUX21X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance i_core/axi_interconnect_i/axi_node_i/\_REQ_BLOCK_GEN[0].REQ_BLOCK /AR_ALLOCATOR/AW_ARB_TREE/\BINARY_TREE.STAGE[0].INCR_VERT[0].LAST_NODE.FAN_IN_REQ /g393__7482 of the cell HS65_LL_OR2X4 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**WARN: (EMS-27):	Message (IMPREPO-102) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+** info: there are 2904 modules.
+** info: there are 37147 stdCell insts.
+**ERROR: (IMPREPO-103):	There are 37147 instances (172 cells) with no dimension defined.
+
+*** Memory Usage v#1 (Current mem = 1276.250M, initial mem = 484.035M) ***
+@file 15:
+@@file 16: init_design 
+**ERROR: (IMPFP-1594):	No site specified. Check the LEF/OA file to make sure a site is specified for core cell.
+Type 'man IMPFP-1594' for more detail.
+**ERROR: (IMPSYC-1595):	No row created.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 2 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for pre_route and post_route extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for pre_route and post_route (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+**ERROR: (IMPEXT-3466):	The technology layer information is not available. This can happen if either no LEF file is imported or an error occurs while reading the LEF file(s). The capacitance table file cannot be read without the layer information.
+Decrypted 4096 characters.
+**ERROR: (IMPEXT-2677):	Multi-corner RC initialization is aborted because of previously-reported errors. Use the reason provided in the error message(s) to resolve this issue and use the set_analysis_view command to invoke multi-corner initialization again.
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc' ...
+Current (total cpu=0:00:35.3, real=0:01:08, peak res=1265.9M, current mem=1257.5M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 9).
+
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 10).
+
+pulpino_chip
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /aw_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 15).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /ar_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 16).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /w_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 17).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /r_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 18).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /b_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 19).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_aw_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 20).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_ar_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 21).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_w_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 22).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_r_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 23).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_b_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 24).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_aw_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 25).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_ar_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 26).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_w_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 27).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_r_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 28).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_b_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 29).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_aw_buffer/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 30).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_ar_buffer/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 31).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_w_buffer/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 32).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_r_buffer/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 33).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_b_buffer/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 34).
+
+Message <TCLCMD-1531> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit. (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 35).
+
+INFO (CTE): Reading of timing constraints file ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc completed, with 22 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1334.3M, current mem=1334.3M)
+Current (total cpu=0:00:35.4, real=0:01:08, peak res=1334.3M, current mem=1334.3M)
+Reading timing constraints file '../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc' ...
+Current (total cpu=0:00:35.4, real=0:01:08, peak res=1334.3M, current mem=1334.3M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc, Line 9).
+
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc, Line 10).
+
+pulpino_chip
+INFO (CTE): Reading of timing constraints file ../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc completed, with 2 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1334.6M, current mem=1334.6M)
+Current (total cpu=0:00:35.5, real=0:01:08, peak res=1334.6M, current mem=1334.6M)
+Total number of combinational cells: 0
+Total number of sequential cells: 0
+Total number of tristate cells: 0
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers:
+Total number of usable buffers: 0
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters:
+Total number of usable inverters: 0
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+**WARN: (IMPOPT-3000):	Buffer footprint is not defined or is an invalid buffer footprint.
+Type 'man IMPOPT-3000' for more detail.
+**WARN: (IMPOPT-3001):	Inverter footprint is not defined or is an invalid inverter footprint.
+Type 'man IMPOPT-3001' for more detail.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 2 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for pre_route and post_route extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for pre_route and post_route (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+**ERROR: (IMPEXT-3466):	The technology layer information is not available. This can happen if either no LEF file is imported or an error occurs while reading the LEF file(s). The capacitance table file cannot be read without the layer information.
+Decrypted 4096 characters.
+**ERROR: (IMPEXT-2677):	Multi-corner RC initialization is aborted because of previously-reported errors. Use the reason provided in the error message(s) to resolve this issue and use the set_analysis_view command to invoke multi-corner initialization again.
+@file 17:
+@@file 18: read_io_file pad.io
+Reading IO assignment file "pad.io" ...
+**WARN: (IMPFP-788):	Cell 'CORNERCELL_ST_SF_LIN' for IO 'PcornerLL' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'CORNERCELL_ST_SF_LIN' for IO 'PcornerLR' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'CORNERCELL_ST_SF_LIN' for IO 'PcornerUR' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'CORNERCELL_ST_SF_LIN' for IO 'PcornerUL' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'VDD_ST_SF_LIN' for IO 'PVDD1' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'GND_ST_SF_LIN' for IO 'PGND1' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'GNDE_ST_SF_LIN' for IO 'PGNDE1' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'VDDE_ST_SF_LIN' for IO 'PVDDE1' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'BD2SCARUDQP_1V8_SF_LIN' for IO 'p_clk' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'BD2SCARUDQP_1V8_SF_LIN' for IO 'p_rst_n' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'BD2SCARUDQP_1V8_SF_LIN' for IO 'p_uart_tx' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'BD2SCARUDQP_1V8_SF_LIN' for IO 'p_uart_rx' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'BD2SCARUDQP_1V8_SF_LIN' for IO 'gen_gpio_pads[0].p_gpio' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'BD2SCARUDQP_1V8_SF_LIN' for IO 'gen_gpio_pads[1].p_gpio' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'BD2SCARUDQP_1V8_SF_LIN' for IO 'gen_gpio_pads[2].p_gpio' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'BD2SCARUDQP_1V8_SF_LIN' for IO 'gen_gpio_pads[3].p_gpio' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'BD2SCARUDQP_1V8_SF_LIN' for IO 'gen_gpio_pads[4].p_gpio' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'BD2SCARUDQP_1V8_SF_LIN' for IO 'gen_gpio_pads[5].p_gpio' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'BD2SCARUDQP_1V8_SF_LIN' for IO 'gen_gpio_pads[6].p_gpio' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (IMPFP-788):	Cell 'BD2SCARUDQP_1V8_SF_LIN' for IO 'gen_gpio_pads[7].p_gpio' has LEF/OA CLASS other than PAD or sub class AreaI0.
+Type 'man IMPFP-788' for more detail.
+**WARN: (EMS-27):	Message (IMPFP-788) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+@file 19:
+@@file 20: create_floorplan -core_density_size {1.0 0.7 80 80 80 80} -site CORE
+**ERROR: (IMPTCM-162):	"CORE" does not match any object in design for specified type "site " object in command "create_floorplan".
+
+Usage: create_floorplan [-help] [-core_margins_by {io die}]
+                        [-die_size_by_io_height {min max}] [-flip {n s f}]
+                        [-floorplan_origin {center llcorner}] [-match_to_site]
+                        [-no_resize] [-no_snap_to_grid] [-overlap_same_site_row] {-box_size <die_box io_box core_box> | -core_size <w h left bottom right top> | -die_size <w h left bottom right top> | -core_density_size <aspectratio [rowdensity [left bottom right top]]> | -stdcell_density_size <aspectratio [stdcelldensity [left bottom bight bop]]> | -keep_shape_density <util>} [-site <site> | -site_only <site>]
+
+**ERROR: (IMPTCM-4):	The value "CORE" specified for the object type of argument "-site" is not a valid object. Review the command specification and remove the argument or specify a legal value.
+**ERROR: (IMPSE-110):	File 'genus_output/pulpino_chip.genus_init.tcl' line 20: errors out.
+#@ End verbose source genus_output/pulpino_chip.genus_init.tcl
+
+
+@innovus 2> innovus -help
+
+wrong # args: should be "innovus"
+wrong # args: should be "innovus"
+@innovus 3>  -help
+[6C
+invalid command name "-help"
+invalid command name "-help"
+@innovus 4> innovus --help
+[5C
+wrong # args: should be "innovus"
+wrong # args: should be "innovus"
+@innovus 5> get_db sites .name
+
+@innovus 6> get db sites .name
+[14C
+ambiguous command name "get": get_activity get_aging_activity get_all_layers get_arcs get_black_box_area get_bond_pad get_capacitance_unit get_ccopt_property_common_ui_map get_cells get_clock_network_objects get_clock_to_clock_association get_clock_tree_capacitance get_clock_tree_effective_max_capacitance get_clock_tree_transition_time get_clocks get_clone_partition_orient get_common_ui_map get_compress_level get_computed_shapes get_constant get_cpf_user_attributes get_cts_graph_traversal get_current_constraint_mode get_db get_default_switching_activity get_designs get_distributed_hosts get_draw_view get_dynamic_power_simulation get_edge get_equivalent_cells get_feature get_flow_config get_generated_clocks get_glitch_threshold get_ilm_type get_integration_route_constraint get_interactive_constraint_modes get_io_flow_flag get_layer_preference get_legacy get_lib_arcs get_lib_cells get_lib_clock_tree_path_delay get_lib_pg_pins get_lib_pins get_libs get_macro_place_constraint get_message get_metal_fill_signoff_config get_metal_fill_spacing_table get_metric get_metric_alias get_metric_config get_metric_definition get_metric_header get_module_view get_multi_cpu_usage get_nets get_oa_default_rule_lib get_oa_design_data get_obj_in_area get_object_name get_partition_pin_status get_path_groups get_pg_nets get_pg_pins get_pg_pins_use_signal_route get_physical_info get_pin_constraint get_pin_port_number get_pins get_ports get_power get_preference get_propagated_clock get_property get_proto_model get_rect get_resistance_unit get_route_attributes get_scheduling_file get_skew_group_delay get_skew_group_path get_socv_rc_variation_factor get_socv_reporting_nsigma_multiplier get_time_unit get_transform_shapes get_waveform getpid gets
+ambiguous command name "get": get_activity get_aging_activity get_all_layers get_arcs get_black_box_area get_bond_pad get_capacitance_unit get_ccopt_property_common_ui_map get_cells get_clock_network_objects get_clock_to_clock_association get_clock_tree_capacitance get_clock_tree_effective_max_capacitance get_clock_tree_transition_time get_clocks get_clone_partition_orient get_common_ui_map get_compress_level get_computed_shapes get_constant get_cpf_user_attributes get_cts_graph_traversal get_current_constraint_mode get_db get_default_switching_activity get_designs get_distributed_hosts get_draw_view get_dynamic_power_simulation get_edge get_equivalent_cells get_feature get_flow_config get_generated_clocks get_glitch_threshold get_ilm_type get_integration_route_constraint get_interactive_constraint_modes get_io_flow_flag get_layer_preference get_legacy get_lib_arcs get_lib_cells get_lib_clock_tree_path_delay get_lib_pg_pins get_lib_pins get_libs get_macro_place_constraint get_message get_metal_fill_signoff_config get_metal_fill_spacing_table get_metric get_metric_alias get_metric_config get_metric_definition get_metric_header get_module_view get_multi_cpu_usage get_nets get_oa_default_rule_lib get_oa_design_data get_obj_in_area get_object_name get_partition_pin_status get_path_groups get_pg_nets get_pg_pins get_pg_pins_use_signal_route get_physical_info get_pin_constraint get_pin_port_number get_pins get_ports get_power get_preference get_propagated_clock get_property get_proto_model get_rect get_resistance_unit get_route_attributes get_scheduling_file get_skew_group_delay get_skew_group_path get_socv_rc_variation_factor get_socv_reporting_nsigma_multiplier get_time_unit get_transform_shapes get_waveform getpid gets
+@innovus 7> source genus_output/pulpino_chip.genus_init.tcl
+
+#@ Begin verbose source (pre): source genus_output/pulpino_chip.genus_init.tcl
+@file 1: ################################################################################
+@file 2: #
+@file 3: # Init setup file
+@file 4: # Created by Genus(TM) Synthesis Solution on 05/07/2026 14:47:06
+@file 5: #
+@file 6: ################################################################################
+@file 7: #if { ![is_common_ui_mode] } { error "ERROR: This script requires common_ui to be active."}
+@file 8: #::legacy::set_attribute -quiet init_mmmc_version 2 /
+@file 9:
+@@file 10: read_mmmc ../pnr/genus_output/pulpino_chip.mmmc.tclpulpino-chip
+**WARN: (TCLCMD-1306):	read_mmmc command should be called once before init_design.
+**ERROR: (IMPSE-110):	File 'genus_output/pulpino_chip.genus_init.tcl' line 10: 1.
+#@ End verbose source genus_output/pulpino_chip.genus_init.tcl
+1
+1
+@innovus 8> exit
+
+
+*** Memory Usage v#1 (Current mem = 1691.086M, initial mem = 484.035M) ***
+*** Message Summary: 140 warning(s), 45305 error(s)
+
+--- Ending "Innovus" (totcpu=0:01:02, real=0:03:07, mem=1691.1M) ---
