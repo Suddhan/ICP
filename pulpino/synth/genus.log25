@@ -1,0 +1,1593 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[14:27:38.324553] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+
+Version: 21.14-s082_1, built Thu Jun 23 05:32:08 PDT 2022
+Options: 
+Date:    Tue May 12 14:27:38 2026
+Host:    fransg-2 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*1physical cpu*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB) (16222476KB)
+PID:     23938
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+
+[14:27:38.480882] Periodic Lic check successful
+[14:27:38.480898] Feature usage summary:
+[14:27:38.480899] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (10 seconds elapsed).
+
+WARNING: This version of the tool is 1418 days old.
+@genus:root: 1> source run_synth.tcl
+Sourcing './run_synth.tcl' (Tue May 12 14:28:15 CEST 2026)...
+#@ Begin verbose source ./run_synth.tcl
+@file(run_synth.tcl) 5: set_db [get_db designs pulpino_top] .multiple_driver_operation average
+@file(run_synth.tcl) 7: set DESIGN pulpino_top ; # Set this to your top module name
+@file(run_synth.tcl) 8: set SYN_EFF medium 
+@file(run_synth.tcl) 9: set MAP_EFF medium
+@file(run_synth.tcl) 10: set OPT_EFF medium
+@file(run_synth.tcl) 12: set DATE [clock format [clock seconds] -format "%b%d-%T"]
+@file(run_synth.tcl) 13: set _OUTPUTS_PATH outputs_${DATE}
+@file(run_synth.tcl) 14: set _LOG_PATH logs_${DATE}
+@file(run_synth.tcl) 16: set_db write_db_use_relative_filepath true
+  Setting attribute of root '/': 'write_db_use_relative_filepath' = true
+@file(run_synth.tcl) 23: set_db / .init_lib_search_path ". \
+/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs \
+/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs \
+/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs \
+/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs \
+/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs \
+/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs \
+../rtl \
+../rtl/components \
+../rtl/includes \
+"
+  Setting attribute of root '/': 'init_lib_search_path' = .  /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs  /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs  /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs  /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs  /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs  /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs  ../rtl  ../rtl/components  ../rtl/includes  
+@file(run_synth.tcl) 36: set_db init_hdl_search_path ". ../rtl \
+../rtl/components \
+../rtl/includes \
+../ips/riscv \
+../ips/axi/core2axi \
+../ips/axi/axi_slice \
+../ips/axi/axi_slice_dc \
+../ips/axi/axi_mem_if_DP \
+../ips/adv_dbg_if/rtl \
+../ips/axi/axi_spi_slave \
+../ips/axi/axi2apb \
+../ips/axi/axi2apb \
+../ips/apb/apb_node \
+../ips/apb/apb_uart_sv \
+../ips/apb/apb_gpio \
+../ips/apb/apb2per \
+../ips/apb/apb_spi_master \
+../ips/apb/apb_timer \
+../ips/apb/apb_event_unit \
+../ips/apb/apb_i2c \
+../ips/apb/apb_fll_if \
+../ips/apb/apb_pulpino \
+../ips/axi/axi_node \
+../ips/apb/apb_uart \
+../ips/riscv/include \
+../ips/apb/apb_event_unit/include \
+../ips/riscv/include \
+../ips/axi/axi_slice \
+../ips/axi/axi_mem_if_DP \
+../ips/apb/apb_node \
+../ips/axi/axi_spi_slave \
+" 
+  Setting attribute of root '/': 'init_hdl_search_path' = . ../rtl  ../rtl/components  ../rtl/includes  ../ips/riscv  ../ips/axi/core2axi  ../ips/axi/axi_slice  ../ips/axi/axi_slice_dc  ../ips/axi/axi_mem_if_DP  ../ips/adv_dbg_if/rtl  ../ips/axi/axi_spi_slave  ../ips/axi/axi2apb  ../ips/axi/axi2apb  ../ips/apb/apb_node  ../ips/apb/apb_uart_sv  ../ips/apb/apb_gpio  ../ips/apb/apb2per  ../ips/apb/apb_spi_master  ../ips/apb/apb_timer  ../ips/apb/apb_event_unit  ../ips/apb/apb_i2c  ../ips/apb/apb_fll_if  ../ips/apb/apb_pulpino  ../ips/axi/axi_node  ../ips/apb/apb_uart  ../ips/riscv/include  ../ips/apb/apb_event_unit/include  ../ips/riscv/include  ../ips/axi/axi_slice  ../ips/axi/axi_mem_if_DP  ../ips/apb/apb_node  ../ips/axi/axi_spi_slave  
+@file(run_synth.tcl) 69: set rtlList " \
+apu_defines.sv \
+apb_uart.sv \
+apb_uart_sv.sv \
+defines_event_unit.sv \
+spi_slave_rx.sv \
+spi_slave_tx.sv \
+spi_slave_cmd_parser.sv \
+spi_slave_regs.sv \
+dc_data_buffer.v \
+dc_token_ring.v \
+dc_full_detector.v \
+dc_synchronizer.v \
+dc_token_ring_fifo_din.v \
+dc_token_ring_fifo_dout.v \
+spi_slave_dc_fifo.sv \
+spi_master_clkgen.sv \
+spi_master_tx.sv \
+spi_master_rx.sv \
+spi_master_fifo.sv \
+spi_master_controller.sv \
+spi_slave_controller.sv \
+spi_slave_axi_plug.sv \
+spi_slave_syncro.sv \
+spi_master_apb_if.sv \
+riscv_defines.sv \
+io_generic_fifo.sv \
+apb_spi_master.sv \
+apb2per.sv \
+axi_bus.sv \
+config.sv \
+debug_bus.sv \
+axi_slice.sv \
+axi_slice_dc_master.sv \
+axi_slice_dc_slave.sv \
+axi_mem_if_SP.sv \
+adbg_tap_top.v \
+adbg_axi_biu.sv \
+adbg_crc32.v \
+adbg_axi_module.sv \
+adbg_or1k_status_reg.sv \
+adbg_or1k_biu.sv \
+adbg_or1k_module.sv \
+adbg_top.sv \
+adv_dbg_if.sv \
+axi_spi_slave.sv \
+axi2apb.sv \
+axi2apb32.sv \
+apb_node.sv \
+apb_node_wrap.sv \
+apb_gpio.sv \
+apb_timer.sv \
+timer.sv \
+generic_service_unit.sv \
+sleep_unit.sv \
+apb_event_unit.sv \
+i2c_master_bit_ctrl.sv \
+i2c_master_byte_ctrl.sv \
+apb_i2c.sv \
+apb_fll_if.sv \
+apb_pulpino.sv \
+axi_AR_allocator.sv \
+axi_AW_allocator.sv \
+axi_multiplexer.sv \
+axi_DW_allocator.sv \
+axi_address_decoder_BW.sv \
+axi_address_decoder_BR.sv \
+axi_FanInPrimitive_Req.sv \
+axi_RR_Flag_Req.sv \
+axi_ArbitrationTree.sv \
+axi_BW_allocator.sv \
+axi_BR_allocator.sv \
+axi_address_decoder_AR.sv \
+axi_address_decoder_AW.sv \
+axi_address_decoder_DW.sv \
+axi_request_block.sv \
+axi_response_block.sv \
+axi_node.sv \
+apu_core_package.sv \
+cluster_clock_gating.sv \
+cluster_clock_inverter.sv \
+cluster_clock_mux2.sv \
+dp_ram.sv \
+generic_fifo.sv \
+pulp_clock_gating.sv \
+pulp_clock_inverter.sv \
+apb_bus.sv \
+rstgen.sv \
+apb_uart_sv.sv \
+sp_ram.sv \
+riscv_core.sv \
+riscv_fetch_fifo.sv \
+riscv_register_file.sv \
+riscv_decoder.sv \
+riscv_prefetch_buffer.sv \
+riscv_hwloop_controller.sv \
+riscv_hwloop_regs.sv \
+riscv_int_controller.sv \
+riscv_controller.sv \
+riscv_compressed_decoder.sv \
+riscv_mult.sv \
+riscv_alu_div.sv \
+riscv_alu.sv \
+riscv_cs_registers.sv \
+riscv_debug_unit.sv \
+axi_write_only_ctrl.sv \
+riscv_if_stage.sv \
+riscv_id_stage.sv \
+riscv_ex_stage.sv \
+riscv_load_store_unit.sv \
+axi_aw_buffer.sv \
+axi_ar_buffer.sv \
+axi_w_buffer.sv \
+axi_r_buffer.sv \
+axi_b_buffer.sv \
+axi_read_only_ctrl.sv \
+core2axi.sv \
+sp_ram_wrap.sv \
+instr_mem.sv \
+data_mem.sv \
+pulp_clock_mux2.sv \
+apb_mock_uart.sv \
+axi2apb_wrap.sv \
+axi_mem_if_SP_wrap.sv \
+axi_node_intf_wrap.sv \
+axi_slice_wrap.sv \
+axi_spi_slave_wrap.sv \
+boot_code.sv \
+boot_rom_wrap.sv \
+clk_rst_gen.sv \
+core2axi_wrap.sv \
+core_region.sv \
+dp_ram_wrap.sv \
+instr_ram_wrap.sv \
+periph_bus_wrap.sv \
+peripherals.sv \
+ram_mux.sv \
+pulpino_top.sv \
+" 
+@file(run_synth.tcl) 210: set_db max_cpus_per_server 8
+  Setting attribute of root '/': 'max_cpus_per_server' = 8
+@file(run_synth.tcl) 211: set_db information_level 9
+  Setting attribute of root '/': 'information_level' = 9
+@file(run_synth.tcl) 212: set_db pbs_mmmc_flow true
+  Setting attribute of root '/': 'pbs_mmmc_flow' = true
+@file(run_synth.tcl) 213: set_db tns_opto true 
+  Setting attribute of root '/': 'tns_opto' = true
+@file(run_synth.tcl) 214: set_db lp_insert_clock_gating true 
+  Setting attribute of root '/': 'lp_insert_clock_gating' = true
+@file(run_synth.tcl) 215: set_db auto_ungroup none 
+  Setting attribute of root '/': 'auto_ungroup' = none
+@file(run_synth.tcl) 216: set_db init_ground_nets {GND GNDE}
+This attribute has no effect on the tool operation.
+  Setting attribute of root '/': 'init_ground_nets' = GND GNDE
+@file(run_synth.tcl) 217: set_db init_power_nets {VDD VDDE}
+This attribute has no effect on the tool operation.
+  Setting attribute of root '/': 'init_power_nets' = VDD VDDE
+@file(run_synth.tcl) 218: set_db lib_lef_consistency_check_enable false
+  Setting attribute of root '/': 'lib_lef_consistency_check_enable' = false
+@file(run_synth.tcl) 221: read_mmmc mmmc.tcl
+  Setting attribute of root '/': 'is_read_mmmc_flow' = true
+Sourcing './mmmc.tcl' (Tue May 12 14:28:15 CEST 2026)...
+#@ Begin verbose source ./mmmc.tcl
+@file(mmmc.tcl) 12: create_library_set -name wcl_slow -timing { 
+  CORE65LPLVT_wc_1.00V_125C_10y.lib
+  CLOCK65LPLVT_wc_1.00V_125C_10y.lib
+  IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib
+  IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib
+  SPHS100909_wc_1.10V_125C_10y.lib
+  PRHS65_wc_1.00V_125C_10y.lib
+}
+@file(mmmc.tcl) 21: create_library_set -name wcl_fast -timing { 
+  CORE65LPLVT_bc_1.25V_m40C.lib 
+  CLOCK65LPLVT_bc_1.25V_m40C.lib
+  IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_bc_1.25V_1.95V_m40C.lib
+  IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_bc_1.25V_m40C.lib
+  SPHS100909_bc_1.30V_m40C.lib
+  PRHS65_bc_1.25V_m40C.lib
+}
+@file(mmmc.tcl) 30: create_library_set -name wcl_typical -timing { 
+  CORE65LPLVT_nom_1.10V_25C.lib
+  CLOCK65LPLVT_nom_1.10V_25C.lib
+  IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_nom_1.10V_1.80V_25C.lib
+  IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_nom_1.10V_25C.lib
+  SPHS100909_nom_1.20V_25C.lib
+  PRHS65_nom_1.10V_25C.lib
+}
+@file(mmmc.tcl) 40: create_opcond -name op_cond_wcl_slow    -process 1 -voltage 1.0  -temperature 125
+@file(mmmc.tcl) 41: create_opcond -name op_cond_wcl_fast    -process 1 -voltage 1.25 -temperature -40
+@file(mmmc.tcl) 42: create_opcond -name op_cond_wcl_typical -process 1 -voltage 1.1  -temperature 25
+@file(mmmc.tcl) 45: create_timing_condition -name timing_cond_wcl_slow    -opcond op_cond_wcl_slow    -library_sets { wcl_slow }
+@file(mmmc.tcl) 46: create_timing_condition -name timing_cond_wcl_fast    -opcond op_cond_wcl_fast    -library_sets { wcl_fast }
+@file(mmmc.tcl) 47: create_timing_condition -name timing_cond_wcl_typical -opcond op_cond_wcl_typical -library_sets { wcl_typical }
+@file(mmmc.tcl) 51: create_rc_corner -name rc_corner_typ -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCTYP.captable -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCTYP/qrcTechFile
+@file(mmmc.tcl) 53: create_rc_corner -name rc_corner_min -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMIN/qrcTechFile
+@file(mmmc.tcl) 55: create_rc_corner -name rc_corner_max -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile
+@file(mmmc.tcl) 58: create_delay_corner -name delay_corner_wcl_slow \
+    -early_timing_condition timing_cond_wcl_slow \
+    -late_timing_condition  timing_cond_wcl_slow \
+    -early_rc_corner rc_corner_min \
+    -late_rc_corner  rc_corner_max
+@file(mmmc.tcl) 64: create_delay_corner -name delay_corner_wcl_fast \
+    -early_timing_condition timing_cond_wcl_fast \
+    -late_timing_condition  timing_cond_wcl_fast \
+    -early_rc_corner rc_corner_min \
+    -late_rc_corner  rc_corner_max
+@file(mmmc.tcl) 70: create_delay_corner -name delay_corner_wcl_typical \
+    -early_timing_condition timing_cond_wcl_typical \
+    -late_timing_condition  timing_cond_wcl_typical \
+    -early_rc_corner rc_corner_typ \
+    -late_rc_corner  rc_corner_typ
+@file(mmmc.tcl) 77: create_constraint_mode -name functional_wcl_slow    -sdc_files { ./constraints/constraints_1.sdc }
+            Reading file '/h/d9/g/su2577su-s/etin35_project/pulpino/synth/constraints/constraints_1.sdc'
+@file(mmmc.tcl) 78: create_constraint_mode -name functional_wcl_fast    -sdc_files { ./constraints/constraints_1.sdc }
+            Reading file '/h/d9/g/su2577su-s/etin35_project/pulpino/synth/constraints/constraints_1.sdc'
+@file(mmmc.tcl) 79: create_constraint_mode -name functional_wcl_typical -sdc_files { ./constraints/constraints_1.sdc }
+            Reading file '/h/d9/g/su2577su-s/etin35_project/pulpino/synth/constraints/constraints_1.sdc'
+@file(mmmc.tcl) 82: create_analysis_view -name view_wcl_slow    -constraint_mode functional_wcl_slow    -delay_corner delay_corner_wcl_slow
+@file(mmmc.tcl) 83: create_analysis_view -name view_wcl_fast    -constraint_mode functional_wcl_fast    -delay_corner delay_corner_wcl_fast
+@file(mmmc.tcl) 84: create_analysis_view -name view_wcl_typical -constraint_mode functional_wcl_typical -delay_corner delay_corner_wcl_typical
+@file(mmmc.tcl) 88: set_analysis_view -setup { view_wcl_slow } -hold { view_wcl_fast }
+
+Threads Configured:6
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'library_features' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 19)
+        : Check to see if this construct is really needed for synthesis. Many liberty constructs are not actually required.
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'library_features' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 20)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 21)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 22)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 23)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 24)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 25)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 26)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 27)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 28)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 29)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 30)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 31)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 32)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 33)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 34)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 35)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 36)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 37)
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'define' encountered. Ignoring (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 38)
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-40'.
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1447)
+        : Invalid value found for the attribute. Correct as per Liberty syntax.
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1448)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1452)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1453)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3390)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3391)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3395)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3396)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5333)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5334)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5338)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5339)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7276)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7277)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7281)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7282)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7988)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7989)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7993)
+Warning : Invalid value specified. [LBR-531]
+        : Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7994)
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-531'.
+Warning : Missing clock pin in the sequential cell. [LBR-525]
+        : Clock pin absent in sequential cell(s) 'HS65_LL_BK1SX1' (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 540447)
+        : Sequential timing checks, such as 'setup_rising' or 'hold_rising', on flop and latch cells require a clock pin. Verify that the 'clock' attribute of the clock pin is set to 'true' or that the clock pin has a 'clocked_on' attribute.
+Warning : Missing sequential block in the sequential cell. [LBR-526]
+        : Sequential block (ff/ff_bank/latch/latch_bank) missing in cell(s) 'HS65_LL_BK1SX1'. This may cause potential problems with results of downstream tools (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'BB' for the cell 'HS65_LL_BK1SX1'. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 540512)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'BB' for the cell 'HS65_LL_BK1X1'. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 540665)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'ANAIO' for the cell 'ANA_1V8_SF_2ROWS'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib, Line 258)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'ANAIOPAD' for the cell 'ANA_1V8_SF_2ROWS'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib, Line 272)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'ANAZI' for the cell 'ANA_1V8_SF_2ROWS'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib, Line 288)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'ANAIO' for the cell 'ANA_1V8_SF_LIN'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib, Line 354)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'ANAIOPAD' for the cell 'ANA_1V8_SF_LIN'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib, Line 368)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'ANAZI' for the cell 'ANA_1V8_SF_LIN'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib, Line 384)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'ANAIO' for the cell 'ANA_1V8_PU_SF_2ROWS'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib, Line 7135)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'ANAIOPAD' for the cell 'ANA_1V8_PU_SF_2ROWS'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib, Line 7149)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'ANAZI' for the cell 'ANA_1V8_PU_SF_2ROWS'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib, Line 7164)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'ANAIO' for the cell 'ANA_1V8_PU_SF_LIN'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib, Line 7264)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'ANAIOPAD' for the cell 'ANA_1V8_PU_SF_LIN'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib, Line 7278)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'ANAZI' for the cell 'ANA_1V8_PU_SF_LIN'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib, Line 7293)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'DUMMY' for the cell 'CORNERCELL_ST_SF_2ROWS'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib, Line 228)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'DUMMY' for the cell 'CORNERCELL_ST_SF_LIN'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib, Line 306)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'DUMMY' for the cell 'GNDE_ST_SF_2ROWS'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib, Line 384)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'DUMMY' for the cell 'GNDE_ST_SF_LIN'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib, Line 464)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'DUMMY' for the cell 'GNDVDD_ST_SF_2ROWS'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib, Line 560)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'DUMMY' for the cell 'GND_ST_SF_2ROWS'. (File /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib, Line 641)
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-518'.
+
+  Message Summary for Library all 6 libraries:
+  ********************************************
+  Invalid value specified. [LBR-531]: 4073
+  Missing sequential block in the sequential cell. [LBR-526]: 1
+  Missing clock pin in the sequential cell. [LBR-525]: 1
+  Missing a function attribute in the output pin definition. [LBR-518]: 69
+  An unsupported construct was detected in this library. [LBR-40]: 5330
+  ********************************************
+ 
+            Reading file '/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib'
+            Reading file '/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_wc_1.00V_125C_10y.lib'
+            Reading file '/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib'
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'CORE65LPLVT' and 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z'.
+        : This is a common source of delay calculation confusion and should be avoided.
+            Reading file '/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib'
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'CORE65LPLVT' and 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z'.
+            Reading file '/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_wc_1.10V_125C_10y.lib'
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'CORE65LPLVT' and 'SPHS100909'.
+            Reading file '/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_wc_1.00V_125C_10y.lib'
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.200000, 1.000000, 125.000000) in library 'CORE65LPLVT_wc_1.00V_125C_10y.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.200000, 1.000000, 125.000000) in library 'CLOCK65LPLVT_wc_1.00V_125C_10y.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.500000, 1.000000, 125.000000) in library 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.500000, 1.000000, 125.000000) in library 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.200000, 1.100000, 125.000000) in library 'SPHS100909_wc_1.10V_125C_10y.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.200000, 1.000000, 125.000000) in library 'PRHS65_wc_1.00V_125C_10y.lib'.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_1024x8m8_L/Q[0]' has no function.
+        : If the remainder of this library cell's semantic checks are successful, it will be considered as a timing-model (because one of its outputs does not have a valid function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_1024x8m8_L/Q[1]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_1024x8m8_L/Q[2]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_1024x8m8_L/Q[3]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_1024x8m8_L/Q[4]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_1024x8m8_L/Q[5]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_1024x8m8_L/Q[6]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_1024x8m8_L/Q[7]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_1024x8m8_L/RY' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_2048x8m8_L/Q[0]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_2048x8m8_L/Q[1]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_2048x8m8_L/Q[2]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_2048x8m8_L/Q[3]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_2048x8m8_L/Q[4]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_2048x8m8_L/Q[5]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_2048x8m8_L/Q[6]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_2048x8m8_L/Q[7]' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ST_SPHS_2048x8m8_L/RY' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ANA_1V8_SF_2ROWS/ANAIO' has no function.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'ANA_1V8_SF_2ROWS/ANAIOPAD' has no function.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-41'.
+        Cell 'HS65_GH_ANTPROT3' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_GH_ANTPROT3' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+        Cell 'HS65_GH_ANTPROT3' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_GH_ANTPROT3' must have an output pin.
+        Cell 'HS65_GL_ANTPROT3' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_GL_ANTPROT3' must have an output pin.
+        Cell 'HS65_GL_ANTPROT3' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_GL_ANTPROT3' must have an output pin.
+        Cell 'HS65_GS_ANTPROT3' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_GS_ANTPROT3' must have an output pin.
+        Cell 'HS65_GS_ANTPROT3' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_GS_ANTPROT3' must have an output pin.
+        Cell 'HS65_LH_ANTPROT1' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LH_ANTPROT1' must have an output pin.
+        Cell 'HS65_LH_ANTPROT1' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LH_ANTPROT1' must have an output pin.
+        Cell 'HS65_LH_ANTPROT3' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LH_ANTPROT3' must have an output pin.
+        Cell 'HS65_LH_ANTPROT3' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LH_ANTPROT3' must have an output pin.
+        Cell 'HS65_LL_ANTPROT1' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LL_ANTPROT1' must have an output pin.
+        Cell 'HS65_LL_ANTPROT1' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LL_ANTPROT1' must have an output pin.
+        Cell 'HS65_LL_ANTPROT3' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LL_ANTPROT3' must have an output pin.
+        Cell 'HS65_LL_ANTPROT3' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LL_ANTPROT3' must have an output pin.
+        Cell 'HS65_LS_ANTPROT1' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LS_ANTPROT1' must have an output pin.
+        Cell 'HS65_LS_ANTPROT1' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LS_ANTPROT1' must have an output pin.
+        Cell 'HS65_LS_ANTPROT3' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LS_ANTPROT3' must have an output pin.
+        Cell 'HS65_LS_ANTPROT3' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LS_ANTPROT3' must have an output pin.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX10'
+        : To make the cell usable, change the value of 'dont_use' attribute to false.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX14'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX17'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX21'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX24'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX27'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX31'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX34'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX38'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX41'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX52'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX62'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX7'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'HS65_LLP_CNHLSX82'
+        Cell 'HS65_LL_CAPX18' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LL_CAPX18' must have an output pin.
+        Cell 'HS65_LL_CAPX18' has no outputs.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'HS65_LL_CAPX18' must have an output pin.
+        Cell 'HS65_LL_CAPX35' has no outputs.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-9'.
+        Cell 'HS65_LL_CAPX35' has no outputs.
+        Cell 'HS65_LL_CAPX53' has no outputs.
+        Cell 'HS65_LL_CAPX53' has no outputs.
+        Cell 'HS65_LL_CAPX9' has no outputs.
+        Cell 'HS65_LL_CAPX9' has no outputs.
+Info    : Set default library domain. [LBR-109]
+        : The default library domain is 'library_domain:timing_cond_wcl_slow'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S0' in libcell 'HS65_LLS1_FA1X21'.
+        : Setting the 'timing_sense' to non_unate.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B0' and 'S0' in libcell 'HS65_LLS1_FA1X21'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A0' and 'S0' in libcell 'HS65_LLS1_FA1X21'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S0' in libcell 'HS65_LLS1_FA1X35'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B0' and 'S0' in libcell 'HS65_LLS1_FA1X35'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A0' and 'S0' in libcell 'HS65_LLS1_FA1X35'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S0' in libcell 'HS65_LLS1_FA1X9'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B0' and 'S0' in libcell 'HS65_LLS1_FA1X9'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A0' and 'S0' in libcell 'HS65_LLS1_FA1X9'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B0' and 'S0' in libcell 'HS65_LLS1_HA1X8'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A0' and 'S0' in libcell 'HS65_LLS1_HA1X8'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S0' in libcell 'HS65_LLS2_FA1X18'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B0' and 'S0' in libcell 'HS65_LLS2_FA1X18'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A0' and 'S0' in libcell 'HS65_LLS2_FA1X18'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'Z' in libcell 'HS65_LLS_XNOR2X12'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'Z' in libcell 'HS65_LLS_XNOR2X12'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'Z' in libcell 'HS65_LLS_XNOR2X18'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'Z' in libcell 'HS65_LLS_XNOR2X18'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'Z' in libcell 'HS65_LLS_XNOR2X24'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'Z' in libcell 'HS65_LLS_XNOR2X24'.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-162'.
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'CORE65LPLVT_wc_1.00V_125C_10y.lib', Total cells: 866, Unusable cells: 81.
+	List of unusable cells: 'HS65_LL_BK1SX1 HS65_LL_BK1X1 HS65_LL_DFPHQNX18 HS65_LL_DFPHQNX27 HS65_LL_DFPHQNX35 HS65_LL_DFPHQX18 HS65_LL_DFPHQX27 HS65_LL_DFPHQX35 HS65_LL_DFPQNX18 HS65_LL_DFPQNX27 HS65_LL_DFPQNX35 HS65_LL_DFPQX18 HS65_LL_DFPQX27 HS65_LL_DFPQX35 HS65_LL_DFPRQNX18 HS65_LL_DFPRQNX27 HS65_LL_DFPRQNX35 HS65_LL_DFPRQX18 HS65_LL_DFPRQX27 HS65_LL_DFPRQX35 HS65_LL_DFPSQNX18 HS65_LL_DFPSQNX27 HS65_LL_DFPSQNX35 HS65_LL_DFPSQX18 HS65_LL_DFPSQX27 HS65_LL_DFPSQX35 HS65_LL_SDFPBTQX9 HS65_LL_SDFPHQNTX18 HS65_LL_SDFPHQNTX27 HS65_LL_SDFPHQNTX35 HS65_LL_SDFPHQNX18 HS65_LL_SDFPHQNX27 HS65_LL_SDFPHQNX35 HS65_LL_SDFPHQTX18 HS65_LL_SDFPHQTX27 HS65_LL_SDFPHQTX35 HS65_LL_SDFPHQX18 HS65_LL_SDFPHQX27 HS65_LL_SDFPHQX35 HS65_LL_SDFPHRQNTX18 HS65_LL_SDFPHRQNTX27 HS65_LL_SDFPHRQNTX35 HS65_LL_SDFPHRQTX18 HS65_LL_SDFPHRQTX27 HS65_LL_SDFPHRQTX35 HS65_LL_SDFPQNTX18 HS65_LL_SDFPQNTX27 HS65_LL_SDFPQNTX35 HS65_LL_SDFPQNX18 HS65_LL_SDFPQNX27 HS65_LL_SDFPQNX35 HS65_LL_SDFPQTX18 HS65_LL_SDFPQTX27 HS65_LL_SDFPQTX35 HS65_LL_SDFPQX18 HS65_LL_SDFPQX27 HS65_LL_SDFPQX35 HS65_LL_SDFPRQNTX18 HS65_LL_SDFPRQNTX27 HS65_LL_SDFPRQNTX35 HS65_LL_SDFPRQNX18 HS65_LL_SDFPRQNX27 HS65_LL_SDFPRQNX35 HS65_LL_SDFPRQTX18 HS65_LL_SDFPRQTX27 HS65_LL_SDFPRQTX35 HS65_LL_SDFPRQX18 HS65_LL_SDFPRQX27 HS65_LL_SDFPRQX35 HS65_LL_SDFPSQNTX18 HS65_LL_SDFPSQNTX27 HS65_LL_SDFPSQNTX35 HS65_LL_SDFPSQNX18 HS65_LL_SDFPSQNX27 HS65_LL_SDFPSQNX35 HS65_LL_SDFPSQTX18 HS65_LL_SDFPSQTX27 HS65_LL_SDFPSQTX35 HS65_LL_SDFPSQX18 HS65_LL_SDFPSQX27 HS65_LL_SDFPSQX35 .'
+        : For  more  information, refer to 'Cells Identified as Unusable' in the 'User Guide'. To know the reason why a cell is considered as unusable, check 'unusable_reason' libcell attribute.
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'CLOCK65LPLVT_wc_1.00V_125C_10y.lib', Total cells: 110, Unusable cells: 42.
+	List of unusable cells: 'HS65_LLP_CNHLSX10 HS65_LLP_CNHLSX14 HS65_LLP_CNHLSX17 HS65_LLP_CNHLSX21 HS65_LLP_CNHLSX24 HS65_LLP_CNHLSX27 HS65_LLP_CNHLSX31 HS65_LLP_CNHLSX34 HS65_LLP_CNHLSX38 HS65_LLP_CNHLSX41 HS65_LLP_CNHLSX52 HS65_LLP_CNHLSX62 HS65_LLP_CNHLSX7 HS65_LLP_CNHLSX82 HS65_LL_CAPX18 HS65_LL_CAPX35 HS65_LL_CAPX53 HS65_LL_CAPX9 HS65_LL_CNBFX38_0 HS65_LL_CNBFX38_1 HS65_LL_CNBFX38_10 HS65_LL_CNBFX38_11 HS65_LL_CNBFX38_12 HS65_LL_CNBFX38_13 HS65_LL_CNBFX38_14 HS65_LL_CNBFX38_15 HS65_LL_CNBFX38_16 HS65_LL_CNBFX38_17 HS65_LL_CNBFX38_18 HS65_LL_CNBFX38_19 HS65_LL_CNBFX38_2 HS65_LL_CNBFX38_20 HS65_LL_CNBFX38_21 HS65_LL_CNBFX38_22 HS65_LL_CNBFX38_23 HS65_LL_CNBFX38_3 HS65_LL_CNBFX38_4 HS65_LL_CNBFX38_5 HS65_LL_CNBFX38_6 HS65_LL_CNBFX38_7 HS65_LL_CNBFX38_8 HS65_LL_CNBFX38_9 .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib', Total cells: 10, Unusable cells: 10.
+	List of unusable cells: 'ANA_1V8_SF_2ROWS ANA_1V8_SF_LIN BD2SCARUDQP_1V8_SF_2ROWS BD2SCARUDQP_1V8_SF_LIN BD4SCARUDQP_1V8_SF_2ROWS BD4SCARUDQP_1V8_SF_LIN BD8SCARUDQP_1V8_SF_2ROWS BD8SCARUDQP_1V8_SF_LIN ANA_1V8_PU_SF_2ROWS ANA_1V8_PU_SF_LIN .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib', Total cells: 33, Unusable cells: 33.
+	List of unusable cells: 'CORNERCELL_ST_SF_2ROWS CORNERCELL_ST_SF_LIN GNDE_ST_SF_2ROWS GNDE_ST_SF_LIN GNDVDD_ST_SF_2ROWS GND_ST_SF_2ROWS GND_ST_SF_LIN IOFILLERCELL32_ST_SF_2ROWS IOFILLERCELL32_ST_SF_LIN IOFILLERCELL64_ST_SF_2ROWS IOFILLERCELL64_ST_SF_LIN IOFILLERCELL_DUMMYPAD_ST_SF_2ROWS IOFILLERCELL_DUMMYPAD_ST_SF_LIN IOFILLERCELL_EMPTY_ST_SF_2ROWS IOFILLERCELL_I_ST_SF_LIN IOFILLERCELL_REF_ASRC_ST_SF_2ROWS IOFILLERCELL_REF_ASRC_ST_SF_LIN IOFILLERCELL_TRIGGER_ST_SF_2ROWS IOFILLERCELL_TRIGGER_ST_SF_LIN IOFILLERCUTCELL_ALL_ST_SF_2ROWS IOFILLERCUTCELL_ALL_ST_SF_LIN LBCORNERCELL_ST_SF_2ROWS LBCORNERCELL_ST_SF_LIN LTCORNERCELL_ST_SF_2ROWS LTCORNERCELL_ST_SF_LIN RBCORNERCELL_ST_SF_2ROWS RBCORNERCELL_ST_SF_LIN RTCORNERCELL_ST_SF_2ROWS RTCORNERCELL_ST_SF_LIN VDDE_ST_SF_2ROWS VDDE_ST_SF_LIN VDD_ST_SF_2ROWS VDD_ST_SF_LIN .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'SPHS100909_wc_1.10V_125C_10y.lib', Total cells: 2, Unusable cells: 2.
+	List of unusable cells: 'ST_SPHS_1024x8m8_L ST_SPHS_2048x8m8_L .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'PRHS65_wc_1.00V_125C_10y.lib', Total cells: 10, Unusable cells: 10.
+	List of unusable cells: 'CLOCKTREE HS65_GH_ANTPROT3 HS65_GL_ANTPROT3 HS65_GS_ANTPROT3 HS65_LH_ANTPROT1 HS65_LH_ANTPROT3 HS65_LL_ANTPROT1 HS65_LL_ANTPROT3 HS65_LS_ANTPROT1 HS65_LS_ANTPROT3 .'
+Warning : Cannot find expected operating_conditions in library. [MMMC-102]
+        : Operating_conditions (P=1.0 V=1.0 T=125.0 tree_type=balanced_tree) cannot be found for opcond:op_cond_wcl_slow in any libraries of timing_condition:timing_cond_wcl_slow.
+        : Using default operating conditions. Check for supported operating_conditions in libraries.
+#@ End verbose source ./mmmc.tcl
+@file(run_synth.tcl) 224: read_physical -lef " \
+/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef \
+/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/viarule_generate.lef \
+/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/sites.lef \
+/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/CADENCE/LEF/CORE65LPLVT_soc.lef \
+/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/CADENCE/LEF/CLOCK65LPLVT_soc.lef \
+/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/CADENCE/LEF/PRHS65_soc.lef \
+/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/CADENCE/LEF/SPHS100909_soc.lef \
+/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef\
+/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z.lef\
+"
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CONT1' has no resistance value.
+        : If this is the expected behavior, this message can be ignored.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via1_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via1_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via1_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via1_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via2' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via2_NPrefDir' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via3' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via3_NPrefDir' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via4' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via4_NPrefDir' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via5' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via5_NPrefDir' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via6' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via6_NPrefDir' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via1_HV_2cut_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via1_HV_2cut_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via1_HV_2cut_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via1_HV_2cut_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'CDS_via1_VV_2cut_NPref_E' has no resistance value.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'PHYS-129'.
+
+  According to lef_library, there are total 8 routing layers [ V(4) / H(4) ]
+
+Warning : Missing wire parameter. [PHYS-15]
+        : 'EDGECAPACITANCE' parameter is missing for layer 'M1' [line 108 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+        : Check the wire parameter in LEF technology files.
+Warning : Missing wire parameter. [PHYS-15]
+        : 'EDGECAPACITANCE' parameter is missing for layer 'M2' [line 152 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'EDGECAPACITANCE' parameter is missing for layer 'M3' [line 195 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'EDGECAPACITANCE' parameter is missing for layer 'M4' [line 238 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'EDGECAPACITANCE' parameter is missing for layer 'M5' [line 283 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'EDGECAPACITANCE' parameter is missing for layer 'M6' [line 320 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'EDGECAPACITANCE' parameter is missing for layer 'M7' [line 357 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'EDGECAPACITANCE' parameter is missing for layer 'AP' [line 381 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'CPERSQDIST' parameter is missing for layer 'M1' [line 108 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'CPERSQDIST' parameter is missing for layer 'M2' [line 152 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'CPERSQDIST' parameter is missing for layer 'M3' [line 195 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'CPERSQDIST' parameter is missing for layer 'M4' [line 238 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'CPERSQDIST' parameter is missing for layer 'M5' [line 283 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'CPERSQDIST' parameter is missing for layer 'M6' [line 320 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'CPERSQDIST' parameter is missing for layer 'M7' [line 357 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'CPERSQDIST' parameter is missing for layer 'AP' [line 381 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'RPERSQ' parameter is missing for layer 'M1' [line 108 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'RPERSQ' parameter is missing for layer 'M2' [line 152 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'RPERSQ' parameter is missing for layer 'M3' [line 195 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'RPERSQ' parameter is missing for layer 'M4' [line 238 in file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef]
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'PHYS-15'.
+Warning : The variant range of wire parameters is too large. An example of wire parameters are, a WIDTH for layer, PITCH for layer, MINSPACING for layers, etc. [PHYS-12]
+        : The variant range (0.1, 3) of 'WIDTH' for layers 'M1' and 'AP' is too large.
+        : Check the consistency of the parameters, and see if you can ignore this message or you're using different LEF file with wrong parameters.
+Warning : The variant range of wire parameters is too large. An example of wire parameters are, a WIDTH for layer, PITCH for layer, MINSPACING for layers, etc. [PHYS-12]
+        : The variant range (0.2, 5) of 'PITCH' for layers 'M1' and 'AP' is too large.
+Warning : The variant range of wire parameters is too large. An example of wire parameters are, a WIDTH for layer, PITCH for layer, MINSPACING for layers, etc. [PHYS-12]
+        : The variant range (0.09, 2) of 'MINSPACING' for layers 'M1' and 'AP' is too large.
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'CORE65LPLVT_wc_1.00V_125C_10y.lib', Total cells: 866, Unusable cells: 81.
+	List of unusable cells: 'HS65_LL_BK1SX1 HS65_LL_BK1X1 HS65_LL_DFPHQNX18 HS65_LL_DFPHQNX27 HS65_LL_DFPHQNX35 HS65_LL_DFPHQX18 HS65_LL_DFPHQX27 HS65_LL_DFPHQX35 HS65_LL_DFPQNX18 HS65_LL_DFPQNX27 HS65_LL_DFPQNX35 HS65_LL_DFPQX18 HS65_LL_DFPQX27 HS65_LL_DFPQX35 HS65_LL_DFPRQNX18 HS65_LL_DFPRQNX27 HS65_LL_DFPRQNX35 HS65_LL_DFPRQX18 HS65_LL_DFPRQX27 HS65_LL_DFPRQX35 HS65_LL_DFPSQNX18 HS65_LL_DFPSQNX27 HS65_LL_DFPSQNX35 HS65_LL_DFPSQX18 HS65_LL_DFPSQX27 HS65_LL_DFPSQX35 HS65_LL_SDFPBTQX9 HS65_LL_SDFPHQNTX18 HS65_LL_SDFPHQNTX27 HS65_LL_SDFPHQNTX35 HS65_LL_SDFPHQNX18 HS65_LL_SDFPHQNX27 HS65_LL_SDFPHQNX35 HS65_LL_SDFPHQTX18 HS65_LL_SDFPHQTX27 HS65_LL_SDFPHQTX35 HS65_LL_SDFPHQX18 HS65_LL_SDFPHQX27 HS65_LL_SDFPHQX35 HS65_LL_SDFPHRQNTX18 HS65_LL_SDFPHRQNTX27 HS65_LL_SDFPHRQNTX35 HS65_LL_SDFPHRQTX18 HS65_LL_SDFPHRQTX27 HS65_LL_SDFPHRQTX35 HS65_LL_SDFPQNTX18 HS65_LL_SDFPQNTX27 HS65_LL_SDFPQNTX35 HS65_LL_SDFPQNX18 HS65_LL_SDFPQNX27 HS65_LL_SDFPQNX35 HS65_LL_SDFPQTX18 HS65_LL_SDFPQTX27 HS65_LL_SDFPQTX35 HS65_LL_SDFPQX18 HS65_LL_SDFPQX27 HS65_LL_SDFPQX35 HS65_LL_SDFPRQNTX18 HS65_LL_SDFPRQNTX27 HS65_LL_SDFPRQNTX35 HS65_LL_SDFPRQNX18 HS65_LL_SDFPRQNX27 HS65_LL_SDFPRQNX35 HS65_LL_SDFPRQTX18 HS65_LL_SDFPRQTX27 HS65_LL_SDFPRQTX35 HS65_LL_SDFPRQX18 HS65_LL_SDFPRQX27 HS65_LL_SDFPRQX35 HS65_LL_SDFPSQNTX18 HS65_LL_SDFPSQNTX27 HS65_LL_SDFPSQNTX35 HS65_LL_SDFPSQNX18 HS65_LL_SDFPSQNX27 HS65_LL_SDFPSQNX35 HS65_LL_SDFPSQTX18 HS65_LL_SDFPSQTX27 HS65_LL_SDFPSQTX35 HS65_LL_SDFPSQX18 HS65_LL_SDFPSQX27 HS65_LL_SDFPSQX35 .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'CLOCK65LPLVT_wc_1.00V_125C_10y.lib', Total cells: 110, Unusable cells: 42.
+	List of unusable cells: 'HS65_LLP_CNHLSX10 HS65_LLP_CNHLSX14 HS65_LLP_CNHLSX17 HS65_LLP_CNHLSX21 HS65_LLP_CNHLSX24 HS65_LLP_CNHLSX27 HS65_LLP_CNHLSX31 HS65_LLP_CNHLSX34 HS65_LLP_CNHLSX38 HS65_LLP_CNHLSX41 HS65_LLP_CNHLSX52 HS65_LLP_CNHLSX62 HS65_LLP_CNHLSX7 HS65_LLP_CNHLSX82 HS65_LL_CAPX18 HS65_LL_CAPX35 HS65_LL_CAPX53 HS65_LL_CAPX9 HS65_LL_CNBFX38_0 HS65_LL_CNBFX38_1 HS65_LL_CNBFX38_10 HS65_LL_CNBFX38_11 HS65_LL_CNBFX38_12 HS65_LL_CNBFX38_13 HS65_LL_CNBFX38_14 HS65_LL_CNBFX38_15 HS65_LL_CNBFX38_16 HS65_LL_CNBFX38_17 HS65_LL_CNBFX38_18 HS65_LL_CNBFX38_19 HS65_LL_CNBFX38_2 HS65_LL_CNBFX38_20 HS65_LL_CNBFX38_21 HS65_LL_CNBFX38_22 HS65_LL_CNBFX38_23 HS65_LL_CNBFX38_3 HS65_LL_CNBFX38_4 HS65_LL_CNBFX38_5 HS65_LL_CNBFX38_6 HS65_LL_CNBFX38_7 HS65_LL_CNBFX38_8 HS65_LL_CNBFX38_9 .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib', Total cells: 10, Unusable cells: 10.
+	List of unusable cells: 'ANA_1V8_SF_2ROWS ANA_1V8_SF_LIN BD2SCARUDQP_1V8_SF_2ROWS BD2SCARUDQP_1V8_SF_LIN BD4SCARUDQP_1V8_SF_2ROWS BD4SCARUDQP_1V8_SF_LIN BD8SCARUDQP_1V8_SF_2ROWS BD8SCARUDQP_1V8_SF_LIN ANA_1V8_PU_SF_2ROWS ANA_1V8_PU_SF_LIN .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib', Total cells: 33, Unusable cells: 33.
+	List of unusable cells: 'CORNERCELL_ST_SF_2ROWS CORNERCELL_ST_SF_LIN GNDE_ST_SF_2ROWS GNDE_ST_SF_LIN GNDVDD_ST_SF_2ROWS GND_ST_SF_2ROWS GND_ST_SF_LIN IOFILLERCELL32_ST_SF_2ROWS IOFILLERCELL32_ST_SF_LIN IOFILLERCELL64_ST_SF_2ROWS IOFILLERCELL64_ST_SF_LIN IOFILLERCELL_DUMMYPAD_ST_SF_2ROWS IOFILLERCELL_DUMMYPAD_ST_SF_LIN IOFILLERCELL_EMPTY_ST_SF_2ROWS IOFILLERCELL_I_ST_SF_LIN IOFILLERCELL_REF_ASRC_ST_SF_2ROWS IOFILLERCELL_REF_ASRC_ST_SF_LIN IOFILLERCELL_TRIGGER_ST_SF_2ROWS IOFILLERCELL_TRIGGER_ST_SF_LIN IOFILLERCUTCELL_ALL_ST_SF_2ROWS IOFILLERCUTCELL_ALL_ST_SF_LIN LBCORNERCELL_ST_SF_2ROWS LBCORNERCELL_ST_SF_LIN LTCORNERCELL_ST_SF_2ROWS LTCORNERCELL_ST_SF_LIN RBCORNERCELL_ST_SF_2ROWS RBCORNERCELL_ST_SF_LIN RTCORNERCELL_ST_SF_2ROWS RTCORNERCELL_ST_SF_LIN VDDE_ST_SF_2ROWS VDDE_ST_SF_LIN VDD_ST_SF_2ROWS VDD_ST_SF_LIN .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'SPHS100909_wc_1.10V_125C_10y.lib', Total cells: 2, Unusable cells: 2.
+	List of unusable cells: 'ST_SPHS_1024x8m8_L ST_SPHS_2048x8m8_L .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'PRHS65_wc_1.00V_125C_10y.lib', Total cells: 10, Unusable cells: 10.
+	List of unusable cells: 'CLOCKTREE HS65_GH_ANTPROT3 HS65_GL_ANTPROT3 HS65_GS_ANTPROT3 HS65_LH_ANTPROT1 HS65_LH_ANTPROT3 HS65_LL_ANTPROT1 HS65_LL_ANTPROT3 HS65_LS_ANTPROT1 HS65_LS_ANTPROT3 .'
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_28_DECAP12 cannot be found in library.
+        : Ensure that the proper library files are available and have been imported.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_28_DECAP16 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_28_DECAP32 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_28_DECAP64 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_28_DECAP9 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_50_DECAP12 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_50_DECAP16 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_50_DECAP32 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_50_DECAP64 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_50_DECAP9 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_GH_FILLERNPWPFP16 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_GH_FILLERNPWPFP3 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_GH_FILLERNPWPFP32 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_GH_FILLERNPWPFP4 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_GH_FILLERNPWPFP64 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_GH_FILLERNPWPFP8 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_GH_FILLERPFOP12 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_GH_FILLERPFOP16 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_GH_FILLERPFOP32 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HS65_GH_FILLERPFOP64 cannot be found in library.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'PHYS-279'.
+@file(run_synth.tcl) 237: set_db [get_db lib_cells -if {.name == *CLOCK65*}] .dont_use true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX10': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX14': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX17': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX21': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX24': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX31': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX34': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX38': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX41': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX52': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX62': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX7': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX82': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CAPX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CAPX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CAPX53': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CAPX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNAND2X17': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNAND2X38': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX10': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX103': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX124': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX14': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX17': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX21': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX24': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX31': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX34': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_0': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_1': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_10': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_11': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_12': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_13': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_14': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_15': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_16': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_17': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_19': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_2': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_20': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_21': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_22': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_23': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_3': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_5': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_6': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_7': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_8': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX38_9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX41': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX45': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX48': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX52': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX55': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX58': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX62': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNBFX82': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX10': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX103': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX124': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX14': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX17': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX21': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX24': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX3': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX31': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX34': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX38': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX41': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX45': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX48': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX52': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX55': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX58': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX62': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX7': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNIVX82': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNMUX21X15': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNMUX31X16': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNMUX41X17': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNMUXI21X16': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNMUXI31X17': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNNAND2AX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNNAND2X18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNNAND2X24': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNNOR2AX15': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNNOR2X15': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNNOR2X24': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNOR2X17': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNOR2X38': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNOR3X15': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNSDFPRQTX15': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNSDFPSQTX16': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_CNXOR2X38': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_DLYIC2X4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_DLYIC2X7': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_DLYIC2X9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_DLYIC4X4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_DLYIC4X7': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_DLYIC4X9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_DLYIC6X4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_DLYIC6X7': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_DLYIC6X9': 'dont_use' = true
+@file(run_synth.tcl) 238: set_db [get_db lib_cells *HS65_LLP_CNHLS*] .dont_use false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX10': 'dont_use' = false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX14': 'dont_use' = false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX17': 'dont_use' = false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX21': 'dont_use' = false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX24': 'dont_use' = false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX27': 'dont_use' = false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX31': 'dont_use' = false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX34': 'dont_use' = false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX38': 'dont_use' = false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX41': 'dont_use' = false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX52': 'dont_use' = false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX62': 'dont_use' = false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX7': 'dont_use' = false
+  Setting attribute of lib_cell 'HS65_LLP_CNHLSX82': 'dont_use' = false
+@file(run_synth.tcl) 240: set_db [get_db lib_cells -if {.name == *_SDF*}] .dont_use true 
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHQNTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHQNTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHQNTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHQNX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHQNX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHQNX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHQTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHQTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHQTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHQX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHQX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHQX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHRQNTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHRQNTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHRQNTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHRQTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHRQTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPHRQTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPQNTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPQNTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPQNTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPQNX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPQNX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPQNX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPQTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPQTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPQTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPQX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPQX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPQX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPRQNTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPRQNTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPRQNTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPRQNX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPRQNX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPRQNX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPRQTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPRQTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPRQTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPRQX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPRQX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPRQX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPSQNTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPSQNTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPSQNTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPSQNX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPSQNX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPSQNX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPSQTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPSQTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPSQTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPSQX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPSQX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LLS_SDFPSQX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPBTQX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQNTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQNTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQNTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQNTX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQNTX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQNX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQNX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQNX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQNX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQNX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQTX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQTX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHQX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHRQNTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHRQNTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHRQNTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHRQNTX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHRQNTX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHRQTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHRQTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHRQTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHRQTX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPHRQTX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQNTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQNTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQNTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQNTX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQNTX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQNX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQNX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQNX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQNX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQNX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQTX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQTX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPQX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQNTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQNTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQNTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQNTX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQNTX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQNX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQNX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQNX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQNX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQNX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQTX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQTX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPRQX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQNTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQNTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQNTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQNTX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQNTX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQNX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQNX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQNX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQNX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQNX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQTX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQTX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQTX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQTX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQTX9': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQX18': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQX27': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQX35': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQX4': 'dont_use' = true
+  Setting attribute of lib_cell 'HS65_LL_SDFPSQX9': 'dont_use' = true
+@file(run_synth.tcl) 241: set_db lp_insert_discrete_clock_gating_logic true
+  Setting attribute of root '/': 'lp_insert_discrete_clock_gating_logic' = true
+@file(run_synth.tcl) 244: read_hdl -language sv $rtlList
+            Reading Verilog file '../rtl/includes/apu_defines.sv'
+            Reading Verilog file '../ips/apb/apb_uart_sv/apb_uart.sv'
+            Reading Verilog file '../ips/apb/apb_uart_sv/apb_uart_sv.sv'
+module apb_uart_sv
+                 |
+Warning : Replacing previously read Verilog description. [VLOGPT-6]
+        : Replacing Verilog description 'apb_uart_sv' with Verilog module in file '../ips/apb/apb_uart_sv/apb_uart_sv.sv' on line 11, column 18.
+        : A Verilog description is replaced when a new description of the same name and same library is read again.
+    Verilog descriptions are:
+       module
+       macromodule
+       configuration
+    SystemVerilog adds the following descriptions:
+       interface
+       program
+       package.
+            Reading Verilog file '../ips/apb/apb_event_unit/include/defines_event_unit.sv'
+            Reading Verilog file '../ips/axi/axi_spi_slave/spi_slave_rx.sv'
+            Reading Verilog file '../ips/axi/axi_spi_slave/spi_slave_tx.sv'
+            Reading Verilog file '../ips/axi/axi_spi_slave/spi_slave_cmd_parser.sv'
+            Reading Verilog file '../ips/axi/axi_spi_slave/spi_slave_regs.sv'
+            Reading Verilog file '../ips/axi/axi_slice_dc/dc_data_buffer.v'
+            Reading Verilog file '../ips/axi/axi_slice_dc/dc_token_ring.v'
+            Reading Verilog file '../ips/axi/axi_slice_dc/dc_full_detector.v'
+            Reading Verilog file '../ips/axi/axi_slice_dc/dc_synchronizer.v'
+            Reading Verilog file '../ips/axi/axi_slice_dc/dc_token_ring_fifo_din.v'
+            Reading Verilog file '../ips/axi/axi_slice_dc/dc_token_ring_fifo_dout.v'
+            Reading Verilog file '../ips/axi/axi_spi_slave/spi_slave_dc_fifo.sv'
+            Reading Verilog file '../ips/apb/apb_spi_master/spi_master_clkgen.sv'
+            Reading Verilog file '../ips/apb/apb_spi_master/spi_master_tx.sv'
+            Reading Verilog file '../ips/apb/apb_spi_master/spi_master_rx.sv'
+            Reading Verilog file '../ips/apb/apb_spi_master/spi_master_fifo.sv'
+`define log2(VALUE) ((VALUE) < ( 1 ) ? 0 : (VALUE) < ( 2 ) ? 1 : (VALUE) < ( 4 ) ? 2 : (VALUE) < ( 8 ) ? 3 : (VALUE) < ( 16 )  ? 4 : (VALUE) < ( 32 )  ? 5 : (VALUE) < ( 64 )  ? 6 : (VALUE) < ( 128 ) ? 7 : (VALUE) < ( 256 ) ? 8 : (VALUE) < ( 512 ) ? 9 : (VALUE) < ( 1024 ) ? 10 : (VALUE) < ( 2048 ) ? 11 : (VALUE) < ( 4096 ) ? 12 : (VALUE) < ( 8192 ) ? 13 : (VALUE) < ( 16384 ) ? 14 : (VALUE) < ( 32768 ) ? 15 : (VALUE) < ( 65536 ) ? 16 : (VALUE) < ( 131072 ) ? 17 : (VALUE) < ( 262144 ) ? 18 : (VALUE) < ( 524288 ) ? 19 : (VALUE) < ( 1048576 ) ? 20 : (VALUE) < ( 1048576 * 2 ) ? 21 : (VALUE) < ( 1048576 * 4 ) ? 22 : (VALUE) < ( 1048576 * 8 ) ? 23 : (VALUE) < ( 1048576 * 16 ) ? 24 : 25)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+Warning : Redefinition of macro. [VLOGPT-647]
+        : Macro 'log2' in file '../ips/apb/apb_spi_master/spi_master_fifo.sv' on line 11, column 687.
+        : The latest definition of the macro will be used.
+            Reading Verilog file '../ips/apb/apb_spi_master/spi_master_controller.sv'
+            Reading Verilog file '../ips/axi/axi_spi_slave/spi_slave_controller.sv'
+`define SPI_QUAD_TX 2'b10
+                        |
+Warning : Redefinition of macro. [VLOGPT-647]
+        : Macro 'SPI_QUAD_TX' in file '../ips/axi/axi_spi_slave/spi_slave_controller.sv' on line 13, column 25.
+`define SPI_QUAD_RX 2'b11
+                        |
+Warning : Redefinition of macro. [VLOGPT-647]
+        : Macro 'SPI_QUAD_RX' in file '../ips/axi/axi_spi_slave/spi_slave_controller.sv' on line 14, column 25.
+            Reading Verilog file '../ips/axi/axi_spi_slave/spi_slave_axi_plug.sv'
+            Reading Verilog file '../ips/axi/axi_spi_slave/spi_slave_syncro.sv'
+            Reading Verilog file '../ips/apb/apb_spi_master/spi_master_apb_if.sv'
+            Reading Verilog file '../ips/riscv/include/riscv_defines.sv'
+            Reading Verilog file '../ips/apb/apb_uart_sv/io_generic_fifo.sv'
+            Reading Verilog file '../ips/apb/apb_spi_master/apb_spi_master.sv'
+            Reading Verilog file '../ips/apb/apb2per/apb2per.sv'
+            Reading Verilog file '../rtl/includes/axi_bus.sv'
+            Reading Verilog file '../rtl/includes/config.sv'
+            Reading Verilog file '../rtl/includes/config.sv'
+            Reading Verilog file '../rtl/includes/debug_bus.sv'
+            Reading Verilog file '../rtl/includes/config.sv'
+            Reading Verilog file '../ips/axi/axi_slice/axi_slice.sv'
+            Reading Verilog file '../ips/axi/axi_slice_dc/axi_slice_dc_master.sv'
+            Reading Verilog file '../ips/axi/axi_slice_dc/axi_slice_dc_slave.sv'
+            Reading Verilog file '../ips/axi/axi_mem_if_DP/axi_mem_if_SP.sv'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_tap_top.v'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_tap_defines.v'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_axi_biu.sv'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_crc32.v'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_axi_module.sv'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_defines.v'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_axi_defines.v'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_or1k_status_reg.sv'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_or1k_defines.v'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_or1k_biu.sv'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_or1k_module.sv'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_defines.v'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_or1k_defines.v'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_top.sv'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adbg_defines.v'
+            Reading Verilog file '../ips/adv_dbg_if/rtl/adv_dbg_if.sv'
+            Reading Verilog file '../ips/axi/axi_spi_slave/axi_spi_slave.sv'
+            Reading Verilog file '../ips/axi/axi2apb/axi2apb.sv'
+            Reading Verilog file '../ips/axi/axi2apb/axi2apb32.sv'
+            Reading Verilog file '../ips/apb/apb_node/apb_node.sv'
+            Reading Verilog file '../ips/apb/apb_node/apb_node_wrap.sv'
+            Reading Verilog file '../ips/apb/apb_gpio/apb_gpio.sv'
+            Reading Verilog file '../ips/apb/apb_timer/apb_timer.sv'
+`define REGS_MAX_ADR             2'd2
+                                    |
+Warning : Redefinition of macro. [VLOGPT-647]
+        : Macro 'REGS_MAX_ADR' in file '../ips/apb/apb_timer/apb_timer.sv' on line 11, column 37.
+            Reading Verilog file '../ips/apb/apb_timer/timer.sv'
+`define REGS_MAX_IDX             'd2
+                                   |
+Warning : Redefinition of macro. [VLOGPT-647]
+        : Macro 'REGS_MAX_IDX' in file '../ips/apb/apb_timer/timer.sv' on line 13, column 36.
+            Reading Verilog file '../ips/apb/apb_event_unit/generic_service_unit.sv'
+            Reading Verilog file '../ips/apb/apb_event_unit/include/defines_event_unit.sv'
+`define REGS_MAX_IDX			'd3 // number of bits needed to access all registers
+                    			                                                   |
+Warning : Redefinition of macro. [VLOGPT-647]
+        : Macro 'REGS_MAX_IDX' in file '../ips/apb/apb_event_unit/include/defines_event_unit.sv' on line 30, column 75.
+`define REGS_MAX_ADR				'd2
+                    				  |
+Warning : Redefinition of macro. [VLOGPT-647]
+        : Macro 'REGS_MAX_ADR' in file '../ips/apb/apb_event_unit/include/defines_event_unit.sv' on line 31, column 27.
+            Reading Verilog file '../ips/apb/apb_event_unit/sleep_unit.sv'
+            Reading Verilog file '../ips/apb/apb_event_unit/include/defines_event_unit.sv'
+            Reading Verilog file '../ips/apb/apb_event_unit/apb_event_unit.sv'
+            Reading Verilog file '../ips/apb/apb_event_unit/include/defines_event_unit.sv'
+            Reading Verilog file '../ips/apb/apb_i2c/i2c_master_bit_ctrl.sv'
+            Reading Verilog file '../ips/apb/apb_i2c/i2c_master_defines.sv'
+            Reading Verilog file '../ips/apb/apb_i2c/i2c_master_byte_ctrl.sv'
+            Reading Verilog file '../ips/apb/apb_i2c/i2c_master_defines.sv'
+	    sr <= #1 8'h0;
+	           |
+Warning : Ignoring unsynthesizable delay specifier (#<n>) mentioned in verilog file. These delay numbers are for simulation purpose only. [VLOGPT-35]
+        : in file '../ips/apb/apb_i2c/i2c_master_byte_ctrl.sv' on line 169, column 13.
+        : All delay numbers assigned or used in behavioral code are for simulation purposes only and are not synthesizable. These values are ignored during synthesis. This warning is issued only once per module.
+            Reading Verilog file '../ips/apb/apb_i2c/apb_i2c.sv'
+            Reading Verilog file '../ips/apb/apb_i2c/i2c_master_defines.sv'
+`define REG_STATUS        3'b011 //BASEADDR+0x0C
+                                               |
+Warning : Redefinition of macro. [VLOGPT-647]
+        : Macro 'REG_STATUS' in file '../ips/apb/apb_i2c/apb_i2c.sv' on line 16, column 48.
+            Reading Verilog file '../ips/apb/apb_fll_if/apb_fll_if.sv'
+            Reading Verilog file '../ips/apb/apb_pulpino/apb_pulpino.sv'
+`define REG_STATUS       4'b0101
+                               |
+Warning : Redefinition of macro. [VLOGPT-647]
+        : Macro 'REG_STATUS' in file '../ips/apb/apb_pulpino/apb_pulpino.sv' on line 16, column 32.
+            Reading Verilog file '../ips/axi/axi_node/axi_AR_allocator.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_AW_allocator.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_multiplexer.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_DW_allocator.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_address_decoder_BW.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_address_decoder_BR.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_FanInPrimitive_Req.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_RR_Flag_Req.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_ArbitrationTree.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_BW_allocator.sv'
+            Reading Verilog file '../ips/axi/axi_node/defines.v'
+            Reading Verilog file '../ips/axi/axi_node/axi_BR_allocator.sv'
+            Reading Verilog file '../ips/axi/axi_node/defines.v'
+            Reading Verilog file '../ips/axi/axi_node/axi_address_decoder_AR.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_address_decoder_AW.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_address_decoder_DW.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_request_block.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_response_block.sv'
+            Reading Verilog file '../ips/axi/axi_node/axi_node.sv'
+            Reading Verilog file '../ips/axi/axi_node/defines.v'
+            Reading Verilog file '../ips/riscv/include/apu_core_package.sv'
+            Reading Verilog file '../rtl/components/cluster_clock_gating.sv'
+            Reading Verilog file '../rtl/components/cluster_clock_inverter.sv'
+            Reading Verilog file '../rtl/components/cluster_clock_mux2.sv'
+            Reading Verilog file '../rtl/components/dp_ram.sv'
+            Reading Verilog file '../rtl/components/generic_fifo.sv'
+            Reading Verilog file '../rtl/components/pulp_clock_gating.sv'
+            Reading Verilog file '../rtl/components/pulp_clock_inverter.sv'
+            Reading Verilog file '../rtl/includes/apb_bus.sv'
+            Reading Verilog file '../rtl/includes/config.sv'
+            Reading Verilog file '../rtl/components/rstgen.sv'
+            Reading Verilog file '../ips/apb/apb_uart_sv/apb_uart_sv.sv'
+module apb_uart_sv
+                 |
+Warning : Replacing previously read Verilog description. [VLOGPT-6]
+        : Replacing Verilog description 'apb_uart_sv' with Verilog module in file '../ips/apb/apb_uart_sv/apb_uart_sv.sv' on line 11, column 18.
+            Reading Verilog file '../rtl/components/sp_ram.sv'
+            Reading Verilog file '../ips/riscv/riscv_core.sv'
+            Reading Verilog file '../ips/riscv/include/riscv_config.sv'
+            Reading Verilog file '../ips/riscv/riscv_fetch_fifo.sv'
+            Reading Verilog file '../ips/riscv/riscv_register_file.sv'
+            Reading Verilog file '../ips/riscv/riscv_decoder.sv'
+            Reading Verilog file '../ips/riscv/include/apu_macros.sv'
+            Reading Verilog file '../ips/riscv/riscv_prefetch_buffer.sv'
+            Reading Verilog file '../ips/riscv/riscv_hwloop_controller.sv'
+            Reading Verilog file '../ips/riscv/riscv_hwloop_regs.sv'
+            Reading Verilog file '../ips/riscv/riscv_int_controller.sv'
+            Reading Verilog file '../ips/riscv/riscv_controller.sv'
+            Reading Verilog file '../ips/riscv/riscv_compressed_decoder.sv'
+            Reading Verilog file '../ips/riscv/riscv_mult.sv'
+            Reading Verilog file '../ips/riscv/riscv_alu_div.sv'
+            Reading Verilog file '../ips/riscv/riscv_alu.sv'
+            Reading Verilog file '../ips/riscv/riscv_cs_registers.sv'
+            Reading Verilog file '../ips/riscv/riscv_debug_unit.sv'
+            Reading Verilog file '../ips/axi/axi_mem_if_DP/axi_write_only_ctrl.sv'
+            Reading Verilog file '../ips/riscv/riscv_if_stage.sv'
+            Reading Verilog file '../ips/riscv/riscv_id_stage.sv'
+            Reading Verilog file '../ips/riscv/riscv_ex_stage.sv'
+            Reading Verilog file '../ips/riscv/include/apu_macros.sv'
+            Reading Verilog file '../ips/riscv/riscv_load_store_unit.sv'
+            Reading Verilog file '../ips/axi/axi_slice/axi_aw_buffer.sv'
+            Reading Verilog file '../ips/axi/axi_slice/axi_ar_buffer.sv'
+            Reading Verilog file '../ips/axi/axi_slice/axi_w_buffer.sv'
+            Reading Verilog file '../ips/axi/axi_slice/axi_r_buffer.sv'
+            Reading Verilog file '../ips/axi/axi_slice/axi_b_buffer.sv'
+            Reading Verilog file '../ips/axi/axi_mem_if_DP/axi_read_only_ctrl.sv'
+            Reading Verilog file '../ips/axi/core2axi/core2axi.sv'
+            Reading Verilog file '../rtl/sp_ram_wrap.sv'
+            Reading Verilog file '../rtl/includes/config.sv'
+Warning : Cannot open file. [VLOGPT-650]
+        : File 'instr_mem.sv'.
+        : The specified file could not be opened.  Check the value of the init_hdl_search_path attribute.
+Warning : Cannot open file. [VLOGPT-650]
+        : File 'data_mem.sv'.
+            Reading Verilog file '../rtl/components/pulp_clock_mux2.sv'
+            Reading Verilog file '../rtl/apb_mock_uart.sv'
+                    $write("%C", PWDATA[7:0]);
+                          |
+Warning : Ignoring unsynthesizable construct. [VLOGPT-37]
+        : Call to system task '$write' in file '../rtl/apb_mock_uart.sv' on line 86, column 27.
+        : For example, the following constructs will be ignored:
+    - initial block
+    - final block
+    - program block
+    - property block
+    - sequence block
+    - covergroup
+    - checker block
+    - gate drive strength
+    - system task enable
+    - reg declaration with initial value
+    - specify block.
+            Reading Verilog file '../rtl/axi2apb_wrap.sv'
+            Reading Verilog file '../rtl/includes/axi_bus.sv'
+            Reading Verilog file '../rtl/axi_mem_if_SP_wrap.sv'
+            Reading Verilog file '../rtl/includes/axi_bus.sv'
+            Reading Verilog file '../rtl/axi_node_intf_wrap.sv'
+            Reading Verilog file '../rtl/includes/axi_bus.sv'
+            Reading Verilog file '../rtl/axi_slice_wrap.sv'
+            Reading Verilog file '../rtl/axi_spi_slave_wrap.sv'
+            Reading Verilog file '../rtl/boot_code.sv'
+            Reading Verilog file '../rtl/boot_rom_wrap.sv'
+            Reading Verilog file '../rtl/includes/config.sv'
+            Reading Verilog file '../rtl/clk_rst_gen.sv'
+            Reading Verilog file '../rtl/core2axi_wrap.sv'
+            Reading Verilog file '../rtl/includes/axi_bus.sv'
+            Reading Verilog file '../rtl/core_region.sv'
+            Reading Verilog file '../rtl/includes/axi_bus.sv'
+            Reading Verilog file '../rtl/includes/config.sv'
+            Reading Verilog file '../rtl/dp_ram_wrap.sv'
+            Reading Verilog file '../rtl/includes/config.sv'
+            Reading Verilog file '../rtl/instr_ram_wrap.sv'
+            Reading Verilog file '../rtl/includes/config.sv'
+            Reading Verilog file '../rtl/periph_bus_wrap.sv'
+            Reading Verilog file '../rtl/includes/apb_bus.sv'
+    assign apb_slave.pslverr  = s_slave.pslverr;;
+                                                |
+Warning : Ignoring unexpected semicolon. [VLOGPT-670]
+        : in file '../rtl/periph_bus_wrap.sv' on line 55, column 49.
+    assign s_masters[0].pslverr  = uart_master.pslverr;;
+                                                       |
+Warning : Ignoring unexpected semicolon. [VLOGPT-670]
+        : in file '../rtl/periph_bus_wrap.sv' on line 57, column 56.
+    assign s_masters[1].pslverr  = gpio_master.pslverr;;
+                                                       |
+Warning : Ignoring unexpected semicolon. [VLOGPT-670]
+        : in file '../rtl/periph_bus_wrap.sv' on line 61, column 56.
+    assign s_masters[2].pslverr  = spi_master.pslverr;;
+                                                      |
+Warning : Ignoring unexpected semicolon. [VLOGPT-670]
+        : in file '../rtl/periph_bus_wrap.sv' on line 65, column 55.
+    assign s_masters[3].pslverr  = timer_master.pslverr;;
+                                                        |
+Warning : Ignoring unexpected semicolon. [VLOGPT-670]
+        : in file '../rtl/periph_bus_wrap.sv' on line 69, column 57.
+    assign s_masters[4].pslverr  = event_unit_master.pslverr;;
+                                                             |
+Warning : Ignoring unexpected semicolon. [VLOGPT-670]
+        : in file '../rtl/periph_bus_wrap.sv' on line 73, column 62.
+    assign s_masters[5].pslverr  = i2c_master.pslverr;;
+                                                      |
+Warning : Ignoring unexpected semicolon. [VLOGPT-670]
+        : in file '../rtl/periph_bus_wrap.sv' on line 77, column 55.
+    assign s_masters[6].pslverr  = fll_master.pslverr;;
+                                                      |
+Warning : Ignoring unexpected semicolon. [VLOGPT-670]
+        : in file '../rtl/periph_bus_wrap.sv' on line 81, column 55.
+    assign s_masters[7].pslverr  = soc_ctrl_master.pslverr;;
+                                                           |
+Warning : Ignoring unexpected semicolon. [VLOGPT-670]
+        : in file '../rtl/periph_bus_wrap.sv' on line 85, column 60.
+    assign s_masters[8].pslverr  = debug_master.pslverr;;
+                                                        |
+Warning : Ignoring unexpected semicolon. [VLOGPT-670]
+        : in file '../rtl/periph_bus_wrap.sv' on line 89, column 57.
+            Reading Verilog file '../rtl/peripherals.sv'
+            Reading Verilog file '../rtl/includes/axi_bus.sv'
+            Reading Verilog file '../rtl/includes/apb_bus.sv'
+            Reading Verilog file '../rtl/includes/debug_bus.sv'
+            Reading Verilog file '../rtl/includes/config.sv'
+            Reading Verilog file '../rtl/ram_mux.sv'
+            Reading Verilog file '../rtl/pulpino_top.sv'
+            Reading Verilog file '../rtl/includes/axi_bus.sv'
+            Reading Verilog file '../rtl/includes/debug_bus.sv'
+@file(run_synth.tcl) 245: read_hdl -language vhdl { 
+  ../ips/apb/apb_uart/slib_input_sync.vhd
+  ../ips/apb/apb_uart/slib_input_filter.vhd
+  ../ips/apb/apb_uart/slib_edge_detect.vhd
+  ../ips/apb/apb_uart/slib_fifo.vhd
+  ../ips/apb/apb_uart/slib_clock_div.vhd
+  ../ips/apb/apb_uart/uart_interrupt.vhd
+  ../ips/apb/apb_uart/uart_transmitter.vhd
+  ../ips/apb/apb_uart/uart_receiver.vhd
+  ../ips/apb/apb_uart/uart_baudgen.vhd
+  ../ips/apb/apb_uart/apb_uart.vhd  
+}
+              Reading VHDL predefined package '/usr/local-eit/cad2/cadence/gen2114/tools/lib/vhdl/std/standard.vhdl'
+            Reading VHDL file '../ips/apb/apb_uart/slib_input_sync.vhd'
+              Reading VHDL predefined package '/usr/local-eit/cad2/cadence/gen2114/tools/lib/vhdl/ieee/std_logic_1164.vhdl'
+              Reading VHDL predefined package '/usr/local-eit/cad2/cadence/gen2114/tools/lib/vhdl/cadence/attributes.vhdl'
+              Reading VHDL predefined package '/usr/local-eit/cad2/cadence/gen2114/tools/lib/vhdl/ieee/numeric_std.vhdl'
+            Reading VHDL file '../ips/apb/apb_uart/slib_input_filter.vhd'
+            Reading VHDL file '../ips/apb/apb_uart/slib_edge_detect.vhd'
+            Reading VHDL file '../ips/apb/apb_uart/slib_fifo.vhd'
+Warning : Initial values are ignored for synthesis. [VHDL-639]
+        : in file '../ips/apb/apb_uart/slib_fifo.vhd' on line 57.
+        : The specified construct has no effect on synthesis. In some cases (such as 'after' clauses in signal assignments) may cause a mismatch between and simulation.
+            Reading VHDL file '../ips/apb/apb_uart/slib_clock_div.vhd'
+            Reading VHDL file '../ips/apb/apb_uart/uart_interrupt.vhd'
+            Reading VHDL file '../ips/apb/apb_uart/uart_transmitter.vhd'
+            Reading VHDL file '../ips/apb/apb_uart/uart_receiver.vhd'
+            Reading VHDL file '../ips/apb/apb_uart/uart_baudgen.vhd'
+            Reading VHDL file '../ips/apb/apb_uart/apb_uart.vhd'
+@file(run_synth.tcl) 258: read_hdl -language sv ../rtl/pulp_pads_top.sv
+            Reading Verilog file '../rtl/pulp_pads_top.sv'
+@file(run_synth.tcl) 260: elaborate $DESIGN
+  Libraries have 625 usable logic and 70 usable sequential lib-cells.
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'CORE65LPLVT_wc_1.00V_125C_10y.lib', Total cells: 866, Unusable cells: 171.
+	List of unusable cells: 'HS65_LLS_SDFPHQNTX18 HS65_LLS_SDFPHQNTX27 HS65_LLS_SDFPHQNTX35 HS65_LLS_SDFPHQNX18 HS65_LLS_SDFPHQNX27 HS65_LLS_SDFPHQNX35 HS65_LLS_SDFPHQTX18 HS65_LLS_SDFPHQTX27 HS65_LLS_SDFPHQTX35 HS65_LLS_SDFPHQX18 HS65_LLS_SDFPHQX27 HS65_LLS_SDFPHQX35 HS65_LLS_SDFPHRQNTX18 HS65_LLS_SDFPHRQNTX27 HS65_LLS_SDFPHRQNTX35 HS65_LLS_SDFPHRQTX18 HS65_LLS_SDFPHRQTX27 HS65_LLS_SDFPHRQTX35 HS65_LLS_SDFPQNTX18 HS65_LLS_SDFPQNTX27 HS65_LLS_SDFPQNTX35 HS65_LLS_SDFPQNX18 HS65_LLS_SDFPQNX27 HS65_LLS_SDFPQNX35 HS65_LLS_SDFPQTX18 HS65_LLS_SDFPQTX27 HS65_LLS_SDFPQTX35 HS65_LLS_SDFPQX18 HS65_LLS_SDFPQX27 HS65_LLS_SDFPQX35 HS65_LLS_SDFPRQNTX18 HS65_LLS_SDFPRQNTX27 HS65_LLS_SDFPRQNTX35 HS65_LLS_SDFPRQNX18 HS65_LLS_SDFPRQNX27 HS65_LLS_SDFPRQNX35 HS65_LLS_SDFPRQTX18 HS65_LLS_SDFPRQTX27 HS65_LLS_SDFPRQTX35 HS65_LLS_SDFPRQX18 HS65_LLS_SDFPRQX27 HS65_LLS_SDFPRQX35 HS65_LLS_SDFPSQNTX18 HS65_LLS_SDFPSQNTX27 HS65_LLS_SDFPSQNTX35 HS65_LLS_SDFPSQNX18 HS65_LLS_SDFPSQNX27 HS65_LLS_SDFPSQNX35 HS65_LLS_SDFPSQTX18 HS65_LLS_SDFPSQTX27 HS65_LLS_SDFPSQTX35 HS65_LLS_SDFPSQX18 HS65_LLS_SDFPSQX27 HS65_LLS_SDFPSQX35 HS65_LL_BK1SX1 HS65_LL_BK1X1 HS65_LL_DFPHQNX18 HS65_LL_DFPHQNX27 HS65_LL_DFPHQNX35 HS65_LL_DFPHQX18 HS65_LL_DFPHQX27 HS65_LL_DFPHQX35 HS65_LL_DFPQNX18 HS65_LL_DFPQNX27 HS65_LL_DFPQNX35 HS65_LL_DFPQX18 HS65_LL_DFPQX27 HS65_LL_DFPQX35 HS65_LL_DFPRQNX18 HS65_LL_DFPRQNX27 HS65_LL_DFPRQNX35 HS65_LL_DFPRQX18 HS65_LL_DFPRQX27 HS65_LL_DFPRQX35 HS65_LL_DFPSQNX18 HS65_LL_DFPSQNX27 HS65_LL_DFPSQNX35 HS65_LL_DFPSQX18 HS65_LL_DFPSQX27 HS65_LL_DFPSQX35 HS65_LL_SDFPBTQX9 HS65_LL_SDFPHQNTX18 HS65_LL_SDFPHQNTX27 HS65_LL_SDFPHQNTX35 HS65_LL_SDFPHQNTX4 HS65_LL_SDFPHQNTX9 HS65_LL_SDFPHQNX18 HS65_LL_SDFPHQNX27 HS65_LL_SDFPHQNX35 HS65_LL_SDFPHQNX4 HS65_LL_SDFPHQNX9 HS65_LL_SDFPHQTX18 HS65_LL_SDFPHQTX27 HS65_LL_SDFPHQTX35 HS65_LL_SDFPHQTX4 HS65_LL_SDFPHQTX9 HS65_LL_SDFPHQX18 HS65_LL_SDFPHQX27 HS65_LL_SDFPHQX35 HS65_LL_SDFPHQX4 HS65_LL_SDFPHQX9 HS65_LL_SDFPHRQNTX18 HS65_LL_SDFPHRQNTX27 HS65_LL_SDFPHRQNTX35 HS65_LL_SDFPHRQNTX4 HS65_LL_SDFPHRQNTX9 HS65_LL_SDFPHRQTX18 HS65_LL_SDFPHRQTX27 HS65_LL_SDFPHRQTX35 HS65_LL_SDFPHRQTX4 HS65_LL_SDFPHRQTX9 HS65_LL_SDFPQNTX18 HS65_LL_SDFPQNTX27 HS65_LL_SDFPQNTX35 HS65_LL_SDFPQNTX4 HS65_LL_SDFPQNTX9 HS65_LL_SDFPQNX18 HS65_LL_SDFPQNX27 HS65_LL_SDFPQNX35 HS65_LL_SDFPQNX4 HS65_LL_SDFPQNX9 HS65_LL_SDFPQTX18 HS65_LL_SDFPQTX27 HS65_LL_SDFPQTX35 HS65_LL_SDFPQTX4 HS65_LL_SDFPQTX9 HS65_LL_SDFPQX18 HS65_LL_SDFPQX27 HS65_LL_SDFPQX35 HS65_LL_SDFPQX4 HS65_LL_SDFPQX9 HS65_LL_SDFPRQNTX18 HS65_LL_SDFPRQNTX27 HS65_LL_SDFPRQNTX35 HS65_LL_SDFPRQNTX4 HS65_LL_SDFPRQNTX9 HS65_LL_SDFPRQNX18 HS65_LL_SDFPRQNX27 HS65_LL_SDFPRQNX35 HS65_LL_SDFPRQNX4 HS65_LL_SDFPRQNX9 HS65_LL_SDFPRQTX18 HS65_LL_SDFPRQTX27 HS65_LL_SDFPRQTX35 HS65_LL_SDFPRQTX4 HS65_LL_SDFPRQTX9 HS65_LL_SDFPRQX18 HS65_LL_SDFPRQX27 HS65_LL_SDFPRQX35 HS65_LL_SDFPRQX4 HS65_LL_SDFPRQX9 HS65_LL_SDFPSQNTX18 HS65_LL_SDFPSQNTX27 HS65_LL_SDFPSQNTX35 HS65_LL_SDFPSQNTX4 HS65_LL_SDFPSQNTX9 HS65_LL_SDFPSQNX18 HS65_LL_SDFPSQNX27 HS65_LL_SDFPSQNX35 HS65_LL_SDFPSQNX4 HS65_LL_SDFPSQNX9 HS65_LL_SDFPSQTX18 HS65_LL_SDFPSQTX27 HS65_LL_SDFPSQTX35 HS65_LL_SDFPSQTX4 HS65_LL_SDFPSQTX9 HS65_LL_SDFPSQX18 HS65_LL_SDFPSQX27 HS65_LL_SDFPSQX35 HS65_LL_SDFPSQX4 HS65_LL_SDFPSQX9 .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'CLOCK65LPLVT_wc_1.00V_125C_10y.lib', Total cells: 110, Unusable cells: 110.
+	List of unusable cells: 'HS65_LLP_CNHLSX10 HS65_LLP_CNHLSX14 HS65_LLP_CNHLSX17 HS65_LLP_CNHLSX21 HS65_LLP_CNHLSX24 HS65_LLP_CNHLSX27 HS65_LLP_CNHLSX31 HS65_LLP_CNHLSX34 HS65_LLP_CNHLSX38 HS65_LLP_CNHLSX41 HS65_LLP_CNHLSX52 HS65_LLP_CNHLSX62 HS65_LLP_CNHLSX7 HS65_LLP_CNHLSX82 HS65_LL_CAPX18 HS65_LL_CAPX35 HS65_LL_CAPX53 HS65_LL_CAPX9 HS65_LL_CNAND2X17 HS65_LL_CNAND2X38 HS65_LL_CNBFX10 HS65_LL_CNBFX103 HS65_LL_CNBFX124 HS65_LL_CNBFX14 HS65_LL_CNBFX17 HS65_LL_CNBFX21 HS65_LL_CNBFX24 HS65_LL_CNBFX27 HS65_LL_CNBFX31 HS65_LL_CNBFX34 HS65_LL_CNBFX38 HS65_LL_CNBFX38_0 HS65_LL_CNBFX38_1 HS65_LL_CNBFX38_10 HS65_LL_CNBFX38_11 HS65_LL_CNBFX38_12 HS65_LL_CNBFX38_13 HS65_LL_CNBFX38_14 HS65_LL_CNBFX38_15 HS65_LL_CNBFX38_16 HS65_LL_CNBFX38_17 HS65_LL_CNBFX38_18 HS65_LL_CNBFX38_19 HS65_LL_CNBFX38_2 HS65_LL_CNBFX38_20 HS65_LL_CNBFX38_21 HS65_LL_CNBFX38_22 HS65_LL_CNBFX38_23 HS65_LL_CNBFX38_3 HS65_LL_CNBFX38_4 HS65_LL_CNBFX38_5 HS65_LL_CNBFX38_6 HS65_LL_CNBFX38_7 HS65_LL_CNBFX38_8 HS65_LL_CNBFX38_9 HS65_LL_CNBFX41 HS65_LL_CNBFX45 HS65_LL_CNBFX48 HS65_LL_CNBFX52 HS65_LL_CNBFX55 HS65_LL_CNBFX58 HS65_LL_CNBFX62 HS65_LL_CNBFX82 HS65_LL_CNIVX10 HS65_LL_CNIVX103 HS65_LL_CNIVX124 HS65_LL_CNIVX14 HS65_LL_CNIVX17 HS65_LL_CNIVX21 HS65_LL_CNIVX24 HS65_LL_CNIVX27 HS65_LL_CNIVX3 HS65_LL_CNIVX31 HS65_LL_CNIVX34 HS65_LL_CNIVX38 HS65_LL_CNIVX41 HS65_LL_CNIVX45 HS65_LL_CNIVX48 HS65_LL_CNIVX52 HS65_LL_CNIVX55 HS65_LL_CNIVX58 HS65_LL_CNIVX62 HS65_LL_CNIVX7 HS65_LL_CNIVX82 HS65_LL_CNMUX21X15 HS65_LL_CNMUX31X16 HS65_LL_CNMUX41X17 HS65_LL_CNMUXI21X16 HS65_LL_CNMUXI31X17 HS65_LL_CNNAND2AX18 HS65_LL_CNNAND2X18 HS65_LL_CNNAND2X24 HS65_LL_CNNOR2AX15 HS65_LL_CNNOR2X15 HS65_LL_CNNOR2X24 HS65_LL_CNOR2X17 HS65_LL_CNOR2X38 HS65_LL_CNOR3X15 HS65_LL_CNSDFPRQTX15 HS65_LL_CNSDFPSQTX16 HS65_LL_CNXOR2X38 HS65_LL_DLYIC2X4 HS65_LL_DLYIC2X7 HS65_LL_DLYIC2X9 HS65_LL_DLYIC4X4 HS65_LL_DLYIC4X7 HS65_LL_DLYIC4X9 HS65_LL_DLYIC6X4 HS65_LL_DLYIC6X7 HS65_LL_DLYIC6X9 .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib', Total cells: 10, Unusable cells: 10.
+	List of unusable cells: 'ANA_1V8_SF_2ROWS ANA_1V8_SF_LIN BD2SCARUDQP_1V8_SF_2ROWS BD2SCARUDQP_1V8_SF_LIN BD4SCARUDQP_1V8_SF_2ROWS BD4SCARUDQP_1V8_SF_LIN BD8SCARUDQP_1V8_SF_2ROWS BD8SCARUDQP_1V8_SF_LIN ANA_1V8_PU_SF_2ROWS ANA_1V8_PU_SF_LIN .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib', Total cells: 33, Unusable cells: 33.
+	List of unusable cells: 'CORNERCELL_ST_SF_2ROWS CORNERCELL_ST_SF_LIN GNDE_ST_SF_2ROWS GNDE_ST_SF_LIN GNDVDD_ST_SF_2ROWS GND_ST_SF_2ROWS GND_ST_SF_LIN IOFILLERCELL32_ST_SF_2ROWS IOFILLERCELL32_ST_SF_LIN IOFILLERCELL64_ST_SF_2ROWS IOFILLERCELL64_ST_SF_LIN IOFILLERCELL_DUMMYPAD_ST_SF_2ROWS IOFILLERCELL_DUMMYPAD_ST_SF_LIN IOFILLERCELL_EMPTY_ST_SF_2ROWS IOFILLERCELL_I_ST_SF_LIN IOFILLERCELL_REF_ASRC_ST_SF_2ROWS IOFILLERCELL_REF_ASRC_ST_SF_LIN IOFILLERCELL_TRIGGER_ST_SF_2ROWS IOFILLERCELL_TRIGGER_ST_SF_LIN IOFILLERCUTCELL_ALL_ST_SF_2ROWS IOFILLERCUTCELL_ALL_ST_SF_LIN LBCORNERCELL_ST_SF_2ROWS LBCORNERCELL_ST_SF_LIN LTCORNERCELL_ST_SF_2ROWS LTCORNERCELL_ST_SF_LIN RBCORNERCELL_ST_SF_2ROWS RBCORNERCELL_ST_SF_LIN RTCORNERCELL_ST_SF_2ROWS RTCORNERCELL_ST_SF_LIN VDDE_ST_SF_2ROWS VDDE_ST_SF_LIN VDD_ST_SF_2ROWS VDD_ST_SF_LIN .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'SPHS100909_wc_1.10V_125C_10y.lib', Total cells: 2, Unusable cells: 2.
+	List of unusable cells: 'ST_SPHS_1024x8m8_L ST_SPHS_2048x8m8_L .'
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'PRHS65_wc_1.00V_125C_10y.lib', Total cells: 10, Unusable cells: 10.
+	List of unusable cells: 'CLOCKTREE HS65_GH_ANTPROT3 HS65_GL_ANTPROT3 HS65_GS_ANTPROT3 HS65_LH_ANTPROT1 HS65_LH_ANTPROT3 HS65_LL_ANTPROT1 HS65_LL_ANTPROT3 HS65_LS_ANTPROT1 HS65_LS_ANTPROT3 .'
+Warning : Message truncated because it exceeds the maximum length of 4096 characters. [MESG-6]
+        : Info portion of message 'LBR-415' truncated to length 4096 from 4135
+        : By default messages are limited to 4096 characters. All characters after the 4096 character limit are truncated. To remove this limit, set the message attribute 'truncate' to 'false'. However, this may dramatically increase the size of the log file.
+Info    : Unusable library cells found at the time of loading a library.  [LBR-415]
+        : Library: 'physical_cells', Total cells: 185, Unusable cells: 185.
+	List of unusable cells: 'HS65_28_DECAP12 HS65_28_DECAP16 HS65_28_DECAP32 HS65_28_DECAP64 HS65_28_DECAP9 HS65_50_DECAP12 HS65_50_DECAP16 HS65_50_DECAP32 HS65_50_DECAP64 HS65_50_DECAP9 HS65_GH_FILLERNPWPFP16 HS65_GH_FILLERNPWPFP3 HS65_GH_FILLERNPWPFP32 HS65_GH_FILLERNPWPFP4 HS65_GH_FILLERNPWPFP64 HS65_GH_FILLERNPWPFP8 HS65_GH_FILLERPFOP12 HS65_GH_FILLERPFOP16 HS65_GH_FILLERPFOP32 HS65_GH_FILLERPFOP64 HS65_GH_FILLERPFOP8 HS65_GH_FILLERPFOP9 HS65_GH_FILLERPFP1 HS65_GH_FILLERPFP2 HS65_GH_FILLERPFP3 HS65_GH_FILLERPFP4 HS65_GH_FILLERSNPWPFP3 HS65_GH_FILLERSNPWPFP4 HS65_GL_FILLERNPWPFP16 HS65_GL_FILLERNPWPFP3 HS65_GL_FILLERNPWPFP32 HS65_GL_FILLERNPWPFP4 HS65_GL_FILLERNPWPFP64 HS65_GL_FILLERNPWPFP8 HS65_GL_FILLERPFOP12 HS65_GL_FILLERPFOP16 HS65_GL_FILLERPFOP32 HS65_GL_FILLERPFOP64 HS65_GL_FILLERPFOP8 HS65_GL_FILLERPFOP9 HS65_GL_FILLERPFP1 HS65_GL_FILLERPFP2 HS65_GL_FILLERPFP3 HS65_GL_FILLERPFP4 HS65_GL_FILLERSNPWPFP3 HS65_GL_FILLERSNPWPFP4 HS65_GS_FILLERNPWPFP16 HS65_GS_FILLERNPWPFP3 HS65_GS_FILLERNPWPFP32 HS65_GS_FILLERNPWPFP4 HS65_GS_FILLERNPWPFP64 HS65_GS_FILLERNPWPFP8 HS65_GS_FILLERPFOP12 HS65_GS_FILLERPFOP16 HS65_GS_FILLERPFOP32 HS65_GS_FILLERPFOP64 HS65_GS_FILLERPFOP8 HS65_GS_FILLERPFOP9 HS65_GS_FILLERPFP1 HS65_GS_FILLERPFP2 HS65_GS_FILLERPFP3 HS65_GS_FILLERPFP4 HS65_GS_FILLERSNPWPFP3 HS65_GS_FILLERSNPWPFP4 HS65_LH_DECAP12 HS65_LH_DECAP16 HS65_LH_DECAP32 HS65_LH_DECAP4 HS65_LH_DECAP64 HS65_LH_DECAP8 HS65_LH_DECAP9 HS65_LH_FILLERCELL1 HS65_LH_FILLERCELL2 HS65_LH_FILLERCELL3 HS65_LH_FILLERCELL4 HS65_LH_FILLERNPW3 HS65_LH_FILLERNPW4 HS65_LH_FILLERNPWPFP16 HS65_LH_FILLERNPWPFP3 HS65_LH_FILLERNPWPFP32 HS65_LH_FILLERNPWPFP4 HS65_LH_FILLERNPWPFP64 HS65_LH_FILLERNPWPFP8 HS65_LH_FILLERPFOP12 HS65_LH_FILLERPFOP16 HS65_LH_FILLERPFOP32 HS65_LH_FILLERPFOP64 HS65_LH_FILLERPFOP8 HS65_LH_FILLERPFOP9 HS65_LH_FILLERPFP1 HS65_LH_FILLERPFP2 HS65_LH_FILLERPFP3 HS65_LH_FILLERPFP4 HS65_LH_FILLERSNPWPFP3 HS65_LH_FILLERSNPWPFP4 HS65_LL_FILLERCELL1 HS65_LL_FILLERCELL2 HS65_LL_FILLERCELL3 HS65_LL_FILLERCELL4 HS65_LL_FILLERNPW3 HS65_LL_FILLERNPW4 HS65_LL_FILLERNPWPFP16 HS65_LL_FILLERNPWPFP3 HS65_LL_FILLERNPWPFP32 HS65_LL_FILLERNPWPFP4 HS65_LL_FILLERNPWPFP64 HS65_LL_FILLERNPWPFP8 HS65_LL_FILLERPFOP12 HS65_LL_FILLERPFOP16 HS65_LL_FILLERPFOP32 HS65_LL_FILLERPFOP64 HS65_LL_FILLERPFOP8 HS65_LL_FILLERPFOP9 HS65_LL_FILLERPFP1 HS65_LL_FILLERPFP2 HS65_LL_FILLERPFP3 HS65_LL_FILLERPFP4 HS65_LL_FILLERSNPWPFP3 HS65_LL_FILLERSNPWPFP4 HS65_LS_FILLERCELL1 HS65_LS_FILLERCELL2 HS65_LS_FILLERCELL3 HS65_LS_FILLERCELL4 HS65_LS_FILLERNPW3 HS65_LS_FILLERNPW4 HS65_LS_FILLERNPWPFP16 HS65_LS_FILLERNPWPFP3 HS65_LS_FILLERNPWPFP32 HS65_LS_FILLERNPWPFP4 HS65_LS_FILLERNPWPFP64 HS65_LS_FILLERNPWPFP8 HS65_LS_FILLERPFOP12 HS65_LS_FILLERPFOP16 HS65_LS_FILLERPFOP32 HS65_LS_FILLERPFOP64 HS65_LS_FILLERPFOP8 HS65_LS_FILLERPFOP9 HS65_LS_FILLERPFP1 HS65_LS_FILLERPFP2 HS65_LS_FILLERPFP3 HS65_LS_FILLERPFP4 HS65_LS_FILLERSNPWPFP3 HS65_LS_FILLERSNPWPFP4 ANA_1V8_PU_SF_2ROWS_25u_short ANA_1V8_PU_SF_LIN_40u ANA_1V8_PU_SF_LIN_50u ANA_1V8_SF_2ROWS_25u_short ANA_1V8_SF_LIN_40u ANA_1V8_SF_LIN_50u BD2SCARUDQP_1V8_SF_2ROWS_25u_long BD2SCARUDQP_1V8_SF_2ROWS_25u_short BD2SCARUDQP_1V8_SF_LIN_40u BD2SCARUDQP_1V8_SF_LIN_50u BD4SCARUDQP_1V8_SF_2ROWS_25u_long BD4SCARUDQP_1V8_SF_2ROWS_25u_short BD4SCARUDQP_1V8_SF_LIN_40u BD4SCARUDQP_1V8_SF_LIN_50u BD8SCARUDQP_1V8_SF_2ROWS_25u_long BD8SCARUDQP_1V8_SF_2ROWS_25u_short BD8SCARUDQP_1V8_SF_LIN_40u BD8SCARUDQP_1V8_SF_LIN_50u IOFILLER16_ST_SF_2ROWS IOFILLER16_ST_SF_LIN IOFILLER1_ST_SF_2ROWS IOFILLER1_ST_SF_LIN IOFILLER2_ST_SF_2ROWS IOFILLER2_ST_SF_LIN IOFILLER4_ST_SF_2ROWS IOFILLER4_ST_SF_LIN IOFILLER8_ST_SF_2ROWS IOFILLER8_ST_SF_LIN IOFILLERCUT_ASRC_REF_ST_SF_2ROWS IOFILLERCUT_ASRC_REF_ST_SF_LIN IOFILLERCUT_GNDE_ST_SF_2ROWS IOFILLERCUT_GNDE_ST_SF_LIN IOFILLERCUT_VDDE_GNDE_ST_SF_2ROWS IOFILLERCUT_VDDE_GNDE_ST_SF_LIN IOFILLERCUT_VDDE_ST_SF_2ROWS IOFILLERCUT_VDDE_ST_SF_LIN IOFILLERCUT_VDD_ST_SF_2ROWS IOFILLERCUT_VDD_ST_SF_LIN IOFILLER_END_LEFT_ST_SF_2ROWS IOFILLER_END_LEFT_ST_SF_LIN IOFILLER_END_RIGHT_ST_
+                  INLINE_INFO: Skipping marking small hierarchies inline as the variable 'hdl_dissolve_primitive_instance_hierarchy_threshold' has not been set to a positive value.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'pulpino_top' from file '../rtl/pulpino_top.sv'.
+Warning : Using default parameter value for module elaboration. [CDFG-818]
+        : Elaborating block 'pulpino_top' with default parameters value.
+Info    : Processing multi-dimensional arrays. [CDFG-250]
+        : Variable 'gpio_padcfg' in module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 101.
+Info    : Processing multi-dimensional arrays. [CDFG-250]
+        : Variable 'pad_cfg_o' in module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 102.
+
+
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'ZI' of instance 'p_uart_tx' of module 'timing_cond_wcl_slow_BD2SCARUDQP_1V8_SF_LIN' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 114.
+        : Please check the reported scenario of unconnected instance port to ensure that it matches the design intent.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'ZI' of instance 'p_spis_miso' of module 'timing_cond_wcl_slow_BD2SCARUDQP_1V8_SF_LIN' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 121.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'ZI' of instance 'p_spim_clk' of module 'timing_cond_wcl_slow_BD2SCARUDQP_1V8_SF_LIN' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 124.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'ZI' of instance 'p_spim_csn' of module 'timing_cond_wcl_slow_BD2SCARUDQP_1V8_SF_LIN' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 125.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'ZI' of instance 'p_spim_sdo0' of module 'timing_cond_wcl_slow_BD8SCARUDQP_1V8_SF_LIN' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 126.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'clk_rst_gen' from file '../rtl/clk_rst_gen.sv'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'cluster_clock_mux2' from file '../rtl/components/cluster_clock_mux2.sv'.
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=1 B=1 Z=1) at line 21 in the file '../rtl/components/cluster_clock_mux2.sv'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=1 B=1 Z=1) at line 21 in the file '../rtl/components/cluster_clock_mux2.sv' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'rstgen' from file '../rtl/components/rstgen.sv'.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '==' in file '../rtl/components/rstgen.sv' on line 61.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '==' in file '../rtl/components/rstgen.sv' on line 53.
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=1 B=1 Z=1) at line 53 in the file '../rtl/components/rstgen.sv'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=1 B=1 Z=1) at line 53 in the file '../rtl/components/rstgen.sv' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'init_no' of instance 'i_rst_gen_soc' of module 'rstgen' inside module 'clk_rst_gen' in file '../rtl/clk_rst_gen.sv' on line 86.
+Info    : Unused module input port. [CDFG-500]
+        : Input port 'clk_standalone_i' is not used in module 'clk_rst_gen' in file '../rtl/clk_rst_gen.sv' on line 18.
+        : (In port definition within the module, the input port is not used in any assignment statements or conditional expressions for decision statements.
+Info    : Unused module input port. [CDFG-500]
+        : Input port 'scan_en_i' is not used in module 'clk_rst_gen' in file '../rtl/clk_rst_gen.sv' on line 20.
+Info    : Unused module input port. [CDFG-500]
+        : Input port 'scan_i' is not used in module 'clk_rst_gen' in file '../rtl/clk_rst_gen.sv' on line 21.
+Info    : Unused module input port. [CDFG-500]
+        : Input port 'fll_req_i' is not used in module 'clk_rst_gen' in file '../rtl/clk_rst_gen.sv' on line 24.
+Info    : Unused module input port. [CDFG-500]
+        : Input port 'fll_wrn_i' is not used in module 'clk_rst_gen' in file '../rtl/clk_rst_gen.sv' on line 25.
+Info    : Unused module input port. [CDFG-500]
+        : Input port 'fll_add_i' is not used in module 'clk_rst_gen' in file '../rtl/clk_rst_gen.sv' on line 26.
+Info    : Unused module input port. [CDFG-500]
+        : Input port 'fll_data_i' is not used in module 'clk_rst_gen' in file '../rtl/clk_rst_gen.sv' on line 27.
+Warning : Module port is wider than connected signal. [CDFG-465]
+        : Signal width (-2147483648) does not match width of input port 'clk_i' (1) of instance 'clk_rst_gen_i' of module 'clk_rst_gen' in file '../rtl/pulpino_top.sv' on line 191.
+        : This may cause simulation mismatches between the original and synthesized designs.
+Error   : Could not resolve complex expression. [CDFG-200] [elaborate]
+        : Expression 'p_clk' in module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 192.
+        : Error during elaboration.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'clk_i' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'rstn_i' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'clk_sel_i' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'clk_standalone_i' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'testmode_i' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'scan_en_i' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'scan_i' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'scan_o' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'fll_req_i' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'fll_wrn_i' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'fll_add_i' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'fll_data_i' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'fll_ack_o' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'fll_r_data_o' of instance 'clk_rst_gen_i' of module 'clk_rst_gen' inside module 'pulpino_top' in file '../rtl/pulpino_top.sv' on line 191.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'ELABUTL-132'.
+Info    : Deleting HDL design. [CDFG-305]
+        : Design 'pulpino_top'.
+        : Designs are often deleted because of elaboration errors. Look for previous errors and try to resolve them.
+Info    : Unable to elaborate the design. [ELAB-4]
+        : Module 'pulpino_top' contains errors and cannot be elaborated.
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+#@ End verbose source ./run_synth.tcl
+1
+@genus:root: 2> exit
+
+Lic Summary:
+[14:38:55.277706] Cdslmd servers: auctor
+[14:38:55.277731] Feature usage summary:
+[14:38:55.277737] Genus_Synthesis
+
+Normal exit.

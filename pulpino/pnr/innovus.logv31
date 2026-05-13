@@ -1,0 +1,1319 @@
+[05/12 14:16:11      0s] 
+[05/12 14:16:11      0s] Cadence Innovus(TM) Implementation System.
+[05/12 14:16:11      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/12 14:16:11      0s] 
+[05/12 14:16:11      0s] Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+[05/12 14:16:11      0s] Options:	-stylus 
+[05/12 14:16:11      0s] Date:		Tue May 12 14:16:11 2026
+[05/12 14:16:11      0s] Host:		fransg-2 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+[05/12 14:16:11      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[05/12 14:16:11      0s] 
+[05/12 14:16:11      0s] License:
+[05/12 14:16:11      0s] 		[14:16:11.324465] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+[05/12 14:16:11      0s] 
+[05/12 14:16:11      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[05/12 14:16:11      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[05/12 14:16:21      8s] 
+[05/12 14:16:21      8s] 
+[05/12 14:16:26     12s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+[05/12 14:16:30     14s] @(#)CDS: NanoRoute 21.35-s114_1 NR220912-2004/21_15-UB (database version 18.20.592_1) {superthreading v2.17}
+[05/12 14:16:30     14s] @(#)CDS: AAE 21.15-s039 (64bit) 10/13/2022 (Linux 3.10.0-693.el7.x86_64)
+[05/12 14:16:30     14s] @(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+[05/12 14:16:30     14s] @(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+[05/12 14:16:30     14s] @(#)CDS: CPE v21.15-s076
+[05/12 14:16:30     14s] @(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+[05/12 14:16:30     14s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[05/12 14:16:30     14s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[05/12 14:16:30     14s] @(#)CDS: RCDB 11.15.0
+[05/12 14:16:30     14s] @(#)CDS: STYLUS 21.12-s013_1 (08/15/2022 08:25 PDT)
+[05/12 14:16:30     14s] @(#)CDS: SystemPlanner-21.15Rel-8720 (21.15) (2022-08-22 18:31:54+0800)
+[05/12 14:16:30     14s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_21695_fransg-2_su2577su-s_655RjV.
+
+[05/12 14:16:30     14s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_21695_fransg-2_su2577su-s_655RjV.
+[05/12 14:16:30     14s] 
+[05/12 14:16:30     14s] Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[05/12 14:16:31     15s] [INFO] Loading PVS 21.10 fill procedures
+[05/12 14:16:33     17s] 
+[05/12 14:16:33     17s] **INFO:  MMMC transition support version v31-84 
+[05/12 14:16:33     17s] 
+[05/12 14:16:35     19s] @innovus 1> add_tracks
+[05/12 14:16:41     21s] 
+
+[05/12 14:16:41     21s] @innovus 2> source genus_output/pulpino_chip.genus_init.tcl
+
+[05/12 14:17:18     29s] #@ Begin verbose source (pre): source genus_output/pulpino_chip.genus_init.tcl
+[05/12 14:17:18     29s] @file 1: ################################################################################
+[05/12 14:17:18     29s] @file 2: #
+[05/12 14:17:18     29s] @file 3: # Init setup file
+[05/12 14:17:18     29s] @file 4: # Created by Genus(TM) Synthesis Solution on 05/07/2026 14:47:06
+[05/12 14:17:18     29s] @file 5: #
+[05/12 14:17:18     29s] @file 6: ################################################################################
+[05/12 14:17:18     29s] @file 7: #if { ![is_common_ui_mode] } { error "ERROR: This script requires common_ui to be active."}
+[05/12 14:17:18     29s] @file 8: #::legacy::set_attribute -quiet init_mmmc_version 2 /
+[05/12 14:17:18     29s] @file 9:
+[05/12 14:17:18     29s] @@file 10: read_mmmc ../pnr/genus_output/pulpino_chip.mmmc.tcl
+[05/12 14:17:18     29s] #@ Begin verbose source ../pnr/genus_output/pulpino_chip.mmmc.tcl (pre)
+[05/12 14:17:18     29s] @file 1: #################################################################################
+[05/12 14:17:18     29s] @file 2: #
+[05/12 14:17:18     29s] @file 3: # Created by Genus(TM) Synthesis Solution 21.14-s082_1 on Thu May 07 14:47:01 CEST 2026
+[05/12 14:17:18     29s] @file 4: #
+[05/12 14:17:18     29s] @file 5: #################################################################################
+[05/12 14:17:18     29s] @file 6:
+[05/12 14:17:18     29s] @file 7: ## library_sets
+[05/12 14:17:18     29s] @@file 8: create_library_set -name wcl_slow \
+[05/12 14:17:18     29s]     -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_wc_1.00V_125C_10y.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_wc_1.10V_125C_10y.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_wc_1.00V_125C_10y.lib }
+[05/12 14:17:18     29s] @@file 15: create_library_set -name wcl_fast \
+[05/12 14:17:18     29s]     -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_bc_1.25V_m40C.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_bc_1.25V_m40C.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_bc_1.25V_1.95V_m40C.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_bc_1.25V_m40C.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_bc_1.30V_m40C.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_bc_1.25V_m40C.lib }
+[05/12 14:17:18     29s] @@file 22: create_library_set -name wcl_typical \
+[05/12 14:17:18     29s]     -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_nom_1.10V_25C.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_nom_1.10V_25C.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_nom_1.10V_1.80V_25C.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_nom_1.10V_25C.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_nom_1.20V_25C.lib \
+[05/12 14:17:18     29s]               /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_nom_1.10V_25C.lib }
+[05/12 14:17:18     29s] @file 29:
+[05/12 14:17:18     29s] @file 30: ## opcond
+[05/12 14:17:18     29s] @@file 31: create_opcond -name op_cond_wcl_slow \
+[05/12 14:17:18     29s]     -process 1.0 \
+[05/12 14:17:18     29s]     -voltage 1.0 \
+[05/12 14:17:18     29s]     -temperature 125.0
+[05/12 14:17:18     29s] @@file 35: create_opcond -name op_cond_wcl_fast \
+[05/12 14:17:18     29s]     -process 1.0 \
+[05/12 14:17:18     29s]     -voltage 1.25 \
+[05/12 14:17:18     29s]     -temperature -40.0
+[05/12 14:17:18     29s] @@file 39: create_opcond -name op_cond_wcl_typical \
+[05/12 14:17:18     29s]     -process 1.0 \
+[05/12 14:17:18     29s]     -voltage 1.1 \
+[05/12 14:17:18     29s]     -temperature 25.0
+[05/12 14:17:18     29s] @file 43:
+[05/12 14:17:18     29s] @file 44: ## timing_condition
+[05/12 14:17:18     29s] @@file 45: create_timing_condition -name timing_cond_wcl_slow \
+[05/12 14:17:18     29s]     -opcond op_cond_wcl_slow \
+[05/12 14:17:18     29s]     -library_sets { wcl_slow }
+[05/12 14:17:18     29s] @@file 48: create_timing_condition -name timing_cond_wcl_fast \
+[05/12 14:17:18     29s]     -opcond op_cond_wcl_fast \
+[05/12 14:17:18     29s]     -library_sets { wcl_fast }
+[05/12 14:17:18     29s] @@file 51: create_timing_condition -name timing_cond_wcl_typical \
+[05/12 14:17:18     29s]     -opcond op_cond_wcl_typical \
+[05/12 14:17:18     29s]     -library_sets { wcl_typical }
+[05/12 14:17:18     29s] @file 54:
+[05/12 14:17:18     29s] @file 55: ## rc_corner
+[05/12 14:17:18     29s] @@file 56: create_rc_corner -name rc_corner_typ \
+[05/12 14:17:18     29s]     -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCTYP/qrcTechFile \
+[05/12 14:17:18     29s]     -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCTYP.captable \
+[05/12 14:17:18     29s]     -pre_route_res 1.0 \
+[05/12 14:17:18     29s]     -pre_route_cap 1.0 \
+[05/12 14:17:18     29s]     -pre_route_clock_res 0.0 \
+[05/12 14:17:18     29s]     -pre_route_clock_cap 0.0 \
+[05/12 14:17:18     29s]     -post_route_res {1.0 1.0 1.0} \
+[05/12 14:17:18     29s]     -post_route_cap {1.0 1.0 1.0} \
+[05/12 14:17:18     29s]     -post_route_cross_cap {1.0 1.0 1.0} \
+[05/12 14:17:18     29s]     -post_route_clock_res {1.0 1.0 1.0} \
+[05/12 14:17:18     29s]     -post_route_clock_cap {1.0 1.0 1.0}
+[05/12 14:17:18     29s] @@file 68: create_rc_corner -name rc_corner_min \
+[05/12 14:17:18     29s]     -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMIN/qrcTechFile \
+[05/12 14:17:18     29s]     -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable \
+[05/12 14:17:18     29s]     -pre_route_res 1.0 \
+[05/12 14:17:18     29s]     -pre_route_cap 1.0 \
+[05/12 14:17:18     29s]     -pre_route_clock_res 0.0 \
+[05/12 14:17:18     29s]     -pre_route_clock_cap 0.0 \
+[05/12 14:17:18     29s]     -post_route_res {1.0 1.0 1.0} \
+[05/12 14:17:18     29s]     -post_route_cap {1.0 1.0 1.0} \
+[05/12 14:17:18     29s]     -post_route_cross_cap {1.0 1.0 1.0} \
+[05/12 14:17:18     29s]     -post_route_clock_res {1.0 1.0 1.0} \
+[05/12 14:17:18     29s]     -post_route_clock_cap {1.0 1.0 1.0}
+[05/12 14:17:18     29s] @@file 80: create_rc_corner -name rc_corner_max \
+[05/12 14:17:18     29s]     -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile \
+[05/12 14:17:18     29s]     -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable \
+[05/12 14:17:18     29s]     -pre_route_res 1.0 \
+[05/12 14:17:18     29s]     -pre_route_cap 1.0 \
+[05/12 14:17:18     29s]     -pre_route_clock_res 0.0 \
+[05/12 14:17:18     29s]     -pre_route_clock_cap 0.0 \
+[05/12 14:17:18     29s]     -post_route_res {1.0 1.0 1.0} \
+[05/12 14:17:18     29s]     -post_route_cap {1.0 1.0 1.0} \
+[05/12 14:17:18     29s]     -post_route_cross_cap {1.0 1.0 1.0} \
+[05/12 14:17:18     29s]     -post_route_clock_res {1.0 1.0 1.0} \
+[05/12 14:17:18     29s]     -post_route_clock_cap {1.0 1.0 1.0}
+[05/12 14:17:18     29s] @file 92:
+[05/12 14:17:18     29s] @file 93: ## delay_corner
+[05/12 14:17:18     29s] @@file 94: create_delay_corner -name delay_corner_wcl_slow \
+[05/12 14:17:18     29s]     -early_timing_condition { timing_cond_wcl_slow } \
+[05/12 14:17:18     29s]     -late_timing_condition { timing_cond_wcl_slow } \
+[05/12 14:17:18     29s]     -early_rc_corner rc_corner_min \
+[05/12 14:17:18     29s]     -late_rc_corner rc_corner_max
+[05/12 14:17:18     29s] @@file 99: create_delay_corner -name delay_corner_wcl_fast \
+[05/12 14:17:18     29s]     -early_timing_condition { timing_cond_wcl_fast } \
+[05/12 14:17:18     29s]     -late_timing_condition { timing_cond_wcl_fast } \
+[05/12 14:17:18     29s]     -early_rc_corner rc_corner_min \
+[05/12 14:17:18     29s]     -late_rc_corner rc_corner_max
+[05/12 14:17:18     29s] @@file 104: create_delay_corner -name delay_corner_wcl_typical \
+[05/12 14:17:18     29s]     -early_timing_condition { timing_cond_wcl_typical } \
+[05/12 14:17:18     29s]     -late_timing_condition { timing_cond_wcl_typical } \
+[05/12 14:17:18     29s]     -early_rc_corner rc_corner_typ \
+[05/12 14:17:18     29s]     -late_rc_corner rc_corner_typ
+[05/12 14:17:18     29s] @file 109:
+[05/12 14:17:18     29s] @file 110: ## constraint_mode
+[05/12 14:17:18     29s] @@file 111: create_constraint_mode -name functional_wcl_slow \
+[05/12 14:17:18     29s]     -sdc_files { ../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc }
+[05/12 14:17:18     29s] @@file 113: create_constraint_mode -name functional_wcl_fast \
+[05/12 14:17:18     29s]     -sdc_files { ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc }
+[05/12 14:17:18     29s] @@file 115: create_constraint_mode -name functional_wcl_typical \
+[05/12 14:17:18     29s]     -sdc_files { ../pnr/genus_output/pulpino_chip.functional_wcl_typical.sdc }
+[05/12 14:17:18     29s] @file 117:
+[05/12 14:17:18     29s] @file 118: ## analysis_view
+[05/12 14:17:18     29s] @@file 119: create_analysis_view -name view_wcl_slow \
+[05/12 14:17:18     29s]     -constraint_mode functional_wcl_slow \
+[05/12 14:17:18     29s]     -delay_corner delay_corner_wcl_slow
+[05/12 14:17:18     29s] @@file 122: create_analysis_view -name view_wcl_fast \
+[05/12 14:17:18     29s]     -constraint_mode functional_wcl_fast \
+[05/12 14:17:18     29s]     -delay_corner delay_corner_wcl_fast
+[05/12 14:17:18     29s] @@file 125: create_analysis_view -name view_wcl_typical \
+[05/12 14:17:18     29s]     -constraint_mode functional_wcl_typical \
+[05/12 14:17:18     29s]     -delay_corner delay_corner_wcl_typical
+[05/12 14:17:18     29s] @file 128:
+[05/12 14:17:18     29s] @file 129: ## set_analysis_view
+[05/12 14:17:18     29s] @@file 130: set_analysis_view -setup { view_wcl_slow } \
+[05/12 14:17:18     29s]                   -hold { view_wcl_fast }
+[05/12 14:17:18     29s] #@ End verbose source ../pnr/genus_output/pulpino_chip.mmmc.tcl
+[05/12 14:17:18     29s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib' ...
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1447)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1448)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1452)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1453)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3390)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3391)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3395)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3396)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5333)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5334)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5338)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5339)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7276)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7277)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7281)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7282)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7988)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7989)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7993)
+[05/12 14:17:18     29s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7994)
+[05/12 14:17:18     29s] Message <TECHLIB-1204> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[05/12 14:17:21     31s] Read 866 cells in library 'CORE65LPLVT' 
+[05/12 14:17:21     31s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_wc_1.00V_125C_10y.lib' ...
+[05/12 14:17:21     32s] Read 110 cells in library 'CLOCK65LPLVT' 
+[05/12 14:17:21     32s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib' ...
+[05/12 14:17:21     32s] Read 10 cells in library 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z' 
+[05/12 14:17:21     32s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib' ...
+[05/12 14:17:21     32s] Read 33 cells in library 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z' 
+[05/12 14:17:21     32s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_wc_1.10V_125C_10y.lib' ...
+[05/12 14:17:21     32s] Read 2 cells in library 'SPHS100909' 
+[05/12 14:17:21     32s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_wc_1.00V_125C_10y.lib' ...
+[05/12 14:17:21     32s] Read 10 cells in library 'PRHS65' 
+[05/12 14:17:21     32s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_bc_1.25V_m40C.lib' ...
+[05/12 14:17:23     34s] Read 866 cells in library 'CORE65LPLVT' 
+[05/12 14:17:23     34s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_bc_1.25V_m40C.lib' ...
+[05/12 14:17:23     34s] Read 110 cells in library 'CLOCK65LPLVT' 
+[05/12 14:17:23     34s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_bc_1.25V_1.95V_m40C.lib' ...
+[05/12 14:17:23     34s] Read 10 cells in library 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z' 
+[05/12 14:17:23     34s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_bc_1.25V_m40C.lib' ...
+[05/12 14:17:23     34s] Read 33 cells in library 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z' 
+[05/12 14:17:23     34s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_bc_1.30V_m40C.lib' ...
+[05/12 14:17:23     34s] Read 2 cells in library 'SPHS100909' 
+[05/12 14:17:23     34s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_bc_1.25V_m40C.lib' ...
+[05/12 14:17:23     34s] Read 10 cells in library 'PRHS65' 
+[05/12 14:17:23     34s] Ending "PreSetAnalysisView" (total cpu=0:00:05.4, real=0:00:05.0, peak res=1018.1M, current mem=809.5M)
+[05/12 14:17:23     34s] @file 11:
+[05/12 14:17:23     34s] @@file 12: read_physical -lef {/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/viarule_generate.lef /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/sites.lef /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/CADENCE/LEF/CORE65LPLVT_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/CADENCE/LEF/CLOCK65LPLVT_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/CADENCE/LEF/PRHS65_soc.lef /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/CADENCE/LEF/SPHS100909_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef
+[05/12 14:17:23     34s] /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z.lef}
+[05/12 14:17:23     34s] 
+[05/12 14:17:23     34s] Loading LEF file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef ...
+[05/12 14:17:23     34s] 
+[05/12 14:17:23     34s] Loading LEF file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/viarule_generate.lef ...
+[05/12 14:17:23     34s] 
+[05/12 14:17:23     34s] Loading LEF file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/sites.lef ...
+[05/12 14:17:23     34s] 
+[05/12 14:17:23     34s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/CADENCE/LEF/CORE65LPLVT_soc.lef ...
+[05/12 14:17:23     34s] Set DBUPerIGU to M2 pitch 200.
+[05/12 14:17:24     35s] 
+[05/12 14:17:24     35s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/CADENCE/LEF/CLOCK65LPLVT_soc.lef ...
+[05/12 14:17:24     35s] 
+[05/12 14:17:24     35s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/CADENCE/LEF/PRHS65_soc.lef ...
+[05/12 14:17:24     35s] 
+[05/12 14:17:24     35s] Loading LEF file /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/CADENCE/LEF/SPHS100909_soc.lef ...
+[05/12 14:17:24     35s] 
+[05/12 14:17:24     35s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef ...
+[05/12 14:17:24     35s] WARNING (LEFPARS-2002): NAMESCASESENSITIVE is a required statement in LEF files with version 5.5 and earlier.
+[05/12 14:17:24     35s] Without NAMESCASESENSITIVE defined, the LEF file is technically incorrect.
+[05/12 14:17:24     35s] Refer to the LEF/DEF 5.5 or earlier Language Reference manual on how to define this statement. See file /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef at line 27188.
+[05/12 14:17:24     35s] 
+[05/12 14:17:24     35s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z.lef ...
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'VDD_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDD_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'VDD_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDD_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'VDDE_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDDE_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'VDDE_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDDE_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'RTCORNERCELL_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RTCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'RTCORNERCELL_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RTCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'RBCORNERCELL_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RBCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'RBCORNERCELL_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RBCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'LTCORNERCELL_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LTCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'LTCORNERCELL_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LTCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'LBCORNERCELL_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LBCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'LBCORNERCELL_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LBCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'IOFILLERCUTCELL_ALL_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCUTCELL_ALL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'IOFILLERCUTCELL_ALL_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCUTCELL_ALL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'IOFILLERCELL_TRIGGER_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCELL_TRIGGER_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'IOFILLERCELL_TRIGGER_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCELL_TRIGGER_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'A0SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'A0SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'A1SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'A1SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'A2SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'A2SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-201):	Pin 'A3SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-201' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPLF-200):	Pin 'A3SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/12 14:17:24     35s] Type 'man IMPLF-200' for more detail.
+[05/12 14:17:24     35s] **WARN: (EMS-27):	Message (IMPLF-201) has exceeded the current message display limit of 20.
+[05/12 14:17:24     35s] To increase the message display limit, refer to the product command reference manual.
+[05/12 14:17:24     35s] **WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+[05/12 14:17:24     35s] To increase the message display limit, refer to the product command reference manual.
+[05/12 14:17:24     35s] 
+[05/12 14:17:24     35s] ##  Check design process and node:  
+[05/12 14:17:24     35s] ##  Both design process and tech node are not set.
+[05/12 14:17:24     35s] 
+[05/12 14:17:24     35s] @file 14:
+[05/12 14:17:24     35s] @@file 15: read_netlist ../pnr/genus_output/pulpino_chip.v
+[05/12 14:17:24     35s] #% Begin Load netlist data ... (date=05/12 14:17:24, mem=817.7M)
+[05/12 14:17:24     35s] *** Begin netlist parsing (mem=1147.1M) ***
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X9' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X9' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X4' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X4' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X27' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X27' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X18' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X18' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X9' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X9' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X4' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X4' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X35' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X35' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X27' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X27' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X18' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X18' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XNOR3X9' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XNOR3X9' is defined in LEF but not in the timing library.
+[05/12 14:17:24     35s] Type 'man IMPVL-159' for more detail.
+[05/12 14:17:24     35s] **WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+[05/12 14:17:24     35s] To increase the message display limit, refer to the product command reference manual.
+[05/12 14:17:24     35s] Created 1031 new cells from 12 timing libraries.
+[05/12 14:17:24     35s] Reading netlist ...
+[05/12 14:17:24     35s] Backslashed names will retain backslash and a trailing blank character.
+[05/12 14:17:24     35s] Reading verilog netlist '../pnr/genus_output/pulpino_chip.v'
+[05/12 14:17:24     35s] 
+[05/12 14:17:24     35s] *** Memory Usage v#1 (Current mem = 1159.137M, initial mem = 484.035M) ***
+[05/12 14:17:24     35s] *** End netlist parsing (cpu=0:00:00.4, real=0:00:00.0, mem=1159.1M) ***
+[05/12 14:17:24     35s] #% End Load netlist data ... (date=05/12 14:17:24, total cpu=0:00:00.4, real=0:00:00.0, peak res=872.0M, current mem=872.0M)
+[05/12 14:17:24     35s] Top level cell is pulpino_chip.
+[05/12 14:17:25     36s] Hooked 2062 DB cells to tlib cells.
+[05/12 14:17:25     36s] Ending "BindLib:" (total cpu=0:00:00.3, real=0:00:00.0, peak res=975.5M, current mem=975.5M)
+[05/12 14:17:25     36s] 3 empty module found.
+[05/12 14:17:25     36s] Starting recursive module instantiation check.
+[05/12 14:17:25     36s] No recursion found.
+[05/12 14:17:25     36s] Building hierarchical netlist for Cell pulpino_chip ...
+[05/12 14:17:25     36s] *** Netlist is unique.
+[05/12 14:17:25     36s] Setting Std. cell height to 2600 DBU (smallest netlist inst).
+[05/12 14:17:25     36s] ** info: there are 3089 modules.
+[05/12 14:17:25     36s] ** info: there are 37058 stdCell insts.
+[05/12 14:17:25     36s] ** info: there are 57 Pad insts.
+[05/12 14:17:25     36s] ** info: there are 32 macros.
+[05/12 14:17:25     36s] 
+[05/12 14:17:25     36s] *** Memory Usage v#1 (Current mem = 1290.562M, initial mem = 484.035M) ***
+[05/12 14:17:25     36s] @file 16:
+[05/12 14:17:25     36s] @@file 17: init_design 
+[05/12 14:17:25     36s] Initializing I/O assignment ...
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_SF_TF_2ROWS' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_SF_2ROWS' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_TF_2ROWS' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_SF_LIN' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_TF_LIN' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'COREHD_QG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'COREHD_QV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'COREHV_QG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'COREHV_QV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'CORE_QG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'CORE_QV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'COREHD_TG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'COREHD_TV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'COREHV_TG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'COREHV_TV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'CORE_TG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'CORE_TV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'COREHD_DG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'COREHD_DV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (IMPFP-3961):	The techSite 'COREHD' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/12 14:17:25     36s] Type 'man IMPFP-3961' for more detail.
+[05/12 14:17:25     36s] **WARN: (EMS-27):	Message (IMPFP-3961) has exceeded the current message display limit of 20.
+[05/12 14:17:25     36s] To increase the message display limit, refer to the product command reference manual.
+[05/12 14:17:25     36s] Start create_tracks
+[05/12 14:17:25     36s] Extraction setup Started 
+[05/12 14:17:25     36s] 
+[05/12 14:17:25     36s] Trim Metal Layers:
+[05/12 14:17:25     36s] Initializing multi-corner RC extraction with 2 active RC Corners ...
+[05/12 14:17:25     36s] **WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for pre_route and post_route extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for pre_route and post_route (effort level medium/high/signoff) extraction engines.
+[05/12 14:17:25     36s] Type 'man IMPEXT-6202' for more detail.
+[05/12 14:17:25     36s] Reading Encrypted Capacitance Table File /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable ...
+[05/12 14:17:25     36s] Cap table was created using Encounter 14.23-s044_1.
+[05/12 14:17:25     36s] Process name: cmos065_7m4x0y2z_GL_RCMAX.
+[05/12 14:17:25     36s] Allocated an empty WireEdgeEnlargement table in rc_corner_max [6].
+[05/12 14:17:25     36s] Allocated an empty WireEdgeEnlargement table in rc_corner_max [7].
+[05/12 14:17:25     36s] Allocated an empty WireEdgeEnlargement table in rc_corner_max [8].
+[05/12 14:17:25     36s] Decrypted 57344 characters.
+[05/12 14:17:25     36s] Reading Encrypted Capacitance Table File /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable ...
+[05/12 14:17:25     36s] Cap table was created using Encounter 14.23-s044_1.
+[05/12 14:17:25     36s] Process name: cmos065_7m4x0y2z_GL_RCMIN.
+[05/12 14:17:25     36s] Allocated an empty WireEdgeEnlargement table in rc_corner_min [6].
+[05/12 14:17:25     36s] Allocated an empty WireEdgeEnlargement table in rc_corner_min [7].
+[05/12 14:17:25     36s] Allocated an empty WireEdgeEnlargement table in rc_corner_min [8].
+[05/12 14:17:25     36s] Decrypted 53248 characters.
+[05/12 14:17:25     36s] Importing multi-corner RC tables ... 
+[05/12 14:17:25     36s] Summary of Active RC-Corners : 
+[05/12 14:17:25     36s]  
+[05/12 14:17:25     36s]  Analysis View: view_wcl_slow
+[05/12 14:17:25     36s]   Late RC-Corner
+[05/12 14:17:25     36s]     RC-Corner Name        : rc_corner_max
+[05/12 14:17:25     36s]     RC-Corner Index       : 0
+[05/12 14:17:25     36s]     RC-Corner Temperature : 25 Celsius
+[05/12 14:17:25     36s]     RC-Corner Cap Table   : '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable'
+[05/12 14:17:25     36s]     RC-Corner PreRoute Res Factor         : 1
+[05/12 14:17:25     36s]     RC-Corner PreRoute Cap Factor         : 1
+[05/12 14:17:25     36s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/12 14:17:25     36s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/12 14:17:25     36s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/12 14:17:25     36s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/12 14:17:25     36s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/12 14:17:25     36s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+[05/12 14:17:25     36s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+[05/12 14:17:25     36s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/12 14:17:25     36s]     RC-Corner Technology file: '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile'
+[05/12 14:17:25     36s]  
+[05/12 14:17:25     36s]   Early RC-Corner
+[05/12 14:17:25     36s]     RC-Corner Name        : rc_corner_min
+[05/12 14:17:25     36s]     RC-Corner Index       : 1
+[05/12 14:17:25     36s]     RC-Corner Temperature : 25 Celsius
+[05/12 14:17:25     36s]     RC-Corner Cap Table   : '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable'
+[05/12 14:17:25     36s]     RC-Corner PreRoute Res Factor         : 1
+[05/12 14:17:25     36s]     RC-Corner PreRoute Cap Factor         : 1
+[05/12 14:17:25     36s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/12 14:17:25     36s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/12 14:17:25     36s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/12 14:17:25     36s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/12 14:17:25     36s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/12 14:17:25     36s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+[05/12 14:17:25     36s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+[05/12 14:17:25     36s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/12 14:17:25     36s]     RC-Corner Technology file: '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMIN/qrcTechFile'
+[05/12 14:17:25     36s]  
+[05/12 14:17:25     36s]  Analysis View: view_wcl_fast
+[05/12 14:17:25     36s]   Late RC-Corner
+[05/12 14:17:25     36s]     RC-Corner Name        : rc_corner_max
+[05/12 14:17:25     36s]     RC-Corner Index       : 0
+[05/12 14:17:25     36s]     RC-Corner Temperature : 25 Celsius
+[05/12 14:17:25     36s]     RC-Corner Cap Table   : '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable'
+[05/12 14:17:25     36s]     RC-Corner PreRoute Res Factor         : 1
+[05/12 14:17:25     36s]     RC-Corner PreRoute Cap Factor         : 1
+[05/12 14:17:25     36s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/12 14:17:25     36s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/12 14:17:25     36s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/12 14:17:25     36s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/12 14:17:25     36s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/12 14:17:25     36s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+[05/12 14:17:25     36s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+[05/12 14:17:25     36s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/12 14:17:25     36s]     RC-Corner Technology file: '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile'
+[05/12 14:17:25     36s]  
+[05/12 14:17:25     36s]   Early RC-Corner
+[05/12 14:17:25     36s]     RC-Corner Name        : rc_corner_min
+[05/12 14:17:25     36s]     RC-Corner Index       : 1
+[05/12 14:17:25     36s]     RC-Corner Temperature : 25 Celsius
+[05/12 14:17:25     36s]     RC-Corner Cap Table   : '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable'
+[05/12 14:17:25     36s]     RC-Corner PreRoute Res Factor         : 1
+[05/12 14:17:25     36s]     RC-Corner PreRoute Cap Factor         : 1
+[05/12 14:17:25     36s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/12 14:17:25     36s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/12 14:17:25     36s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/12 14:17:25     36s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/12 14:17:25     36s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/12 14:17:25     36s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+[05/12 14:17:25     36s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+[05/12 14:17:25     36s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/12 14:17:25     36s]     RC-Corner Technology file: '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMIN/qrcTechFile'
+[05/12 14:17:25     36s] Technology file '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile' associated with first view 'view_wcl_slow' will be used as the primary corner for the multi-corner extraction.
+[05/12 14:17:25     36s] 
+[05/12 14:17:25     36s] Trim Metal Layers:
+[05/12 14:17:25     36s] LayerId::1 widthSet size::5
+[05/12 14:17:25     36s] LayerId::2 widthSet size::4
+[05/12 14:17:25     36s] LayerId::3 widthSet size::4
+[05/12 14:17:25     36s] LayerId::4 widthSet size::4
+[05/12 14:17:25     36s] LayerId::5 widthSet size::4
+[05/12 14:17:25     36s] LayerId::6 widthSet size::4
+[05/12 14:17:25     36s] LayerId::7 widthSet size::4
+[05/12 14:17:25     36s] LayerId::8 widthSet size::2
+[05/12 14:17:25     36s] eee: pegSigSF::1.070000
+[05/12 14:17:25     36s] Updating RC grid for preRoute extraction ...
+[05/12 14:17:25     36s] Initializing multi-corner capacitance tables ... 
+[05/12 14:17:25     36s] Initializing multi-corner resistance tables ...
+[05/12 14:17:25     36s] Creating RPSQ from WeeR and WRes ...
+[05/12 14:17:25     36s] Creating RPSQ from WeeR and WRes ...
+[05/12 14:17:25     36s] eee: l::1 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/12 14:17:25     36s] eee: l::2 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/12 14:17:25     36s] eee: l::3 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/12 14:17:25     36s] eee: l::4 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/12 14:17:25     36s] eee: l::5 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/12 14:17:25     36s] eee: l::6 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/12 14:17:25     36s] eee: l::7 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/12 14:17:25     36s] eee: l::8 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/12 14:17:25     36s] {RT rc_corner_max 0 8 8 {6 0} {7 0} 2}
+[05/12 14:17:25     36s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.000000 uaWl=0.000000 uaWlH=0.000000 aWlH=0.000000 lMod=0 pMax=0.850000 pMod=82 wcR=0.559500 newSi=0.000000 wHLS=1.398750 siPrev=0 viaL=0.000000
+[05/12 14:17:25     36s] *Info: initialize multi-corner CTS.
+[05/12 14:17:26     37s] Ending "SetAnalysisView" (total cpu=0:00:00.1, real=0:00:01.0, peak res=1279.9M, current mem=970.7M)
+[05/12 14:17:26     37s] Reading timing constraints file '../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc' ...
+[05/12 14:17:26     37s] Current (total cpu=0:00:37.2, real=0:01:15, peak res=1279.9M, current mem=1274.8M)
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 9).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 10).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] pulpino_chip
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /aw_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 15).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /ar_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 16).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /w_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 17).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /r_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 18).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /b_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 19).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_aw_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 20).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_ar_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 21).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_w_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 22).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_r_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 23).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_b_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 24).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_aw_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 25).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_ar_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 26).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_w_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 27).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_r_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 28).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_b_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 29).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_aw_buffer/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 30).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_ar_buffer/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 31).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_w_buffer/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 32).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_r_buffer/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 33).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'i_core/peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_b_buffer/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 34).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] Message <TCLCMD-1531> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit. (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 35).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] INFO (CTE): Reading of timing constraints file ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc completed, with 22 WARNING
+[05/12 14:17:26     37s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1356.3M, current mem=1356.3M)
+[05/12 14:17:26     37s] Current (total cpu=0:00:37.3, real=0:01:15, peak res=1356.3M, current mem=1356.3M)
+[05/12 14:17:26     37s] Reading timing constraints file '../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc' ...
+[05/12 14:17:26     37s] Current (total cpu=0:00:37.4, real=0:01:15, peak res=1356.3M, current mem=1356.3M)
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc, Line 9).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc, Line 10).
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] pulpino_chip
+[05/12 14:17:26     37s] INFO (CTE): Reading of timing constraints file ../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc completed, with 2 WARNING
+[05/12 14:17:26     37s] Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1356.6M, current mem=1356.6M)
+[05/12 14:17:26     37s] Current (total cpu=0:00:37.4, real=0:01:15, peak res=1356.6M, current mem=1356.6M)
+[05/12 14:17:26     37s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) Begin ...
+[05/12 14:17:26     37s] Summary for sequential cells identification: 
+[05/12 14:17:26     37s]   Identified SBFF number: 210
+[05/12 14:17:26     37s]   Identified MBFF number: 0
+[05/12 14:17:26     37s]   Identified SB Latch number: 0
+[05/12 14:17:26     37s]   Identified MB Latch number: 0
+[05/12 14:17:26     37s]   Not identified SBFF number: 0
+[05/12 14:17:26     37s]   Not identified MBFF number: 0
+[05/12 14:17:26     37s]   Not identified SB Latch number: 0
+[05/12 14:17:26     37s]   Not identified MB Latch number: 0
+[05/12 14:17:26     37s]   Number of sequential cells which are not FFs: 45
+[05/12 14:17:26     37s] Total number of combinational cells: 721
+[05/12 14:17:26     37s] Total number of sequential cells: 255
+[05/12 14:17:26     37s] Total number of tristate cells: 10
+[05/12 14:17:26     37s] Total number of level shifter cells: 0
+[05/12 14:17:26     37s] Total number of power gating cells: 0
+[05/12 14:17:26     37s] Total number of isolation cells: 0
+[05/12 14:17:26     37s] Total number of power switch cells: 0
+[05/12 14:17:26     37s] Total number of pulse generator cells: 0
+[05/12 14:17:26     37s] Total number of always on buffers: 0
+[05/12 14:17:26     37s] Total number of retention cells: 0
+[05/12 14:17:26     37s] List of usable buffers: HS65_LL_CNBFX10 HS65_LL_CNBFX103 HS65_LL_CNBFX124 HS65_LL_CNBFX14 HS65_LL_CNBFX21 HS65_LL_CNBFX17 HS65_LL_CNBFX27 HS65_LL_CNBFX24 HS65_LL_CNBFX34 HS65_LL_CNBFX31 HS65_LL_CNBFX38 HS65_LL_CNBFX41 HS65_LL_CNBFX48 HS65_LL_CNBFX45 HS65_LL_CNBFX55 HS65_LL_CNBFX52 HS65_LL_CNBFX62 HS65_LL_CNBFX58 HS65_LL_CNBFX82 HS65_LL_BFX13 HS65_LL_BFX106 HS65_LL_BFX142 HS65_LL_BFX2 HS65_LL_BFX18 HS65_LL_BFX213 HS65_LL_BFX27 HS65_LL_BFX22 HS65_LL_BFX284 HS65_LL_BFX31 HS65_LL_BFX4 HS65_LL_BFX35 HS65_LL_BFX44 HS65_LL_BFX40 HS65_LL_BFX53 HS65_LL_BFX49 HS65_LL_BFX62 HS65_LL_BFX9 HS65_LL_BFX7 HS65_LL_BFX71
+[05/12 14:17:26     37s] Total number of usable buffers: 39
+[05/12 14:17:26     37s] List of unusable buffers: CLOCKTREE
+[05/12 14:17:26     37s] Total number of unusable buffers: 1
+[05/12 14:17:26     37s] List of usable inverters: HS65_LL_CNIVX10 HS65_LL_CNIVX103 HS65_LL_CNIVX124 HS65_LL_CNIVX14 HS65_LL_CNIVX21 HS65_LL_CNIVX17 HS65_LL_CNIVX24 HS65_LL_CNIVX3 HS65_LL_CNIVX27 HS65_LL_CNIVX34 HS65_LL_CNIVX31 HS65_LL_CNIVX41 HS65_LL_CNIVX38 HS65_LL_CNIVX48 HS65_LL_CNIVX45 HS65_LL_CNIVX55 HS65_LL_CNIVX52 HS65_LL_CNIVX58 HS65_LL_CNIVX7 HS65_LL_CNIVX62 HS65_LL_CNIVX82 HS65_LL_IVX13 HS65_LL_IVX106 HS65_LL_IVX142 HS65_LL_IVX2 HS65_LL_IVX18 HS65_LL_IVX213 HS65_LL_IVX27 HS65_LL_IVX22 HS65_LL_IVX284 HS65_LL_IVX31 HS65_LL_IVX4 HS65_LL_IVX35 HS65_LL_IVX44 HS65_LL_IVX40 HS65_LL_IVX53 HS65_LL_IVX49 HS65_LL_IVX62 HS65_LL_IVX9 HS65_LL_IVX7 HS65_LL_IVX71
+[05/12 14:17:26     37s] Total number of usable inverters: 41
+[05/12 14:17:26     37s] List of unusable inverters:
+[05/12 14:17:26     37s] Total number of unusable inverters: 0
+[05/12 14:17:26     37s] List of identified usable delay cells: HS65_LL_DLYIC2X4 HS65_LL_DLYIC2X9 HS65_LL_DLYIC2X7 HS65_LL_DLYIC4X4 HS65_LL_DLYIC4X9 HS65_LL_DLYIC4X7 HS65_LL_DLYIC6X4 HS65_LL_DLYIC6X7 HS65_LL_DLYIC6X9
+[05/12 14:17:26     37s] Total number of identified usable delay cells: 9
+[05/12 14:17:26     37s] List of identified unusable delay cells: HS65_LL_CNBFX38_0 HS65_LL_CNBFX38_1 HS65_LL_CNBFX38_10 HS65_LL_CNBFX38_11 HS65_LL_CNBFX38_12 HS65_LL_CNBFX38_13 HS65_LL_CNBFX38_14 HS65_LL_CNBFX38_15 HS65_LL_CNBFX38_16 HS65_LL_CNBFX38_17 HS65_LL_CNBFX38_18 HS65_LL_CNBFX38_19 HS65_LL_CNBFX38_2 HS65_LL_CNBFX38_20 HS65_LL_CNBFX38_21 HS65_LL_CNBFX38_22 HS65_LL_CNBFX38_23 HS65_LL_CNBFX38_3 HS65_LL_CNBFX38_4 HS65_LL_CNBFX38_5 HS65_LL_CNBFX38_6 HS65_LL_CNBFX38_7 HS65_LL_CNBFX38_8 HS65_LL_CNBFX38_9[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) End ...
+
+[05/12 14:17:26     37s] Total number of identified unusable delay cells: 24
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] TimeStamp Deleting Cell Server Begin ...
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] TimeStamp Deleting Cell Server End ...
+[05/12 14:17:26     37s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1379.6M, current mem=1379.5M)
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) Begin ...
+[05/12 14:17:26     37s] Summary for sequential cells identification: 
+[05/12 14:17:26     37s]   Identified SBFF number: 210
+[05/12 14:17:26     37s]   Identified MBFF number: 0
+[05/12 14:17:26     37s]   Identified SB Latch number: 0
+[05/12 14:17:26     37s]   Identified MB Latch number: 0
+[05/12 14:17:26     37s]   Not identified SBFF number: 0
+[05/12 14:17:26     37s]   Not identified MBFF number: 0
+[05/12 14:17:26     37s]   Not identified SB Latch number: 0
+[05/12 14:17:26     37s]   Not identified MB Latch number: 0
+[05/12 14:17:26     37s]   Number of sequential cells which are not FFs: 45
+[05/12 14:17:26     37s]  Visiting view : view_wcl_slow
+[05/12 14:17:26     37s]    : PowerDomain = none : Weighted F : unweighted  = 22.60 (1.000) with rcCorner = 0
+[05/12 14:17:26     37s]    : PowerDomain = none : Weighted F : unweighted  = 18.90 (1.000) with rcCorner = -1
+[05/12 14:17:26     37s]  Visiting view : view_wcl_fast
+[05/12 14:17:26     37s]    : PowerDomain = none : Weighted F : unweighted  = 7.90 (1.000) with rcCorner = 1
+[05/12 14:17:26     37s]    : PowerDomain = none : Weighted F : unweighted  = 6.70 (1.000) with rcCorner = -1
+[05/12 14:17:26     37s] TLC MultiMap info (StdDelay):
+[05/12 14:17:26     37s]   : delay_corner_wcl_fast + wcl_fast + 1 + no RcCorner := 6.7ps
+[05/12 14:17:26     37s]   : delay_corner_wcl_fast + wcl_fast + 1 + rc_corner_min := 7.9ps
+[05/12 14:17:26     37s]   : delay_corner_wcl_slow + wcl_slow + 1 + no RcCorner := 18.9ps
+[05/12 14:17:26     37s]   : delay_corner_wcl_slow + wcl_slow + 1 + rc_corner_max := 22.6ps
+[05/12 14:17:26     37s]  Setting StdDelay to: 22.6ps
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) End ...
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] TimeStamp Deleting Cell Server Begin ...
+[05/12 14:17:26     37s] 
+[05/12 14:17:26     37s] TimeStamp Deleting Cell Server End ...
+[05/12 14:17:26     37s] @file 18:
+[05/12 14:17:26     37s] @@file 19: read_io_file pad.io
+[05/12 14:17:26     37s] Reading IO assignment file "pad.io" ...
+[05/12 14:17:26     37s] **Warn: ignored IO file "pad.io" line 86: Pad: PVDDE2   E VDDE_ST_SF_LIN
+[05/12 14:17:26     37s]   Reason: duplicate specification.
+[05/12 14:17:26     37s] **Warn: ignored IO file "pad.io" line 87: Pad: PGNDE2   E GNDE_ST_SF_LIN
+[05/12 14:17:26     37s]   Reason: duplicate specification.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[4].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[5].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[6].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[7].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[8].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[9].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[10].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[11].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[12].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[13].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[14].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[15].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[16].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[17].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[18].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[19].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[20].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[21].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[22].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (IMPFP-780):	IO instance 'gen_gpio_pads[23].p_gpio' isn't defined in IO file, io placement might be incorrect.
+[05/12 14:17:26     37s] **WARN: (EMS-27):	Message (IMPFP-780) has exceeded the current message display limit of 20.
+[05/12 14:17:26     37s] To increase the message display limit, refer to the product command reference manual.
+[05/12 14:17:26     37s] **WARN: (IMPFP-3108):	The tool will relocate the IOs because of not enough space to accommodate the IOs for side 'W' between IOs 'PVDD2' and 'p_spim_sdi3'.
+[05/12 14:17:26     37s] IO: gen_gpio_pads[14].p_gpio has offset specified but is not the first IO for side W
+[05/12 14:17:26     37s] **WARN: (IMPFP-3108):	The tool will relocate the IOs because of not enough space to accommodate the IOs for side 'S' between IOs 'PVDD3' and 'p_i2c_sda'.
+[05/12 14:17:26     37s] IO: gen_gpio_pads[28].p_gpio has offset specified but is not the first IO for side S
+[05/12 14:17:26     37s] @file 20:
+[05/12 14:17:26     37s] @@file 21: create_floorplan -core_density_size {1.0 0.7 80 80 80 80} -site CORE
+[05/12 14:17:26     37s] Adjusting core size to PlacementGrid : width :1175.4 height : 1175.2
+[05/12 14:17:26     37s] Start create_tracks
+[05/12 14:17:26     37s] @file 22:
+[05/12 14:17:26     37s] @file 23:
+[05/12 14:17:26     37s] @file 24:
+[05/12 14:17:26     37s] #@ End verbose source: genus_output/pulpino_chip.genus_init.tcl
+[05/12 14:17:26     37s] @innovus 3> add_tracks
+
+[05/12 14:17:30     38s] Start create_tracks
+[05/12 14:17:30     38s] @innovus 4> gui_select -point {0.07000 0.04400}
+[05/12 14:17:38     40s] @innovus 5> create_tracks
+
+[05/12 14:17:48     42s] 
+[05/12 14:17:48     42s] Usage: create_tracks [-help] -direction <string> -layer <string> -num <integer>
+[05/12 14:17:48     42s]                      -start <float> -step <float>
+[05/12 14:17:48     42s] 
+[05/12 14:17:48     42s] **ERROR: (IMPTCM-32):	Wrong number of arguments specified for command "create_tracks".
+[05/12 14:17:48     42s] 
+[05/12 14:17:48     42s] 
+[05/12 14:17:48     42s] @innovus 6> set sram0 [lindex [get_db [get_db insts -if {.name == *sram_inst}] .name ] 0]
+
+[05/12 14:18:22     50s] @innovus 7> create_relative_floorplan -place $sram0 -ref_type core_boundary -horizontal_edge_separate {1 0 1} -vertical_edge_separate {0 0 0}
+
+[05/12 14:20:49     83s] 
+[05/12 14:20:49     83s] **ERROR: (IMPFP-6005):	The number of inputs in options should be identical.
+[05/12 14:20:49     83s] 
+[05/12 14:20:49     83s] @innovus 8> create_floorplan -site CORE -utilization 0.70 -margins 30 30 30 30
+
+[05/12 14:22:09    101s] 
+[05/12 14:22:09    101s] 
+[05/12 14:22:09    101s] Usage: create_floorplan [-help] [-core_margins_by {io die}]
+[05/12 14:22:09    101s]                         [-die_size_by_io_height {min max}] [-flip {n s f}]
+[05/12 14:22:09    101s]                         [-floorplan_origin {center llcorner}] [-match_to_site]
+[05/12 14:22:09    101s]                         [-no_resize] [-no_snap_to_grid] [-overlap_same_site_row] {-box_size <die_box io_box core_box> | -core_size <w h left bottom right top> | -die_size <w h left bottom right top> | -core_density_size <aspectratio [rowdensity [left bottom right top]]> | -stdcell_density_size <aspectratio [stdcelldensity [left bottom bight bop]]> | -keep_shape_density <util>} [-site <site> | -site_only <site>]
+[05/12 14:22:09    101s] 
+[05/12 14:22:09    101s] **ERROR: (IMPTCM-48):	"-utilization" is not a legal option for command "create_floorplan". Either the current option or an option prior to it is not specified correctly.
+[05/12 14:22:09    101s] 
+[05/12 14:22:09    101s] @innovus 9> plan_design
+
+[05/12 14:23:45    123s] **WARN: (IMPAFP-9024):	This command is hidden and will be obsolete in the next major release. For module placement, use proto_design instead. For macro placement, use place_design -concurrent_macros to place both standard cells and macros together.
+[05/12 14:23:45    123s] **WARN: (IMPAFP-9024):	This command is hidden and will be obsolete in the next major release. For module placement, use proto_design instead. For macro placement, use place_design -concurrent_macros to place both standard cells and macros together.
+[05/12 14:23:45    123s] **WARN: (IMPTCM-77):	Option "-honorOrientation" for command getPlanDesignMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+[05/12 14:23:45    123s] **WARN: (IMPAFP-9024):	This command is hidden and will be obsolete in the next major release. For module placement, use proto_design instead. For macro placement, use place_design -concurrent_macros to place both standard cells and macros together.
+[05/12 14:23:45    123s] **WARN: (EMS-27):	Message (IMPTCM-77) has exceeded the current message display limit of 1.
+[05/12 14:23:45    123s] To increase the message display limit, refer to the product command reference manual.
+[05/12 14:23:45    123s] **WARN: (IMPAFP-9024):	This command is hidden and will be obsolete in the next major release. For module placement, use proto_design instead. For macro placement, use place_design -concurrent_macros to place both standard cells and macros together.
+[05/12 14:23:45    123s]  *** Starting placeMacroHigh flow *** 
+[05/12 14:23:45    123s] OPERPROF: Starting PlacementDelFiller
+ at level 1, MEM:1732.7M, EPOCH TIME: 1778588625.345925
+[05/12 14:23:45    123s] Deleted 0 physical inst  (cell - / prefix -).
+[05/12 14:23:45    123s] OPERPROF: Finished PlacementDelFiller
+ at level 1, CPU:0.000, REAL:0.001, MEM:1732.7M, EPOCH TIME: 1778588625.346787
+[05/12 14:23:45    123s] ***** New seed flow = 1. *****  
+[05/12 14:23:45    123s] Auto Macro Seed: i_core/core_region_i/instr_mem
+[05/12 14:23:45    123s] Auto Macro Seed: i_core/core_region_i/data_mem
+[05/12 14:23:45    123s] Auto Macro Seed: i_core
+[05/12 14:23:45    123s] Ignore PD Guides: numIgnoredGuide = 0 
+[05/12 14:23:45    123s] INFO: #ExclusiveGroups=0
+[05/12 14:23:45    123s] INFO: There are no Exclusive Groups.
+[05/12 14:23:45    123s] Extracting standard cell pins and blockage ...... 
+[05/12 14:23:45    123s] Pin and blockage extraction finished
+[05/12 14:23:45    123s] Extracting macro/IO cell pins and blockage ...... 
+[05/12 14:23:45    123s] Pin and blockage extraction finished
+[05/12 14:23:45    123s] *** Starting "NanoPlace(TM) placement v#1 (mem=1732.7M)" ...
+[05/12 14:23:45    123s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[05/12 14:23:45    123s] 
+[05/12 14:23:45    123s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) Begin ...
+[05/12 14:23:45    123s] Summary for sequential cells identification: 
+[05/12 14:23:45    123s]   Identified SBFF number: 210
+[05/12 14:23:45    123s]   Identified MBFF number: 0
+[05/12 14:23:45    123s]   Identified SB Latch number: 0
+[05/12 14:23:45    123s]   Identified MB Latch number: 0
+[05/12 14:23:45    123s]   Not identified SBFF number: 0
+[05/12 14:23:45    123s]   Not identified MBFF number: 0
+[05/12 14:23:45    123s]   Not identified SB Latch number: 0
+[05/12 14:23:45    123s]   Not identified MB Latch number: 0
+[05/12 14:23:45    123s]   Number of sequential cells which are not FFs: 45
+[05/12 14:23:45    123s]  Visiting view : view_wcl_slow
+[05/12 14:23:45    123s]    : PowerDomain = none : Weighted F : unweighted  = 22.60 (1.000) with rcCorner = 0
+[05/12 14:23:45    123s]    : PowerDomain = none : Weighted F : unweighted  = 18.90 (1.000) with rcCorner = -1
+[05/12 14:23:45    123s]  Visiting view : view_wcl_fast
+[05/12 14:23:45    123s]    : PowerDomain = none : Weighted F : unweighted  = 7.90 (1.000) with rcCorner = 1
+[05/12 14:23:45    123s]    : PowerDomain = none : Weighted F : unweighted  = 6.70 (1.000) with rcCorner = -1
+[05/12 14:23:45    123s] TLC MultiMap info (StdDelay):
+[05/12 14:23:45    123s]   : delay_corner_wcl_fast + wcl_fast + 1 + no RcCorner := 6.7ps
+[05/12 14:23:45    123s]   : delay_corner_wcl_fast + wcl_fast + 1 + rc_corner_min := 7.9ps
+[05/12 14:23:45    123s]   : delay_corner_wcl_slow + wcl_slow + 1 + no RcCorner := 18.9ps
+[05/12 14:23:45    123s]   : delay_corner_wcl_slow + wcl_slow + 1 + rc_corner_max := 22.6ps
+[05/12 14:23:45    123s]  Setting StdDelay to: 22.6ps
+[05/12 14:23:45    123s] 
+[05/12 14:23:45    123s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) End ...
+[05/12 14:23:45    123s] Wait...
+[05/12 14:23:47    125s] *** Build Buffered Sizing Timing Model (Used Compact Buffer Set) ...(cpu=0:00:01.8 mem=1859.0M) ***
+[05/12 14:23:48    126s] *** Build Virtual Sizing Timing Model
+[05/12 14:23:48    126s] (cpu=0:00:02.8 mem=1902.0M) ***
+[05/12 14:23:48    126s] No user-set net weight.
+[05/12 14:23:48    126s] Net fanout histogram:
+[05/12 14:23:48    126s] 2		: 23827 (61.0%) nets
+[05/12 14:23:48    126s] 3		: 5473 (14.0%) nets
+[05/12 14:23:48    126s] 4     -	14	: 8116 (20.8%) nets
+[05/12 14:23:48    126s] 15    -	39	: 1593 (4.1%) nets
+[05/12 14:23:48    126s] 40    -	79	: 13 (0.0%) nets
+[05/12 14:23:48    126s] 80    -	159	: 5 (0.0%) nets
+[05/12 14:23:48    126s] no activity file in design. spp won't run.
+[05/12 14:23:48    126s] 160   -	319	: 4 (0.0%) nets
+[05/12 14:23:48    126s] 320   -	639	: 2 (0.0%) nets
+[05/12 14:23:48    126s] 640   -	1279	: 1 (0.0%) nets
+[05/12 14:23:48    126s] 1280  -	2559	: 0 (0.0%) nets
+[05/12 14:23:48    126s] 2560  -	5119	: 0 (0.0%) nets
+[05/12 14:23:48    126s] 5120+		: 1 (0.0%) nets
+[05/12 14:23:48    126s] Options: timingDriven clkGateAware pinGuide congEffort=auto gpeffort=medium 
+[05/12 14:23:48    126s] Processing tracks to init pin-track alignment.
+[05/12 14:23:48    126s] z: 2, totalTracks: 1
+[05/12 14:23:48    126s] z: 4, totalTracks: 1
+[05/12 14:23:48    126s] z: 6, totalTracks: 1
+[05/12 14:23:48    126s] z: 8, totalTracks: 1
+[05/12 14:23:48    126s] #spOpts: hrOri=1 hrSnap=1 rpCkHalo=4 
+[05/12 14:23:48    126s] All LLGs are deleted
+[05/12 14:23:48    126s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/12 14:23:48    126s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/12 14:23:48    126s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:1923.0M, EPOCH TIME: 1778588628.312855
+[05/12 14:23:48    126s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.001, MEM:1923.0M, EPOCH TIME: 1778588628.313772
+[05/12 14:23:48    126s] #std cell=37058 (0 fixed + 37058 movable) #buf cell=739 #inv cell=2160 #block=32 (32 floating + 0 preplaced)
+[05/12 14:23:48    126s] #ioInst=77 #net=39035 #term=154569 #term/net=3.96, #fixedIo=77, #floatIo=0, #fixedPin=57, #floatPin=0
+[05/12 14:23:48    126s] stdCell: 37058 single + 0 double + 0 multi
+[05/12 14:23:48    126s] Total standard cell length = 79.0900 (mm), area = 0.2056 (mm^2)
+[05/12 14:23:48    126s] OPERPROF: Starting spInitSiteArr at level 1, MEM:1924.0M, EPOCH TIME: 1778588628.324648
+[05/12 14:23:48    126s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/12 14:23:48    126s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/12 14:23:48    126s] OPERPROF:   Starting spiInitFpSiteArr at level 2, MEM:1924.0M, EPOCH TIME: 1778588628.324962
+[05/12 14:23:48    126s] Max number of tech site patterns supported in site array is 256.
+[05/12 14:23:48    126s] Core basic site is CORE
+[05/12 14:23:48    126s] **WARN: (IMPSP-362):	Site 'CORE' has one std.Cell height, so ignoring its X-symmetry.
+[05/12 14:23:48    126s] Type 'man IMPSP-362' for more detail.
+[05/12 14:23:48    126s] OPERPROF:     Starting spiCheckSiteIfFastDPInitAvailable at level 3, MEM:1927.0M, EPOCH TIME: 1778588628.345646
+[05/12 14:23:48    126s] After signature check, allow fast init is false, keep pre-filter is false.
+[05/12 14:23:48    126s] After signature check and other controls, allow fast init is false, keep pre-filter is false.
+[05/12 14:23:48    126s] OPERPROF:     Finished spiCheckSiteIfFastDPInitAvailable at level 3, CPU:0.000, REAL:0.001, MEM:1927.0M, EPOCH TIME: 1778588628.346171
+[05/12 14:23:48    126s] Use non-trimmed site array because memory saving is not enough.
+[05/12 14:23:48    126s] SiteArray: non-trimmed site array dimensions = 452 x 5877
+[05/12 14:23:48    126s] SiteArray: use 13,307,904 bytes
+[05/12 14:23:48    126s] SiteArray: current memory after site array memory allocation 1939.7M
+[05/12 14:23:48    126s] SiteArray: FP blocked sites are writable
+[05/12 14:23:48    126s] Estimated cell power/ground rail width = 0.325 um
+[05/12 14:23:48    126s] Layer info - lib-1st H=1, V=2.  Cell-FPin=1. Top-pin=2
+[05/12 14:23:48    126s] OPERPROF:     Starting RoutingBlockageFromWireViaStBox at level 3, MEM:1939.7M, EPOCH TIME: 1778588628.372362
+[05/12 14:23:48    126s] OPERPROF:     Finished RoutingBlockageFromWireViaStBox at level 3, CPU:0.000, REAL:0.000, MEM:1939.7M, EPOCH TIME: 1778588628.372447
+[05/12 14:23:48    126s] SiteArray: number of non floorplan blocked sites for llg default is 2656404
+[05/12 14:23:48    126s] Atter site array init, number of instance map data is 0.
+[05/12 14:23:48    126s] OPERPROF:   Finished spiInitFpSiteArr at level 2, CPU:0.060, REAL:0.067, MEM:1939.7M, EPOCH TIME: 1778588628.392210
+[05/12 14:23:48    126s] 
+[05/12 14:23:48    126s]  Pre_CCE_Colorizing is not ON! (0:0:1129:0)
+[05/12 14:23:48    126s] OPERPROF: Finished spInitSiteArr at level 1, CPU:0.080, REAL:0.083, MEM:1939.7M, EPOCH TIME: 1778588628.407796
+[05/12 14:23:48    126s] 
+[05/12 14:23:48    126s]  Pre_CCE_Colorizing is not ON! (0:0:1129:0)
+[05/12 14:23:48    126s] Average module density = 0.693.
+[05/12 14:23:48    126s] Density for the design = 0.693.
+[05/12 14:23:48    126s]        = (stdcell_area 395450 sites (205634 um^2) + block_area 1444320 sites (751046 um^2)) / alloc_area 2656404 sites (1381330 um^2).
+[05/12 14:23:48    126s] Pin Density = 0.05819.
+[05/12 14:23:48    126s]             = total # of pins 154569 / total area 2656404.
+[05/12 14:23:48    126s] OPERPROF: Starting spSetupSpareRegionBox at level 1, MEM:1939.7M, EPOCH TIME: 1778588628.436716
+[05/12 14:23:48    126s] OPERPROF: Finished spSetupSpareRegionBox at level 1, CPU:0.010, REAL:0.014, MEM:1939.7M, EPOCH TIME: 1778588628.450530
+[05/12 14:23:48    126s] OPERPROF: Starting pre-place ADS at level 1, MEM:1939.7M, EPOCH TIME: 1778588628.453962
+[05/12 14:23:48    126s] OPERPROF:   Starting pre-place ADS Build Supply Map at level 2, MEM:1940.7M, EPOCH TIME: 1778588628.493190
+[05/12 14:23:48    126s] OPERPROF:     Starting ADS RRMInitG at level 3, MEM:1940.7M, EPOCH TIME: 1778588628.493285
+[05/12 14:23:48    126s] OPERPROF:     Finished ADS RRMInitG at level 3, CPU:0.000, REAL:0.000, MEM:1940.7M, EPOCH TIME: 1778588628.493502
+[05/12 14:23:48    126s] OPERPROF:     Starting ADS RRMCPTSL at level 3, MEM:1940.7M, EPOCH TIME: 1778588628.493552
+[05/12 14:23:48    126s] OPERPROF:       Starting ADS RRMBLKB at level 4, MEM:1940.7M, EPOCH TIME: 1778588628.493597
+[05/12 14:23:48    126s] OPERPROF:       Finished ADS RRMBLKB at level 4, CPU:0.000, REAL:0.001, MEM:1940.7M, EPOCH TIME: 1778588628.494653
+[05/12 14:23:48    126s] OPERPROF:       Starting ADS RRMCPTTR at level 4, MEM:1940.7M, EPOCH TIME: 1778588628.494704
+[05/12 14:23:48    126s] OPERPROF:       Finished ADS RRMCPTTR at level 4, CPU:0.000, REAL:0.000, MEM:1940.7M, EPOCH TIME: 1778588628.494864
+[05/12 14:23:48    126s] OPERPROF:     Finished ADS RRMCPTSL at level 3, CPU:0.000, REAL:0.001, MEM:1940.7M, EPOCH TIME: 1778588628.494911
+[05/12 14:23:48    126s] OPERPROF:   Finished pre-place ADS Build Supply Map at level 2, CPU:0.000, REAL:0.002, MEM:1940.7M, EPOCH TIME: 1778588628.495556
+[05/12 14:23:48    126s] ADSU 0.149 -> 0.149. site 2656404.000 -> 2654781.600. GS 20.800
+[05/12 14:23:48    126s] OPERPROF: Finished pre-place ADS at level 1, CPU:0.080, REAL:0.082, MEM:1940.7M, EPOCH TIME: 1778588628.535708
+[05/12 14:23:48    126s] OPERPROF: Starting spMPad at level 1, MEM:1940.7M, EPOCH TIME: 1778588628.535886
+[05/12 14:23:48    126s] OPERPROF:   Starting spContextMPad at level 2, MEM:1940.7M, EPOCH TIME: 1778588628.537386
+[05/12 14:23:48    126s] OPERPROF:   Finished spContextMPad at level 2, CPU:0.000, REAL:0.000, MEM:1940.7M, EPOCH TIME: 1778588628.537437
+[05/12 14:23:48    126s] OPERPROF: Finished spMPad at level 1, CPU:0.000, REAL:0.002, MEM:1940.7M, EPOCH TIME: 1778588628.537484
+[05/12 14:23:48    126s] Initial padding reaches pin density 0.243 for top
+[05/12 14:23:48    126s] InitPadU 0.693 -> 0.822 for top
+[05/12 14:23:48    126s] Fence Initialization: numPrefixFence = 0,  numAutoFence = 0, numPrefixGuide = 0  numAutoGuide = 0 numNoCon = 0 
+[05/12 14:23:48    126s] === lastAutoLevel = 10 
+[05/12 14:23:48    126s] OPERPROF: Starting spSectionHeadInit at level 1, MEM:1940.7M, EPOCH TIME: 1778588628.693743
+[05/12 14:23:48    126s] OPERPROF: Finished spSectionHeadInit at level 1, CPU:0.020, REAL:0.028, MEM:1940.7M, EPOCH TIME: 1778588628.721361
+[05/12 14:23:48    126s] OPERPROF: Starting spInitNetWt at level 1, MEM:1940.7M, EPOCH TIME: 1778588628.726331
+[05/12 14:23:48    126s] no activity file in design. spp won't run.
+[05/12 14:23:48    126s] [spp] 0
+[05/12 14:23:48    126s] [adp] 0:1:1:3
+[05/12 14:23:48    126s] OPERPROF: Finished spInitNetWt at level 1, CPU:0.010, REAL:0.009, MEM:1943.7M, EPOCH TIME: 1778588628.735664
+[05/12 14:23:48    126s] OPERPROF: Starting npMain at level 1, MEM:1943.7M, EPOCH TIME: 1778588628.762385
+[05/12 14:23:50    127s] Iteration  1: Total net bbox = 7.183e+05 (1.26e+05 5.92e+05)
+[05/12 14:23:50    127s]               Est.  stn bbox = 7.928e+05 (1.40e+05 6.52e+05)
+[05/12 14:23:50    127s]               cpu = 0:00:00.5 real = 0:00:01.0 mem = 2079.9M
+[05/12 14:23:50    127s] OPERPROF: Finished npMain at level 1, CPU:0.620, REAL:1.617, MEM:2065.9M, EPOCH TIME: 1778588630.379510
+[05/12 14:23:50    127s] User specified -module_cluster_mode =  0 
+[05/12 14:23:50    127s] 
+[05/12 14:23:50    127s] OPERPROF: Starting npMain at level 1, MEM:2065.9M, EPOCH TIME: 1778588630.412961
+[05/12 14:23:50    127s] Iteration  2: Total net bbox = 7.183e+05 (1.26e+05 5.92e+05)
+[05/12 14:23:50    127s]               Est.  stn bbox = 7.928e+05 (1.40e+05 6.52e+05)
+[05/12 14:23:50    127s]               cpu = 0:00:00.0 real = 0:00:00.0 mem = 2082.9M
+[05/12 14:23:50    127s] Iteration  3: Total net bbox = 7.728e+05 (2.18e+05 5.55e+05)
+[05/12 14:23:50    127s]               Est.  stn bbox = 8.589e+05 (2.46e+05 6.13e+05)
+[05/12 14:23:50    127s]               cpu = 0:00:00.1 real = 0:00:00.0 mem = 2141.8M
+[05/12 14:23:50    127s] OPERPROF: Finished npMain at level 1, CPU:0.320, REAL:0.325, MEM:2141.8M, EPOCH TIME: 1778588630.737725
+[05/12 14:23:50    127s] 
+[05/12 14:23:50    127s] 
+[05/12 14:23:50    127s] OPERPROF: Starting npMain at level 1, MEM:2141.8M, EPOCH TIME: 1778588630.772363
+[05/12 14:23:51    128s] exp_mt_sequential is set from setPlaceMode option to 1
+[05/12 14:23:51    128s] Setting dotProdMode from setPlaceMode option to Multi-thread sequential mode (nrThread=1)
+[05/12 14:23:51    128s] place_exp_mt_interval set to default 32
+[05/12 14:23:51    128s] place_exp_mt_interval_bias (first half) set to default 0.750000
+[05/12 14:23:54    131s] Iteration  4: Total net bbox = 4.372e+05 (1.65e+05 2.72e+05)
+[05/12 14:23:54    131s]               Est.  stn bbox = 5.334e+05 (2.02e+05 3.31e+05)
+[05/12 14:23:54    131s]               cpu = 0:00:03.5 real = 0:00:04.0 mem = 2142.8M
+[05/12 14:23:54    131s] OPERPROF: Finished npMain at level 1, CPU:3.720, REAL:3.726, MEM:2142.8M, EPOCH TIME: 1778588634.498499
+[05/12 14:23:54    131s] 
+[05/12 14:23:54    131s] 
+[05/12 14:23:54    131s] OPERPROF: Starting npMain at level 1, MEM:2142.8M, EPOCH TIME: 1778588634.533601
+[05/12 14:23:59    136s] Iteration  5: Total net bbox = 7.491e+05 (3.82e+05 3.67e+05)
+[05/12 14:23:59    136s]               Est.  stn bbox = 8.936e+05 (4.52e+05 4.41e+05)
+[05/12 14:23:59    136s]               cpu = 0:00:04.7 real = 0:00:05.0 mem = 2143.8M
+[05/12 14:23:59    136s] OPERPROF: Finished npMain at level 1, CPU:4.960, REAL:4.945, MEM:2143.8M, EPOCH TIME: 1778588639.478577
+[05/12 14:23:59    136s] 
+[05/12 14:24:06    143s] nrCritNet: 0.00% ( 0 / 39035 ) cutoffSlk: 214748364.7ps stdDelay: 22.6ps
+[05/12 14:24:06    143s] 
+[05/12 14:24:06    144s] Iteration  6: Total net bbox = 7.665e+05 (3.95e+05 3.71e+05)
+[05/12 14:24:06    144s]               Est.  stn bbox = 9.120e+05 (4.66e+05 4.46e+05)
+[05/12 14:24:06    144s]               cpu = 0:00:17.2 real = 0:00:18.0 mem = 2155.3M
+[05/12 14:24:06    144s] OPERPROF: Starting npMain at level 1, MEM:2155.3M, EPOCH TIME: 1778588646.939904
+[05/12 14:24:15    152s] OPERPROF: Finished npMain at level 1, CPU:8.820, REAL:8.793, MEM:2217.7M, EPOCH TIME: 1778588655.732942
+[05/12 14:24:15    152s] Iteration  7: Total net bbox = 8.558e+05 (4.37e+05 4.19e+05)
+[05/12 14:24:15    152s]               Est.  stn bbox = 1.017e+06 (5.20e+05 4.97e+05)
+[05/12 14:24:15    152s]               cpu = 0:00:08.9 real = 0:00:09.0 mem = 2217.7M
+[05/12 14:24:15    152s]  RelinkConst: Total constraint = 0, Relinked 0 constraints . 
+[05/12 14:24:15    152s] User specified -fenceSpacing =  -1.0000 
+[05/12 14:24:15    152s] User specified fence spacing: -1.0000 um
+[05/12 14:24:15    152s] *** The nonConstraint instance area ratio is 0.548609 
+[05/12 14:24:15    152s] *** The prefixed-fenceArea/coreBoxArea is 0.000000, The auto-ConstraintArea/coreBoxArea is 0.000000 
+[05/12 14:24:15    152s] Start Auto fence creation, hasNoConInst = 1  .
+[05/12 14:24:15    152s] 
+[05/12 14:24:15    152s] ================== Start Auto-Fence Creation ==================
+[05/12 14:24:15    152s] User define fence spacing: -1.0000 um
+[05/12 14:24:15    152s] Number of Movable Guide      : 0
+[05/12 14:24:15    152s] Number of Movable Region     : 0
+[05/12 14:24:15    152s] Number of Movable Fence      : 0
+[05/12 14:24:15    152s] Number of Movable Soft Guide : 0
+[05/12 14:24:15    152s] Total Movable Objects        : 0 (non-group: 0, group: 0)
+[05/12 14:24:15    152s] Total Prefixed Objects       : 0
+[05/12 14:24:15    152s] Total Partition Cut Objects  : 0
+[05/12 14:24:15    152s] 
+[05/12 14:24:15    152s] 
+[05/12 14:24:15    152s] 
+[05/12 14:24:15    152s] Number of Nested Objects    : 0
+[05/12 14:24:15    152s] Number of Non-Nested Objects: 0
+[05/12 14:24:15    152s] Number of Nested Sets       : 0
+[05/12 14:24:15    152s] Number of Master&Clone Pairs: 0
+[05/12 14:24:15    152s] 
+[05/12 14:24:15    152s] Fence Spacing: 2.0000 um
+[05/12 14:24:15    152s] Snap Spacing: X(0.2000 um), Y(2.6000 um)
+[05/12 14:24:15    152s] Fence2Core Spaceing: 0.0000 um
+[05/12 14:24:15    152s] 
+[05/12 14:24:15    152s] ==== Design Information ====
+[05/12 14:24:15    152s] Core site: (192000, 192000) - (1367400, 1367200)
+[05/12 14:24:15    152s] Design Whitespace% : 100.00%
+[05/12 14:24:15    152s] Maximum Logical Level: 0
+[05/12 14:24:15    152s] Has Non-constraint Instance: 1
+[05/12 14:24:15    152s] Allow Disjoint Whitespace: 0
+[05/12 14:24:15    152s] 
+[05/12 14:24:15    152s] ==To Place Non-Nested Objects==
+[05/12 14:24:15    152s] Targets: 
+[05/12 14:24:15    152s] Number of Total Targets: 0
+[05/12 14:24:15    152s] 
+[05/12 14:24:15    152s] ================== Finished Auto-Fence Creation ===============
+[05/12 14:24:15    152s] *** Done Auto-Fence Creation, (cpu = 0:00:00.0, mem = 2217.7M, mem_delta = 0.0M) ***
+[05/12 14:24:15    152s] End Auto fence creation 1.
+[05/12 14:24:16    152s] New Seed Flow: add i_core as hinst seed
+[05/12 14:24:16    152s] New Seed Flow: add i_core/core_region_i/data_mem as hinst seed
+[05/12 14:24:16    152s] New Seed Flow: add i_core/core_region_i/instr_mem as hinst seed
+[05/12 14:24:16    152s] MacroPlacer: Options: -pathConnWeight 1.000000 -bp 6 
+[05/12 14:24:16    152s] MacroPlacer: Reading Data for Block Placer
+[05/12 14:24:16    153s] MacroPlacer: total number of seeds contain macros: 2
+[05/12 14:24:16    153s] MacroPlacer: total number of seeds:                3
+[05/12 14:24:16    153s] MacroPlacer: total number of macros:               32
+[05/12 14:24:16    153s] MacroPlacer: total number of clusters:             3
+[05/12 14:24:16    153s] MacroPlacer: total number of ios:                  77
+[05/12 14:24:16    153s] MacroPlacer: total number of nets:                 359
+[05/12 14:24:16    153s] MacroPlacer: total number of keepouts:             0
+[05/12 14:24:16    153s] MacroPlacer: total number of fences:               0
+[05/12 14:24:16    153s] MacroPlacer: total number of fixed macros:         0
+[05/12 14:24:16    153s] MacroPlacer:            256 2-pins nets
+[05/12 14:24:16    153s] MacroPlacer:              0 3-pins nets
+[05/12 14:24:16    153s] MacroPlacer:              0 4-pins nets
+[05/12 14:24:16    153s] MacroPlacer:             80 5-pins nets
+[05/12 14:24:16    153s] MacroPlacer: Merging nets.
+[05/12 14:24:16    153s] MacroPlacer: total number of merged nets: 32
+[05/12 14:24:16    153s] -maxRouteLayer is specified which turned on auto macro spacing estimation.
+[05/12 14:24:16    153s] Macro spacing is determined by auto spacing estimation, ..., see documentation for details.
+[05/12 14:24:16    153s] MacroPlacer: Finished data reading for Block Placer
+[05/12 14:24:16    153s] ... in Multi-Level Module Mode...
+[05/12 14:24:16    153s] Start generating contour.
+[05/12 14:24:16    153s] Completed data preparation.
+[05/12 14:24:16    153s] 
+[05/12 14:24:16    153s] ================== Start to Place This Module ===============
+[05/12 14:24:16    153s] 
+[05/12 14:24:16    153s] ==== Design Information ====
+[05/12 14:24:16    153s] Core site: (192000, 192000) - (1367400, 1367200)
+[05/12 14:24:16    153s] Num of Blocks 32 (M: 32, F: 0, O: 0)
+[05/12 14:24:16    153s]  Generating virtual wall for each modules
+[05/12 14:24:16    153s] ...
+[05/12 14:24:16    153s] Calling Macro Packer
+[05/12 14:24:16    153s] ...
+[05/12 14:24:16    153s] 	 Packing whole design.
+[05/12 14:24:16    153s] 
+[05/12 14:24:16    153s] == Macro Placement Stage 0 (6)==
+[05/12 14:24:16    153s] 
+[05/12 14:24:16    153s] == Macro Placement Stage 0 (3)==
+[05/12 14:24:16    153s] 
+[05/12 14:24:16    153s] == Macro Placement Stage 1 (3)==
+[05/12 14:24:16    153s] 
+[05/12 14:24:16    153s] ---Succeed on placing blocks!
+[05/12 14:24:16    153s] *** Done Macro Placing, (cpu = 0:00:00.0, mem = 2217.7M, mem_delta = 0.0M) ***
+[05/12 14:24:16    153s] Num of placed blocks:   32 / 32
+[05/12 14:24:16    153s] Num of unplaced blocks: 0
+[05/12 14:24:16    153s] 
+[05/12 14:24:16    153s] ================== Done Placing This Module ===============
+[05/12 14:24:16    153s] Placing Macro with -bp mode 6.
+[05/12 14:24:16    153s] *** Done refineMacro, (cpu = 0:00:00.5, mem = 2217.7M, mem_delta = 0.0M) ***
+[05/12 14:24:16    153s] $$$$ RefineAll 32  macros
+[05/12 14:24:16    153s] Iteration  8: Total net bbox = 1.058e+06 (5.25e+05 5.33e+05)
+[05/12 14:24:16    153s]               Est.  stn bbox = 1.221e+06 (6.09e+05 6.12e+05)
+[05/12 14:24:16    153s]               cpu = 0:00:26.7 real = 0:00:28.0 mem = 2217.7M
+[05/12 14:24:16    153s] *** cost = 1.058e+06 (5.25e+05 5.33e+05) (cpu for global=0:00:26.7) real=494052:24:16***
+[05/12 14:24:16    153s] Saved padding area to DB
+[05/12 14:24:16    153s] All LLGs are deleted
+[05/12 14:24:16    153s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/12 14:24:16    153s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/12 14:24:16    153s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2217.7M, EPOCH TIME: 1778588656.967550
+[05/12 14:24:16    153s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.001, MEM:2217.7M, EPOCH TIME: 1778588656.968243
+[05/12 14:24:16    153s] Solver runtime cpu: 0:00:16.6 real: 0:00:16.5
+[05/12 14:24:16    153s] Core Placement runtime cpu: 0:00:18.4 real: 0:00:20.0
+[05/12 14:24:16    153s] *** Free Virtual Timing Model ...(mem=2217.7M)
+[05/12 14:24:17    153s] UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+[05/12 14:24:17    153s] UM:*                                                                   final
+[05/12 14:24:17    154s]       flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+[05/12 14:24:17    154s] UM:*                                                                   global_place
+[05/12 14:24:17    154s] *** Finishing placeMacroHigh flow ***
+[05/12 14:24:17    154s] ***** runMacroHigh mode(initial) =   0 
+[05/12 14:24:17    154s] checkFence: found no fence violation.
+[05/12 14:24:17    154s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[05/12 14:24:17    154s] Checking routing tracks.....
+[05/12 14:24:17    154s] Checking other grids.....
+[05/12 14:24:17    154s] Checking FINFET Grid is on Manufacture Grid.....
+[05/12 14:24:17    154s] Checking core/die box is on Grid.....
+[05/12 14:24:17    154s] Checking snap rule ......
+[05/12 14:24:17    154s] Checking Row is on grid......
+[05/12 14:24:17    154s] Checking AreaIO row.....
+[05/12 14:24:17    154s] Checking row out of die ...
+[05/12 14:24:17    154s] Checking routing blockage.....
+[05/12 14:24:17    154s] Checking components.....
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[0].col[0].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[0].col[0].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[0].col[1].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[0].col[1].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[0].col[2].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[0].col[2].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[0].col[3].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[0].col[3].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[1].col[0].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[1].col[0].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[1].col[1].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[1].col[1].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[1].col[2].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[1].col[2].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[1].col[3].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[1].col[3].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[2].col[0].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[2].col[0].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[2].col[1].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[2].col[1].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[2].col[2].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[2].col[2].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[2].col[3].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[2].col[3].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[3].col[0].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[3].col[0].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[3].col[1].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[3].col[1].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[3].col[2].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[3].col[2].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/data_mem/rows[3].col[3].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/data_mem/rows[3].col[3].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[0].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[0].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[1].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[1].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[2].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[2].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (IMPFP-10013):	Halo should be created around block i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[3].i_sram and snapping rules are not checked since it's height is not multiple of default tech site's height.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[3].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] **WARN: (EMS-27):	Message (IMPFP-10013) has exceeded the current message display limit of 20.
+[05/12 14:24:17    154s] To increase the message display limit, refer to the product command reference manual.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[1].col[0].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[1].col[1].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[1].col[2].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[1].col[3].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[2].col[0].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[2].col[1].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[2].col[2].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[2].col[3].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[3].col[0].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[3].col[1].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[3].col[2].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] Instance i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[3].col[3].i_sram not snapped to row-site.
+[05/12 14:24:17    154s] Checking IO Pads out of die...
+[05/12 14:24:17    154s] Checking constraints (guide/region/fence).....
+[05/12 14:24:17    154s] 
+[05/12 14:24:17    154s] Checking Preroutes.....
+[05/12 14:24:17    154s] No. of regular pre-routes not on tracks : 0 
+[05/12 14:24:17    154s] 
+[05/12 14:24:17    154s] Reporting Utilizations.....
+[05/12 14:24:17    154s] 
+[05/12 14:24:17    154s] Processing tracks to init pin-track alignment.
+[05/12 14:24:17    154s] z: 2, totalTracks: 1
+[05/12 14:24:17    154s] z: 4, totalTracks: 1
+[05/12 14:24:17    154s] z: 6, totalTracks: 1
+[05/12 14:24:17    154s] Core utilization  = 69.257914
+[05/12 14:24:17    154s] Effective Utilizations
+[05/12 14:24:17    154s] z: 8, totalTracks: 1
+[05/12 14:24:17    154s] #spOpts: hrOri=1 hrSnap=1 rpCkHalo=4 
+[05/12 14:24:17    154s] All LLGs are deleted
+[05/12 14:24:17    154s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/12 14:24:17    154s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/12 14:24:17    154s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2208.2M, EPOCH TIME: 1778588657.623535
+[05/12 14:24:17    154s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.001, MEM:2208.2M, EPOCH TIME: 1778588657.624348
+[05/12 14:24:17    154s] OPERPROF: Starting spInitSiteArr at level 1, MEM:2208.2M, EPOCH TIME: 1778588657.636797
+[05/12 14:24:17    154s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/12 14:24:17    154s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/12 14:24:17    154s] OPERPROF:   Starting spiInitFpSiteArr at level 2, MEM:2208.2M, EPOCH TIME: 1778588657.637075
+[05/12 14:24:17    154s] Max number of tech site patterns supported in site array is 256.
+[05/12 14:24:17    154s] Core basic site is CORE
+[05/12 14:24:17    154s] OPERPROF:     Starting spiCheckSiteIfFastDPInitAvailable at level 3, MEM:2208.2M, EPOCH TIME: 1778588657.658425
+[05/12 14:24:17    154s] After signature check, allow fast init is true, keep pre-filter is true.
+[05/12 14:24:17    154s] After signature check and other controls, allow fast init is true, keep pre-filter is true.
+[05/12 14:24:17    154s] OPERPROF:     Finished spiCheckSiteIfFastDPInitAvailable at level 3, CPU:0.000, REAL:0.002, MEM:2208.2M, EPOCH TIME: 1778588657.660148
+[05/12 14:24:17    154s] Fast DP-INIT is on for default
+[05/12 14:24:17    154s] Layer info - lib-1st H=1, V=2.  Cell-FPin=1. Top-pin=2
+[05/12 14:24:17    154s] Atter site array init, number of instance map data is 0.
+[05/12 14:24:17    154s] OPERPROF:   Finished spiInitFpSiteArr at level 2, CPU:0.050, REAL:0.050, MEM:2208.2M, EPOCH TIME: 1778588657.686850
+[05/12 14:24:17    154s] 
+[05/12 14:24:17    154s]  Pre_CCE_Colorizing is not ON! (0:0:1129:0)
+[05/12 14:24:17    154s] OPERPROF: Finished spInitSiteArr at level 1, CPU:0.070, REAL:0.066, MEM:2208.2M, EPOCH TIME: 1778588657.702480
+[05/12 14:24:17    154s] Average module density = 0.693.
+[05/12 14:24:17    154s] Density for the design = 0.693.
+[05/12 14:24:17    154s]        = (stdcell_area 395450 sites (205634 um^2) + block_area 1444320 sites (751046 um^2)) / alloc_area 2656404 sites (1381330 um^2).
+[05/12 14:24:17    154s] Pin Density = 0.05820.
+[05/12 14:24:17    154s]             = total # of pins 154613 / total area 2656404.
+[05/12 14:24:17    154s] All LLGs are deleted
+[05/12 14:24:17    154s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/12 14:24:17    154s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/12 14:24:17    154s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:2208.2M, EPOCH TIME: 1778588657.736067
+[05/12 14:24:17    154s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.001, MEM:2208.2M, EPOCH TIME: 1778588657.736768
+[05/12 14:24:17    154s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[05/12 14:24:17    154s] 
+[05/12 14:24:17    154s] *** Summary of all messages that are not suppressed in this session:
+[05/12 14:24:17    154s] Severity  ID               Count  Summary                                  
+[05/12 14:24:17    154s] WARNING   IMPFP-10013         32  Halo should be created around block %s a...
+[05/12 14:24:17    154s] WARNING   IMPSP-362            1  Site '%s' has %s std.Cell height, so ign...
+[05/12 14:24:17    154s] WARNING   IMPAFP-9024          3  This command is hidden and will be obsol...
+[05/12 14:24:17    154s] WARNING   IMPTCM-77            3  Option "%s" for command %s is obsolete a...
+[05/12 14:24:17    154s] *** Message Summary: 39 warning(s), 0 error(s)
+[05/12 14:24:17    154s] 
+[05/12 14:24:17    154s] 0
+[05/12 14:24:17    154s] @innovus 10> gui_select -point {-836.46100 722.76900}
+[05/12 14:24:36    159s] @innovus 11> gui_select -point {-481.59100 1491.65400}
+[05/12 14:24:38    159s] @innovus 12> set_db [get_db insts -if {.name == *sram*}] .place_status fixed
+
+[05/12 14:24:52    162s] 32 fixed
+[05/12 14:24:52    162s] @innovus 13> create_place_halo -insts [get_db insts -if {.is_macro == true}] -halo_deltas {10 10 10 10}
+
+[05/12 14:25:26    170s] **ERROR: (IMPFP-7695):	The Macro/BlackBox/CommitPtn/Block/IOPad/Cell '' was not found, so halo was not added.
+[05/12 14:25:26    170s] 
+[05/12 14:25:26    170s] 
+[05/12 14:25:26    170s] @innovus 14> create_place_halo -insts [get_db insts -if {.is_macro == true} .name] -halo_deltas {10 10 10 10}
+
+[05/12 14:26:54    190s] **ERROR: (IMPDBTCL-248):	'is_macro' is not a recognized object or attribute for object type 'string'. Update its value to match one of the 'string' attributes. Run 'help string' to get a list of all 'string' attributes.
+[05/12 14:26:54    190s] 
+[05/12 14:26:54    190s] 
+[05/12 14:26:54    190s] @innovus 15> create_place_halo -insts *sram* -halo_deltas {10 10 10 10}
+[1C
+[05/12 14:29:12    220s] @innovus 16> set leftPads [get_db [get_db insts -if {.lib_cells == *IO65*}] -if {.orient == r270}]
+
+[05/12 14:32:19    270s] {inst:pulpino_chip/gen_gpio_pads\[14\].p_gpio} {inst:pulpino_chip/gen_gpio_pads\[15\].p_gpio} {inst:pulpino_chip/gen_gpio_pads\[16\].p_gpio} {inst:pulpino_chip/gen_gpio_pads\[17\].p_gpio} {inst:pulpino_chip/gen_gpio_pads\[18\].p_gpio} {inst:pulpino_chip/gen_gpio_pads\[19\].p_gpio} {inst:pulpino_chip/gen_gpio_pads\[20\].p_gpio} {inst:pulpino_chip/gen_gpio_pads\[21\].p_gpio} {inst:pulpino_chip/gen_gpio_pads\[22\].p_gpio} {inst:pulpino_chip/gen_gpio_pads\[23\].p_gpio} {inst:pulpino_chip/gen_gpio_pads\[24\].p_gpio} {inst:pulpino_chip/gen_gpio_pads\[25\].p_gpio} {inst:pulpino_chip/gen_gpio_pads\[26\].p_gpio} {inst:pulpino_chip/gen_gpio_pads\[27\].p_gpio} inst:pulpino_chip/p_spim_clk inst:pulpino_chip/p_spim_csn inst:pulpino_chip/p_spim_sdi0 inst:pulpino_chip/p_spim_sdi1 inst:pulpino_chip/p_spim_sdi2 inst:pulpino_chip/p_spim_sdi3 inst:pulpino_chip/p_spim_sdo0 inst:pulpino_chip/p_spim_sdo1 inst:pulpino_chip/p_spim_sdo2 inst:pulpino_chip/p_spim_sdo3 inst:pulpino_chip/PVDD2 inst:pulpino_chip/PGND2 inst:pulpino_chip/PGNDE2 inst:pulpino_chip/PVDDE2
+[05/12 14:32:19    270s] @innovus 17> gui_select -point {192.19800 -309.07300}
+[05/12 14:32:33    274s] @innovus 18> deselect_obj -all
+
+[05/12 14:33:00    280s] @innovus 19> select_obj $leftPads
+
+[05/12 14:33:13    283s] @innovus 20> space_selected -fix_side top -space 90
+
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:23    286s] @innovus 21> space_selected -fix_side top -space 26
+**ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:35    289s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:33:35    289s] **WARN: (EMS-27):	Message (IMPFP-60) has exceeded the current message display limit of 20.
+[05/12 14:33:35    289s] To increase the message display limit, refer to the product command reference manual.
+[05/12 14:33:35    289s] @innovus 22> space_selected -fix_side top -space 20
+
+[05/12 14:34:12    299s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:34:12    299s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:34:12    299s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:34:12    299s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:34:12    299s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:34:12    299s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:34:12    299s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:34:12    299s] @innovus 23> space_selected -fix_side top -space 10
+
+[05/12 14:34:16    300s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:34:16    300s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:34:16    300s] **ERROR: (IMPFP-60):	Io Inst new lower left location is outside of headbox, it would not be moved.
+[05/12 14:34:16    300s] @innovus 24> gui_select -point {223.97900 509.66200}
+[05/12 14:34:20    301s] @innovus 25> exit
+
+[05/12 14:48:19    468s] 
+[05/12 14:48:19    468s] *** Memory Usage v#1 (Current mem = 1956.223M, initial mem = 484.035M) ***
+[05/12 14:48:19    468s] 
+[05/12 14:48:19    468s] *** Summary of all messages that are not suppressed in this session:
+[05/12 14:48:19    468s] Severity  ID               Count  Summary                                  
+[05/12 14:48:19    468s] WARNING   IMPLF-200          264  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/12 14:48:19    468s] WARNING   IMPLF-201          120  Pin '%s' in macro '%s' has no ANTENNADIF...
+[05/12 14:48:19    468s] ERROR     IMPFP-7695           1  The Macro/BlackBox/CommitPtn/Block/IOPad...
+[05/12 14:48:19    468s] WARNING   IMPFP-3108           2  The tool will relocate the IOs because o...
+[05/12 14:48:19    468s] ERROR     IMPFP-60            37  Io Inst new lower left location is outsi...
+[05/12 14:48:19    468s] WARNING   IMPFP-780           28  IO instance '%s' isn't defined in IO fil...
+[05/12 14:48:19    468s] WARNING   IMPFP-10013         32  Halo should be created around block %s a...
+[05/12 14:48:19    468s] ERROR     IMPFP-6005           1  The number of inputs in options should b...
+[05/12 14:48:19    468s] WARNING   IMPFP-3961          50  The techSite '%s' has no related standar...
+[05/12 14:48:19    468s] ERROR     IMPDBTCL-248         1  '%s' is not a recognized object or attri...
+[05/12 14:48:19    468s] WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+[05/12 14:48:19    468s] WARNING   IMPVL-159         2578  Pin '%s' of cell '%s' is defined in LEF ...
+[05/12 14:48:19    468s] WARNING   IMPSP-362            1  Site '%s' has %s std.Cell height, so ign...
+[05/12 14:48:19    468s] WARNING   IMPAFP-9024          4  This command is hidden and will be obsol...
+[05/12 14:48:19    468s] WARNING   IMPTCM-77            3  Option "%s" for command %s is obsolete a...
+[05/12 14:48:19    468s] ERROR     IMPTCM-32            1  Wrong number of arguments specified for ...
+[05/12 14:48:19    468s] ERROR     IMPTCM-48            1  "%s" is not a legal option for command "...
+[05/12 14:48:19    468s] WARNING   TCLCMD-1461          4  Skipped unsupported command: %s          
+[05/12 14:48:19    468s] WARNING   TCLCMD-1531         52  '%s' has been applied on hierarchical pi...
+[05/12 14:48:19    468s] ERROR     TECHLIB-1204      8146  Illegal value '%s' defined for attribute...
+[05/12 14:48:19    468s] *** Message Summary: 3139 warning(s), 8188 error(s)
+[05/12 14:48:19    468s] 
+[05/12 14:48:19    468s] --- Ending "Innovus" (totcpu=0:07:48, real=0:32:08, mem=1956.2M) ---

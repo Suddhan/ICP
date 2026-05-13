@@ -1,0 +1,44 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Mon May 11 12:57:25 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.35-s114_1 NR220912-2004/21_15-UB (database version 18.20.592_1) {superthreading v2.17}
+#@(#)CDS: AAE 21.15-s039 (64bit) 10/13/2022 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+#@(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+#@(#)CDS: CPE v21.15-s076
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+
+read_db pulpino_placed.enc
+gui_select -point {1228.67900 1815.01700}
+ccopt_design
+get_ports pad_clk
+create_clock -name core_clk -period 10.0 [get_ports pad_clk]
+set_interactive_constraint_modes [get_db constraint_modes .name]
+set_interactive_constraint_modes {functional_wcl_slow functional_wcl_fast}
+get_ports pad_clk
+create_clock -name core_clk -period 10.0 [get_ports pad_clk]
+create_ccopt_clock_tree_spec
+create_clock_tree_spec
+ccopt_design
+route_design
+route_eco
+verify_drc
+check_drc
+set_layer_preference violation -is_visible 1
+gui_select -point {586.13400 487.73000}
+set_db route_design_detail_step_effort high
+route_design -eco
+eco_route
+route_design -global_detail
+gui_select -point {-105.11800 663.22800}
+gui_select -point {55.53400 635.26700}
+gui_select -point {110.08500 691.55000}
+edit_trim_route
+gui_select -point {-250.42400 784.00900}
+edit_trim_route
+route_design -global_detail -wire_opt

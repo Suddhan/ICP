@@ -1,0 +1,26 @@
+set nokey
+set size ratio 0
+set label "i_core/core_region_i/data_mem" at 49738,482572
+set label "i_core/core_region_i/instr_mem" at 923535,-82924
+plot '-' w l lc rgb "red", '-' w l lc rgb "green"
+192000 192000
+192000 1367200
+1367400 1367200
+1367400 192000
+192000 192000
+EOF
+
+49738 482572
+49738 924510
+491676 924510
+491676 482572
+49738 482572
+
+923535 -82924
+923535 644725
+1651184 644725
+1651184 -82924
+923535 -82924
+
+EOF
+pause -1 'Press any key'

@@ -1,0 +1,148 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Wed May 13 11:34:12 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.35-s114_1 NR220912-2004/21_15-UB (database version 18.20.592_1) {superthreading v2.17}
+#@(#)CDS: AAE 21.15-s039 (64bit) 10/13/2022 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+#@(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+#@(#)CDS: CPE v21.15-s076
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+
+#@ source genus_output/pulpino_chip.genus_init.tcl
+#@ Begin verbose source (pre): source genus_output/pulpino_chip.genus_init.tcl
+read_mmmc ../pnr/genus_output/pulpino_chip.mmmc.tcl
+#@ Begin verbose source ../pnr/genus_output/pulpino_chip.mmmc.tcl (pre)
+create_library_set -name wcl_slow \
+    -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_wc_1.00V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_wc_1.10V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_wc_1.00V_125C_10y.lib }
+create_library_set -name wcl_fast \
+    -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_bc_1.25V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_bc_1.25V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_bc_1.25V_1.95V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_bc_1.25V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_bc_1.30V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_bc_1.25V_m40C.lib }
+create_library_set -name wcl_typical \
+    -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_nom_1.10V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_nom_1.10V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_nom_1.10V_1.80V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_nom_1.10V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_nom_1.20V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_nom_1.10V_25C.lib }
+create_opcond -name op_cond_wcl_slow \
+    -process 1.0 \
+    -voltage 1.0 \
+    -temperature 125.0
+create_opcond -name op_cond_wcl_fast \
+    -process 1.0 \
+    -voltage 1.25 \
+    -temperature -40.0
+create_opcond -name op_cond_wcl_typical \
+    -process 1.0 \
+    -voltage 1.1 \
+    -temperature 25.0
+create_timing_condition -name timing_cond_wcl_slow \
+    -opcond op_cond_wcl_slow \
+    -library_sets { wcl_slow }
+create_timing_condition -name timing_cond_wcl_fast \
+    -opcond op_cond_wcl_fast \
+    -library_sets { wcl_fast }
+create_timing_condition -name timing_cond_wcl_typical \
+    -opcond op_cond_wcl_typical \
+    -library_sets { wcl_typical }
+create_rc_corner -name rc_corner_typ \
+    -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCTYP/qrcTechFile \
+    -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCTYP.captable \
+    -pre_route_res 1.0 \
+    -pre_route_cap 1.0 \
+    -pre_route_clock_res 0.0 \
+    -pre_route_clock_cap 0.0 \
+    -post_route_res {1.0 1.0 1.0} \
+    -post_route_cap {1.0 1.0 1.0} \
+    -post_route_cross_cap {1.0 1.0 1.0} \
+    -post_route_clock_res {1.0 1.0 1.0} \
+    -post_route_clock_cap {1.0 1.0 1.0}
+create_rc_corner -name rc_corner_min \
+    -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMIN/qrcTechFile \
+    -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable \
+    -pre_route_res 1.0 \
+    -pre_route_cap 1.0 \
+    -pre_route_clock_res 0.0 \
+    -pre_route_clock_cap 0.0 \
+    -post_route_res {1.0 1.0 1.0} \
+    -post_route_cap {1.0 1.0 1.0} \
+    -post_route_cross_cap {1.0 1.0 1.0} \
+    -post_route_clock_res {1.0 1.0 1.0} \
+    -post_route_clock_cap {1.0 1.0 1.0}
+create_rc_corner -name rc_corner_max \
+    -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile \
+    -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable \
+    -pre_route_res 1.0 \
+    -pre_route_cap 1.0 \
+    -pre_route_clock_res 0.0 \
+    -pre_route_clock_cap 0.0 \
+    -post_route_res {1.0 1.0 1.0} \
+    -post_route_cap {1.0 1.0 1.0} \
+    -post_route_cross_cap {1.0 1.0 1.0} \
+    -post_route_clock_res {1.0 1.0 1.0} \
+    -post_route_clock_cap {1.0 1.0 1.0}
+create_delay_corner -name delay_corner_wcl_slow \
+    -early_timing_condition { timing_cond_wcl_slow } \
+    -late_timing_condition { timing_cond_wcl_slow } \
+    -early_rc_corner rc_corner_min \
+    -late_rc_corner rc_corner_max
+create_delay_corner -name delay_corner_wcl_fast \
+    -early_timing_condition { timing_cond_wcl_fast } \
+    -late_timing_condition { timing_cond_wcl_fast } \
+    -early_rc_corner rc_corner_min \
+    -late_rc_corner rc_corner_max
+create_delay_corner -name delay_corner_wcl_typical \
+    -early_timing_condition { timing_cond_wcl_typical } \
+    -late_timing_condition { timing_cond_wcl_typical } \
+    -early_rc_corner rc_corner_typ \
+    -late_rc_corner rc_corner_typ
+create_constraint_mode -name functional_wcl_slow \
+    -sdc_files { ../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc }
+create_constraint_mode -name functional_wcl_fast \
+    -sdc_files { ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc }
+create_constraint_mode -name functional_wcl_typical \
+    -sdc_files { ../pnr/genus_output/pulpino_chip.functional_wcl_typical.sdc }
+create_analysis_view -name view_wcl_slow \
+    -constraint_mode functional_wcl_slow \
+    -delay_corner delay_corner_wcl_slow
+create_analysis_view -name view_wcl_fast \
+    -constraint_mode functional_wcl_fast \
+    -delay_corner delay_corner_wcl_fast
+create_analysis_view -name view_wcl_typical \
+    -constraint_mode functional_wcl_typical \
+    -delay_corner delay_corner_wcl_typical
+set_analysis_view -setup { view_wcl_slow } \
+                  -hold { view_wcl_fast }
+#@ End verbose source ../pnr/genus_output/pulpino_chip.mmmc.tcl
+read_physical -lef {/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/viarule_generate.lef /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/sites.lef /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/CADENCE/LEF/CORE65LPLVT_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/CADENCE/LEF/CLOCK65LPLVT_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/CADENCE/LEF/PRHS65_soc.lef /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/CADENCE/LEF/SPHS100909_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef
+/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z.lef}
+read_netlist ../synth/outputs/pulpino_top_netlist.v
+init_design 
+read_io_file -no_die_size_adjust pad.io  
+create_floorplan -core_density_size {1.0 0.7 80 80 80 80} -site CORE
+#@ End verbose source: genus_output/pulpino_chip.genus_init.tcl
+gui_select -point {0.05700 0.04300}
+set sram0 [lindex [get_db [get_db insts -if {.name == *sram_inst}] .name ] 0]
+set sram1 [lindex [get_db [get_db insts -if {.name == *sram_inst}] .name ] 1]
+set sram2 [lindex [get_db [get_db insts -if {.name == *sram_inst}] .name ] 2]
+set sram3 [lindex [get_db [get_db insts -if {.name == *sram_inst}] .name ] 3]
+set sram4 [lindex [get_db [get_db insts -if {.name == *sram_inst}] .name ] 4]
+set sram5 [lindex [get_db [get_db insts -if {.name == *sram_inst}] .name ] 5]
+set sram6 [lindex [get_db [get_db insts -if {.name == *sram_inst}] .name ] 6]
+set sram7 [lindex [get_db [get_db insts -if {.name == *sram_inst}] .name ] 7]
+set sram8 [lindex [get_db [get_db insts -if {.name == *sram_inst}] .name ] 8]
+set sram9 [lindex [get_db [get_db insts -if {.name == *sram_inst}] .name ] 9]

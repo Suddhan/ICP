@@ -145,7 +145,7 @@ module pulpino_top
   // --- GPIOs ---
   genvar i;
   generate
-      for (i = 0; i < 32; i++) begin : gen_gpio_pads
+      for (i = 0; i < 4; i++) begin : gen_gpio_pads
           BD2SCARUDQP_1V8_SF_LIN p_gpio (
               .ZI(gpio_in[i]), 
               .A(gpio_out[i]), 
@@ -155,7 +155,8 @@ module pulpino_top
           );
       end
   endgenerate
-
+assign gpio_in[31:4] = 28'b0;
+ 
   // ==========================================
   // ORIGINAL CORE LOGIC
   // ==========================================

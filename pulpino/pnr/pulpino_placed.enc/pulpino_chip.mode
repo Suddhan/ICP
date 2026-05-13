@@ -1,0 +1,41 @@
+catch { setAnalysisMode -analysisType bcwc }
+catch { setAnalysisMode -checkType setup }
+catch { setAnalysisMode -clkSrcPath true }
+catch { setAnalysisMode -clockPropagation forcedIdeal }
+catch { setAnalysisMode -usefulSkew true }
+catch { setAnalysisMode -virtualIPO false }
+catch { setOptMode -activeHoldViews { view_wcl_fast } }
+catch { setOptMode -activeSetupViews { view_wcl_slow } }
+catch { setOptMode -autoSetupViews { view_wcl_slow} }
+catch { setOptMode -autoTDGRSetupViews { view_wcl_slow} }
+catch { setOptMode -drcMargin 0 }
+catch { setOptMode -fixDrc true }
+catch { setOptMode -optimizeFF true }
+catch { setOptMode -setupTargetSlack 0 }
+catch { setPathGroupOptions reg2cgate -effortLevel high -weight 1 }
+catch { setPathGroupOptions reg2reg -effortLevel high -weight 2 }
+catch { setPathGroupOptions default -effortLevel low }
+catch { setExtractRCMode  -engine preRoute }
+catch {setNanoRouteMode -quiet -extractThirdPartyCompatible false}
+catch {setNanoRouteMode -quiet -grouteExpTdStdDelay 22.600000}
+
+catch { setPlaceMode -MXPBoundaryLevel 7 }
+catch { setPlaceMode -MXPConstraintFile {} }
+catch { setPlaceMode -MXPControlSetting 0 }
+catch { setPlaceMode -MXPLogicHierAware 0 }
+catch { setPlaceMode -MXPPreplaceSetting 5 }
+catch { setPlaceMode -MXPRefineSetting 17 }
+catch { setPlaceMode -place_global_place_io_pins false }
+catch { setPlaceMode -timingDriven true }
+catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
+catch { setDelayCalMode -enable_high_fanout true }
+catch { setDelayCalMode -engine aae }
+catch { setDelayCalMode -ignoreNetLoad false }
+catch { setDelayCalMode -socv_accuracy_mode low }
+catch { setImportMode -discardFloatingVNets false }
+catch { setImportMode -keepEmptyModule true }
+catch { setSIMode -separate_delta_delay_on_data true }
+catch { setFPlanMode -defaultTechSite CORE }
+catch { setFPlanMode -maxIoHeight false }
+catch { setFPlanMode -place_check_ignore_fixed_cell_list {} }
+catch { setFPlanMode -powerRailLayer {} }

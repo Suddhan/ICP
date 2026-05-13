@@ -1,90 +1,74 @@
 # ------------------------------------------------------------------------------
-# Specify units and design
+# 1. Setup & Units
 # ------------------------------------------------------------------------------
 set sdc_version 2.0
 set_units -time 1.0ns -capacitance 1.0pF
-current_design top
+current_design pulpino_top
+#set_db / .multiple_driver_operation average
 
 # ------------------------------------------------------------------------------
-# Clock Definitions
+# 2. Clock Definitions
 # ------------------------------------------------------------------------------
-# Define a clock for the synthesis, with the name `CLK`. 
-# We set the period to `5.0` time units (time units = 1.0ns), that is low on 0.0ns and goes high on 2.5ns
-# The clock `CLK` is defined to be located on the ports of clk, i.e. on the outside of the clock pad.
-set clk_freq 125.0 ; # MHz				//changed the clock frequency from 150->125 MHz
-set clk_period [expr 1000.0/${clk_freq}]
-create_clock -name "CLK" -period ${clk_period} -waveform [list 0.0 [expr ${clk_period}/2]] [get_ports clk]
+set clk_period 8.0
 
-# Flash clock is generated from main clock every other clock cycle.
-# Thus, we define it with generate clock and divide down the freq. by 2.
-create_generated_clock -name FLASH_CLK \
-    -source [get_ports clk] \
-    -divide_by 2 \
-    [get_ports flash_clk]
+# Main System Clock
+#changed from clk -> pad_clk
+create_clock -name CLK -period ${clk_period} [get_ports pad_clk]		
 
+# JTAG Clock 
+#changed from tck_i -> pad_jtag_tck
+# Verified as tck_i in pulpino_top.sv
+create_clock -name JTAG_CLK -period 100.0 [get_ports pad_jtag_tck]		
 
-#Emulating clock tree for more realistic synthesis results
-#Also adding source latency since clock is generated outside chip
-set_clock_uncertainty 0.4 [get_clocks CLK]
-set_false_path -from [get_ports resetn]			#added later
-set_clock_transition [expr ${clk_period}*0.04] [get_clocks CLK]
-set_clock_latency -source 0.1 [get_clocks CLK]
-set_clock_skew [expr ${clk_period}*0.02] [get_clocks CLK]
+# SPI/Flash Clock (Fixes the failed generated clock)
+#changed from spi_clk_i -> pad_spis_clk
+create_clock -name SPI_CLK -period 40 [get_ports pad_spis_clk]		
 
-# ------------------------------------------------------------------------------
-# IO configuration 
-# Sets constant values to pins or ports to be used by timing engine
-# ------------------------------------------------------------------------------
-set_case_analysis 1 [get_pins {clk_pad_in/EN clk_pad_in/PDN clk_pad_in/PUN}]
-set_case_analysis 0 [get_pins {clk_pad_in/TM clk_pad_in/TEN}]
+# Note: Using spi_master_clk_o found via your get_db search
+#create_generated_clock -name FLASH_CLK \
+#    -source [get_ports clk] \
+#    -divide_by 2 \
+#    [get_ports spi_master_clk_o]
 
-set inputPads [get_db [get_db insts -if {.name ==*pad_in*}] .name]
-foreach pad $inputPads {
-    # Lets do the same thing for the other pads
-    set_case_analysis 1 [get_pins ${pad}/EN]
-    set_case_analysis 1 [get_pins ${pad}/PDN]
-    set_case_analysis 1 [get_pins ${pad}/PUN]
-    set_case_analysis 0 [get_pins ${pad}/HYST]
-}
+# Define clock groups to show JTAG and System clocks are independent
+set_clock_groups -asynchronous \
+  -group [get_clocks CLK] \
+  -group [get_clocks JTAG_CLK] \
+  -group [get_clocks SPI_CLK]
 
 # ------------------------------------------------------------------------------
-# Input Delays (External Logic -> Chip)
+# 3. Case Analysis (Resolves blocked paths)
 # ------------------------------------------------------------------------------
-# Signal traveling to other logic outside of chip, this takes some time
-# This isn't a real project, thus we have some "realistic dealy" but not based on a real physical component
-set INPUT_DELAY 1.6
+# Primary selection and test signals
+#set_case_analysis 0 [get_ports clk_sel_i]
+set_case_analysis 0 [get_pins clk_rst_gen_i/clk_sel_i]
+#set_case_analysis 0 [get_ports testmode_i]
+set_case_analysis 0 [get_pins clk_rst_gen_i/testmode_i]
+#set_case_analysis 1 [get_ports fetch_enable_i]
+#set_case_analysis 1 [get_pins core_region_i/fetch_enable_i]
 
-# Reset and IRQs - should be synch
-set_input_delay -clock CLK $INPUT_DELAY [get_ports {resetn irq_5 irq_6 irq_7}]
-
-# Serial RX
-set_input_delay -clock CLK $INPUT_DELAY [get_ports ser_rx]
-
-# Flash Inputs
-set_input_delay -clock CLK $INPUT_DELAY [get_ports {flash_io0_di flash_io1_di flash_io2_di flash_io3_di}]
-
-# Assume inputs are driven from an external chip that has a driver that looks lik BUFX40 from our library
-set_driving_cell -lib_cell *BFX40 -pin Z [get_ports {flash_io*_di* irq* resetn ser_rx}]
-
+# RISC-V Core Clock Gate (The specific path from your terminal output)
+set_case_analysis 1 [get_pins core_region_i/CORE.RISCV_CORE/core_clock_gate_i/en_i]
+# Force peripheral and memory clock gates open
+#set_case_analysis 1 [get_pins -hierarchical *en_i]
+set_case_analysis 1 [get_pins -hierarchical *cg_cell/en_i]
+set_case_analysis 1 [get_pins -hierarchical *spi_slave_i/*/en_i]
 # ------------------------------------------------------------------------------
-# Output Delays (Chip -> External Logic)
+# 4. I/O Constraints
 # ------------------------------------------------------------------------------
-# Signal traveling from chip to outside logic, this takes some time
-# This isn't a real project, thus we have some "realistic dealy" but not based on a real physical component
-set OUTPUT_DELAY 1.6
+set delay_value [expr ${clk_period} * 0.2]
 
-# Serial TX
-set_output_delay -clock CLK $OUTPUT_DELAY [get_ports ser_tx]
+# Exclude both clock inputs from delay constraints to avoid "Clock-as-data"
+# was {clk tck_i} before
+set clk_ports [get_ports {pad_clk pad_jtag_tck}]
 
-# Flash Control outputs
-set_output_delay -clock FLASH_CLK $OUTPUT_DELAY [get_ports flash_csb]
+set_input_delay -clock CLK ${delay_value} [remove_from_collection [all_inputs] ${clk_ports}]
+set_driving_cell -lib_cell HS65_LL_BFX2 -library CORE65LPLVT [remove_from_collection [all_inputs] ${clk_ports}]
 
-# Flash Data Outputs
-set_output_delay -clock FLASH_CLK $OUTPUT_DELAY [get_ports {flash_io0_do flash_io1_do flash_io2_do flash_io3_do}]
-set_output_delay -clock FLASH_CLK $OUTPUT_DELAY [get_ports {flash_io?_oe}]
+set_output_delay -clock CLK ${delay_value} [all_outputs]
+set_load 0.05 [all_outputs]
 
 # ------------------------------------------------------------------------------
-# Load
+# 5. Timing Exceptions
 # ------------------------------------------------------------------------------
-# Assume outputs drive a standard load (e.g., 10pF for PCB traces)
-set_load 2.0 [all_outputs]
+set_false_path -from [get_ports rst_n]

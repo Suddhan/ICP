@@ -1,0 +1,4 @@
+0 mlmModuletop 
+2 i_core/core_region_i mlmModuletop
+3 i_core/core_region_i/data_mem i_core/core_region_i
+3 i_core/core_region_i/instr_mem i_core/core_region_i

@@ -1,0 +1,6 @@
+0
+189 i_core/core_region_i/data_mem
+4 i_core/core_region_i
+1 i_core
+400 i_core/core_region_i/instr_mem/sp_ram_wrap_i
+192 i_core/core_region_i/instr_mem

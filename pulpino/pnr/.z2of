@@ -1,0 +1,224 @@
+i_core/core_region_i/data_mem/rows[0].col[0].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[0].col[1].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[0].col[2].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[0].col[3].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[1].col[0].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[1].col[1].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[1].col[2].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[1].col[3].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[2].col[0].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[2].col[1].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[2].col[2].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[2].col[3].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[3].col[0].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[3].col[1].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[3].col[2].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[3].col[3].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[0].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[1].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[2].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[3].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[1].col[0].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[1].col[1].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[1].col[2].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[1].col[3].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[2].col[0].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[2].col[1].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[2].col[2].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[2].col[3].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[3].col[0].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[3].col[1].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[3].col[2].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[3].col[3].i_sram, R0, R180, MX, MY, R90, R270, MX90, MY90
+i_core/core_region_i/data_mem/rows[0].col[0].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[0].col[1].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[0].col[2].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[0].col[3].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[1].col[0].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[1].col[1].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[1].col[2].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[1].col[3].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[2].col[0].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[2].col[1].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[2].col[2].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[2].col[3].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[3].col[0].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[3].col[1].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[3].col[2].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/data_mem/rows[3].col[3].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[0].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[1].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[2].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[3].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[1].col[0].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[1].col[1].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[1].col[2].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[1].col[3].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[2].col[0].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[2].col[1].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[2].col[2].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[2].col[3].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[3].col[0].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[3].col[1].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[3].col[2].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
+i_core/core_region_i/instr_mem/sp_ram_wrap_i/rows[3].col[3].i_sram
+	Macro2Core 0
+	UserSpacingL 0
+	UserSpacingB 1066
+	UserSpacingR 0
+	UserSpacingT 0
