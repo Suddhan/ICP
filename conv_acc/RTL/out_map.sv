@@ -7,13 +7,13 @@ module out_map(
     output logic finish_input,
     output logic finish_output
 );
-logic [7:0] addr;
+logic [7:0] addr, next_addr;
 logic write_enable, read_enable;
 
 always_ff @(posedge clk) begin
     if(rst) begin
         addr <= 0;
-        out_data <= 0;
+        next_addr <= 0;
         write_enable <= 0;
         read_enable <= 0;
         finish_output <= 0;
@@ -39,11 +39,11 @@ always_ff @(posedge clk) begin
             end else begin
             if(valid) begin
                 write_enable <= 1;
-                addr <= addr + 1;
+                next_addr <= addr + 1;
         
             end else begin
                 write_enable <= 0;
-                addr <= addr;
+                addr <= next_addr;
             end
             end
 

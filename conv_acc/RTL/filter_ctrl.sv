@@ -54,6 +54,6 @@ always_comb begin
   
   
 end
-assign valid_out = (counter == 5);
+assign valid_out = (counter == 4 && valid_in);
 
 endmodule

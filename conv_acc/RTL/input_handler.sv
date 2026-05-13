@@ -31,7 +31,7 @@ always_ff @( posedge clk ) begin
     else begin
         case(current_state) //moving of data based on state
             filter_load : begin
-                filter_data <= data1;
+                filter_data <= data3;
                 filter_enable <= 1;
             end
             ifm_active : begin

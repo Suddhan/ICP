@@ -16,14 +16,15 @@ logic [20:0] filter_result;
 
 logic [7:0] quantized_data;
 
+logic [7:0] pool_output;
+
 logic output_finish, input_finish;
 
 logic [7:0] ofm_data;
 
 
-always ff @(posedge clk) begin
+always_ff @(posedge clk) begin
     if(rst) begin
-        output_data <= 0;
         apb_output <= 0;
     end else begin
         if(input_finish) begin

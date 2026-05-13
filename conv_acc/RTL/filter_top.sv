@@ -21,6 +21,7 @@ logic [7:0] filter5 [0:4];
 logic [15:0] mult1_result, mult2_result, mult3_result, mult4_result, mult5_result;
 
 logic [18:0] accum_result;
+logic [3:0] curr_case;
 
 logic [4:0] loading_index, next_loading_index;
 logic [2:0] filter_index, next_filter_index;
@@ -36,31 +37,36 @@ always_ff @(posedge clk ) begin : filter_loading
         loading_index <= 0;
         next_loading_index <= 0;
         filter_index <= 0;
-        next_filter_index <= 0;
+        curr_case <= 0;
     end else begin if(filter_load) begin
         case(loading_index) inside
 
         [0:4] : begin 
+            curr_case <= 1;
             filter1[loading_index] <= filter_weight;
             loading_index <= loading_index + 1;
         end
 
         [5:9] : begin
+            curr_case <= 2;
             filter2[loading_index - 5] <= filter_weight;
             loading_index <= loading_index + 1;
         end
 
         [10:14] : begin
+            curr_case <= 3;
             filter3[loading_index - 10] <= filter_weight;
             loading_index <= loading_index + 1;
         end
 
         [15:19] : begin
+            curr_case <= 4;
             filter4[loading_index -15] <= filter_weight;
             loading_index <= loading_index + 1;
         end
 
         [20:24] : begin
+            curr_case <= 5;
             filter5[loading_index - 20] <= filter_weight;
             loading_index <= loading_index + 1;
         end
@@ -70,7 +76,6 @@ always_ff @(posedge clk ) begin : filter_loading
     end else begin
         if(data_valid) begin 
             filter_index <= next_filter_index;
-            next_filter_index <= (next_filter_index == 4) ? 0 : next_filter_index + 1;
         end
         else  filter_index <= filter_index;
 
@@ -79,7 +84,8 @@ always_ff @(posedge clk ) begin : filter_loading
     end
 
 end
-
+assign next_filter_index = data_valid ? ((filter_index < 4) ? filter_index + 1 : 0) : filter_index;
+//assign next_counter = in_valid ? ((counter < 3'd4) ? counter + 1 : 1) : counter;
 
 partial_mult mult1(
     .data(i_data1), 
