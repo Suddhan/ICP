@@ -74,9 +74,9 @@ create_delay_corner -name delay_corner_wcl_typical \
     -late_rc_corner  rc_corner_typ
 
 ## 6. Constraint Modes (Link to your SDC files)
-create_constraint_mode -name functional_wcl_slow    -sdc_files { ./constraints/constraints_1.sdc }
-create_constraint_mode -name functional_wcl_fast    -sdc_files { ./constraints/constraints_1.sdc }
-create_constraint_mode -name functional_wcl_typical -sdc_files { ./constraints/constraints_1.sdc }
+create_constraint_mode -name functional_wcl_slow    -sdc_files { /h/d9/g/su2577su-s/etin35_project/pulpino/synth/constraints/constraints_1.sdc }
+create_constraint_mode -name functional_wcl_fast    -sdc_files { /h/d9/g/su2577su-s/etin35_project/pulpino/synth/constraints/constraints_1.sdc }
+create_constraint_mode -name functional_wcl_typical -sdc_files { /h/d9/g/su2577su-s/etin35_project/pulpino/synth/constraints/constraints_1.sdc }
 
 ## 7. Analysis Views (Final mapping for the tool)
 create_analysis_view -name view_wcl_slow    -constraint_mode functional_wcl_slow    -delay_corner delay_corner_wcl_slow

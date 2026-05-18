@@ -4,68 +4,63 @@
 set sdc_version 2.0
 set_units -time 1.0ns -capacitance 1.0pF
 current_design pulpino_top
-#set_db / .multiple_driver_operation average
 
 # ------------------------------------------------------------------------------
 # 2. Clock Definitions
 # ------------------------------------------------------------------------------
 set clk_period 8.0
 
-# Main System Clock
-#changed from clk -> pad_clk
-create_clock -name CLK -period ${clk_period} [get_ports pad_clk]		
+# Physical Clocks
+create_clock -name CLK       -period ${clk_period} [get_ports clk]
+create_clock -name JTAG_CLK  -period 100.0         [get_ports tck_i]
+create_clock -name SPI_CLK   -period 40.0          [get_ports spi_clk_i]
 
-# JTAG Clock 
-#changed from tck_i -> pad_jtag_tck
-# Verified as tck_i in pulpino_top.sv
-create_clock -name JTAG_CLK -period 100.0 [get_ports pad_jtag_tck]		
+# Virtual Clocks (Models the timing of the external UART/SPI/JTAG devices)
+create_clock -name VCLK_ASYNC -period 100.0
 
-# SPI/Flash Clock (Fixes the failed generated clock)
-#changed from spi_clk_i -> pad_spis_clk
-create_clock -name SPI_CLK -period 40 [get_ports pad_spis_clk]		
-
-# Note: Using spi_master_clk_o found via your get_db search
-#create_generated_clock -name FLASH_CLK \
-#    -source [get_ports clk] \
-#    -divide_by 2 \
-#    [get_ports spi_master_clk_o]
-
-# Define clock groups to show JTAG and System clocks are independent
+# Define Asynchronous Relationships
+# This tells the tool these clocks have no phase relationship. 
+# It effectively "cuts" the timing paths between them.
 set_clock_groups -asynchronous \
   -group [get_clocks CLK] \
-  -group [get_clocks JTAG_CLK] \
-  -group [get_clocks SPI_CLK]
+  -group [get_clocks {JTAG_CLK}] \
+  -group [get_clocks {SPI_CLK}] \
+  -group [get_clocks VCLK_ASYNC]
 
 # ------------------------------------------------------------------------------
-# 3. Case Analysis (Resolves blocked paths)
+# 3. Case Analysis (Internal Signals)
 # ------------------------------------------------------------------------------
-# Primary selection and test signals
-#set_case_analysis 0 [get_ports clk_sel_i]
 set_case_analysis 0 [get_pins clk_rst_gen_i/clk_sel_i]
-#set_case_analysis 0 [get_ports testmode_i]
 set_case_analysis 0 [get_pins clk_rst_gen_i/testmode_i]
-#set_case_analysis 1 [get_ports fetch_enable_i]
-set_case_analysis 1 [get_pins core_region_i/fetch_enable_i]
-
-# RISC-V Core Clock Gate (The specific path from your terminal output)
 set_case_analysis 1 [get_pins core_region_i/CORE.RISCV_CORE/core_clock_gate_i/en_i]
-# Force peripheral and memory clock gates open
-#set_case_analysis 1 [get_pins -hierarchical *en_i]
 set_case_analysis 1 [get_pins -hierarchical *cg_cell/en_i]
-set_case_analysis 1 [get_pins -hierarchical *spi_slave_i/*/en_i]
+set_case_analysis 1 [get_pins p_clk/EN]
+
 # ------------------------------------------------------------------------------
 # 4. I/O Constraints
 # ------------------------------------------------------------------------------
 set delay_value [expr ${clk_period} * 0.2]
+set_input_transition 0.5 [all_inputs]
 
-# Exclude both clock inputs from delay constraints to avoid "Clock-as-data"
-# was {clk tck_i} before
-set clk_ports [get_ports {pad_clk pad_jtag_tck}]
+# 4a. Identify your asynchronous input pins
+set async_inputs [get_ports {uart_rx spi_sdi0_i spi_cs_i spi_master_sdi*_i tms_i tdi_i trstn_i scl_pad_i sda_pad_i pad_gpio[*]}]
 
-set_input_delay -clock CLK ${delay_value} [remove_from_collection [all_inputs] ${clk_ports}]
-set_driving_cell -lib_cell HS65_LL_BFX2 -library CORE65LPLVT [remove_from_collection [all_inputs] ${clk_ports}]
+# 4b. Synchronous Inputs (Only ports that actually transition with your CLK)
+# We remove the clock ports and the async ports from the "all_inputs" list
+set sync_inputs [remove_from_collection [all_inputs] [concat [get_ports {clk tck_i spi_clk_i}] ${async_inputs}]]
+if {[sizeof_collection ${sync_inputs}] > 0} {
+    set_input_delay -clock CLK ${delay_value} ${sync_inputs}
+}
 
+# 4c. Constrain Asynchronous Inputs using the Virtual Clock
+# This prevents the -9652.1 violation because they are no longer timed against CLK
+set_input_delay ${delay_value} -clock VCLK_ASYNC ${async_inputs}
+
+# 4d. Outputs
 set_output_delay -clock CLK ${delay_value} [all_outputs]
+
+# Driving cell and load
+set_driving_cell -lib_cell HS65_LL_BFX2 -library CORE65LPLVT [all_inputs]
 set_load 0.05 [all_outputs]
 
 # ------------------------------------------------------------------------------

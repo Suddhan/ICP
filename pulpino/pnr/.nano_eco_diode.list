@@ -1,0 +1,7 @@
+FORMATVERSION 1
+ADDINST HS65_LH_ANTPROT1 peripherals_i/apb_gpio_i/DIODE_1 1 addPortAsNeeded
+INSTTERM MINUS gpio_in[0] -
+ADDINST HS65_LH_ANTPROT1 peripherals_i/apb_gpio_i/DIODE_2 1 addPortAsNeeded
+INSTTERM MINUS gpio_in[1] -
+ADDINST HS65_LH_ANTPROT1 peripherals_i/axi_spi_slave_i/axi_spi_slave_i/u_syncro/DIODE_3 1 addPortAsNeeded
+INSTTERM MINUS spi_cs_i -

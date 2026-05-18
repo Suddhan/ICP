@@ -1,4 +1,5 @@
 
+
 set_db [get_db base_cells -if {.class == core}] .symmetry xy ;	# Issue with stdcells not having symmetry in lef files, forced xy to fix this. (NOT a nice solution) /KW
 
 # Set design attributes
@@ -8,18 +9,20 @@ set_db design_top_routing_layer M7
 set_db design_bottom_routing_layer M2 
 set_db design_flow_effort standard ; # {express standard extreme}
 set_db design_power_effort low ; # {none low high}
-
+set_db place_global_place_io_pins true
 # Set timing attributes
 set_db timing_analysis_cppr           both
 set_db timing_analysis_type           ocv
 
 
 set_preference CmdLogMode 2 ; 
+set_db add_fillers_cells [get_db [get_db base_cells *HS65_LS_FILLERCELL*] .name] 
+
 
 #core size
 set core_dx [expr [get_db [lindex [get_db insts -if {.name == *sram*}] 0] .bbox.dx] * 10] ;
-set core_dy 1390 ; 
-create_floorplan -site CORE -core_size $core_dx $core_dy 30 30 30 30
+set core_dy 1410 ; 
+create_floorplan -site CORE -core_size $core_dx $core_dy 40 40 40 40
 #Set sram name
 set sram0 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 0]
 set sram1 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 1]
@@ -142,7 +145,7 @@ deselect_obj -all
 #               We also add -inst [..] to only do this for our VDD pads and GND pads.
 route_special -connect pad_pin -nets {VDD} -pad_pin_layer_range {M6 M7} -inst [get_db [get_db insts -if {.base_cell == *VDD_*}] .name ]
 route_special -connect pad_pin -nets {GND} -pad_pin_layer_range {M7 M7} -inst [get_db [get_db insts -if {.base_cell == *GND_*}] .name ]
-
+route_special -connect core_pin -nets {VDD GND}   
 
 
 ### Stripes
@@ -200,4 +203,29 @@ set_db add_well_taps_cell HS65_LH_FILLERNPWPFP4
 #               According to the documentation, the maximum distance a cell can have to a well tap is 30um.
 #               This means that if we space the well taps with 60um, all cells will be within the 30um range of a tap.
 add_well_taps -cell_interval 60
+
+#Add pad fillers
+set leftPads [get_db [get_db insts -if {.lib_cells == *IO65*}] -if {.orient == r270}]
+deselect_obj -all
+select_obj $leftPads
+add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side left -filler_orient R270
+
+set topPads [get_db [get_db insts -if {.lib_cells == *IO65*}] -if {.orient == r180}]
+deselect_obj -all
+select_obj $topPads
+add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side top -filler_orient R180
+
+set rightPads [get_db [get_db insts -if {.lib_cells == *IO65*}] -if {.orient == r90}]
+deselect_obj -all
+select_obj $rightPads
+add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side right -filler_orient R90
+
+
+set bottomPads [get_db [get_db insts -if {.lib_cells == *IO65*}] -if {.orient == r0}]
+deselect_obj -all
+select_obj $bottomPads
+add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side bottom -filler_orient R0
+
+
+
 

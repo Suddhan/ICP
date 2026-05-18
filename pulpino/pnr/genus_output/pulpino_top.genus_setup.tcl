@@ -2,7 +2,7 @@
 #
 # Genus(TM) Synthesis Solution setup file
 # Created by Genus(TM) Synthesis Solution 21.14-s082_1
-#   on 05/12/2026 15:01:46
+#   on 05/18/2026 12:09:06
 #
 # This file can only be run in Genus Common UI mode.
 #
@@ -49,13 +49,13 @@ set _slk_ [::legacy::get_attribute slack design:pulpino_top]
 if {[regexp {^-?[0-9.]+$} $_slk_]} {
   set _slk_ [format %.1f $_slk_]
 }
-if {$_slk_ != "inf"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack: inf,  current slack: $_slk_"
+if {$_slk_ != "0.1"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack: 0.1,  current slack: $_slk_"
 }
 unset _slk_
 # multi-mode slack
-if {"[string_representation [::legacy::get_attribute slack_by_mode design:pulpino_top]]" != "{{mode:pulpino_top/view_wcl_slow inf}}"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack_by_mode: {{mode:pulpino_top/view_wcl_slow inf}}  current slack_by_mode: [string_representation [::legacy::get_attribute slack_by_mode design:pulpino_top]]"
+if {"[string_representation [::legacy::get_attribute slack_by_mode design:pulpino_top]]" != "{{mode:pulpino_top/view_wcl_slow 0.1}}"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack_by_mode: {{mode:pulpino_top/view_wcl_slow 0.1}}  current slack_by_mode: [string_representation [::legacy::get_attribute slack_by_mode design:pulpino_top]]"
 }
 # tns
 set _tns_ [::legacy::get_attribute tns design:pulpino_top]
@@ -71,8 +71,8 @@ set _cell_area_ [::legacy::get_attribute cell_area design:pulpino_top]
 if {[regexp {^-?[0-9.]+$} $_cell_area_]} {
   set _cell_area_ [format %.0f $_cell_area_]
 }
-if {$_cell_area_ != "1015042"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden cell area: 1015042,  current cell area: $_cell_area_"
+if {$_cell_area_ != "1090042"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden cell area: 1090042,  current cell area: $_cell_area_"
 }
 unset _cell_area_
 # net area
@@ -80,8 +80,8 @@ set _net_area_ [::legacy::get_attribute net_area design:pulpino_top]
 if {[regexp {^-?[0-9.]+$} $_net_area_]} {
   set _net_area_ [format %.0f $_net_area_]
 }
-if {$_net_area_ != "84889"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden net area: 84889,  current net area: $_net_area_"
+if {$_net_area_ != "90978"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden net area: 90978,  current net area: $_net_area_"
 }
 unset _net_area_
 # library domain count

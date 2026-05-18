@@ -1463,4 +1463,11 @@ For 7092 new insts, Inserted 7092 well-taps <HS65_LH_FILLERNPWPFP4> cells (prefi
 #@ End verbose source: genus_output/pulpino_init.tcl
 @innovus 2> gui_select -point {0.06900 0.06900}
 @innovus 3> gui_select -rect {668.09900 801.59800 529.58800 786.44100}
-@innovus 4> 
+@innovus 4> The X11 connection broke: I/O error (code 1)
+XIO:  fatal IO error 22 (Invalid argument) on X server "localhost:10.0"
+      after 377 requests (377 known processed) with 0 events remaining.
+
+*** Memory Usage v#1 (Current mem = 1754.430M, initial mem = 484.035M) ***
+*** Message Summary: 4239 warning(s), 8580 error(s)
+
+--- Ending "Innovus" (totcpu=0:03:38, real=0:25:44, mem=1754.4M) ---

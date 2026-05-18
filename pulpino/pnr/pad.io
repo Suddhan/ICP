@@ -25,7 +25,8 @@ Pad: p_rst_n     N BD2SCARUDQP_1V8_SF_LIN
 Pad: p_uart_tx   N BD2SCARUDQP_1V8_SF_LIN
 Pad: p_uart_rx   N BD2SCARUDQP_1V8_SF_LIN
 
-
+Pad: p_spim_clk  N BD2SCARUDQP_1V8_SF_LIN
+Pad: p_spim_csn  N BD2SCARUDQP_1V8_SF_LIN
 # ================================================ #
 # WEST (SPI Master / Flash)
 # ================================================ #
@@ -34,8 +35,6 @@ Pad: PGND2    W GND_ST_SF_LIN
 #Pad: PGNDE2   W GNDE_ST_SF_LIN
 #Pad: PVDDE2   W VDDE_ST_SF_LIN
 
-Pad: p_spim_clk  W BD2SCARUDQP_1V8_SF_LIN
-Pad: p_spim_csn  W BD2SCARUDQP_1V8_SF_LIN
 
 # Note: The SDO pins use the 8mA high-drive cell!
 Pad: p_spim_sdo0 W BD8SCARUDQP_1V8_SF_LIN

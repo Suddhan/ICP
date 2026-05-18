@@ -16,41 +16,41 @@ module pulpino_top
   )
   (
     // Clock and Reset (Physical Pads)
-    inout wire pad_clk,
-    inout wire pad_rst_n,
+    inout wire clk,
+    inout wire rst_n,
 
     // JTAG Interface
-    inout wire pad_jtag_tck,
-    inout wire pad_jtag_trstn,
-    inout wire pad_jtag_tms,
-    inout wire pad_jtag_tdi,
-    inout wire pad_jtag_tdo,
+    inout wire tck_i,
+    inout wire trstn_i,
+    inout wire tms_i,
+    inout wire tdi_i,
+    inout wire tdo_o,
 
     // UART Interface
-    inout wire pad_uart_tx,
-    inout wire pad_uart_rx,
+    inout wire uart_tx,
+    inout wire uart_rx,
 
     // I2C Interface
-    inout wire pad_i2c_scl,
-    inout wire pad_i2c_sda,
+    inout wire scl_pad_i,
+    inout wire sda_pad_i,
 
     // SPI Slave
-    inout wire pad_spis_clk,
-    inout wire pad_spis_cs,
-    inout wire pad_spis_miso,
-    inout wire pad_spis_mosi,
+    inout wire spi_clk_i,
+    inout wire spi_cs_i,
+    inout wire spi_sdo0_o,
+    inout wire spi_sdi0_i,
 
     // SPI Master
-    inout wire pad_spim_clk,
-    inout wire pad_spim_csn0,
-    inout wire pad_spim_sdo0,
-    inout wire pad_spim_sdo1,
-    inout wire pad_spim_sdo2,
-    inout wire pad_spim_sdo3,
-    inout wire pad_spim_sdi0,
-    inout wire pad_spim_sdi1,
-    inout wire pad_spim_sdi2,
-    inout wire pad_spim_sdi3,
+    inout wire spi_master_clk_o,
+    inout wire spi_master_csn0_o,
+    inout wire spi_master_sdo0_o,
+    inout wire spi_master_sdo1_o,
+    inout wire spi_master_sdo2_o,
+    inout wire spi_master_sdo3_o,
+    inout wire spi_master_sdi0_i,
+    inout wire spi_master_sdi1_i,
+    inout wire spi_master_sdi2_i,
+    inout wire spi_master_sdi3_i,
 
     // 32 Bidirectional GPIOs
     inout wire [31:0] pad_gpio
@@ -66,15 +66,15 @@ module pulpino_top
   // ==========================================
   // INTERNAL CORE WIRES (Previously ports)
   // ==========================================
-  wire clk, rst_n;
-  wire tck_i, trstn_i, tms_i, tdi_i, tdo_o;
-  wire uart_tx, uart_rx;
-  wire scl_pad_i, scl_pad_o, scl_padoen_o;
-  wire sda_pad_i, sda_pad_o, sda_padoen_o;
-  wire spi_clk_i, spi_cs_i, spi_sdo0_o, spi_sdi0_i;
-  wire spi_master_clk_o, spi_master_csn0_o;
-  wire spi_master_sdo0_o, spi_master_sdo1_o, spi_master_sdo2_o, spi_master_sdo3_o;
-  wire spi_master_sdi0_i, spi_master_sdi1_i, spi_master_sdi2_i, spi_master_sdi3_i;
+  wire pad_clk, pad_rst_n;
+  wire pad_jtag_tck, pad_jtag_trstn, pad_jtag_tms, pad_jtag_tdi, pad_jtag_tdo;
+  wire pad_uart_tx, pad_uart_rx;
+  wire pad_i2c_scl, scl_pad_o, scl_padoen_o;
+  wire pad_i2c_sda, sda_pad_o, sda_padoen_o;
+  wire pad_spis_clk, pad_spis_cs, pad_spis_miso, pad_spis_mosi;
+  wire pad_spim_clk, pad_spim_csn0;
+  wire pad_spim_sdo0, pad_spim_sdo1, pad_spim_sdo2, pad_spim_sdo3;
+  wire pad_spim_sdi0, pad_spim_sdi1, pad_spim_sdi2, pad_spim_sdi3;
   wire [31:0] gpio_in, gpio_out, gpio_dir;
 
   // Hardwired internal signals for standard boot configuration
@@ -104,43 +104,43 @@ module pulpino_top
   // ==========================================
 
   // --- Clock & Reset (Inputs) ---
-  BD2SCARUDQP_1V8_SF_LIN p_clk     (.ZI(clk),      .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_clk));
-  BD2SCARUDQP_1V8_SF_LIN p_rst_n   (.ZI(rst_n),    .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_rst_n));
+  BD2SCARUDQP_1V8_SF_LIN p_clk     (.ZI(pad_clk),      .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(clk));
+  BD2SCARUDQP_1V8_SF_LIN p_rst_n   (.ZI(pad_rst_n),    .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(rst_n));
 
   // --- JTAG ---
-  BD2SCARUDQP_1V8_SF_LIN p_tck     (.ZI(tck_i),    .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_jtag_tck));
-  BD2SCARUDQP_1V8_SF_LIN p_trstn   (.ZI(trstn_i),  .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_jtag_trstn));
-  BD2SCARUDQP_1V8_SF_LIN p_tms     (.ZI(tms_i),    .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_jtag_tms));
-  BD2SCARUDQP_1V8_SF_LIN p_tdi     (.ZI(tdi_i),    .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_jtag_tdi));
-  BD2SCARUDQP_1V8_SF_LIN p_tdo     (.ZI(),         .A(tdo_o),    .EN(Low),  .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_jtag_tdo));
+  BD2SCARUDQP_1V8_SF_LIN p_tck     (.ZI(pad_jtag_tck),    .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(tck_i));
+  BD2SCARUDQP_1V8_SF_LIN p_trstn   (.ZI(pad_jtag_trstn),  .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(trstn_i));
+  BD2SCARUDQP_1V8_SF_LIN p_tms     (.ZI(pad_jtag_tms),    .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(tms_i));
+  BD2SCARUDQP_1V8_SF_LIN p_tdi     (.ZI(pad_jtag_tdi),    .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(tdi_i));
+  BD2SCARUDQP_1V8_SF_LIN p_tdo     (.ZI(),         .A(pad_jtag_tdo),    .EN(Low),  .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(tdo_o));
 
   // --- UART ---
-  BD2SCARUDQP_1V8_SF_LIN p_uart_tx (.ZI(),         .A(uart_tx),  .EN(Low),  .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_uart_tx));
-  BD2SCARUDQP_1V8_SF_LIN p_uart_rx (.ZI(uart_rx),  .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_uart_rx));
+  BD2SCARUDQP_1V8_SF_LIN p_uart_tx (.ZI(),         .A(pad_uart_tx),  .EN(Low),  .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(uart_tx));
+  BD2SCARUDQP_1V8_SF_LIN p_uart_rx (.ZI(pad_uart_rx),  .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(uart_rx));
 
   // --- I2C ---
-  BD2SCARUDQP_1V8_SF_LIN p_i2c_scl (.ZI(scl_pad_i), .A(scl_pad_o), .EN(scl_padoen_o), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_i2c_scl));
-  BD2SCARUDQP_1V8_SF_LIN p_i2c_sda (.ZI(sda_pad_i), .A(sda_pad_o), .EN(sda_padoen_o), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_i2c_sda));
+  BD2SCARUDQP_1V8_SF_LIN p_i2c_scl (.ZI(pad_i2c_scl), .A(scl_pad_o), .EN(scl_padoen_o), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(scl_pad_i));
+  BD2SCARUDQP_1V8_SF_LIN p_i2c_sda (.ZI(pad_i2c_sda), .A(sda_pad_o), .EN(sda_padoen_o), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(sda_pad_i));
 
   // --- SPI Slave ---
-  BD2SCARUDQP_1V8_SF_LIN p_spis_clk  (.ZI(spi_clk_i),  .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spis_clk));
-  BD2SCARUDQP_1V8_SF_LIN p_spis_cs   (.ZI(spi_cs_i),   .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spis_cs));
-  BD2SCARUDQP_1V8_SF_LIN p_spis_mosi (.ZI(spi_sdi0_i), .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spis_mosi));
-  BD2SCARUDQP_1V8_SF_LIN p_spis_miso (.ZI(),           .A(spi_sdo0_o), .EN(Low),  .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spis_miso));
+  BD2SCARUDQP_1V8_SF_LIN p_spis_clk  (.ZI(pad_spis_clk),  .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_clk_i));
+  BD2SCARUDQP_1V8_SF_LIN p_spis_cs   (.ZI(pad_spis_cs),   .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_cs_i));
+  BD2SCARUDQP_1V8_SF_LIN p_spis_mosi (.ZI(pad_spis_mosi), .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_sdi0_i));
+  BD2SCARUDQP_1V8_SF_LIN p_spis_miso (.ZI(),           .A(pad_spis_miso), .EN(Low),  .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_sdo0_o));
 
   // --- SPI Master ---
-  BD2SCARUDQP_1V8_SF_LIN p_spim_clk  (.ZI(), .A(spi_master_clk_o),  .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spim_clk));
-  BD2SCARUDQP_1V8_SF_LIN p_spim_csn  (.ZI(), .A(spi_master_csn0_o), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spim_csn0));
+  BD2SCARUDQP_1V8_SF_LIN p_spim_clk  (.ZI(), .A(pad_spim_clk),  .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_clk_o));
+  BD2SCARUDQP_1V8_SF_LIN p_spim_csn  (.ZI(), .A(pad_spim_csn0), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_csn0_o));
   
-  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo0 (.ZI(), .A(spi_master_sdo0_o), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spim_sdo0));
-  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo1 (.ZI(), .A(spi_master_sdo1_o), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spim_sdo1));
-  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo2 (.ZI(), .A(spi_master_sdo2_o), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spim_sdo2));
-  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo3 (.ZI(), .A(spi_master_sdo3_o), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spim_sdo3));
+  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo0 (.ZI(), .A(pad_spim_sdo0), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdo0_o));
+  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo1 (.ZI(), .A(pad_spim_sdo1), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdo1_o));
+  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo2 (.ZI(), .A(pad_spim_sdo2), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdo2_o));
+  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo3 (.ZI(), .A(pad_spim_sdo3), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdo3_o));
   
-  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi0 (.ZI(spi_master_sdi0_i), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spim_sdi0));
-  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi1 (.ZI(spi_master_sdi1_i), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spim_sdi1));
-  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi2 (.ZI(spi_master_sdi2_i), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spim_sdi2));
-  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi3 (.ZI(spi_master_sdi3_i), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_spim_sdi3));
+  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi0 (.ZI(pad_spim_sdi0), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdi0_i));
+  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi1 (.ZI(pad_spim_sdi1), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdi1_i));
+  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi2 (.ZI(pad_spim_sdi2), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdi2_i));
+  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi3 (.ZI(pad_spim_sdi3), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdi3_i));
 
   // --- GPIOs ---
   genvar i;
@@ -203,8 +203,8 @@ assign gpio_in[31:4] = 28'b0;
   clk_rst_gen
   clk_rst_gen_i
   (
-      .clk_i            ( clk              ),
-      .rstn_i           ( rst_n            ),
+      .clk_i            ( pad_clk              ),
+      .rstn_i           ( pad_rst_n            ),
 
       .clk_sel_i        ( clk_sel_i        ),   
       .clk_standalone_i ( clk_standalone_i ),
@@ -258,11 +258,11 @@ assign gpio_in[31:4] = 28'b0;
     .instr_slave    ( slaves[0]         ),
     .debug          ( debug             ),
 
-    .tck_i          ( tck_i             ),
-    .trstn_i        ( trstn_i           ),
-    .tms_i          ( tms_i             ),
-    .tdi_i          ( tdi_i             ),
-    .tdo_o          ( tdo_o             )
+    .tck_i          ( pad_jtag_tck             ),
+    .trstn_i        ( pad_jtag_trstn           ),
+    .tms_i          ( pad_jtag_tms             ),
+    .tdi_i          ( pad_jtag_tdi             ),
+    .tdo_o          ( pad_jtag_tdo             )
   );
 
   //----------------------------------------------------------------------------//
@@ -284,54 +284,54 @@ assign gpio_in[31:4] = 28'b0;
     .axi_spi_master   ( masters[2]        ),
     .debug            ( debug             ),
 
-    .spi_clk_i        ( spi_clk_i         ),
+    .spi_clk_i        ( pad_spis_clk         ),
     .testmode_i       ( testmode_i        ),
-    .spi_cs_i         ( spi_cs_i          ),
-    .spi_mode_o       ( spi_mode_o        ),
-    .spi_sdo0_o       ( spi_sdo0_o        ),
-    .spi_sdo1_o       ( spi_sdo1_o        ),
-    .spi_sdo2_o       ( spi_sdo2_o        ),
-    .spi_sdo3_o       ( spi_sdo3_o        ),
-    .spi_sdi0_i       ( spi_sdi0_i        ),
-    .spi_sdi1_i       ( spi_sdi1_i        ),
-    .spi_sdi2_i       ( spi_sdi2_i        ),
-    .spi_sdi3_i       ( spi_sdi3_i        ),
+    .spi_cs_i         ( pad_spis_cs          ),
+    .spi_mode_o       (         ),
+    .spi_sdo0_o       ( pad_spis_miso        ),
+    .spi_sdo1_o       (         ),
+    .spi_sdo2_o       (         ),
+    .spi_sdo3_o       (         ),
+    .spi_sdi0_i       ( pad_spis_mosi        ),
+    .spi_sdi1_i       (         ),
+    .spi_sdi2_i       (         ),
+    .spi_sdi3_i       (         ),
 
     .slave            ( slaves[2]         ),
 
-    .uart_tx          ( uart_tx           ),
-    .uart_rx          ( uart_rx           ),
-    .uart_rts         ( uart_rts          ),
-    .uart_dtr         ( uart_dtr          ),
-    .uart_cts         ( uart_cts          ),
-    .uart_dsr         ( uart_dsr          ),
+    .uart_tx          ( pad_uart_tx           ),
+    .uart_rx          ( pad_uart_rx           ),
+    .uart_rts         (           ),
+    .uart_dtr         (           ),
+    .uart_cts         (           ),
+    .uart_dsr         (           ),
 
-    .spi_master_clk   ( spi_master_clk_o  ),
-    .spi_master_csn0  ( spi_master_csn0_o ),
-    .spi_master_csn1  ( spi_master_csn1_o ),
-    .spi_master_csn2  ( spi_master_csn2_o ),
-    .spi_master_csn3  ( spi_master_csn3_o ),
-    .spi_master_mode  ( spi_master_mode_o ),
-    .spi_master_sdo0  ( spi_master_sdo0_o ),
-    .spi_master_sdo1  ( spi_master_sdo1_o ),
-    .spi_master_sdo2  ( spi_master_sdo2_o ),
-    .spi_master_sdo3  ( spi_master_sdo3_o ),
-    .spi_master_sdi0  ( spi_master_sdi0_i ),
-    .spi_master_sdi1  ( spi_master_sdi1_i ),
-    .spi_master_sdi2  ( spi_master_sdi2_i ),
-    .spi_master_sdi3  ( spi_master_sdi3_i ),
+    .spi_master_clk   ( pad_spim_clk  ),
+    .spi_master_csn0  ( pad_spim_csn0 ),
+    .spi_master_csn1  (  ),
+    .spi_master_csn2  (  ),
+    .spi_master_csn3  (  ),
+    .spi_master_mode  (  ),
+    .spi_master_sdo0  ( pad_spim_sdo0 ),
+    .spi_master_sdo1  ( pad_spim_sdo1 ),
+    .spi_master_sdo2  ( pad_spim_sdo2 ),
+    .spi_master_sdo3  ( pad_spim_sdo3 ),
+    .spi_master_sdi0  ( pad_spim_sdi0 ),
+    .spi_master_sdi1  ( pad_spim_sdi1 ),
+    .spi_master_sdi2  ( pad_spim_sdi2 ),
+    .spi_master_sdi3  ( pad_spim_sdi3 ),
 
-    .scl_pad_i        ( scl_pad_i         ),
+    .scl_pad_i        ( pad_i2c_scl         ),
     .scl_pad_o        ( scl_pad_o         ),
     .scl_padoen_o     ( scl_padoen_o      ),
-    .sda_pad_i        ( sda_pad_i         ),
+    .sda_pad_i        ( pad_i2c_sda         ),
     .sda_pad_o        ( sda_pad_o         ),
     .sda_padoen_o     ( sda_padoen_o      ),
 
     .gpio_in          ( gpio_in           ),
     .gpio_out         ( gpio_out          ),
     .gpio_dir         ( gpio_dir          ),
-    .gpio_padcfg      ( gpio_padcfg       ),
+    .gpio_padcfg      (        ),
 
     .core_busy_i      ( core_busy_int     ),
     .irq_o            ( irq_to_core_int   ),

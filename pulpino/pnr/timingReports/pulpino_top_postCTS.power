@@ -1,0 +1,121 @@
+*----------------------------------------------------------------------------------------
+*	Innovus 21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+*	
+*
+* 	Date & Time:	2026-May-18 14:49:07 (2026-May-18 12:49:07 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: pulpino_top
+*
+*	Liberty Libraries used: 
+*	        view_wcl_slow: /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib
+*	        view_wcl_slow: /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_wc_1.00V_125C_10y.lib
+*	        view_wcl_slow: /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib
+*	        view_wcl_slow: /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib
+*	        view_wcl_slow: /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_wc_1.10V_125C_10y.lib
+*	        view_wcl_slow: /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_wc_1.00V_125C_10y.lib
+*
+*	Power Domain used: 
+*              Rail:       VDDE      Voltage:       1.65 
+*              Rail:        VDD      Voltage:          1 
+*
+*       Power View : view_wcl_slow
+*
+*       User-Defined Activity : N.A.
+*
+*       Activity File: N.A.
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs 
+*
+*       report_power -outfile ./timingReports/pulpino_top_postCTS.power -leakage
+*
+-----------------------------------------------------------------------------------------
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Leakage Power:         0.62620280 
+-----------------------------------------------------------------------------------------
+
+
+Group                           Leakage       Percentage 
+                                Power         (%)        
+-----------------------------------------------------------------------------------------
+Sequential                        0.1876       30.86 
+Macro                             0.1242       20.43 
+IO                               0.01073       1.766 
+Physical-Only                   0.002571      0.4229 
+Combinational                     0.2541        41.8 
+Clock (Combinational)           0.007003       1.152 
+Clock (Sequential)                0.0217        3.57 
+-----------------------------------------------------------------------------------------
+Total                             0.6079         100 
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Leakage       Percentage 
+                                Power         (%)        
+-----------------------------------------------------------------------------------------
+VDDE                     1.65     0.0289       4.616 
+VDD                         1     0.5973       95.38 
+
+
+Clock                           Leakage       Percentage 
+                                Power         (%)        
+-----------------------------------------------------------------------------------------
+SPI_CLK                         0.001525      0.2435 
+CLK                              0.02685       4.288 
+JTAG_CLK                        0.001368      0.2184 
+-----------------------------------------------------------------------------------------
+Total (excluding duplicates)     0.02974        4.75 
+-----------------------------------------------------------------------------------------
+Clock: SPI_CLK
+Clock Period: 0.040000 usec 
+Clock Toggle Rate:    50.0000 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: CLK
+Clock Period: 0.008000 usec 
+Clock Toggle Rate:   250.0000 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: JTAG_CLK
+Clock Period: 0.100000 usec 
+Clock Toggle Rate:    20.0000 Mhz 
+Clock Static Probability:  0.5000
+
+
+
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*                Highest Average Power: core_region_i/data_mem/rows[0].col[0].i_sram (ST_SPHS_2048x8m8_L):          0.00388 
+*                Highest Leakage Power: core_region_i/data_mem/rows[0].col[0].i_sram (ST_SPHS_2048x8m8_L):          0.00388 
+*          Total Cap:      5.74784e-10 F
+*          Total instances in design: 39522
+*          Total instances in design with no power:     0
+*          Total instances in design with no activity:     0
+*          Total Fillers and Decap:    14
+-----------------------------------------------------------------------------------------
+
+Total leakage power = 0.626203 mW
+Cell usage statistics:  
+Library IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z , 14 cells ( 0.035423%) , 0.0209107 mW ( 3.339283%  ) 
+Library CLOCK65LPLVT , 5073 cells ( 12.835889%) , 0.044397 mW ( 7.089870%  ) 
+Library SPHS100909 , 32 cells ( 0.080968%) , 0.12416 mW ( 19.827442%  ) 
+Library CORE65LPLVT , 34374 cells ( 86.974342%) , 0.426001 mW ( 68.029282%  ) 
+Library IO65LPHVT_SF_1V8_50A_7M4X0Y2Z , 29 cells ( 0.073377%) , 0.0107339 mW ( 1.714124%  ) 

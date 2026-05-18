@@ -1,0 +1,838 @@
+[05/14 10:17:37      0s] 
+[05/14 10:17:37      0s] Cadence Innovus(TM) Implementation System.
+[05/14 10:17:37      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/14 10:17:37      0s] 
+[05/14 10:17:37      0s] Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+[05/14 10:17:37      0s] Options:	-stylus 
+[05/14 10:17:37      0s] Date:		Thu May 14 10:17:37 2026
+[05/14 10:17:37      0s] Host:		fransg-2 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+[05/14 10:17:37      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[05/14 10:17:37      0s] 
+[05/14 10:17:37      0s] License:
+[05/14 10:17:37      0s] 		[10:17:37.324505] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+[05/14 10:17:37      0s] 
+[05/14 10:17:37      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[05/14 10:17:37      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[05/14 10:17:46      8s] 
+[05/14 10:17:46      8s] 
+[05/14 10:17:52     12s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+[05/14 10:17:55     14s] @(#)CDS: NanoRoute 21.35-s114_1 NR220912-2004/21_15-UB (database version 18.20.592_1) {superthreading v2.17}
+[05/14 10:17:55     14s] @(#)CDS: AAE 21.15-s039 (64bit) 10/13/2022 (Linux 3.10.0-693.el7.x86_64)
+[05/14 10:17:55     14s] @(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+[05/14 10:17:55     14s] @(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+[05/14 10:17:55     14s] @(#)CDS: CPE v21.15-s076
+[05/14 10:17:55     14s] @(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+[05/14 10:17:55     14s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[05/14 10:17:55     14s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[05/14 10:17:55     14s] @(#)CDS: RCDB 11.15.0
+[05/14 10:17:55     14s] @(#)CDS: STYLUS 21.12-s013_1 (08/15/2022 08:25 PDT)
+[05/14 10:17:55     14s] @(#)CDS: SystemPlanner-21.15Rel-8720 (21.15) (2022-08-22 18:31:54+0800)
+[05/14 10:17:55     14s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_12030_fransg-2_su2577su-s_YzQsZJ.
+
+[05/14 10:17:55     14s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_12030_fransg-2_su2577su-s_YzQsZJ.
+[05/14 10:17:55     14s] 
+[05/14 10:17:55     14s] Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[05/14 10:17:57     15s] [INFO] Loading PVS 21.10 fill procedures
+[05/14 10:17:58     17s] 
+[05/14 10:17:58     17s] **INFO:  MMMC transition support version v31-84 
+[05/14 10:17:58     17s] 
+[05/14 10:18:01     19s] @innovus 1> source genus_output/pulpino_init.tcl
+#@ Begin verbose source (pre): source genus_output/pulpino_init.tcl
+[05/14 10:18:36     27s] @file 1: ################################################################################
+[05/14 10:18:36     27s] @file 2: #
+[05/14 10:18:36     27s] @file 3: # Init setup file
+[05/14 10:18:36     27s] @file 4: # Created by Genus(TM) Synthesis Solution on 05/07/2026 14:47:06
+[05/14 10:18:36     27s] @file 5: #
+[05/14 10:18:36     27s] @file 6: ################################################################################
+[05/14 10:18:36     27s] @file 7: #if { ![is_common_ui_mode] } { error "ERROR: This script requires common_ui to be active."}
+[05/14 10:18:36     27s] @file 8: #::legacy::set_attribute -quiet init_mmmc_version 2 /
+[05/14 10:18:36     27s] @file 9:
+[05/14 10:18:36     27s] @@file 10: read_mmmc ../pnr/genus_output/pulpino_chip.mmmc.tcl
+[05/14 10:18:36     27s] #@ Begin verbose source ../pnr/genus_output/pulpino_chip.mmmc.tcl (pre)
+[05/14 10:18:36     27s] @file 1: #################################################################################
+[05/14 10:18:36     27s] @file 2: #
+[05/14 10:18:36     27s] @file 3: # Created by Genus(TM) Synthesis Solution 21.14-s082_1 on Thu May 07 14:47:01 CEST 2026
+[05/14 10:18:36     27s] @file 4: #
+[05/14 10:18:36     27s] @file 5: #################################################################################
+[05/14 10:18:36     27s] @file 6:
+[05/14 10:18:36     27s] @file 7: ## library_sets
+[05/14 10:18:36     27s] @@file 8: create_library_set -name wcl_slow \
+[05/14 10:18:36     27s]     -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_wc_1.00V_125C_10y.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_wc_1.10V_125C_10y.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_wc_1.00V_125C_10y.lib }
+[05/14 10:18:36     27s] @@file 15: create_library_set -name wcl_fast \
+[05/14 10:18:36     27s]     -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_bc_1.25V_m40C.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_bc_1.25V_m40C.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_bc_1.25V_1.95V_m40C.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_bc_1.25V_m40C.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_bc_1.30V_m40C.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_bc_1.25V_m40C.lib }
+[05/14 10:18:36     27s] @@file 22: create_library_set -name wcl_typical \
+[05/14 10:18:36     27s]     -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_nom_1.10V_25C.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_nom_1.10V_25C.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_nom_1.10V_1.80V_25C.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_nom_1.10V_25C.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_nom_1.20V_25C.lib \
+[05/14 10:18:36     27s]               /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_nom_1.10V_25C.lib }
+[05/14 10:18:36     27s] @file 29:
+[05/14 10:18:36     27s] @file 30: ## opcond
+[05/14 10:18:36     27s] @@file 31: create_opcond -name op_cond_wcl_slow \
+[05/14 10:18:36     27s]     -process 1.0 \
+[05/14 10:18:36     27s]     -voltage 1.0 \
+[05/14 10:18:36     27s]     -temperature 125.0
+[05/14 10:18:36     27s] @@file 35: create_opcond -name op_cond_wcl_fast \
+[05/14 10:18:36     27s]     -process 1.0 \
+[05/14 10:18:36     27s]     -voltage 1.25 \
+[05/14 10:18:36     27s]     -temperature -40.0
+[05/14 10:18:36     27s] @@file 39: create_opcond -name op_cond_wcl_typical \
+[05/14 10:18:36     27s]     -process 1.0 \
+[05/14 10:18:36     27s]     -voltage 1.1 \
+[05/14 10:18:36     27s]     -temperature 25.0
+[05/14 10:18:36     27s] @file 43:
+[05/14 10:18:36     27s] @file 44: ## timing_condition
+[05/14 10:18:36     27s] @@file 45: create_timing_condition -name timing_cond_wcl_slow \
+[05/14 10:18:36     27s]     -opcond op_cond_wcl_slow \
+[05/14 10:18:36     27s]     -library_sets { wcl_slow }
+[05/14 10:18:36     27s] @@file 48: create_timing_condition -name timing_cond_wcl_fast \
+[05/14 10:18:36     27s]     -opcond op_cond_wcl_fast \
+[05/14 10:18:36     27s]     -library_sets { wcl_fast }
+[05/14 10:18:36     27s] @@file 51: create_timing_condition -name timing_cond_wcl_typical \
+[05/14 10:18:36     27s]     -opcond op_cond_wcl_typical \
+[05/14 10:18:36     27s]     -library_sets { wcl_typical }
+[05/14 10:18:36     27s] @file 54:
+[05/14 10:18:36     27s] @file 55: ## rc_corner
+[05/14 10:18:36     27s] @@file 56: create_rc_corner -name rc_corner_typ \
+[05/14 10:18:36     27s]     -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCTYP/qrcTechFile \
+[05/14 10:18:36     27s]     -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCTYP.captable \
+[05/14 10:18:36     27s]     -pre_route_res 1.0 \
+[05/14 10:18:36     27s]     -pre_route_cap 1.0 \
+[05/14 10:18:36     27s]     -pre_route_clock_res 0.0 \
+[05/14 10:18:36     27s]     -pre_route_clock_cap 0.0 \
+[05/14 10:18:36     27s]     -post_route_res {1.0 1.0 1.0} \
+[05/14 10:18:36     27s]     -post_route_cap {1.0 1.0 1.0} \
+[05/14 10:18:36     27s]     -post_route_cross_cap {1.0 1.0 1.0} \
+[05/14 10:18:36     27s]     -post_route_clock_res {1.0 1.0 1.0} \
+[05/14 10:18:36     27s]     -post_route_clock_cap {1.0 1.0 1.0}
+[05/14 10:18:36     27s] @@file 68: create_rc_corner -name rc_corner_min \
+[05/14 10:18:36     27s]     -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMIN/qrcTechFile \
+[05/14 10:18:36     27s]     -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable \
+[05/14 10:18:36     27s]     -pre_route_res 1.0 \
+[05/14 10:18:36     27s]     -pre_route_cap 1.0 \
+[05/14 10:18:36     27s]     -pre_route_clock_res 0.0 \
+[05/14 10:18:36     27s]     -pre_route_clock_cap 0.0 \
+[05/14 10:18:36     27s]     -post_route_res {1.0 1.0 1.0} \
+[05/14 10:18:36     27s]     -post_route_cap {1.0 1.0 1.0} \
+[05/14 10:18:36     27s]     -post_route_cross_cap {1.0 1.0 1.0} \
+[05/14 10:18:36     27s]     -post_route_clock_res {1.0 1.0 1.0} \
+[05/14 10:18:36     27s]     -post_route_clock_cap {1.0 1.0 1.0}
+[05/14 10:18:36     27s] @@file 80: create_rc_corner -name rc_corner_max \
+[05/14 10:18:36     27s]     -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile \
+[05/14 10:18:36     27s]     -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable \
+[05/14 10:18:36     27s]     -pre_route_res 1.0 \
+[05/14 10:18:36     27s]     -pre_route_cap 1.0 \
+[05/14 10:18:36     27s]     -pre_route_clock_res 0.0 \
+[05/14 10:18:36     27s]     -pre_route_clock_cap 0.0 \
+[05/14 10:18:36     27s]     -post_route_res {1.0 1.0 1.0} \
+[05/14 10:18:36     27s]     -post_route_cap {1.0 1.0 1.0} \
+[05/14 10:18:36     27s]     -post_route_cross_cap {1.0 1.0 1.0} \
+[05/14 10:18:36     27s]     -post_route_clock_res {1.0 1.0 1.0} \
+[05/14 10:18:36     27s]     -post_route_clock_cap {1.0 1.0 1.0}
+[05/14 10:18:36     27s] @file 92:
+[05/14 10:18:36     27s] @file 93: ## delay_corner
+[05/14 10:18:36     27s] @@file 94: create_delay_corner -name delay_corner_wcl_slow \
+[05/14 10:18:36     27s]     -early_timing_condition { timing_cond_wcl_slow } \
+[05/14 10:18:36     27s]     -late_timing_condition { timing_cond_wcl_slow } \
+[05/14 10:18:36     27s]     -early_rc_corner rc_corner_min \
+[05/14 10:18:36     27s]     -late_rc_corner rc_corner_max
+[05/14 10:18:36     27s] @@file 99: create_delay_corner -name delay_corner_wcl_fast \
+[05/14 10:18:36     27s]     -early_timing_condition { timing_cond_wcl_fast } \
+[05/14 10:18:36     27s]     -late_timing_condition { timing_cond_wcl_fast } \
+[05/14 10:18:36     27s]     -early_rc_corner rc_corner_min \
+[05/14 10:18:36     27s]     -late_rc_corner rc_corner_max
+[05/14 10:18:36     27s] @@file 104: create_delay_corner -name delay_corner_wcl_typical \
+[05/14 10:18:36     27s]     -early_timing_condition { timing_cond_wcl_typical } \
+[05/14 10:18:36     27s]     -late_timing_condition { timing_cond_wcl_typical } \
+[05/14 10:18:36     27s]     -early_rc_corner rc_corner_typ \
+[05/14 10:18:36     27s]     -late_rc_corner rc_corner_typ
+[05/14 10:18:36     27s] @file 109:
+[05/14 10:18:36     27s] @file 110: ## constraint_mode
+[05/14 10:18:36     27s] @@file 111: create_constraint_mode -name functional_wcl_slow \
+[05/14 10:18:36     27s]     -sdc_files { ../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc }
+[05/14 10:18:36     27s] @@file 113: create_constraint_mode -name functional_wcl_fast \
+[05/14 10:18:36     27s]     -sdc_files { ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc }
+[05/14 10:18:36     27s] @@file 115: create_constraint_mode -name functional_wcl_typical \
+[05/14 10:18:36     27s]     -sdc_files { ../pnr/genus_output/pulpino_chip.functional_wcl_typical.sdc }
+[05/14 10:18:36     27s] @file 117:
+[05/14 10:18:36     27s] @file 118: ## analysis_view
+[05/14 10:18:36     27s] @@file 119: create_analysis_view -name view_wcl_slow \
+[05/14 10:18:36     27s]     -constraint_mode functional_wcl_slow \
+[05/14 10:18:36     27s]     -delay_corner delay_corner_wcl_slow
+[05/14 10:18:36     27s] @@file 122: create_analysis_view -name view_wcl_fast \
+[05/14 10:18:36     27s]     -constraint_mode functional_wcl_fast \
+[05/14 10:18:36     27s]     -delay_corner delay_corner_wcl_fast
+[05/14 10:18:36     27s] @@file 125: create_analysis_view -name view_wcl_typical \
+[05/14 10:18:36     27s]     -constraint_mode functional_wcl_typical \
+[05/14 10:18:36     27s]     -delay_corner delay_corner_wcl_typical
+[05/14 10:18:36     27s] @file 128:
+[05/14 10:18:36     27s] @file 129: ## set_analysis_view
+[05/14 10:18:36     27s] @@file 130: set_analysis_view -setup { view_wcl_slow } \
+[05/14 10:18:36     27s]                   -hold { view_wcl_fast }
+[05/14 10:18:36     27s] #@ End verbose source ../pnr/genus_output/pulpino_chip.mmmc.tcl
+[05/14 10:18:36     27s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib' ...
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1447)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1448)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1452)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1453)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3390)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3391)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3395)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3396)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5333)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5334)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5338)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5339)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7276)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7277)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7281)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7282)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7988)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7989)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7993)
+[05/14 10:18:36     27s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7994)
+[05/14 10:18:36     27s] Message <TECHLIB-1204> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[05/14 10:18:39     30s] Read 866 cells in library 'CORE65LPLVT' 
+[05/14 10:18:39     30s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_wc_1.00V_125C_10y.lib' ...
+[05/14 10:18:39     30s] Read 110 cells in library 'CLOCK65LPLVT' 
+[05/14 10:18:39     30s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib' ...
+[05/14 10:18:39     30s] Read 10 cells in library 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z' 
+[05/14 10:18:39     30s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib' ...
+[05/14 10:18:39     30s] Read 33 cells in library 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z' 
+[05/14 10:18:39     30s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_wc_1.10V_125C_10y.lib' ...
+[05/14 10:18:39     30s] Read 2 cells in library 'SPHS100909' 
+[05/14 10:18:39     30s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_wc_1.00V_125C_10y.lib' ...
+[05/14 10:18:39     30s] Read 10 cells in library 'PRHS65' 
+[05/14 10:18:39     30s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_bc_1.25V_m40C.lib' ...
+[05/14 10:18:41     32s] Read 866 cells in library 'CORE65LPLVT' 
+[05/14 10:18:41     32s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_bc_1.25V_m40C.lib' ...
+[05/14 10:18:41     32s] Read 110 cells in library 'CLOCK65LPLVT' 
+[05/14 10:18:41     32s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_bc_1.25V_1.95V_m40C.lib' ...
+[05/14 10:18:41     32s] Read 10 cells in library 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z' 
+[05/14 10:18:41     32s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_bc_1.25V_m40C.lib' ...
+[05/14 10:18:41     32s] Read 33 cells in library 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z' 
+[05/14 10:18:41     32s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_bc_1.30V_m40C.lib' ...
+[05/14 10:18:41     32s] Read 2 cells in library 'SPHS100909' 
+[05/14 10:18:41     32s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_bc_1.25V_m40C.lib' ...
+[05/14 10:18:41     32s] Read 10 cells in library 'PRHS65' 
+[05/14 10:18:41     32s] Ending "PreSetAnalysisView" (total cpu=0:00:05.4, real=0:00:05.0, peak res=1018.6M, current mem=810.1M)
+[05/14 10:18:41     32s] @file 11:
+[05/14 10:18:41     32s] @@file 12: read_physical -lef {/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/viarule_generate.lef /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/sites.lef /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/CADENCE/LEF/CORE65LPLVT_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/CADENCE/LEF/CLOCK65LPLVT_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/CADENCE/LEF/PRHS65_soc.lef /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/CADENCE/LEF/SPHS100909_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef
+[05/14 10:18:41     32s] /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z.lef}
+[05/14 10:18:41     32s] 
+[05/14 10:18:41     32s] Loading LEF file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef ...
+[05/14 10:18:41     32s] 
+[05/14 10:18:41     32s] Loading LEF file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/viarule_generate.lef ...
+[05/14 10:18:41     32s] 
+[05/14 10:18:41     32s] Loading LEF file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/sites.lef ...
+[05/14 10:18:41     32s] 
+[05/14 10:18:41     32s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/CADENCE/LEF/CORE65LPLVT_soc.lef ...
+[05/14 10:18:41     32s] Set DBUPerIGU to M2 pitch 200.
+[05/14 10:18:42     33s] 
+[05/14 10:18:42     33s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/CADENCE/LEF/CLOCK65LPLVT_soc.lef ...
+[05/14 10:18:42     33s] 
+[05/14 10:18:42     33s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/CADENCE/LEF/PRHS65_soc.lef ...
+[05/14 10:18:42     33s] 
+[05/14 10:18:42     33s] Loading LEF file /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/CADENCE/LEF/SPHS100909_soc.lef ...
+[05/14 10:18:42     33s] 
+[05/14 10:18:42     33s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef ...
+[05/14 10:18:42     33s] WARNING (LEFPARS-2002): NAMESCASESENSITIVE is a required statement in LEF files with version 5.5 and earlier.
+[05/14 10:18:42     33s] Without NAMESCASESENSITIVE defined, the LEF file is technically incorrect.
+[05/14 10:18:42     33s] Refer to the LEF/DEF 5.5 or earlier Language Reference manual on how to define this statement. See file /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef at line 27188.
+[05/14 10:18:42     33s] 
+[05/14 10:18:42     33s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z.lef ...
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'VDD_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDD_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'VDD_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDD_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'VDDE_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDDE_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'VDDE_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDDE_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'RTCORNERCELL_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RTCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'RTCORNERCELL_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RTCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'RBCORNERCELL_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RBCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'RBCORNERCELL_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RBCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'LTCORNERCELL_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LTCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'LTCORNERCELL_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LTCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'LBCORNERCELL_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LBCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'LBCORNERCELL_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LBCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'IOFILLERCUTCELL_ALL_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCUTCELL_ALL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'IOFILLERCUTCELL_ALL_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCUTCELL_ALL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'IOFILLERCELL_TRIGGER_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCELL_TRIGGER_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'DUMMY' in macro 'IOFILLERCELL_TRIGGER_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCELL_TRIGGER_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'A0SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'A0SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'A1SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'A1SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'A2SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'A2SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-201):	Pin 'A3SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-201' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPLF-200):	Pin 'A3SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/14 10:18:42     33s] Type 'man IMPLF-200' for more detail.
+[05/14 10:18:42     33s] **WARN: (EMS-27):	Message (IMPLF-201) has exceeded the current message display limit of 20.
+[05/14 10:18:42     33s] To increase the message display limit, refer to the product command reference manual.
+[05/14 10:18:42     33s] **WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+[05/14 10:18:42     33s] To increase the message display limit, refer to the product command reference manual.
+[05/14 10:18:42     33s] 
+[05/14 10:18:42     33s] ##  Check design process and node:  
+[05/14 10:18:42     33s] ##  Both design process and tech node are not set.
+[05/14 10:18:42     33s] 
+[05/14 10:18:42     33s] @file 14:
+[05/14 10:18:42     33s] @@file 15: read_netlist ../synth/outputs/pulpino_top_netlist.v
+[05/14 10:18:42     33s] #% Begin Load netlist data ... (date=05/14 10:18:42, mem=818.3M)
+[05/14 10:18:42     33s] *** Begin netlist parsing (mem=1151.1M) ***
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X9' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X9' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X4' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X4' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X27' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X27' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X18' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X18' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X9' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X9' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X4' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X4' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X35' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X35' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X27' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X27' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X18' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X18' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XNOR3X9' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XNOR3X9' is defined in LEF but not in the timing library.
+[05/14 10:18:42     33s] Type 'man IMPVL-159' for more detail.
+[05/14 10:18:42     33s] **WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+[05/14 10:18:42     33s] To increase the message display limit, refer to the product command reference manual.
+[05/14 10:18:42     33s] Created 1031 new cells from 12 timing libraries.
+[05/14 10:18:42     33s] Reading netlist ...
+[05/14 10:18:42     33s] Backslashed names will retain backslash and a trailing blank character.
+[05/14 10:18:42     33s] Reading verilog netlist '../synth/outputs/pulpino_top_netlist.v'
+[05/14 10:18:42     33s] 
+[05/14 10:18:42     33s] *** Memory Usage v#1 (Current mem = 1159.137M, initial mem = 484.035M) ***
+[05/14 10:18:42     33s] *** End netlist parsing (cpu=0:00:00.4, real=0:00:00.0, mem=1159.1M) ***
+[05/14 10:18:42     33s] #% End Load netlist data ... (date=05/14 10:18:42, total cpu=0:00:00.4, real=0:00:00.0, peak res=872.3M, current mem=872.3M)
+[05/14 10:18:42     33s] Top level cell is pulpino_top.
+[05/14 10:18:43     34s] Hooked 2062 DB cells to tlib cells.
+[05/14 10:18:43     34s] Ending "BindLib:" (total cpu=0:00:00.3, real=0:00:00.0, peak res=975.9M, current mem=975.9M)
+[05/14 10:18:43     34s] 3 empty module found.
+[05/14 10:18:43     34s] Starting recursive module instantiation check.
+[05/14 10:18:43     34s] No recursion found.
+[05/14 10:18:43     34s] Building hierarchical netlist for Cell pulpino_top ...
+[05/14 10:18:43     34s] *** Netlist is unique.
+[05/14 10:18:43     34s] Setting Std. cell height to 2600 DBU (smallest netlist inst).
+[05/14 10:18:43     34s] ** info: there are 3088 modules.
+[05/14 10:18:43     34s] ** info: there are 37128 stdCell insts.
+[05/14 10:18:43     34s] ** info: there are 29 Pad insts.
+[05/14 10:18:43     34s] ** info: there are 32 macros.
+[05/14 10:18:43     34s] 
+[05/14 10:18:43     34s] *** Memory Usage v#1 (Current mem = 1289.562M, initial mem = 484.035M) ***
+[05/14 10:18:43     34s] @file 16:
+[05/14 10:18:43     34s] @@file 17: init_design 
+[05/14 10:18:43     34s] Initializing I/O assignment ...
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_SF_TF_2ROWS' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_SF_2ROWS' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_TF_2ROWS' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_SF_LIN' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_TF_LIN' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'COREHD_QG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'COREHD_QV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'COREHV_QG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'COREHV_QV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'CORE_QG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'CORE_QV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'COREHD_TG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'COREHD_TV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'COREHV_TG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'COREHV_TV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'CORE_TG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'CORE_TV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'COREHD_DG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'COREHD_DV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (IMPFP-3961):	The techSite 'COREHD' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/14 10:18:43     34s] Type 'man IMPFP-3961' for more detail.
+[05/14 10:18:43     34s] **WARN: (EMS-27):	Message (IMPFP-3961) has exceeded the current message display limit of 20.
+[05/14 10:18:43     34s] To increase the message display limit, refer to the product command reference manual.
+[05/14 10:18:43     34s] Start create_tracks
+[05/14 10:18:43     34s] Extraction setup Started 
+[05/14 10:18:43     34s] 
+[05/14 10:18:43     34s] Trim Metal Layers:
+[05/14 10:18:43     34s] Initializing multi-corner RC extraction with 2 active RC Corners ...
+[05/14 10:18:43     34s] **WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for pre_route and post_route extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for pre_route and post_route (effort level medium/high/signoff) extraction engines.
+[05/14 10:18:43     34s] Type 'man IMPEXT-6202' for more detail.
+[05/14 10:18:43     34s] Reading Encrypted Capacitance Table File /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable ...
+[05/14 10:18:43     34s] Cap table was created using Encounter 14.23-s044_1.
+[05/14 10:18:43     34s] Process name: cmos065_7m4x0y2z_GL_RCMAX.
+[05/14 10:18:43     34s] Allocated an empty WireEdgeEnlargement table in rc_corner_max [6].
+[05/14 10:18:43     34s] Allocated an empty WireEdgeEnlargement table in rc_corner_max [7].
+[05/14 10:18:43     34s] Allocated an empty WireEdgeEnlargement table in rc_corner_max [8].
+[05/14 10:18:43     34s] Decrypted 57344 characters.
+[05/14 10:18:43     34s] Reading Encrypted Capacitance Table File /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable ...
+[05/14 10:18:43     34s] Cap table was created using Encounter 14.23-s044_1.
+[05/14 10:18:43     34s] Process name: cmos065_7m4x0y2z_GL_RCMIN.
+[05/14 10:18:43     34s] Allocated an empty WireEdgeEnlargement table in rc_corner_min [6].
+[05/14 10:18:43     34s] Allocated an empty WireEdgeEnlargement table in rc_corner_min [7].
+[05/14 10:18:43     34s] Allocated an empty WireEdgeEnlargement table in rc_corner_min [8].
+[05/14 10:18:43     34s] Decrypted 53248 characters.
+[05/14 10:18:44     35s] Importing multi-corner RC tables ... 
+[05/14 10:18:44     35s] Summary of Active RC-Corners : 
+[05/14 10:18:44     35s]  
+[05/14 10:18:44     35s]  Analysis View: view_wcl_slow
+[05/14 10:18:44     35s]   Late RC-Corner
+[05/14 10:18:44     35s]     RC-Corner Name        : rc_corner_max
+[05/14 10:18:44     35s]     RC-Corner Index       : 0
+[05/14 10:18:44     35s]     RC-Corner Temperature : 25 Celsius
+[05/14 10:18:44     35s]     RC-Corner Cap Table   : '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable'
+[05/14 10:18:44     35s]     RC-Corner PreRoute Res Factor         : 1
+[05/14 10:18:44     35s]     RC-Corner PreRoute Cap Factor         : 1
+[05/14 10:18:44     35s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/14 10:18:44     35s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/14 10:18:44     35s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/14 10:18:44     35s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/14 10:18:44     35s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/14 10:18:44     35s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+[05/14 10:18:44     35s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+[05/14 10:18:44     35s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/14 10:18:44     35s]     RC-Corner Technology file: '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile'
+[05/14 10:18:44     35s]  
+[05/14 10:18:44     35s]   Early RC-Corner
+[05/14 10:18:44     35s]     RC-Corner Name        : rc_corner_min
+[05/14 10:18:44     35s]     RC-Corner Index       : 1
+[05/14 10:18:44     35s]     RC-Corner Temperature : 25 Celsius
+[05/14 10:18:44     35s]     RC-Corner Cap Table   : '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable'
+[05/14 10:18:44     35s]     RC-Corner PreRoute Res Factor         : 1
+[05/14 10:18:44     35s]     RC-Corner PreRoute Cap Factor         : 1
+[05/14 10:18:44     35s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/14 10:18:44     35s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/14 10:18:44     35s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/14 10:18:44     35s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/14 10:18:44     35s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/14 10:18:44     35s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+[05/14 10:18:44     35s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+[05/14 10:18:44     35s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/14 10:18:44     35s]     RC-Corner Technology file: '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMIN/qrcTechFile'
+[05/14 10:18:44     35s]  
+[05/14 10:18:44     35s]  Analysis View: view_wcl_fast
+[05/14 10:18:44     35s]   Late RC-Corner
+[05/14 10:18:44     35s]     RC-Corner Name        : rc_corner_max
+[05/14 10:18:44     35s]     RC-Corner Index       : 0
+[05/14 10:18:44     35s]     RC-Corner Temperature : 25 Celsius
+[05/14 10:18:44     35s]     RC-Corner Cap Table   : '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable'
+[05/14 10:18:44     35s]     RC-Corner PreRoute Res Factor         : 1
+[05/14 10:18:44     35s]     RC-Corner PreRoute Cap Factor         : 1
+[05/14 10:18:44     35s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/14 10:18:44     35s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/14 10:18:44     35s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/14 10:18:44     35s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/14 10:18:44     35s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/14 10:18:44     35s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+[05/14 10:18:44     35s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+[05/14 10:18:44     35s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/14 10:18:44     35s]     RC-Corner Technology file: '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile'
+[05/14 10:18:44     35s]  
+[05/14 10:18:44     35s]   Early RC-Corner
+[05/14 10:18:44     35s]     RC-Corner Name        : rc_corner_min
+[05/14 10:18:44     35s]     RC-Corner Index       : 1
+[05/14 10:18:44     35s]     RC-Corner Temperature : 25 Celsius
+[05/14 10:18:44     35s]     RC-Corner Cap Table   : '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable'
+[05/14 10:18:44     35s]     RC-Corner PreRoute Res Factor         : 1
+[05/14 10:18:44     35s]     RC-Corner PreRoute Cap Factor         : 1
+[05/14 10:18:44     35s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/14 10:18:44     35s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/14 10:18:44     35s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/14 10:18:44     35s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/14 10:18:44     35s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/14 10:18:44     35s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+[05/14 10:18:44     35s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+[05/14 10:18:44     35s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/14 10:18:44     35s] Technology file '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile' associated with first view 'view_wcl_slow' will be used as the primary corner for the multi-corner extraction.
+[05/14 10:18:44     35s]     RC-Corner Technology file: '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMIN/qrcTechFile'
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] Trim Metal Layers:
+[05/14 10:18:44     35s] LayerId::1 widthSet size::5
+[05/14 10:18:44     35s] LayerId::2 widthSet size::4
+[05/14 10:18:44     35s] LayerId::3 widthSet size::4
+[05/14 10:18:44     35s] LayerId::4 widthSet size::4
+[05/14 10:18:44     35s] LayerId::5 widthSet size::4
+[05/14 10:18:44     35s] LayerId::6 widthSet size::4
+[05/14 10:18:44     35s] LayerId::7 widthSet size::4
+[05/14 10:18:44     35s] LayerId::8 widthSet size::2
+[05/14 10:18:44     35s] eee: pegSigSF::1.070000
+[05/14 10:18:44     35s] Updating RC grid for preRoute extraction ...
+[05/14 10:18:44     35s] Initializing multi-corner capacitance tables ... 
+[05/14 10:18:44     35s] Initializing multi-corner resistance tables ...
+[05/14 10:18:44     35s] Creating RPSQ from WeeR and WRes ...
+[05/14 10:18:44     35s] Creating RPSQ from WeeR and WRes ...
+[05/14 10:18:44     35s] eee: l::1 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/14 10:18:44     35s] eee: l::2 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/14 10:18:44     35s] eee: l::3 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/14 10:18:44     35s] eee: l::4 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/14 10:18:44     35s] eee: l::5 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/14 10:18:44     35s] eee: l::6 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/14 10:18:44     35s] eee: l::7 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/14 10:18:44     35s] eee: l::8 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/14 10:18:44     35s] {RT rc_corner_max 0 8 8 {6 0} {7 0} 2}
+[05/14 10:18:44     35s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.000000 uaWl=0.000000 uaWlH=0.000000 aWlH=0.000000 lMod=0 pMax=0.850000 pMod=82 wcR=0.559500 newSi=0.000000 wHLS=1.398750 siPrev=0 viaL=0.000000
+[05/14 10:18:44     35s] *Info: initialize multi-corner CTS.
+[05/14 10:18:44     35s] Ending "SetAnalysisView" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1281.9M, current mem=971.0M)
+[05/14 10:18:44     35s] Reading timing constraints file '../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc' ...
+[05/14 10:18:44     35s] Current (total cpu=0:00:35.4, real=0:01:07, peak res=1281.9M, current mem=1275.0M)
+[05/14 10:18:44     35s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 9).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 10).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'pulpino_chip' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 13).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'designs' that match 'pulpino_chip' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 13).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'i_core/core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i/aw_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 15).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'pins' that match 'i_core/core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i/aw_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 15).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 15).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'ports or pins' that match '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 15).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'i_core/core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i/ar_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 16).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'pins' that match 'i_core/core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i/ar_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 16).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 16).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'ports or pins' that match '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 16).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'i_core/core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i/w_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 17).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'pins' that match 'i_core/core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i/w_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 17).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 17).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'ports or pins' that match '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 17).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'i_core/core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i/r_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 18).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'pins' that match 'i_core/core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i/r_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 18).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 18).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'ports or pins' that match '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 18).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'i_core/core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i/b_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 19).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'pins' that match 'i_core/core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i/b_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 19).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 19).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'ports or pins' that match '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 19).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_aw_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 20).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'pins' that match 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_aw_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 20).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 20).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'ports or pins' that match '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 20).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_ar_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 21).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'pins' that match 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_ar_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 21).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 21).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'ports or pins' that match '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 21).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_w_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 22).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'pins' that match 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_w_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 22).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 22).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'ports or pins' that match '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 22).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_r_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 23).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'pins' that match 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_r_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 23).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 23).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'ports or pins' that match '' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 23).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_b_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 24).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **ERROR: (TCLCMD-917):	Cannot find 'pins' that match 'i_core/core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_b_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 24).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] Message <TCLCMD-513> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit. (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 24).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] Message <TCLCMD-917> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit. (File ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc, Line 24).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] INFO (CTE): Reading of timing constraints file ../pnr/genus_output/pulpino_chip.functional_wcl_fast.sdc completed, with 22 Warnings and 20 Errors.
+[05/14 10:18:44     35s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1349.4M, current mem=1349.4M)
+[05/14 10:18:44     35s] Current (total cpu=0:00:35.5, real=0:01:07, peak res=1349.4M, current mem=1349.4M)
+[05/14 10:18:44     35s] Reading timing constraints file '../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc' ...
+[05/14 10:18:44     35s] Current (total cpu=0:00:35.5, real=0:01:07, peak res=1349.4M, current mem=1349.4M)
+[05/14 10:18:44     35s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc, Line 9).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc, Line 10).
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] INFO (CTE): Reading of timing constraints file ../pnr/genus_output/pulpino_chip.functional_wcl_slow.sdc completed, with 2 WARNING
+[05/14 10:18:44     35s] Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1349.7M, current mem=1349.7M)
+[05/14 10:18:44     35s] Current (total cpu=0:00:35.6, real=0:01:07, peak res=1349.7M, current mem=1349.7M)
+[05/14 10:18:44     35s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) Begin ...
+[05/14 10:18:44     35s] Summary for sequential cells identification: 
+[05/14 10:18:44     35s]   Identified SBFF number: 210
+[05/14 10:18:44     35s]   Identified MBFF number: 0
+[05/14 10:18:44     35s]   Identified SB Latch number: 0
+[05/14 10:18:44     35s]   Identified MB Latch number: 0
+[05/14 10:18:44     35s]   Not identified SBFF number: 0
+[05/14 10:18:44     35s]   Not identified MBFF number: 0
+[05/14 10:18:44     35s]   Not identified SB Latch number: 0
+[05/14 10:18:44     35s]   Not identified MB Latch number: 0
+[05/14 10:18:44     35s]   Number of sequential cells which are not FFs: 45
+[05/14 10:18:44     35s] Total number of combinational cells: 721
+[05/14 10:18:44     35s] Total number of sequential cells: 255
+[05/14 10:18:44     35s] Total number of tristate cells: 10
+[05/14 10:18:44     35s] Total number of level shifter cells: 0
+[05/14 10:18:44     35s] Total number of power gating cells: 0
+[05/14 10:18:44     35s] Total number of isolation cells: 0
+[05/14 10:18:44     35s] Total number of power switch cells: 0
+[05/14 10:18:44     35s] Total number of pulse generator cells: 0
+[05/14 10:18:44     35s] Total number of always on buffers: 0
+[05/14 10:18:44     35s] Total number of retention cells: 0
+[05/14 10:18:44     35s] List of usable buffers: HS65_LL_CNBFX10 HS65_LL_CNBFX103 HS65_LL_CNBFX124 HS65_LL_CNBFX14 HS65_LL_CNBFX21 HS65_LL_CNBFX17 HS65_LL_CNBFX27 HS65_LL_CNBFX24 HS65_LL_CNBFX34 HS65_LL_CNBFX31 HS65_LL_CNBFX38 HS65_LL_CNBFX41 HS65_LL_CNBFX48 HS65_LL_CNBFX45 HS65_LL_CNBFX55 HS65_LL_CNBFX52 HS65_LL_CNBFX62 HS65_LL_CNBFX58 HS65_LL_CNBFX82 HS65_LL_BFX13 HS65_LL_BFX106 HS65_LL_BFX142 HS65_LL_BFX2 HS65_LL_BFX18 HS65_LL_BFX213 HS65_LL_BFX27 HS65_LL_BFX22 HS65_LL_BFX284 HS65_LL_BFX31 HS65_LL_BFX4 HS65_LL_BFX35 HS65_LL_BFX44 HS65_LL_BFX40 HS65_LL_BFX53 HS65_LL_BFX49 HS65_LL_BFX62 HS65_LL_BFX9 HS65_LL_BFX7 HS65_LL_BFX71
+[05/14 10:18:44     35s] Total number of usable buffers: 39
+[05/14 10:18:44     35s] List of unusable buffers: CLOCKTREE
+[05/14 10:18:44     35s] Total number of unusable buffers: 1
+[05/14 10:18:44     35s] List of usable inverters: HS65_LL_CNIVX10 HS65_LL_CNIVX103 HS65_LL_CNIVX124 HS65_LL_CNIVX14 HS65_LL_CNIVX21 HS65_LL_CNIVX17 HS65_LL_CNIVX24 HS65_LL_CNIVX3 HS65_LL_CNIVX27 HS65_LL_CNIVX34 HS65_LL_CNIVX31 HS65_LL_CNIVX41 HS65_LL_CNIVX38 HS65_LL_CNIVX48 HS65_LL_CNIVX45 HS65_LL_CNIVX55 HS65_LL_CNIVX52 HS65_LL_CNIVX58 HS65_LL_CNIVX7 HS65_LL_CNIVX62 HS65_LL_CNIVX82 HS65_LL_IVX13 HS65_LL_IVX106 HS65_LL_IVX142 HS65_LL_IVX2 HS65_LL_IVX18 HS65_LL_IVX213 HS65_LL_IVX27 HS65_LL_IVX22 HS65_LL_IVX284 HS65_LL_IVX31 HS65_LL_IVX4 HS65_LL_IVX35 HS65_LL_IVX44 HS65_LL_IVX40 HS65_LL_IVX53 HS65_LL_IVX49 HS65_LL_IVX62 HS65_LL_IVX9 HS65_LL_IVX7 HS65_LL_IVX71
+[05/14 10:18:44     35s] Total number of usable inverters: 41
+[05/14 10:18:44     35s] List of unusable inverters:
+[05/14 10:18:44     35s] Total number of unusable inverters: 0
+[05/14 10:18:44     35s] List of identified usable delay cells: HS65_LL_DLYIC2X4 HS65_LL_DLYIC2X9 HS65_LL_DLYIC2X7 HS65_LL_DLYIC4X4 HS65_LL_DLYIC4X9 HS65_LL_DLYIC4X7 HS65_LL_DLYIC6X4 HS65_LL_DLYIC6X7 HS65_LL_DLYIC6X9
+[05/14 10:18:44     35s] Total number of identified usable delay cells: 9
+[05/14 10:18:44     35s] List of identified unusable delay cells: HS65_LL_CNBFX38_0 HS65_LL_CNBFX38_1 HS65_LL_CNBFX38_10 HS65_LL_CNBFX38_11 HS65_LL_CNBFX38_12 HS65_LL_CNBFX38_13 HS65_LL_CNBFX38_14 HS65_LL_CNBFX38_15 HS65_LL_CNBFX38_16 HS65_LL_CNBFX38_17 HS65_LL_CNBFX38_18 HS65_LL_CNBFX38_19 HS65_LL_CNBFX38_2 HS65_LL_CNBFX38_20 HS65_LL_CNBFX38_21 HS65_LL_CNBFX38_22 HS65_LL_CNBFX38_23 HS65_LL_CNBFX38_3 HS65_LL_CNBFX38_4 HS65_LL_CNBFX38_5 HS65_LL_CNBFX38_6 HS65_LL_CNBFX38_7 HS65_LL_CNBFX38_8 HS65_LL_CNBFX38_9[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) End ...
+
+[05/14 10:18:44     35s] Total number of identified unusable delay cells: 24
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] TimeStamp Deleting Cell Server Begin ...
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] TimeStamp Deleting Cell Server End ...
+[05/14 10:18:44     35s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1372.8M, current mem=1372.7M)
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) Begin ...
+[05/14 10:18:44     35s] Summary for sequential cells identification: 
+[05/14 10:18:44     35s]   Identified SBFF number: 210
+[05/14 10:18:44     35s]   Identified MBFF number: 0
+[05/14 10:18:44     35s]   Identified SB Latch number: 0
+[05/14 10:18:44     35s]   Identified MB Latch number: 0
+[05/14 10:18:44     35s]   Not identified SBFF number: 0
+[05/14 10:18:44     35s]   Not identified MBFF number: 0
+[05/14 10:18:44     35s]   Not identified SB Latch number: 0
+[05/14 10:18:44     35s]   Not identified MB Latch number: 0
+[05/14 10:18:44     35s]   Number of sequential cells which are not FFs: 45
+[05/14 10:18:44     35s]  Visiting view : view_wcl_slow
+[05/14 10:18:44     35s]    : PowerDomain = none : Weighted F : unweighted  = 22.60 (1.000) with rcCorner = 0
+[05/14 10:18:44     35s]    : PowerDomain = none : Weighted F : unweighted  = 18.90 (1.000) with rcCorner = -1
+[05/14 10:18:44     35s]  Visiting view : view_wcl_fast
+[05/14 10:18:44     35s]    : PowerDomain = none : Weighted F : unweighted  = 7.90 (1.000) with rcCorner = 1
+[05/14 10:18:44     35s]    : PowerDomain = none : Weighted F : unweighted  = 6.70 (1.000) with rcCorner = -1
+[05/14 10:18:44     35s] TLC MultiMap info (StdDelay):
+[05/14 10:18:44     35s]   : delay_corner_wcl_fast + wcl_fast + 1 + no RcCorner := 6.7ps
+[05/14 10:18:44     35s]   : delay_corner_wcl_fast + wcl_fast + 1 + rc_corner_min := 7.9ps
+[05/14 10:18:44     35s]   : delay_corner_wcl_slow + wcl_slow + 1 + no RcCorner := 18.9ps
+[05/14 10:18:44     35s]   : delay_corner_wcl_slow + wcl_slow + 1 + rc_corner_max := 22.6ps
+[05/14 10:18:44     35s]  Setting StdDelay to: 22.6ps
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) End ...
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] TimeStamp Deleting Cell Server Begin ...
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] TimeStamp Deleting Cell Server End ...
+[05/14 10:18:44     35s] @file 18:
+[05/14 10:18:44     35s] @@file 19: read_io_file -no_die_size_adjust pad.io  
+[05/14 10:18:44     35s] Reading IO assignment file "pad.io" ...
+[05/14 10:18:44     35s] @file 20:
+[05/14 10:18:44     35s] @file 21: source floorplan.tcl
+[05/14 10:18:44     35s] #@ Begin verbose source floorplan.tcl (pre)
+[05/14 10:18:44     35s] @file 1:
+[05/14 10:18:44     35s] @@file 2: set_db [get_db base_cells -if {.class == core}] .symmetry xy ;
+[05/14 10:18:44     35s] @file 2: # Issue with stdcells not having symmetry in lef files, forced xy to fix this. (NOT a nice solution) /KW
+[05/14 10:18:44     35s] @file 3:
+[05/14 10:18:44     35s] @file 4: # Set design attributes
+[05/14 10:18:44     35s] @@file 5: set_db design_process_node 65
+[05/14 10:18:44     35s] ##  Process: 65            (User Set)               
+[05/14 10:18:44     35s] ##     Node: (not set)                           
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] ##  Check design process and node:  
+[05/14 10:18:44     35s] ##  Design tech node is not set.
+[05/14 10:18:44     35s] 
+[05/14 10:18:44     35s] Applying the recommended capacitance filtering threshold values for 65nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+[05/14 10:18:44     35s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[05/14 10:18:44     35s] 	Capacitance filtering mode(extract_rc_cap_filter_mode option of the set_db) is 'relative_and_coupling' for all engines.
+[05/14 10:18:44     35s] 	The accuracy mode for post_route extract_rc_effort_level low extraction will be set to 'high'.
+[05/14 10:18:44     35s] 	Default value for EffortLevel(extract_rc_effort_level option of the set_db) in post_route extraction mode is 'medium'.
+[05/14 10:18:44     35s] @file 6:
+[05/14 10:18:44     35s] @@file 7: set_db design_top_routing_layer M7
+[05/14 10:18:44     35s] @@file 8: set_db design_bottom_routing_layer M2 
+[05/14 10:18:44     35s] @@file 9: set_db design_flow_effort standard ;
+[05/14 10:18:44     35s] @file 9: # {express standard extreme}
+[05/14 10:18:44     35s] @@file 10: set_db design_power_effort low ;
+[05/14 10:18:44     35s] @file 10: # {none low high}
+[05/14 10:18:44     35s] @file 11:
+[05/14 10:18:44     35s] @file 12: # Set timing attributes
+[05/14 10:18:44     35s] @@file 13: set_db timing_analysis_cppr           both
+[05/14 10:18:44     35s] @@file 14: set_db timing_analysis_type           ocv
+[05/14 10:18:44     35s] @file 15:
+[05/14 10:18:44     35s] @file 16:
+[05/14 10:18:44     35s] @@file 17: set_preference CmdLogMode 2 ;
+[05/14 10:18:44     35s] @file 18:  
+[05/14 10:18:44     35s] @file 19: #adding pad fillers
+[05/14 10:18:44     35s] @@file 20: deselect_obj -all
+[05/14 10:18:44     35s] @file 21: select_obj $leftPads
+[05/14 10:18:44     35s] **ERROR: (IMPSE-110):	File 'floorplan.tcl' line 21: can't read "leftPads": no such variable.
+[05/14 10:18:44     35s] #@ End verbose source floorplan.tcl
+[05/14 10:18:44     35s] **ERROR: (IMPSE-110):	File 'genus_output/pulpino_init.tcl' line 177: can't read "leftPads": no such variable.
+[05/14 10:18:44     35s] #@ End verbose source genus_output/pulpino_init.tcl
+[05/14 10:18:44     35s] can't read "leftPads": no such variable
+[05/14 10:18:44     35s] can't read "leftPads": no such variable
+[05/14 10:18:44     35s] @innovus 2> source genus_output/pulpino_init.tcl
+
+[05/14 10:19:15     43s] #@ Begin verbose source (pre): source genus_output/pulpino_init.tcl
+[05/14 10:19:15     43s] @file 1: ################################################################################
+[05/14 10:19:15     43s] @file 2: #
+[05/14 10:19:15     43s] @file 3: # Init setup file
+[05/14 10:19:15     43s] @file 4: # Created by Genus(TM) Synthesis Solution on 05/07/2026 14:47:06
+[05/14 10:19:15     43s] @file 5: #
+[05/14 10:19:15     43s] @file 6: ################################################################################
+[05/14 10:19:15     43s] @file 7: #if { ![is_common_ui_mode] } { error "ERROR: This script requires common_ui to be active."}
+[05/14 10:19:15     43s] @file 8: #::legacy::set_attribute -quiet init_mmmc_version 2 /
+[05/14 10:19:15     43s] @file 9:
+[05/14 10:19:15     43s] @@file 10: read_mmmc ../pnr/genus_output/pulpino_chip.mmmc.tcl
+[05/14 10:19:15     43s] **WARN: (TCLCMD-1306):	read_mmmc command should be called once before init_design.
+[05/14 10:19:15     43s] **ERROR: (IMPSE-110):	File 'genus_output/pulpino_init.tcl' line 10: 1.
+[05/14 10:19:15     43s] #@ End verbose source genus_output/pulpino_init.tcl
+[05/14 10:19:15     43s] 1
+[05/14 10:19:15     43s] 1
+[05/14 10:19:15     43s] @innovus 3> exit
+
+[05/14 10:19:19     44s] 
+[05/14 10:19:19     44s] *** Memory Usage v#1 (Current mem = 1721.422M, initial mem = 484.035M) ***
+[05/14 10:19:19     44s] 
+[05/14 10:19:19     44s] *** Summary of all messages that are not suppressed in this session:
+[05/14 10:19:19     44s] Severity  ID               Count  Summary                                  
+[05/14 10:19:19     44s] WARNING   IMPLF-200          264  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/14 10:19:19     44s] WARNING   IMPLF-201          120  Pin '%s' in macro '%s' has no ANTENNADIF...
+[05/14 10:19:19     44s] ERROR     IMPSE-110            3  File '%s' line %s: %s.                   
+[05/14 10:19:19     44s] WARNING   IMPFP-3961          25  The techSite '%s' has no related standar...
+[05/14 10:19:19     44s] WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+[05/14 10:19:19     44s] WARNING   IMPVL-159         2578  Pin '%s' of cell '%s' is defined in LEF ...
+[05/14 10:19:19     44s] WARNING   TCLCMD-513         106  The software could not find a matching o...
+[05/14 10:19:19     44s] ERROR     TCLCMD-917         106  Cannot find '%s' that match '%s'         
+[05/14 10:19:19     44s] WARNING   TCLCMD-1306          1  read_mmmc command should be called once ...
+[05/14 10:19:19     44s] WARNING   TCLCMD-1461          4  Skipped unsupported command: %s          
+[05/14 10:19:19     44s] ERROR     TECHLIB-1204      8146  Illegal value '%s' defined for attribute...
+[05/14 10:19:19     44s] *** Message Summary: 3099 warning(s), 8255 error(s)
+[05/14 10:19:19     44s] 
+[05/14 10:19:19     44s] --- Ending "Innovus" (totcpu=0:00:44.3, real=0:01:42, mem=1721.4M) ---
