@@ -12,6 +12,7 @@
 `include "apb_bus.sv"
 `include "debug_bus.sv"
 `include "config.sv"
+//`include "../Conv_ACC/conv_acc/RTL/conv_top.sv"
 
 module peripherals
   #(
@@ -113,6 +114,7 @@ module peripherals
   APB_BUS s_fll_bus();
   APB_BUS s_soc_ctrl_bus();
   APB_BUS s_debug_bus();
+  APB_BUS s_conv_acc_bus();
 
   logic [1:0]   s_spim_event;
   logic [3:0]   timer_irq;
@@ -227,7 +229,8 @@ module peripherals
      .i2c_master        ( s_i2c_bus        ),
      .fll_master        ( s_fll_bus        ),
      .soc_ctrl_master   ( s_soc_ctrl_bus   ),
-     .debug_master      ( s_debug_bus      )
+     .debug_master      ( s_debug_bus      ),
+     .conv_acc_master   ( s_conv_acc_bus   )
   );
 
   //////////////////////////////////////////////////////////////////
@@ -545,5 +548,41 @@ module peripherals
     .per_master_r_valid_i ( debug.rvalid            ),
     .per_master_r_opc_i   ( '0                      ),
     .per_master_r_rdata_i ( debug.rdata             )
+  );
+
+  //////////////////////////////////////////////////////////////////
+  ///                                                            ///
+  /// APB Slave 9: APB2PER for conv_acc                          ///
+  ///                                                            ///
+  //////////////////////////////////////////////////////////////////
+
+  apb2conv
+  #(
+    .PER_ADDR_WIDTH ( 15             ),
+    .APB_ADDR_WIDTH ( APB_ADDR_WIDTH )
+  )
+  apb2conv_i
+  (
+    .clk_i          ( clk_i                    ),
+    .rst_ni         ( rst_n                    ),
+    
+    .PADDR        ( s_conv_acc_bus.paddr    ),
+    .PWDATA       ( s_conv_acc_bus.pwdata   ),
+    .PWRITE       ( s_conv_acc_bus.pwrite   ),
+    .PSEL         ( s_conv_acc_bus.psel     ),
+    .PENABLE      ( s_conv_acc_bus.penable  ),
+    .PRDATA       ( s_conv_acc_bus.prdata   ),
+    .PREADY       ( s_conv_acc_bus.pready   ),
+    .PSLVERR      ( s_conv_acc_bus.pslverr  ),
+    
+    .conv_input_o   ( s_conv_input  ),
+    .conv_output_i  ( s_conv_output )
+  );
+
+  conv_top conv_top_i (
+    .clk             ( clk_i          ),
+    .rst             ( ~rst_n         ),
+    .apb_input       ( s_conv_input   ),
+    .apb_output      ( s_conv_output  )
   );
 endmodule
