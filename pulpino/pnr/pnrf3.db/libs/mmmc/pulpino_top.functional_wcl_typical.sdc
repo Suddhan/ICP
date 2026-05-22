@@ -1,0 +1,1 @@
+/h/d9/g/su2577su-s/etin35_project/pulpino/pnr/genus_output/pulpino_top.functional_wcl_typical.sdc

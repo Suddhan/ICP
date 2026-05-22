@@ -2,7 +2,7 @@
 #
 # Genus(TM) Synthesis Solution setup file
 # Created by Genus(TM) Synthesis Solution 21.14-s082_1
-#   on 05/18/2026 12:09:06
+#   on 05/22/2026 11:27:08
 #
 # This file can only be run in Genus Common UI mode.
 #
@@ -71,8 +71,8 @@ set _cell_area_ [::legacy::get_attribute cell_area design:pulpino_top]
 if {[regexp {^-?[0-9.]+$} $_cell_area_]} {
   set _cell_area_ [format %.0f $_cell_area_]
 }
-if {$_cell_area_ != "1090042"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden cell area: 1090042,  current cell area: $_cell_area_"
+if {$_cell_area_ != "1054381"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden cell area: 1054381,  current cell area: $_cell_area_"
 }
 unset _cell_area_
 # net area
@@ -80,8 +80,8 @@ set _net_area_ [::legacy::get_attribute net_area design:pulpino_top]
 if {[regexp {^-?[0-9.]+$} $_net_area_]} {
   set _net_area_ [format %.0f $_net_area_]
 }
-if {$_net_area_ != "90978"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden net area: 90978,  current net area: $_net_area_"
+if {$_net_area_ != "88293"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden net area: 88293,  current net area: $_net_area_"
 }
 unset _net_area_
 # library domain count

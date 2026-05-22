@@ -1,0 +1,157 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Tue May 19 10:44:27 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.35-s114_1 NR220912-2004/21_15-UB (database version 18.20.592_1) {superthreading v2.17}
+#@(#)CDS: AAE 21.15-s039 (64bit) 10/13/2022 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+#@(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+#@(#)CDS: CPE v21.15-s076
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+
+read_db pnrf1.db
+set_layer_preference node_layer -is_visible 0
+set_layer_preference node_layer -is_visible 1
+time_design -post_route
+time_design -post_cts
+gui_select -point {211.50800 1243.88800}
+opt_design -post_route
+set stage route
+check_design -type $stage -out_file ./verify/${stage}/check_design.rpt ;
+push_snapshot_stack
+set_db route_design_antenna_diode_insertion true
+set_db route_design_antenna_cell_name [get_db [get_db base_cells -if {.name == *ANTPROT*}] .name]
+set_db design_flow_effort standard
+set_db timing_analysis_type ocv 
+route_design
+time_design -post_route
+opt_design -post_route
+opt_design -post_route -drv
+time_design -post_route -hold
+opt_design -post_route -hold
+add_fillers
+pop_snapshot_stack
+create_snapshot -categories all -label route
+report_metric -format html -out_file metrics.html
+set_multi_cpu_usage -local_cpu 6
+check_drc -out_file ./verify/route/check_drc.rpt
+fix_via -min_step
+route_eco -fix_drc
+route_eco -fix_drc
+route_eco -fix_drc
+check_pg_shorts -out_file verify/route/check_pg_shorts.rpt
+check_connectivity -out_file ./verify/route/check_connectivity.rpt
+check_connectivity -out_file ./verify/route/check_connectivity.rpt
+check_process_antenna -out_file verify/route/check_process_antenna.rpt
+check_process_antenna -out_file check_process_antenna.rpt
+check_well_taps -max_distance 30 -report verify/route/check_well_taps.rpt
+set_layer_preference violation -is_visible 1
+route_special -connect pad_pin -nets {VDD} -pad_pin_layer_range {M6 M7} -inst [get_db [get_db insts -if {.base_cell == *VDD_*}] .name ]
+gui_select -point {-205.35000 143.16400}
+route_special -connect pad_pin -nets {GND} -pad_pin_layer_range {M7 M7} -inst [get_db [get_db insts -if {.base_cell == *GND_*}] .name ]
+route_special -connect pad_pin -nets {VDD} -pad_pin_layer_range {M6 M7} -inst [get_db [get_db insts -if {.base_cell == *VDD_*}] .name ]
+gui_select -point {1505.72300 1405.94600}
+check_connectivity -out_file ./verify/route/check_connectivity.rpt
+check_connectivity -out_file check_connectivity.rpt
+set_layer_preference net -is_visible 0
+set_layer_preference clock -is_visible 0
+set_layer_preference M1 -is_visible 0
+set_layer_preference violation -is_visible 0
+route_special -connect pad_pin -nets {GND} -pad_pin_layer_range {M7 M7} -inst [get_db [get_db insts -if {.base_cell == *GND_*}] .name ]
+set_layer_preference pinObj -is_visible 1
+set_layer_preference node_layer -is_visible 1
+set_layer_preference node_layer -is_visible 0
+gui_select -point {357.13400 1585.51400}
+set_layer_preference allM7 -is_visible 1
+set_layer_preference allM2Cont -is_visible 0
+set_layer_preference allM3Cont -is_visible 0
+set_layer_preference allM4Cont -is_visible 0
+set_layer_preference allM5Cont -is_visible 0
+set_layer_preference allM6Cont -is_visible 0
+set_layer_preference allM7Cont -is_visible 0
+set_layer_preference allM8Cont -is_visible 0
+gui_select -point {325.94100 1592.59400}
+set_layer_preference allM7 -is_visible 0
+set_layer_preference allM2Cont -is_visible 0
+set_layer_preference allM3Cont -is_visible 0
+set_layer_preference allM4Cont -is_visible 0
+set_layer_preference allM5Cont -is_visible 0
+set_layer_preference allM6Cont -is_visible 0
+set_layer_preference allM7Cont -is_visible 0
+set_layer_preference allM8Cont -is_visible 0
+set_layer_preference allM7 -is_visible 1
+set_layer_preference allM2Cont -is_visible 0
+set_layer_preference allM3Cont -is_visible 0
+set_layer_preference allM4Cont -is_visible 0
+set_layer_preference allM5Cont -is_visible 0
+set_layer_preference allM6Cont -is_visible 0
+set_layer_preference allM7Cont -is_visible 0
+set_layer_preference allM8Cont -is_visible 0
+gui_select -point {364.21300 1602.43700}
+set_layer_preference pinObj -is_selectable 1
+gui_select -point {360.97700 1602.76100}
+gui_select -point {356.55500 1594.99400}
+gui_select -point {355.80000 1603.08400}
+gui_select -point {238.38900 1596.06600}
+set_layer_preference allM6 -is_visible 1
+set_layer_preference allM2Cont -is_visible 0
+set_layer_preference allM3Cont -is_visible 0
+set_layer_preference allM4Cont -is_visible 0
+set_layer_preference allM5Cont -is_visible 0
+set_layer_preference allM6Cont -is_visible 0
+set_layer_preference allM7Cont -is_visible 1
+set_layer_preference allM8Cont -is_visible 0
+set_layer_preference allM7 -is_visible 0
+set_layer_preference allM2Cont -is_visible 0
+set_layer_preference allM3Cont -is_visible 0
+set_layer_preference allM4Cont -is_visible 0
+set_layer_preference allM5Cont -is_visible 0
+set_layer_preference allM6Cont -is_visible 0
+set_layer_preference allM7Cont -is_visible 0
+set_layer_preference allM8Cont -is_visible 0
+gui_select -point {211.92000 1603.26400}
+set_layer_preference allM7 -is_visible 1
+set_layer_preference allM2Cont -is_visible 0
+set_layer_preference allM3Cont -is_visible 0
+set_layer_preference allM4Cont -is_visible 0
+set_layer_preference allM5Cont -is_visible 0
+set_layer_preference allM6Cont -is_visible 0
+set_layer_preference allM7Cont -is_visible 1
+set_layer_preference allM8Cont -is_visible 0
+set_layer_preference allM6 -is_visible 0
+set_layer_preference allM2Cont -is_visible 0
+set_layer_preference allM3Cont -is_visible 0
+set_layer_preference allM4Cont -is_visible 0
+set_layer_preference allM5Cont -is_visible 0
+set_layer_preference allM6Cont -is_visible 0
+set_layer_preference allM7Cont -is_visible 0
+set_layer_preference allM8Cont -is_visible 0
+get_db [get_db insts -if {.base_cell == *GND_*}] .name 
+route_special -connect pad_pin -nets {GND} -pad_pin_layer_range {M7 M7} -inst [get_db [get_db insts -if {.base_cell == *GND_*}] .name ]
+get_db
+get_db [get_db insts -if {.base_cell == *GND_*}] .lib_cells.lib_pins
+get_db [get_db insts -if {.base_cell == *GND_*}] .lib_cells
+gui_select -point {344.42000 1628.47200}
+get_db base_cells -if {.name==GND_ST_SF_LIN}
+get_db [get_db base_cells -if {.name==GND_ST_SF_LIN}] .lef_file_name 
+set_db [get_db base_cells -if {.name==GND_ST_SF_LIN}] .lef_file_name /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/CADENCE/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_soc_KW_FIX.lef
+pwd
+time_design -post_route 
+set_layer_preference node_layer -is_visible 1
+set_layer_preference node_layer -is_visible 0
+check_floorplan -report_density 
+check_place 
+get_db report_place_density_map_ignore_filler 
+set_db report_place_density_map_ignore_filler tru
+check_place 
+check_place -ignore_filler_in_density 
+delete_filler
+gui_select -point {1262.76100 1735.59000}
+gui_select -point {1704.57100 914.21600}
+get_db report_place_density_map_ignore_filler 
+check_place -ignore_filler_in_density 
+exit

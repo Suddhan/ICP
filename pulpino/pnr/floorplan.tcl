@@ -106,10 +106,39 @@ connect_global_net GND -type pg_pin -pin_base_name gnd -inst_base_name *
 connect_global_net VDD -type tie_hi -pin_base_name vdd -inst_base_name *
 connect_global_net GND -type tie_lo -pin_base_name gnd -inst_base_name *
 
+connect_global_net GND -type pg_pin -pin_base_name GND -inst_base_name *
 connect_global_net VDD -type pg_pin -pin_base_name VDD -inst_base_name *
 connect_global_net GND -type pg_pin -pin_base_name GNDE -inst_base_name *
 connect_global_net VDDE -type pg_pin -pin_base_name VDDE -inst_base_name *
 connect_global_net VDDE -type pg_pin -pin_base_name VDDE1V8 -inst_base_name *
+
+
+#Add pad fillers
+set leftPads [get_db [get_db io_constraints -if {.side == west}] .inst]
+deselect_obj -all
+select_obj $leftPads
+space_selected -space 98 -fix_side top
+add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side left -filler_orient R270
+
+set topPads [get_db [get_db io_constraints -if {.side == north}] .inst]
+deselect_obj -all
+select_obj $topPads
+space_selected -space 150 -fix_side right
+add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side top -filler_orient R180
+
+set rightPads [get_db [get_db io_constraints -if {.side == east}] .inst]
+deselect_obj -all
+select_obj $rightPads
+space_selected -space 150 -fix_side bottom
+add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side right -filler_orient R90
+
+
+set bottomPads [get_db [get_db io_constraints -if {.side == south}] .inst]
+deselect_obj -all
+select_obj $bottomPads
+space_selected -space 130 -fix_side left
+add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side bottom -filler_orient R0
+
 
 
 ######################################
@@ -143,7 +172,7 @@ deselect_obj -all
 #               The connection in these pads are on layer M6 respectively M7. 
 #               We use the special route to tell the tool to connect the `pad_pins` (i.e., the pin connection of the pads) for the net VDD resp. GND
 #               We also add -inst [..] to only do this for our VDD pads and GND pads.
-route_special -connect pad_pin -nets {VDD} -pad_pin_layer_range {M6 M7} -inst [get_db [get_db insts -if {.base_cell == *VDD_*}] .name ]
+route_special -connect pad_pin -nets {VDD} -pad_pin_layer_range {M5 M7} -inst [get_db [get_db insts -if {.base_cell == *VDD_*}] .name ]
 route_special -connect pad_pin -nets {GND} -pad_pin_layer_range {M7 M7} -inst [get_db [get_db insts -if {.base_cell == *GND_*}] .name ]
 route_special -connect core_pin -nets {VDD GND}   
 
@@ -203,28 +232,6 @@ set_db add_well_taps_cell HS65_LH_FILLERNPWPFP4
 #               According to the documentation, the maximum distance a cell can have to a well tap is 30um.
 #               This means that if we space the well taps with 60um, all cells will be within the 30um range of a tap.
 add_well_taps -cell_interval 60
-
-#Add pad fillers
-set leftPads [get_db [get_db insts -if {.lib_cells == *IO65*}] -if {.orient == r270}]
-deselect_obj -all
-select_obj $leftPads
-add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side left -filler_orient R270
-
-set topPads [get_db [get_db insts -if {.lib_cells == *IO65*}] -if {.orient == r180}]
-deselect_obj -all
-select_obj $topPads
-add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side top -filler_orient R180
-
-set rightPads [get_db [get_db insts -if {.lib_cells == *IO65*}] -if {.orient == r90}]
-deselect_obj -all
-select_obj $rightPads
-add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side right -filler_orient R90
-
-
-set bottomPads [get_db [get_db insts -if {.lib_cells == *IO65*}] -if {.orient == r0}]
-deselect_obj -all
-select_obj $bottomPads
-add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side bottom -filler_orient R0
 
 
 

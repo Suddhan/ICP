@@ -16,44 +16,41 @@ module pulpino_top
   )
   (
     // Clock and Reset (Physical Pads)
-    inout wire clk,
-    inout wire rst_n,
+    input wire clk,
+    input wire rst_n,
 
     // JTAG Interface
-    inout wire tck_i,
-    inout wire trstn_i,
-    inout wire tms_i,
-    inout wire tdi_i,
-    inout wire tdo_o,
+    input wire tck_i,
+    input wire trstn_i,
+    input wire tms_i,
+    input wire tdi_i,
+    output wire tdo_o,
 
     // UART Interface
-    inout wire uart_tx,
-    inout wire uart_rx,
+    output wire uart_tx,
+    input wire uart_rx,
 
     // I2C Interface
-    inout wire scl_pad_i,
-    inout wire sda_pad_i,
+    input wire scl_pad_i,
+    input wire sda_pad_i,
 
     // SPI Slave
-    inout wire spi_clk_i,
-    inout wire spi_cs_i,
-    inout wire spi_sdo0_o,
-    inout wire spi_sdi0_i,
-
-    // SPI Master
-    inout wire spi_master_clk_o,
-    inout wire spi_master_csn0_o,
-    inout wire spi_master_sdo0_o,
-    inout wire spi_master_sdo1_o,
-    inout wire spi_master_sdo2_o,
-    inout wire spi_master_sdo3_o,
-    inout wire spi_master_sdi0_i,
-    inout wire spi_master_sdi1_i,
-    inout wire spi_master_sdi2_i,
-    inout wire spi_master_sdi3_i,
+    input wire spi_clk_i,
+    input wire spi_cs_i,
+    output wire spi_sdo0_o,
+    output wire spi_sdo1_o,
+    output wire spi_sdo2_o,
+    output wire spi_sdo3_o,
+    input wire spi_sdi0_i,
+    input wire spi_sdi1_i,
+    input wire spi_sdi2_i,
+    input wire spi_sdi3_i,
+	output wire [1:0] spi_mode_o,
+	//output wire use_qspi,
+	input fetch_enable_i,
 
     // 32 Bidirectional GPIOs
-    inout wire [31:0] pad_gpio
+	output pad_gpio
   );
 
   // ==========================================
@@ -71,28 +68,44 @@ module pulpino_top
   wire pad_uart_tx, pad_uart_rx;
   wire pad_i2c_scl, scl_pad_o, scl_padoen_o;
   wire pad_i2c_sda, sda_pad_o, sda_padoen_o;
-  wire pad_spis_clk, pad_spis_cs, pad_spis_miso, pad_spis_mosi;
-  wire pad_spim_clk, pad_spim_csn0;
-  wire pad_spim_sdo0, pad_spim_sdo1, pad_spim_sdo2, pad_spim_sdo3;
-  wire pad_spim_sdi0, pad_spim_sdi1, pad_spim_sdi2, pad_spim_sdi3;
-  wire [31:0] gpio_in, gpio_out, gpio_dir;
+  wire pad_spis_clk, pad_spis_cs, pad_spi_sdi1_i, pad_spi_sdi0_i, pad_spi_sdi2_i, pad_spi_sdi3_i, pad_spi_sdo0_o, pad_spi_sdo1_o, pad_spi_sdo2_o, pad_spi_sdo3_o, pad_fetch_enable_i;
+  //wire pad_spim_clk, pad_spim_csn0;
+  //wire pad_spim_sdo0, pad_spim_sdo1, pad_spim_sdo2, pad_spim_sdo3;
+  //wire pad_spim_sdi0, pad_spim_sdi1, pad_spim_sdi2, pad_spim_sdi3;
+  logic [31:0]gpio_in;
+  logic [31:0] gpio_dir;
+  wire [1:0] pad_spi_mode_o;
+  //wire [1:0] pad_spi_master_mode_o;
+  /*  //SPI Master
+    inout wire spi_master_clk,
+    inout wire spi_master_csn0,
+	inout wire [1:0] spi_master_mode,
+    inout wire spi_master_sdo0,
+    inout wire spi_master_sdo1,
+    inout wire spi_master_sdo2,
+    inout wire spi_master_sdo3,
+    inout wire spi_master_sdi0,
+    inout wire spi_master_sdi1,
+    inout wire spi_master_sdi2,
+    inout wire spi_master_sdi3,*/
+
 
   // Hardwired internal signals for standard boot configuration
   logic clk_sel_i        = 1'b0;
   logic clk_standalone_i = 1'b0;
   logic testmode_i       = 1'b0;
-  logic fetch_enable_i   = 1'b1;
+  logic [31:0] gpio_out;
+
   logic scan_enable_i    = 1'b0;
-  wire  spi_sdi1_i       = 1'b0;
+  /*wire  spi_sdi1_i       = 1'b0;
   wire  spi_sdi2_i       = 1'b0;
-  wire  spi_sdi3_i       = 1'b0;
+  wire  spi_sdi3_i       = 1'b0;*/
   logic uart_cts         = 1'b0;
   logic uart_dsr         = 1'b0;
 
   // Internal unconnected outputs that previously went to pads
-  logic [1:0]       spi_mode_o;
-  logic [1:0]       spi_master_mode_o;
-  logic             spi_sdo1_o, spi_sdo2_o, spi_sdo3_o;
+
+  //logic             spi_sdo1_o, spi_sdo2_o, spi_sdo3_o;
   logic             spi_master_csn1_o, spi_master_csn2_o, spi_master_csn3_o;
   logic             uart_rts, uart_dtr;
   logic [31:0][5:0] gpio_padcfg;
@@ -102,7 +115,11 @@ module pulpino_top
   // ==========================================
   // PHYSICAL PAD INSTANTIATIONS
   // ==========================================
+// input_pad_conf (ZI,      A,  EN,    TA,  TEN,  TM,   PUN,    PDN,    HYST, IO         )
+//                (toCore,  -,  High,  -,   -,    Low,  High,   High,   Low,  fromOutside)
 
+// output_pad_conf (ZI,            A,         EN,    TA,  TEN,  TM,    PUN,    PDN,   HYST, IO       )
+//                 (unconnected,   fromCore,  Low,   -,   -,    Low,   High,   High,  Low,  toOutside)
   // --- Clock & Reset (Inputs) ---
   BD2SCARUDQP_1V8_SF_LIN p_clk     (.ZI(pad_clk),      .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(clk));
   BD2SCARUDQP_1V8_SF_LIN p_rst_n   (.ZI(pad_rst_n),    .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(rst_n));
@@ -119,43 +136,46 @@ module pulpino_top
   BD2SCARUDQP_1V8_SF_LIN p_uart_rx (.ZI(pad_uart_rx),  .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(uart_rx));
 
   // --- I2C ---
-  BD2SCARUDQP_1V8_SF_LIN p_i2c_scl (.ZI(pad_i2c_scl), .A(scl_pad_o), .EN(scl_padoen_o), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(scl_pad_i));
-  BD2SCARUDQP_1V8_SF_LIN p_i2c_sda (.ZI(pad_i2c_sda), .A(sda_pad_o), .EN(sda_padoen_o), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(sda_pad_i));
+  /*BD2SCARUDQP_1V8_SF_LIN p_i2c_scl (.ZI(pad_i2c_scl), .A(scl_pad_o), .EN(scl_padoen_o), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(scl_pad_i));
+  BD2SCARUDQP_1V8_SF_LIN p_i2c_sda (.ZI(pad_i2c_sda), .A(sda_pad_o), .EN(sda_padoen_o), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(sda_pad_i));*/
 
   // --- SPI Slave ---
   BD2SCARUDQP_1V8_SF_LIN p_spis_clk  (.ZI(pad_spis_clk),  .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_clk_i));
   BD2SCARUDQP_1V8_SF_LIN p_spis_cs   (.ZI(pad_spis_cs),   .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_cs_i));
-  BD2SCARUDQP_1V8_SF_LIN p_spis_mosi (.ZI(pad_spis_mosi), .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_sdi0_i));
-  BD2SCARUDQP_1V8_SF_LIN p_spis_miso (.ZI(),           .A(pad_spis_miso), .EN(Low),  .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_sdo0_o));
+  BD2SCARUDQP_1V8_SF_LIN p_spi_sdi0_i (.ZI(pad_spi_sdi0_i), .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_sdi0_i));
+  BD2SCARUDQP_1V8_SF_LIN p_spi_sdi1_i (.ZI(pad_spi_sdi1_i), .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_sdi1_i));
+  BD2SCARUDQP_1V8_SF_LIN p_spi_sdi2_i (.ZI(pad_spi_sdi2_i), .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_sdi2_i));
+  BD2SCARUDQP_1V8_SF_LIN p_spi_sdi3_i (.ZI(pad_spi_sdi3_i), .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_sdi3_i));
+  BD2SCARUDQP_1V8_SF_LIN p_spi_sdo0_o (.ZI(), .A(pad_spi_sdo0_o),   .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_sdo0_o));
+  BD2SCARUDQP_1V8_SF_LIN p_spi_sdo1_o (.ZI(), .A(pad_spi_sdo1_o),   .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_sdo1_o));
+  BD2SCARUDQP_1V8_SF_LIN p_spi_sdo2_o (.ZI(), .A(pad_spi_sdo2_o),   .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_sdo2_o));
+  BD2SCARUDQP_1V8_SF_LIN p_spi_sdo3_o (.ZI(), .A(pad_spi_sdo3_o),   .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_sdo3_o));
+  BD2SCARUDQP_1V8_SF_LIN p_spis_mode0 (.ZI(),           .A(pad_spi_mode_o[0]), .EN(Low),  .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_mode_o[0]));
+  BD2SCARUDQP_1V8_SF_LIN p_spis_mode1 (.ZI(),           .A(pad_spi_mode_o[1]), .EN(Low),  .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_mode_o[1]));
+  //BD2SCARUDQP_1V8_SF_LIN p_spis_miso (.ZI(),           .A(pad_use_qspi), .EN(Low),  .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(use_qspi));
+  BD2SCARUDQP_1V8_SF_LIN p_fetch_enable_i  (.ZI(pad_fetch_enable_i),  .A(DontCare),   .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(fetch_enable_i));
 
   // --- SPI Master ---
-  BD2SCARUDQP_1V8_SF_LIN p_spim_clk  (.ZI(), .A(pad_spim_clk),  .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_clk_o));
-  BD2SCARUDQP_1V8_SF_LIN p_spim_csn  (.ZI(), .A(pad_spim_csn0), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_csn0_o));
-  
-  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo0 (.ZI(), .A(pad_spim_sdo0), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdo0_o));
-  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo1 (.ZI(), .A(pad_spim_sdo1), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdo1_o));
-  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo2 (.ZI(), .A(pad_spim_sdo2), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdo2_o));
-  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo3 (.ZI(), .A(pad_spim_sdo3), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdo3_o));
-  
-  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi0 (.ZI(pad_spim_sdi0), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdi0_i));
-  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi1 (.ZI(pad_spim_sdi1), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdi1_i));
-  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi2 (.ZI(pad_spim_sdi2), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdi2_i));
-  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi3 (.ZI(pad_spim_sdi3), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdi3_i));
+  /*BD2SCARUDQP_1V8_SF_LIN p_spim_clk  (.ZI(), .A(pad_spim_clk),  .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_clk));
+  BD2SCARUDQP_1V8_SF_LIN p_spim_csn  (.ZI(), .A(pad_spim_csn0), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_csn0));
+  BD2SCARUDQP_1V8_SF_LIN p_spim_mode0 (.ZI(),           .A(pad_spi_master_mode_o[0]), .EN(Low),  .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_mode[0]));
+  BD2SCARUDQP_1V8_SF_LIN p_spim_mode1 (.ZI(),           .A(pad_spi_master_mode_o[1]), .EN(Low),  .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_mode[1]));
 
-  // --- GPIOs ---
-  genvar i;
-  generate
-      for (i = 0; i < 4; i++) begin : gen_gpio_pads
-          BD2SCARUDQP_1V8_SF_LIN p_gpio (
-              .ZI(gpio_in[i]), 
-              .A(gpio_out[i]), 
-              .EN(~gpio_dir[i]), 
-              .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), 
-              .IO(pad_gpio[i])
-          );
-      end
-  endgenerate
-assign gpio_in[31:4] = 28'b0;
+  
+  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo0 (.ZI(), .A(pad_spim_sdo0), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdo0));
+  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo1 (.ZI(), .A(pad_spim_sdo1), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdo1));
+  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo2 (.ZI(), .A(pad_spim_sdo2), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdo2));
+  BD8SCARUDQP_1V8_SF_LIN p_spim_sdo3 (.ZI(), .A(pad_spim_sdo3), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdo3));
+  
+  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi0 (.ZI(pad_spim_sdi0), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdi0));
+  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi1 (.ZI(pad_spim_sdi1), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdi1));
+  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi2 (.ZI(pad_spim_sdi2), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdi2));
+  BD2SCARUDQP_1V8_SF_LIN p_spim_sdi3 (.ZI(pad_spim_sdi3), .A(DontCare), .EN(High), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(spi_master_sdi3));*/
+
+
+//  BD2SCARUDQP_1V8_SF_LIN p_gpio_8 (.ZI(gpio_in), .A(gpio_out), .EN(~gpio_dir), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_gpio));
+  BD2SCARUDQP_1V8_SF_LIN p_gpio_8 (.ZI(), .A(gpio_out[8]), .EN(Low), .TA(DontCare), .TEN(DontCare), .TM(Low), .PUN(High), .PDN(High), .HYST(Low), .IO(pad_gpio));
+
  
   // ==========================================
   // ORIGINAL CORE LOGIC
@@ -287,15 +307,15 @@ assign gpio_in[31:4] = 28'b0;
     .spi_clk_i        ( pad_spis_clk         ),
     .testmode_i       ( testmode_i        ),
     .spi_cs_i         ( pad_spis_cs          ),
-    .spi_mode_o       (         ),
-    .spi_sdo0_o       ( pad_spis_miso        ),
-    .spi_sdo1_o       (         ),
-    .spi_sdo2_o       (         ),
-    .spi_sdo3_o       (         ),
-    .spi_sdi0_i       ( pad_spis_mosi        ),
-    .spi_sdi1_i       (         ),
-    .spi_sdi2_i       (         ),
-    .spi_sdi3_i       (         ),
+    .spi_mode_o       ( pad_spi_mode_o        ),
+    .spi_sdo0_o       ( pad_spi_sdo0_o        ),
+    .spi_sdo1_o       ( pad_spi_sdo1_o        ),
+    .spi_sdo2_o       ( pad_spi_sdo2_o        ),
+    .spi_sdo3_o       ( pad_spi_sdo3_o        ),
+    .spi_sdi0_i       ( pad_spi_sdi0_i        ),
+    .spi_sdi1_i       ( pad_spi_sdi1_i        ),
+    .spi_sdi2_i       ( pad_spi_sdi2_i        ),
+    .spi_sdi3_i       ( pad_spi_sdi3_i        ),
 
     .slave            ( slaves[2]         ),
 
@@ -311,15 +331,15 @@ assign gpio_in[31:4] = 28'b0;
     .spi_master_csn1  (  ),
     .spi_master_csn2  (  ),
     .spi_master_csn3  (  ),
-    .spi_master_mode  (  ),
-    .spi_master_sdo0  ( pad_spim_sdo0 ),
-    .spi_master_sdo1  ( pad_spim_sdo1 ),
-    .spi_master_sdo2  ( pad_spim_sdo2 ),
-    .spi_master_sdo3  ( pad_spim_sdo3 ),
-    .spi_master_sdi0  ( pad_spim_sdi0 ),
-    .spi_master_sdi1  ( pad_spim_sdi1 ),
-    .spi_master_sdi2  ( pad_spim_sdi2 ),
-    .spi_master_sdi3  ( pad_spim_sdi3 ),
+    .spi_master_mode  (  ),//pad_spi_master_mode_o
+    .spi_master_sdo0  (  ),//pad_spim_sdo0
+    .spi_master_sdo1  (  ),//pad_spim_sdo1
+    .spi_master_sdo2  (  ),//pad_spim_sdo2
+    .spi_master_sdo3  (  ),//pad_spim_sdo2
+    .spi_master_sdi0  (  ),//pad_spim_sdi0
+    .spi_master_sdi1  (  ),//pad_spim_sdi1
+    .spi_master_sdi2  (  ),//pad_spim_sdi2
+    .spi_master_sdi3  (  ),//pad_spim_sdi3
 
     .scl_pad_i        ( pad_i2c_scl         ),
     .scl_pad_o        ( scl_pad_o         ),
@@ -335,7 +355,7 @@ assign gpio_in[31:4] = 28'b0;
 
     .core_busy_i      ( core_busy_int     ),
     .irq_o            ( irq_to_core_int   ),
-    .fetch_enable_i   ( fetch_enable_i    ),
+    .fetch_enable_i   ( pad_fetch_enable_i    ),
     .fetch_enable_o   ( fetch_enable_int  ),
     .clk_gate_core_o  ( clk_gate_core_int ),
 

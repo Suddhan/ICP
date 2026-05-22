@@ -1,0 +1,13 @@
+FORMATVERSION 1
+ADDINST HS65_LH_ANTPROT1 peripherals_i/apb_spi_master_i/u_spictrl/u_rxreg/DIODE_1 1 addPortAsNeeded
+INSTTERM MINUS pad_spim_sdi1 -
+ADDINST HS65_LH_ANTPROT1 peripherals_i/apb_gpio_i/DIODE_2 1 addPortAsNeeded
+INSTTERM MINUS gpio_in[1] -
+ADDINST HS65_LH_ANTPROT1 peripherals_i/apb_gpio_i/DIODE_3 1 addPortAsNeeded
+INSTTERM MINUS gpio_in[0] -
+ADDINST HS65_LH_ANTPROT1 core_region_i/data_mem/DIODE_4 1 addPortAsNeeded
+INSTTERM MINUS core_region_i/data_mem/q_o\[2\]\[1\][6] -
+ADDINST HS65_LH_ANTPROT1 peripherals_i/apb_gpio_i/DIODE_5 1 addPortAsNeeded
+INSTTERM MINUS gpio_in[2] -
+ADDINST HS65_LH_ANTPROT1 peripherals_i/apb_spi_master_i/u_spictrl/u_rxreg/DIODE_6 1 addPortAsNeeded
+INSTTERM MINUS pad_spim_sdi0 -

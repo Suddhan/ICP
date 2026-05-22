@@ -1,0 +1,265 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Tue May 19 14:04:29 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.35-s114_1 NR220912-2004/21_15-UB (database version 18.20.592_1) {superthreading v2.17}
+#@(#)CDS: AAE 21.15-s039 (64bit) 10/13/2022 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+#@(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+#@(#)CDS: CPE v21.15-s076
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+
+set_multi_cpu_usage -local_cpu 6 
+#@ source genus_output/pulpino_init.tcl
+#@ Begin verbose source (pre): source genus_output/pulpino_init.tcl
+read_mmmc ../pnr/genus_output/pulpino_top.mmmc.tcl
+#@ Begin verbose source ../pnr/genus_output/pulpino_top.mmmc.tcl (pre)
+create_library_set -name wcl_slow \
+    -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_wc_1.00V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_wc_1.10V_125C_10y.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_wc_1.00V_125C_10y.lib }
+create_library_set -name wcl_fast \
+    -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_bc_1.25V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_bc_1.25V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_bc_1.25V_1.95V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_bc_1.25V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_bc_1.30V_m40C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_bc_1.25V_m40C.lib }
+create_library_set -name wcl_typical \
+    -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_nom_1.10V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_nom_1.10V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_nom_1.10V_1.80V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_nom_1.10V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_nom_1.20V_25C.lib \
+              /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_nom_1.10V_25C.lib }
+create_opcond -name op_cond_wcl_slow \
+    -process 1.0 \
+    -voltage 1.0 \
+    -temperature 125.0
+create_opcond -name op_cond_wcl_fast \
+    -process 1.0 \
+    -voltage 1.25 \
+    -temperature -40.0
+create_opcond -name op_cond_wcl_typical \
+    -process 1.0 \
+    -voltage 1.1 \
+    -temperature 25.0
+create_timing_condition -name timing_cond_wcl_slow \
+    -opcond op_cond_wcl_slow \
+    -library_sets { wcl_slow }
+create_timing_condition -name timing_cond_wcl_fast \
+    -opcond op_cond_wcl_fast \
+    -library_sets { wcl_fast }
+create_timing_condition -name timing_cond_wcl_typical \
+    -opcond op_cond_wcl_typical \
+    -library_sets { wcl_typical }
+create_rc_corner -name rc_corner_typ \
+    -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCTYP/qrcTechFile \
+    -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCTYP.captable \
+    -pre_route_res 1.0 \
+    -pre_route_cap 1.0 \
+    -pre_route_clock_res 0.0 \
+    -pre_route_clock_cap 0.0 \
+    -post_route_res {1.0 1.0 1.0} \
+    -post_route_cap {1.0 1.0 1.0} \
+    -post_route_cross_cap {1.0 1.0 1.0} \
+    -post_route_clock_res {1.0 1.0 1.0} \
+    -post_route_clock_cap {1.0 1.0 1.0}
+create_rc_corner -name rc_corner_min \
+    -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMIN/qrcTechFile \
+    -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable \
+    -pre_route_res 1.0 \
+    -pre_route_cap 1.0 \
+    -pre_route_clock_res 0.0 \
+    -pre_route_clock_cap 0.0 \
+    -post_route_res {1.0 1.0 1.0} \
+    -post_route_cap {1.0 1.0 1.0} \
+    -post_route_cross_cap {1.0 1.0 1.0} \
+    -post_route_clock_res {1.0 1.0 1.0} \
+    -post_route_clock_cap {1.0 1.0 1.0}
+create_rc_corner -name rc_corner_max \
+    -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile \
+    -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable \
+    -pre_route_res 1.0 \
+    -pre_route_cap 1.0 \
+    -pre_route_clock_res 0.0 \
+    -pre_route_clock_cap 0.0 \
+    -post_route_res {1.0 1.0 1.0} \
+    -post_route_cap {1.0 1.0 1.0} \
+    -post_route_cross_cap {1.0 1.0 1.0} \
+    -post_route_clock_res {1.0 1.0 1.0} \
+    -post_route_clock_cap {1.0 1.0 1.0}
+create_delay_corner -name delay_corner_wcl_slow \
+    -early_timing_condition { timing_cond_wcl_slow } \
+    -late_timing_condition { timing_cond_wcl_slow } \
+    -early_rc_corner rc_corner_min \
+    -late_rc_corner rc_corner_max
+create_delay_corner -name delay_corner_wcl_fast \
+    -early_timing_condition { timing_cond_wcl_fast } \
+    -late_timing_condition { timing_cond_wcl_fast } \
+    -early_rc_corner rc_corner_min \
+    -late_rc_corner rc_corner_max
+create_delay_corner -name delay_corner_wcl_typical \
+    -early_timing_condition { timing_cond_wcl_typical } \
+    -late_timing_condition { timing_cond_wcl_typical } \
+    -early_rc_corner rc_corner_typ \
+    -late_rc_corner rc_corner_typ
+create_constraint_mode -name functional_wcl_slow \
+    -sdc_files { ../pnr/genus_output/pulpino_top.functional_wcl_slow.sdc }
+create_constraint_mode -name functional_wcl_fast \
+    -sdc_files { ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc }
+create_constraint_mode -name functional_wcl_typical \
+    -sdc_files { ../pnr/genus_output/pulpino_top.functional_wcl_typical.sdc }
+create_analysis_view -name view_wcl_slow \
+    -constraint_mode functional_wcl_slow \
+    -delay_corner delay_corner_wcl_slow
+create_analysis_view -name view_wcl_fast \
+    -constraint_mode functional_wcl_fast \
+    -delay_corner delay_corner_wcl_fast
+create_analysis_view -name view_wcl_typical \
+    -constraint_mode functional_wcl_typical \
+    -delay_corner delay_corner_wcl_typical
+set_analysis_view -setup { view_wcl_slow } \
+                  -hold { view_wcl_fast }
+#@ End verbose source ../pnr/genus_output/pulpino_top.mmmc.tcl
+read_physical -lef {/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/viarule_generate.lef /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/sites.lef /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/CADENCE/LEF/CORE65LPLVT_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/CADENCE/LEF/CLOCK65LPLVT_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/CADENCE/LEF/PRHS65_soc.lef /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/CADENCE/LEF/SPHS100909_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/CADENCE/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_soc_KW_FIX.lef}
+set_multi_cpu_usage -local_cpu 6 
+read_netlist ../synth/outputs/pulpino_top_netlist.v
+init_design 
+read_io_file -no_die_size_adjust pad.io  
+#@ source floorplan.tcl
+#@ Begin verbose source floorplan.tcl (pre)
+set_db [get_db base_cells -if {.class == core}] .symmetry xy ;
+set_db design_process_node 65
+set_db design_top_routing_layer M7
+set_db design_bottom_routing_layer M2 
+set_db design_flow_effort standard ;
+set_db design_power_effort low ;
+set_db place_global_place_io_pins true
+set_db timing_analysis_cppr           both
+set_db timing_analysis_type           ocv
+set_preference CmdLogMode 2 ;
+set_db add_fillers_cells [get_db [get_db base_cells *HS65_LS_FILLERCELL*] .name] 
+set core_dx [expr [get_db [lindex [get_db insts -if {.name == *sram*}] 0] .bbox.dx] * 10] ;
+set core_dy 1410 ;
+create_floorplan -site CORE -core_size $core_dx $core_dy 40 40 40 40
+set sram0 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 0]
+set sram1 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 1]
+set sram2 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 2]
+set sram3 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 3]
+set sram4 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 4]
+set sram5 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 5]
+set sram6 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 6]
+set sram7 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 7]
+set sram8 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 8]
+set sram9 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 9]
+set sram10 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 10]
+set sram11 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 11]
+set sram12 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 12]
+set sram13 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 13]
+set sram14 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 14]
+set sram15 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 15]
+set sram16 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 16]
+set sram17 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 17]
+set sram18 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 18]
+set sram19 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 19]
+set sram20 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 20]
+set sram21 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 21]
+set sram22 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 22]
+set sram23 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 23]
+set sram24 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 24]
+set sram25 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 25]
+set sram26 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 26]
+set sram27 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 27]
+set sram28 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 28]
+set sram29 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 29]
+set sram30 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 30]
+set sram31 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 31]
+create_relative_floorplan -place $sram0 -ref_type core_boundary -horizontal_edge_separate {1 0 1} -vertical_edge_separate {0 0 0}
+for {set i 1} {$i < 10} {incr i} {
+    create_relative_floorplan -place [set sram$i] -ref_type object -ref [set sram[expr {$i-1}]] -horizontal_edge_separate {1 0 1} -vertical_edge_separate {2 0 0}
+}
+create_relative_floorplan -place $sram10 -ref_type core_boundary -horizontal_edge_separate {3 0 3} -vertical_edge_separate {0 0 0} -orient {R180}
+for {set i 11} {$i < 20} {incr i} {
+    create_relative_floorplan -place [set sram$i] -ref_type object -ref [set sram[expr {$i-1}]] -horizontal_edge_separate {3 0 3} -vertical_edge_separate {2 0 0} -orient {R180}
+}
+create_relative_floorplan -place $sram20 -ref_type object -ref $sram0 -horizontal_edge_separate {3 -20 1} -vertical_edge_separate {0 0 0} -orient {R90}
+for {set i 21} {$i < 26} {incr i} {
+    create_relative_floorplan -place [set sram$i] -ref_type object -ref [set sram[expr {$i-1}]] -horizontal_edge_separate {3 0 1} -vertical_edge_separate {0 0 0} -orient {R90}
+}
+create_relative_floorplan -place $sram26 -ref_type object -ref $sram9 -horizontal_edge_separate {3 -20 1} -vertical_edge_separate {2 0 2}  -orient {R270}
+for {set i 27} {$i < 32} {incr i} {
+    create_relative_floorplan -place [set sram$i] -ref_type object -ref [set sram[expr {$i-1}]] -horizontal_edge_separate {3 0 1} -vertical_edge_separate {2 0 2} -orient {R270}
+}
+set_db [get_db insts -if {.name == *sram*}] .place_status fixed
+create_place_halo -insts *sram* -halo_deltas {10 10 10 10}
+select_obj [get_db insts -if {.name == *i_sram*}]
+split_row -selected
+deselect_obj -all
+create_net -name VDD -power
+create_net -name GND -ground
+create_net -name GNDE -ground
+create_net -name VDDE -power
+create_net -name VDDE1V8 -power
+delete_global_net_connections
+connect_global_net VDD -type pg_pin -pin_base_name vdd -inst_base_name *
+connect_global_net GND -type pg_pin -pin_base_name gnd -inst_base_name *
+connect_global_net VDD -type tie_hi -pin_base_name vdd -inst_base_name *
+connect_global_net GND -type tie_lo -pin_base_name gnd -inst_base_name *
+connect_global_net GND -type pg_pin -pin_base_name GND -inst_base_name *
+connect_global_net VDD -type pg_pin -pin_base_name VDD -inst_base_name *
+connect_global_net GND -type pg_pin -pin_base_name GNDE -inst_base_name *
+connect_global_net VDDE -type pg_pin -pin_base_name VDDE -inst_base_name *
+connect_global_net VDDE -type pg_pin -pin_base_name VDDE1V8 -inst_base_name *
+delete_all_power_preroutes
+set_db add_stripes_stacked_via_top_layer AP ;
+add_rings -spacing 4 -width 10 -layer {top M7 bottom M7 left M6 right M6} -jog_distance 0.07 -offset 0.1 -nets {VDD GND}
+select_obj [get_db insts -if {.name == *sram*}] ;
+add_rings -around cluster -layer {top M7 bottom M7 left M6 right M6} -nets {VDD GND} -skip_side {top left right} -spacing 4 -width 10 -type block_rings
+deselect_obj -all
+route_special -connect pad_pin -nets {VDD} -pad_pin_layer_range {M6 M7} -inst [get_db [get_db insts -if {.base_cell == *VDD_*}] .name ]
+route_special -connect pad_pin -nets {GND} -pad_pin_layer_range {M7 M7} -inst [get_db [get_db insts -if {.base_cell == *GND_*}] .name ]
+route_special -connect core_pin -nets {VDD GND}   
+set_db add_stripes_ignore_block_check false
+set_db add_stripes_break_at none
+set_db add_stripes_route_over_rows_only false
+set_db add_stripes_rows_without_stripes_only false
+set_db add_stripes_extend_to_closest_target ring
+set_db add_stripes_stop_at_last_wire_for_area true
+set_db add_stripes_spacing_type edge_to_edge
+set_db add_stripes_spacing_from_block 0
+set_db add_stripes_orthogonal_only true
+set_db add_stripes_allow_jog { padcore_ring  block_ring }
+set_db add_stripes_skip_via_on_pin {  standardcell }
+set_db add_stripes_skip_via_on_wire_shape {  noshape   }
+set_db add_stripes_stacked_via_bottom_layer M5
+add_stripes -nets {VDD GND} -layer M7 -direction horizontal -width 10 -spacing 4 -set_to_set_distance 70 -start_from top -start_offset 35 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
+add_stripes -nets {VDD GND} -layer M6 -direction vertical -width 10 -spacing 4 -set_to_set_distance 120 -start_from left -start_offset 55 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
+set_db add_stripes_stripe_min_length 50 ;
+add_stripes -width 10 -spacing 3 -direction horizontal -layer M7 -nets {VDD GND}  -set_to_set_distance 150 -start_from bottom -start_offset 50 -stop_offset 50 -area_blockage [get_db [get_db insts -if {.name == *sram*}] .bbox]
+set_db add_stripes_trim_antenna_back_to_shape block_ring ;
+add_stripes -width 10 -spacing 3 -direction vertical -layer M6 -nets {VDD GND}  -set_to_set_distance 140 -start_from left -start_offset 100 -stop_offset 50 -area_blockage [get_db [get_db insts -if {.name == *sram*}] .bbox]
+add_stripes -width 3 -spacing 2 -direction horizontal -layer M5 -nets {VDD GND}  -set_to_set_distance 60 -start_from top -start_offset 20 -stop_offset 0
+set_db add_stripes_stacked_via_bottom_layer M3
+set_db add_stripes_trim_antenna_back_to_shape {block_ring}
+set_db add_stripes_trim_antenna_max_distance 10
+set macroLowerLeftY [lindex [lindex [get_db [get_db insts -if {.name == *sram*}] .bbox] 0] 10]
+set macroUpperRightY [lindex [lindex [get_db [get_db insts -if {.name == *sram*}] .bbox] 0] 9]
+add_stripes -width 3 -spacing 2 -direction vertical -layer M4 -nets {VDD GND}  -set_to_set_distance 60 -start_from left -start_offset 10 -stop_offset 10 -area_blockage [list 0 $macroLowerLeftY 800 $macroUpperRightY]
+delete_inst -inst *WELLTAP* ;
+set_db add_well_taps_cell HS65_LH_FILLERNPWPFP4
+add_well_taps -cell_interval 60
+set leftPads [get_db [get_db insts -if {.lib_cells == *IO65*}] -if {.orient == r270}]
+deselect_obj -all
+select_obj $leftPads
+space_selected -space 98 -fix-side bottom
+#@ End verbose source floorplan.tcl
+#@ End verbose source genus_output/pulpino_init.tcl
+exit

@@ -19,7 +19,7 @@ create_clock -name SPI_CLK   -period 40.0          [get_ports spi_clk_i]
 create_clock -name VCLK_ASYNC -period 100.0
 
 # Define Asynchronous Relationships
-# This tells the tool these clocks have no phase relationship. 
+# This tells the tool these clocks have no phase relationship.
 # It effectively "cuts" the timing paths between them.
 set_clock_groups -asynchronous \
   -group [get_clocks CLK] \
@@ -43,17 +43,21 @@ set delay_value [expr ${clk_period} * 0.2]
 set_input_transition 0.5 [all_inputs]
 
 # 4a. Identify your asynchronous input pins
-set async_inputs [get_ports {uart_rx spi_sdi0_i spi_cs_i spi_master_sdi*_i tms_i tdi_i trstn_i scl_pad_i sda_pad_i pad_gpio[*]}]
+#     NOTE: pad_gpio[8] removed — pad_gpio is a 1-bit output port, not an input
+set async_inputs [get_ports {uart_rx spi_sdi0_i spi_sdi1_i spi_sdi2_i spi_sdi3_i \
+                              spi_cs_i tms_i tdi_i trstn_i scl_pad_i sda_pad_i \
+                              fetch_enable_i}]
 
 # 4b. Synchronous Inputs (Only ports that actually transition with your CLK)
 # We remove the clock ports and the async ports from the "all_inputs" list
-set sync_inputs [remove_from_collection [all_inputs] [concat [get_ports {clk tck_i spi_clk_i}] ${async_inputs}]]
+set sync_inputs [remove_from_collection [all_inputs] \
+                  [concat [get_ports {clk tck_i spi_clk_i}] ${async_inputs}]]
 if {[sizeof_collection ${sync_inputs}] > 0} {
     set_input_delay -clock CLK ${delay_value} ${sync_inputs}
 }
 
 # 4c. Constrain Asynchronous Inputs using the Virtual Clock
-# This prevents the -9652.1 violation because they are no longer timed against CLK
+# This prevents large violations because they are no longer timed against CLK
 set_input_delay ${delay_value} -clock VCLK_ASYNC ${async_inputs}
 
 # 4d. Outputs
@@ -67,3 +71,34 @@ set_load 0.05 [all_outputs]
 # 5. Timing Exceptions
 # ------------------------------------------------------------------------------
 set_false_path -from [get_ports rst_n]
+
+# ------------------------------------------------------------------------------
+# 6. Pad Cell Constraints
+# ------------------------------------------------------------------------------
+
+# Lock all pad cells — prevents Genus from remapping or optimizing them
+set_dont_touch [get_cells {
+    p_clk
+    p_rst_n
+    p_tck
+    p_trstn
+    p_tms
+    p_tdi
+    p_tdo
+    p_uart_tx
+    p_uart_rx
+    p_spis_clk
+    p_spis_cs
+    p_spi_sdi0_i
+    p_spi_sdi1_i
+    p_spi_sdi2_i
+    p_spi_sdi3_i
+    p_spi_sdo0_o
+    p_spi_sdo1_o
+    p_spi_sdo2_o
+    p_spi_sdo3_o
+    p_spis_mode0
+    p_spis_mode1
+    p_fetch_enable_i
+    p_gpio_8
+}]
