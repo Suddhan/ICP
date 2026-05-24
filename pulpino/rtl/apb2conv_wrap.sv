@@ -19,47 +19,46 @@ module apb2conv_wrap
     input  logic [31:0]                conv_output_i
 );
 
-    logic [31:0] regs_c, regs_n;
+    logic [31:0] regs_w, regs_r;
 
     assign register_adr = PADDR[2:0];
 
     // register write logic
     always_comb
     begin
-        regs_n = regs_c;
+        regs_w = 0;
 
         if (PSEL && PENABLE && PWRITE)
         begin
-            regs_n = PWDATA[31:0]; // Write the convolution output to the register
+            regs_w = PWDATA[31:0]; // Write the convolution output to the register
         end
     end
     always_comb
     begin
-        PRDATA = 'b0;
+       regs_r = 0;
 
         if (PSEL && PENABLE && !PWRITE)
         begin
-            regs_n = conv_output_i; // Read the convolution output to theregister;
+            regs_r = conv_output_i; // Read the convolution output to theregister;
         end
     end
     always_ff @(posedge CLK, negedge RSTN)
     begin
         if(~RSTN)
         begin
-            regs_c <= 0;
+            conv_input_o <= 0; // Clear the input data on reset
+             PRDATA <= 0; // Clear the output data on reset
         end
         else
         begin
-            regs_c <= regs_n;
             if (PSEL && PENABLE && PWRITE)
             begin
-                conv_input_o <= regs_c; // Send the input data to the convolution accelerator
+                conv_input_o <= regs_w; // Send the input data to the convolution accelerator
             end else if(PSEL && PENABLE && !PWRITE) begin
                 conv_input_o <= 0; // Clear the input data when reading
-                PRDATA <= regs_c; // Output the convolution result
+                PRDATA <= regs_r; // Output the convolution result
 
             end
-            else regsc <= reg_n;
         end
     end
     assign PREADY  = 1'b1;
