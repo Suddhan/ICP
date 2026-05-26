@@ -93,11 +93,11 @@ create_constraint_mode -name functional_wcl_typical\
     [list ${::IMEX::libVar}/mmmc/pulpino_top.functional_wcl_typical.sdc]
 create_constraint_mode -name functional_wcl_fast\
    -sdc_files\
-    [list ${::IMEX::dataVar}/mmmc/modes/functional_wcl_fast/functional_wcl_fast.sdc]
+    [list /dev/null]
 create_constraint_mode -name functional_wcl_slow\
    -sdc_files\
-    [list ${::IMEX::dataVar}/mmmc/modes/functional_wcl_slow/functional_wcl_slow.sdc]
-create_analysis_view -name view_wcl_slow -constraint_mode functional_wcl_slow -delay_corner delay_corner_wcl_slow -latency_file ${::IMEX::dataVar}/mmmc/views/view_wcl_slow/latency.sdc
+    [list /dev/null]
+create_analysis_view -name view_wcl_slow -constraint_mode functional_wcl_slow -delay_corner delay_corner_wcl_slow -latency_file ${::IMEX::libVar}/mmmc/latency.sdc
 create_analysis_view -name view_wcl_typical -constraint_mode functional_wcl_typical -delay_corner delay_corner_wcl_typical
-create_analysis_view -name view_wcl_fast -constraint_mode functional_wcl_fast -delay_corner delay_corner_wcl_fast -latency_file ${::IMEX::dataVar}/mmmc/views/view_wcl_fast/latency.sdc
+create_analysis_view -name view_wcl_fast -constraint_mode functional_wcl_fast -delay_corner delay_corner_wcl_fast -latency_file ${::IMEX::libVar}/mmmc/latency.1.sdc
 set_analysis_view -setup [list view_wcl_slow] -hold [list view_wcl_fast]

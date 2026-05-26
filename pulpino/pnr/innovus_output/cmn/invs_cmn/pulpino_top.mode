@@ -34,7 +34,7 @@ catch {setNanoRouteMode -quiet -droutePostRouteSpreadWire "auto"}
 catch {setNanoRouteMode -quiet -drouteStartIteration 0}
 catch {setNanoRouteMode -quiet -drouteUseLefPinTaperRule true}
 catch {setNanoRouteMode -quiet -drouteUseMinSpacingForBlockage auto}
-catch {setNanoRouteMode -quiet -extractDesignSignature 142768207}
+catch {setNanoRouteMode -quiet -extractDesignSignature 40753581}
 catch {setNanoRouteMode -quiet -extractRcModelFile "rc_model.bin"}
 catch {setNanoRouteMode -quiet -extractThirdPartyCompatible false}
 catch {setNanoRouteMode -quiet -grouteExpTdStdDelay 22.600000}
@@ -46,7 +46,7 @@ catch {setNanoRouteMode -quiet -routeReInsertFillerCellListFromFile false}
 catch {setNanoRouteMode -quiet -routeStrictlyHonorNonDefaultRule "false"}
 catch {setNanoRouteMode -quiet -routeWithEco false}
 catch {setNanoRouteMode -quiet -routeWithSiPostRouteFix false}
-catch {setNanoRouteMode -quiet -timingEngine ".timing_file_12931.tif.gz"}
+catch {setNanoRouteMode -quiet -timingEngine ".timing_file_728.tif.gz"}
 
 catch { setPlaceMode -place_global_ignore_scan true }
 catch { setPlaceMode -place_global_max_density 0.5 }

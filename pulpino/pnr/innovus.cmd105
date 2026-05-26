@@ -1,0 +1,44 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Tue May 26 12:29:39 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.35-s114_1 NR220912-2004/21_15-UB (database version 18.20.592_1) {superthreading v2.17}
+#@(#)CDS: AAE 21.15-s039 (64bit) 10/13/2022 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+#@(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+#@(#)CDS: CPE v21.15-s076
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+
+read_db pnrf4.db
+read_activity_file -format SAIF core_power.saif -scope tb_pl/top_i
+report_power -instances {core_region_i peripherals_i clk_rst_gen_i axi_interconnect_i} \
+             -output_dir ../pnr/power_report_core_only
+report_power
+report_power -output_dir power_rpt_core
+report_power -outfile power_rpt_core
+report_power -out_file power_core.rpt
+get_db log_file
+get_db analysis_views
+set_power_analysis_mode -analysis_view pulpino_top/view_wcl_typical
+innovus -power
+set_analysis_view pulpino_top/view_wcl_typical
+set_analysis_view -setup { view_wcl_typical }
+set_analysis_view -setup { view_wcl_typical } -hold { view_wcl_fast}
+set_analysis_view  { view_wcl_typical }
+set_analysis_view  -help
+set_analysis_view pulpino_top/view_wcl_typical
+set_switching_activity -clock CLK -scale_factor 5
+set_switching_activity -clock CLK -scale 5
+report_power -out_file power_core.rpt
+read_activity_file -format SAIF core_power.saif -scope tb_pl/top_i
+report_power -out_file power_core.rpt
+set_analysis_view  -help
+set_analysis_view -setup { view_wcl_typical } -hold { view_wcl_typical}
+read_activity_file -format SAIF core_power.saif -scope tb_pl/top_i
+report_power -out_file power_core.rpt
+get_db analysis_views
+exit

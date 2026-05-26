@@ -1,0 +1,90 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+Options:	-stylus 
+Date:		Tue May 26 12:18:48 2026
+Host:		fransg-2 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[12:18:48.324545] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_15625_fransg-2_su2577su-s_eFwMaU.
+
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[INFO] Loading PVS 21.10 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+@innovus 1> read_activity_file -format SAIF -file core_power.saif -instance tb_pl/top_i/core_region_i
+
+Usage: read_activity_file [-help] [<activity_file>] [-block <string>]
+                          [-cell <string>] [-end <string>] [-format <string>]
+                          [-hierarchy_separator <string>]
+                          [-name_mapping_rule <string>] [-reset] [-rtl <string>]
+                          [-scale_time <string>] [-scope <string>]
+                          [-start <string>] [-start_time_shift <string>]
+                          [-weight <string>] [-write_net_freq {true false}]
+                          [-zero_delay <string>]
+
+**ERROR: (IMPTCM-48):	"-file" is not a legal option for command "read_activity_file". Either the current option or an option prior to it is not specified correctly.
+
+
+@innovus 2> read_activity_file -format SAIF -core_power.saif -instance tb_pl/top_i/core_region_i
+
+Usage: read_activity_file [-help] [<activity_file>] [-block <string>]
+                          [-cell <string>] [-end <string>] [-format <string>]
+                          [-hierarchy_separator <string>]
+                          [-name_mapping_rule <string>] [-reset] [-rtl <string>]
+                          [-scale_time <string>] [-scope <string>]
+                          [-start <string>] [-start_time_shift <string>]
+                          [-weight <string>] [-write_net_freq {true false}]
+                          [-zero_delay <string>]
+
+**ERROR: (IMPTCM-48):	"-core_power.saif" is not a legal option for command "read_activity_file". Either the current option or an option prior to it is not specified correctly.
+
+
+@innovus 3> read_activity_file -format SAIF core_power.saif -instance tb_pl/top_i/core_region_i
+
+Usage: read_activity_file [-help] [<activity_file>] [-block <string>]
+                          [-cell <string>] [-end <string>] [-format <string>]
+                          [-hierarchy_separator <string>]
+                          [-name_mapping_rule <string>] [-reset] [-rtl <string>]
+                          [-scale_time <string>] [-scope <string>]
+                          [-start <string>] [-start_time_shift <string>]
+                          [-weight <string>] [-write_net_freq {true false}]
+                          [-zero_delay <string>]
+
+**ERROR: (IMPTCM-48):	"-instance" is not a legal option for command "read_activity_file". Either the current option or an option prior to it is not specified correctly.
+
+
+@innovus 4> read_activity_file -format SAIF core_power.saif -scope tb_pl/top_i/core_region_i
+** ERROR: (VOLTUS_POWR-1145): 
+File: core_power.saif 
+does NOT exist.
+** WARN:  (VOLTUS_POWR-2038):  File core_power.saif is empty.
+
+
+
+@innovus 5> read_activity_file -format SAIF core_power.saif -scope tb_pl/top_i/core_region_i
+
+** ERROR: (VOLTUS_POWR-1145): 
+File: core_power.saif 
+does NOT exist.
+** WARN:  (VOLTUS_POWR-2038):  File core_power.saif is empty.
+
+
+
+@innovus 6> exit
+
+
+*** Memory Usage v#1 (Current mem = 1049.219M, initial mem = 484.035M) ***
+*** Message Summary: 0 warning(s), 3 error(s)
+
+--- Ending "Innovus" (totcpu=0:01:39, real=0:06:17, mem=1049.2M) ---

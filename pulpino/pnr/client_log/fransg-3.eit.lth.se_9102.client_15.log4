@@ -1,0 +1,130 @@
+#################  nanoroute  ################
+#Copyright (c) 1999 - 2010
+#Cadence Design Systems, Inc.
+#All rights reserved. This work may not be copied, modified, 
+#re-published, uploaded, executed, or distributed in any way, 
+#in any medium, whether in whole or in part, without prior 
+#written permission from Cadence Design Systems, Inc.
+#http://www.cadence.com
+#
+#Product Version : 21.35-s114_1 NR220912-2004/21_15-UB
+#Database Version : 18.20 {superthreading v2.17}
+#Checkout Date : 09/12/2022:20:04:43 from 21_15
+#Compiled Date : 10/13/2022 11:45:47 using tools-
+#Hostname : fransg-3 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64 Core_i5  3.90GHz 6Core 6CPU 9MB cache 16GB)
+#Current Working Directory : /h/d9/g/su2577su-s/etin35_project/pulpino/pnr
+#nanoroute Executable : /usr/local-eit/cad2/cadence/inn2114/tools.lnx86/plato/bin/64bit/nanoroute
+#Current Date and Time : Fri May 22 14:00:20 2026
+#
+#number of cpu = 1.
+#client index = 1779451482.
+#Connected to server fransg-3.eit.lth.se on port 33100. (1 threads)
+#Loading library ...
+#    loading LIBRARY_HEADER ...
+#    loading TECHNOLOGY ...
+#    loading 18 LAYERS ...
+#    loading 101 lib VIAS ...
+#    loading 7 VIA_RULES ...
+#    loading 1 RULES ...
+#    loading TIMING ...
+#    receiving 1216 CELLS ...
+#setNanoRouteMode -droute_start_iteration 0
+#setNanoRouteMode -route_antenna_cell_name "HS65_LS_ANTPROT3 HS65_LS_ANTPROT1 HS65_LL_ANTPROT3 HS65_LL_ANTPROT1 HS65_LH_ANTPROT3 HS65_LH_ANTPROT1 HS65_GS_ANTPROT3 HS65_GL_ANTPROT3 HS65_GH_ANTPROT3"
+#setNanoRouteMode -route_insert_antenna_diode true
+#setNanoRouteMode -route_with_eco true
+#Loading design pulpino_top init ...
+#    loading DESIGN_VIEW pulpino_top,init ... 
+#    loading 426 CHILD CELL_VIEWS ...
+#    loading 219 design VIAS ...
+### Loading lrule/via rc from file /RC_TABLE ...
+### Done loading /RC_TABLE
+#    loading 51671 INSTANCES ...
+#    loading 135 DIRTY_AREA ...
+#    loading 5 SPECIAL_NETS ...
+#    loading 71006 NETS ...
+#setNanoRouteMode -droute_start_iteration 0
+#setNanoRouteMode -route_antenna_cell_name "HS65_LS_ANTPROT3 HS65_LS_ANTPROT1 HS65_LL_ANTPROT3 HS65_LL_ANTPROT1 HS65_LH_ANTPROT3 HS65_LH_ANTPROT1 HS65_GS_ANTPROT3 HS65_GL_ANTPROT3 HS65_GH_ANTPROT3"
+#setNanoRouteMode -route_insert_antenna_diode true
+#setNanoRouteMode -route_with_eco true
+#cpu time = 00:00:01, elapsed time = 00:00:06, memory = 109.82 (MB), peak = 109.82 (MB)
+#Start routing data preparation on Fri May 22 14:00:36 2026
+#
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.650.
+#Voltage range [0.000 - 1.250] has 70490 nets.
+#Voltage range [0.000 - 0.000] has 513 nets.
+#Voltage range [1.000 - 1.250] has 2 nets.
+#Voltage range [1.000 - 1.650] has 1 net.
+#Build and mark too close pins for the same net.
+### receiving APA data from server ...
+#Restoring pin access data from file (null) ...
+#Done restoring pin access data
+#Initial pin access analysis.
+#Detail pin access analysis.
+# M1           H   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.1900
+# M2           V   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.2000
+# M3           H   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.2000
+# M4           V   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.2000
+# M5           H   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.2000
+# M6           V   Track-Pitch = 0.8000    Line-2-Via Pitch = 0.8000
+# M7           H   Track-Pitch = 0.8000    Line-2-Via Pitch = 0.8000
+# AP           V   Track-Pitch = 5.0000    Line-2-Via Pitch = 5.7000
+#WARNING (NRAG-44) Track pitch is too small compared with line-2-via pitch.
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer M3's pitch = 0.2000.
+#Using automatically generated G-grids.
+#(check_and_prepare_match_target_file) no match_target_file in constraint. quit
+#Done routing data preparation.
+#cpu time = 00:00:03, elapsed time = 00:00:20, memory = 223.25 (MB), peak = 223.44 (MB)
+### drc_pitch = 5900 (  5.9000 um) drc_range = 3110 (  3.1100 um) route_pitch = 3620 (  3.6200 um) patch_pitch = 3600 (  3.6000 um) top_route_layer = 7 top_pin_layer = 7
+#build: cpu time = 00:00:03, elapsed time = 00:00:21, memory = 233.66 (MB), peak = 233.66 (MB)
+#
+#Start client routing ...
+#
+#start initial detail routing ...
+#cpu time = 00:00:00, elapsed time = 00:00:05, memory = 234.34 (MB), peak = 234.62 (MB)
+#start 1st optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:04, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 2nd optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 3rd optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 4th optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 5th optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:01, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 6th optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 7th optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 8th optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 9th optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 10th optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 11th optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 12th optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 13th optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 14th optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 15th optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#start 16th optimization iteration ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.41 (MB), peak = 246.13 (MB)
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:36
+#Increased memory = 124.57 (MB)
+#Total memory = 234.39 (MB)
+#Peak memory = 246.13 (MB)
+#
+#Cpu time = 00:00:04
+#Elapsed time = 00:01:17
+#Increased memory = 233.20 (MB)
+#Total memory = 234.38 (MB)
+#Peak memory = 246.13 (MB)
+#Finished client route on Fri May 22 14:01:37 2026
+#

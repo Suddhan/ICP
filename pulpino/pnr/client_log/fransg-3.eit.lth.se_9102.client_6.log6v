@@ -1,0 +1,132 @@
+#################  nanoroute  ################
+[05/22 14:06:18] [00:00:00] #Copyright (c) 1999 - 2010
+[05/22 14:06:18] [00:00:00] #Cadence Design Systems, Inc.
+[05/22 14:06:18] [00:00:00] #All rights reserved. This work may not be copied, modified, 
+[05/22 14:06:18] [00:00:00] #re-published, uploaded, executed, or distributed in any way, 
+[05/22 14:06:18] [00:00:00] #in any medium, whether in whole or in part, without prior 
+[05/22 14:06:18] [00:00:00] #written permission from Cadence Design Systems, Inc.
+[05/22 14:06:18] [00:00:00] #http://www.cadence.com
+[05/22 14:06:18] [00:00:00] #
+[05/22 14:06:18] [00:00:00] #Product Version : 21.35-s114_1 NR220912-2004/21_15-UB
+[05/22 14:06:18] [00:00:00] #Database Version : 18.20 {superthreading v2.17}
+[05/22 14:06:18] [00:00:00] #Checkout Date : 09/12/2022:20:04:43 from 21_15
+[05/22 14:06:18] [00:00:00] #Compiled Date : 10/13/2022 11:45:47 using tools-
+[05/22 14:06:18] [00:00:00] #Hostname : fransg-3 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64 Core_i5  3.90GHz 6Core 6CPU 9MB cache 16GB)
+[05/22 14:06:18] [00:00:00] #Current Working Directory : /h/d9/g/su2577su-s/etin35_project/pulpino/pnr
+[05/22 14:06:18] [00:00:00] #nanoroute Executable : /usr/local-eit/cad2/cadence/inn2114/tools.lnx86/plato/bin/64bit/nanoroute
+[05/22 14:06:18] [00:00:00] #Current Date and Time : Fri May 22 14:06:18 2026
+#
+[05/22 14:06:18] [00:00:00] #number of cpu = 1.
+[05/22 14:06:18] [00:00:00] #client index = 1779451835.
+[05/22 14:06:18] [00:00:00] #Connected to server fransg-3.eit.lth.se on port 57579. (1 threads)
+[05/22 14:06:34] [00:00:00] #Loading library ...
+[05/22 14:06:34] [00:00:00] #    loading LIBRARY_HEADER ...
+[05/22 14:06:34] [00:00:00] #    loading TECHNOLOGY ...
+[05/22 14:06:34] [00:00:00] #    loading 18 LAYERS ...
+[05/22 14:06:34] [00:00:00] #    loading 101 lib VIAS ...
+[05/22 14:06:34] [00:00:00] #    loading 7 VIA_RULES ...
+[05/22 14:06:34] [00:00:00] #    loading 1 RULES ...
+[05/22 14:06:34] [00:00:00] #    loading TIMING ...
+[05/22 14:06:34] [00:00:00] #    receiving 1216 CELLS ...
+[05/22 14:06:37] [00:00:00] #setNanoRouteMode -droute_post_route_spread_wire "auto"
+[05/22 14:06:37] [00:00:00] #setNanoRouteMode -droute_start_iteration 0
+[05/22 14:06:37] [00:00:00] #setNanoRouteMode -route_antenna_cell_name "HS65_LS_ANTPROT3 HS65_LS_ANTPROT1 HS65_LL_ANTPROT3 HS65_LL_ANTPROT1 HS65_LH_ANTPROT3 HS65_LH_ANTPROT1 HS65_GS_ANTPROT3 HS65_GL_ANTPROT3 HS65_GH_ANTPROT3"
+[05/22 14:06:37] [00:00:00] #setNanoRouteMode -route_insert_antenna_diode true
+[05/22 14:06:37] [00:00:00] #setNanoRouteMode -route_with_eco true
+[05/22 14:06:37] [00:00:00] #Loading design pulpino_top init ...
+[05/22 14:06:37] [00:00:00] #    loading DESIGN_VIEW pulpino_top,init ... 
+[05/22 14:06:37] [00:00:00] #    loading 426 CHILD CELL_VIEWS ...
+[05/22 14:06:37] [00:00:00] #    loading 219 design VIAS ...
+[05/22 14:06:37] [00:00:00] ### Loading lrule/via rc from file /RC_TABLE ...
+[05/22 14:06:37] [00:00:00] ### Done loading /RC_TABLE
+[05/22 14:06:37] [00:00:00] #    loading 51851 INSTANCES ...
+[05/22 14:06:38] [00:00:00] #    loading 782 DIRTY_AREA ...
+[05/22 14:06:38] [00:00:00] #    loading 5 SPECIAL_NETS ...
+[05/22 14:06:38] [00:00:00] #    loading 71186 NETS ...
+[05/22 14:06:40] [00:00:01] #setNanoRouteMode -droute_post_route_spread_wire "auto"
+[05/22 14:06:40] [00:00:01] #setNanoRouteMode -droute_start_iteration 0
+[05/22 14:06:40] [00:00:01] #setNanoRouteMode -route_antenna_cell_name "HS65_LS_ANTPROT3 HS65_LS_ANTPROT1 HS65_LL_ANTPROT3 HS65_LL_ANTPROT1 HS65_LH_ANTPROT3 HS65_LH_ANTPROT1 HS65_GS_ANTPROT3 HS65_GL_ANTPROT3 HS65_GH_ANTPROT3"
+[05/22 14:06:40] [00:00:01] #setNanoRouteMode -route_insert_antenna_diode true
+[05/22 14:06:40] [00:00:01] #setNanoRouteMode -route_with_eco true
+[05/22 14:06:40] [00:00:01] #cpu time = 00:00:01, elapsed time = 00:00:06, memory = 110.07 (MB), peak = 110.07 (MB)
+[05/22 14:06:40] [00:00:01] #Start routing data preparation on Fri May 22 14:06:40 2026
+#
+[05/22 14:06:41] [00:00:01] #Minimum voltage of a net in the design = 0.000.
+[05/22 14:06:41] [00:00:01] #Maximum voltage of a net in the design = 1.650.
+[05/22 14:06:41] [00:00:01] #Voltage range [0.000 - 1.250] has 70670 nets.
+[05/22 14:06:41] [00:00:01] #Voltage range [0.000 - 0.000] has 513 nets.
+[05/22 14:06:41] [00:00:01] #Voltage range [1.000 - 1.250] has 2 nets.
+[05/22 14:06:41] [00:00:01] #Voltage range [1.000 - 1.650] has 1 net.
+[05/22 14:06:41] [00:00:01] #Build and mark too close pins for the same net.
+[05/22 14:06:41] [00:00:01] ### receiving APA data from server ...
+[05/22 14:06:41] [00:00:01] #Restoring pin access data from file (null) ...
+[05/22 14:06:48] [00:00:01] #Done restoring pin access data
+[05/22 14:06:48] [00:00:01] #Initial pin access analysis.
+[05/22 14:06:48] [00:00:01] #Detail pin access analysis.
+[05/22 14:06:56] [00:00:02] # M1           H   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.1900
+[05/22 14:06:56] [00:00:02] # M2           V   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.2000
+[05/22 14:06:56] [00:00:02] # M3           H   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.2000
+[05/22 14:06:56] [00:00:02] # M4           V   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.2000
+[05/22 14:06:56] [00:00:02] # M5           H   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.2000
+[05/22 14:06:56] [00:00:02] # M6           V   Track-Pitch = 0.8000    Line-2-Via Pitch = 0.8000
+[05/22 14:06:56] [00:00:02] # M7           H   Track-Pitch = 0.8000    Line-2-Via Pitch = 0.8000
+[05/22 14:06:56] [00:00:02] # AP           V   Track-Pitch = 5.0000    Line-2-Via Pitch = 5.7000
+[05/22 14:06:56] [00:00:02] #WARNING (NRAG-44) Track pitch is too small compared with line-2-via pitch.
+[05/22 14:06:57] [00:00:03] #Regenerating Ggrids automatically.
+[05/22 14:06:57] [00:00:03] #Auto generating G-grids with size=15 tracks, using layer M3's pitch = 0.2000.
+[05/22 14:06:57] [00:00:03] #Using automatically generated G-grids.
+[05/22 14:06:58] [00:00:03] #(check_and_prepare_match_target_file) no match_target_file in constraint. quit
+[05/22 14:07:08] [00:00:03] #Done routing data preparation.
+[05/22 14:07:08] [00:00:03] #cpu time = 00:00:03, elapsed time = 00:00:28, memory = 223.56 (MB), peak = 223.76 (MB)
+[05/22 14:07:08] [00:00:04] ### drc_pitch = 5900 (  5.9000 um) drc_range = 3110 (  3.1100 um) route_pitch = 3620 (  3.6200 um) patch_pitch = 3600 (  3.6000 um) top_route_layer = 7 top_pin_layer = 7
+[05/22 14:07:08] [00:00:04] #build: cpu time = 00:00:03, elapsed time = 00:00:28, memory = 233.98 (MB), peak = 233.98 (MB)
+[05/22 14:07:08] [00:00:04] #
+[05/22 14:07:08] [00:00:04] #Start client routing ...
+[05/22 14:07:08] [00:00:04] #
+[05/22 14:07:08] [00:00:04] #start initial detail routing ...
+[05/22 14:07:52] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:44, memory = 234.69 (MB), peak = 262.56 (MB)
+[05/22 14:07:54] [00:00:04] #start 1st optimization iteration ...
+[05/22 14:07:55] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:03, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:55] [00:00:04] #start 2nd optimization iteration ...
+[05/22 14:07:55] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:55] [00:00:04] #start 3rd optimization iteration ...
+[05/22 14:07:55] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:56] [00:00:04] #start 4th optimization iteration ...
+[05/22 14:07:56] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:56] [00:00:04] #start 5th optimization iteration ...
+[05/22 14:07:56] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:56] [00:00:04] #start 6th optimization iteration ...
+[05/22 14:07:56] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:57] [00:00:04] #start 7th optimization iteration ...
+[05/22 14:07:57] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:57] [00:00:04] #start 8th optimization iteration ...
+[05/22 14:07:57] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:57] [00:00:04] #start 9th optimization iteration ...
+[05/22 14:07:57] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:57] [00:00:04] #start 10th optimization iteration ...
+[05/22 14:07:58] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:58] [00:00:04] #start 11th optimization iteration ...
+[05/22 14:07:58] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:58] [00:00:04] #start 12th optimization iteration ...
+[05/22 14:07:58] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:58] [00:00:04] #start 13th optimization iteration ...
+[05/22 14:07:58] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:59] [00:00:04] #start 14th optimization iteration ...
+[05/22 14:07:59] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:59] [00:00:04] #start 15th optimization iteration ...
+[05/22 14:07:59] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:07:59] [00:00:04] #start 16th optimization iteration ...
+[05/22 14:07:59] [00:00:04] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 234.76 (MB), peak = 262.56 (MB)
+[05/22 14:08:00] [00:00:04] #Cpu time = 00:00:04
+[05/22 14:08:00] [00:00:04] #Elapsed time = 00:01:20
+[05/22 14:08:00] [00:00:04] #Increased memory = 124.66 (MB)
+[05/22 14:08:00] [00:00:04] #Total memory = 234.73 (MB)
+[05/22 14:08:00] [00:00:04] #Peak memory = 262.56 (MB)
+[05/22 14:08:00] [00:00:04] #
+[05/22 14:08:22] [00:00:04] #Cpu time = 00:00:04
+[05/22 14:08:22] [00:00:04] #Elapsed time = 00:02:04
+[05/22 14:08:22] [00:00:04] #Increased memory = 233.54 (MB)
+[05/22 14:08:22] [00:00:04] #Total memory = 234.73 (MB)
+[05/22 14:08:22] [00:00:04] #Peak memory = 262.56 (MB)
+[05/22 14:08:22] [00:00:04] #Finished client route on Fri May 22 14:08:22 2026
+#

@@ -2,7 +2,7 @@
 *	Innovus 21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
 *	
 *
-* 	Date & Time:	2026-May-22 12:07:41 (2026-May-22 10:07:41 GMT)
+* 	Date & Time:	2026-May-26 14:40:29 (2026-May-26 12:40:29 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
@@ -49,40 +49,40 @@
 
 Total Power 
 -----------------------------------------------------------------------------------------
-Total Leakage Power:         0.62135698 
+Total Leakage Power:         0.62314285 
 -----------------------------------------------------------------------------------------
 
 
 Group                           Leakage       Percentage 
                                 Power         (%)        
 -----------------------------------------------------------------------------------------
-Sequential                        0.1831       30.36 
-Macro                             0.1242       20.59 
-IO                              0.008064       1.337 
-Physical-Only                   0.002571      0.4263 
-Combinational                     0.2569       42.61 
-Clock (Combinational)           0.007445       1.235 
-Clock (Sequential)               0.02079       3.448 
+Sequential                        0.1825       30.17 
+Macro                             0.1242       20.53 
+IO                              0.008064       1.333 
+Physical-Only                   0.002571       0.425 
+Combinational                     0.2596       42.93 
+Clock (Combinational)           0.007205       1.191 
+Clock (Sequential)               0.02069        3.42 
 -----------------------------------------------------------------------------------------
-Total                              0.603         100 
+Total                             0.6048         100 
 -----------------------------------------------------------------------------------------
 
 
 Rail                  Voltage   Leakage       Percentage 
                                 Power         (%)        
 -----------------------------------------------------------------------------------------
-VDDE                     1.65    0.02627       4.228 
-VDD                         1     0.5951       95.77 
+VDDE                     1.65    0.02627       4.216 
+VDD                         1     0.5969       95.78 
 
 
 Clock                           Leakage       Percentage 
                                 Power         (%)        
 -----------------------------------------------------------------------------------------
-SPI_CLK                         0.001715      0.2759 
-CLK                              0.02614       4.207 
-JTAG_CLK                        0.001417       0.228 
+SPI_CLK                         0.001674      0.2686 
+CLK                              0.02576       4.134 
+JTAG_CLK                        0.001494      0.2398 
 -----------------------------------------------------------------------------------------
-Total (excluding duplicates)     0.02927       4.711 
+Total (excluding duplicates)     0.02893       4.643 
 -----------------------------------------------------------------------------------------
 Clock: SPI_CLK
 Clock Period: 0.040000 usec 
@@ -105,18 +105,18 @@ Clock Static Probability:  0.5000
 *	Power Distribution Summary: 
 *                Highest Average Power: core_region_i/data_mem/rows[0].col[0].i_sram (ST_SPHS_2048x8m8_L):          0.00388 
 *                Highest Leakage Power: core_region_i/data_mem/rows[0].col[0].i_sram (ST_SPHS_2048x8m8_L):          0.00388 
-*          Total Cap:      5.30034e-10 F
-*          Total instances in design: 41691
+*          Total Cap:      5.30103e-10 F
+*          Total instances in design: 41677
 *          Total instances in design with no power:     0
 *          Total instances in design with no activity:     0
 *          Total Fillers and Decap:    14
 -----------------------------------------------------------------------------------------
 
-Total leakage power = 0.621357 mW
+Total leakage power = 0.623143 mW
 Cell usage statistics:  
-Library IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z , 14 cells ( 0.033580%) , 0.0209107 mW ( 3.365325%  ) 
-Library IO65LPHVT_SF_1V8_50A_7M4X0Y2Z , 23 cells ( 0.055168%) , 0.008064 mW ( 1.297805%  ) 
-Library CORE65LPLVT , 36423 cells ( 87.364182%) , 0.423832 mW ( 68.210738%  ) 
-Library PRHS65 , 3 cells ( 0.007196%) , 1.59195e-09 mW ( 0.000000%  ) 
-Library SPHS100909 , 32 cells ( 0.076755%) , 0.12416 mW ( 19.982072%  ) 
-Library CLOCK65LPLVT , 5196 cells ( 12.463121%) , 0.0443901 mW ( 7.144060%  ) 
+Library IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z , 14 cells ( 0.033592%) , 0.0209107 mW ( 3.355680%  ) 
+Library IO65LPHVT_SF_1V8_50A_7M4X0Y2Z , 23 cells ( 0.055186%) , 0.008064 mW ( 1.294086%  ) 
+Library CORE65LPLVT , 36343 cells ( 87.201569%) , 0.425861 mW ( 68.340842%  ) 
+Library PRHS65 , 3 cells ( 0.007198%) , 1.59195e-09 mW ( 0.000000%  ) 
+Library SPHS100909 , 32 cells ( 0.076781%) , 0.12416 mW ( 19.924805%  ) 
+Library CLOCK65LPLVT , 5262 cells ( 12.625669%) , 0.0441471 mW ( 7.084587%  ) 

@@ -1,0 +1,1883 @@
+[05/25 14:31:56      0s] 
+[05/25 14:31:56      0s] Cadence Innovus(TM) Implementation System.
+[05/25 14:31:56      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/25 14:31:56      0s] 
+[05/25 14:31:56      0s] Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+[05/25 14:31:56      0s] Options:	-stylus 
+[05/25 14:31:56      0s] Date:		Mon May 25 14:31:56 2026
+[05/25 14:31:56      0s] Host:		fransg-1 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+[05/25 14:31:56      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[05/25 14:31:56      0s] 
+[05/25 14:31:56      0s] License:
+[05/25 14:31:56      0s] 		[14:31:56.324513] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+[05/25 14:31:56      0s] 
+[05/25 14:31:56      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[05/25 14:31:56      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[05/25 14:32:05      8s] 
+[05/25 14:32:05      8s] 
+[05/25 14:32:11     12s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+[05/25 14:32:14     14s] @(#)CDS: NanoRoute 21.35-s114_1 NR220912-2004/21_15-UB (database version 18.20.592_1) {superthreading v2.17}
+[05/25 14:32:14     14s] @(#)CDS: AAE 21.15-s039 (64bit) 10/13/2022 (Linux 3.10.0-693.el7.x86_64)
+[05/25 14:32:14     14s] @(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+[05/25 14:32:14     14s] @(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+[05/25 14:32:14     14s] @(#)CDS: CPE v21.15-s076
+[05/25 14:32:14     14s] @(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+[05/25 14:32:14     14s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[05/25 14:32:14     14s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[05/25 14:32:14     14s] @(#)CDS: RCDB 11.15.0
+[05/25 14:32:14     14s] @(#)CDS: STYLUS 21.12-s013_1 (08/15/2022 08:25 PDT)
+[05/25 14:32:14     14s] @(#)CDS: SystemPlanner-21.15Rel-8720 (21.15) (2022-08-22 18:31:54+0800)
+[05/25 14:32:14     14s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_28876_fransg-1_su2577su-s_4nGLxc.
+
+[05/25 14:32:14     14s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_28876_fransg-1_su2577su-s_4nGLxc.
+[05/25 14:32:14     14s] 
+[05/25 14:32:14     14s] Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[05/25 14:32:16     15s] [INFO] Loading PVS 21.10 fill procedures
+[05/25 14:32:17     17s] 
+[05/25 14:32:17     17s] **INFO:  MMMC transition support version v31-84 
+[05/25 14:32:17     17s] 
+[05/25 14:32:20     19s] @innovus 1> source genus_output/pulpino_init.tcl
+#@ Begin verbose source (pre): source genus_output/pulpino_init.tcl
+[05/25 14:32:22     20s] @file 1: ################################################################################
+[05/25 14:32:22     20s] @file 2: #
+[05/25 14:32:22     20s] @file 3: # Init setup file
+[05/25 14:32:22     20s] @file 4: # Created by Genus(TM) Synthesis Solution on 05/07/2026 14:47:06
+[05/25 14:32:22     20s] @file 5: #
+[05/25 14:32:22     20s] @file 6: ################################################################################
+[05/25 14:32:22     20s] @file 7: #if { ![is_common_ui_mode] } { error "ERROR: This script requires common_ui to be active."}
+[05/25 14:32:22     20s] @file 8: #::legacy::set_attribute -quiet init_mmmc_version 2 /
+[05/25 14:32:22     20s] @file 9:
+[05/25 14:32:22     20s] @@file 10: read_mmmc ../pnr/genus_output/pulpino_top.mmmc.tcl
+[05/25 14:32:22     20s] #@ Begin verbose source ../pnr/genus_output/pulpino_top.mmmc.tcl (pre)
+[05/25 14:32:22     20s] @file 1: #################################################################################
+[05/25 14:32:22     20s] @file 2: #
+[05/25 14:32:22     20s] @file 3: # Created by Genus(TM) Synthesis Solution 21.14-s082_1 on Fri May 22 11:27:03 CEST 2026
+[05/25 14:32:22     20s] @file 4: #
+[05/25 14:32:22     20s] @file 5: #################################################################################
+[05/25 14:32:22     20s] @file 6:
+[05/25 14:32:22     20s] @file 7: ## library_sets
+[05/25 14:32:22     20s] @@file 8: create_library_set -name wcl_slow \
+[05/25 14:32:22     20s]     -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_wc_1.00V_125C_10y.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_wc_1.10V_125C_10y.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_wc_1.00V_125C_10y.lib }
+[05/25 14:32:22     20s] @@file 15: create_library_set -name wcl_fast \
+[05/25 14:32:22     20s]     -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_bc_1.25V_m40C.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_bc_1.25V_m40C.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_bc_1.25V_1.95V_m40C.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_bc_1.25V_m40C.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_bc_1.30V_m40C.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_bc_1.25V_m40C.lib }
+[05/25 14:32:22     20s] @@file 22: create_library_set -name wcl_typical \
+[05/25 14:32:22     20s]     -timing { /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_nom_1.10V_25C.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_nom_1.10V_25C.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_nom_1.10V_1.80V_25C.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_nom_1.10V_25C.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_nom_1.20V_25C.lib \
+[05/25 14:32:22     20s]               /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_nom_1.10V_25C.lib }
+[05/25 14:32:22     20s] @file 29:
+[05/25 14:32:22     20s] @file 30: ## opcond
+[05/25 14:32:22     20s] @@file 31: create_opcond -name op_cond_wcl_slow \
+[05/25 14:32:22     20s]     -process 1.0 \
+[05/25 14:32:22     20s]     -voltage 1.0 \
+[05/25 14:32:22     20s]     -temperature 125.0
+[05/25 14:32:22     20s] @@file 35: create_opcond -name op_cond_wcl_fast \
+[05/25 14:32:22     20s]     -process 1.0 \
+[05/25 14:32:22     20s]     -voltage 1.25 \
+[05/25 14:32:22     20s]     -temperature -40.0
+[05/25 14:32:22     20s] @@file 39: create_opcond -name op_cond_wcl_typical \
+[05/25 14:32:22     20s]     -process 1.0 \
+[05/25 14:32:22     20s]     -voltage 1.1 \
+[05/25 14:32:22     20s]     -temperature 25.0
+[05/25 14:32:22     20s] @file 43:
+[05/25 14:32:22     20s] @file 44: ## timing_condition
+[05/25 14:32:22     20s] @@file 45: create_timing_condition -name timing_cond_wcl_slow \
+[05/25 14:32:22     20s]     -opcond op_cond_wcl_slow \
+[05/25 14:32:22     20s]     -library_sets { wcl_slow }
+[05/25 14:32:22     20s] @@file 48: create_timing_condition -name timing_cond_wcl_fast \
+[05/25 14:32:22     20s]     -opcond op_cond_wcl_fast \
+[05/25 14:32:22     20s]     -library_sets { wcl_fast }
+[05/25 14:32:22     20s] @@file 51: create_timing_condition -name timing_cond_wcl_typical \
+[05/25 14:32:22     20s]     -opcond op_cond_wcl_typical \
+[05/25 14:32:22     20s]     -library_sets { wcl_typical }
+[05/25 14:32:22     20s] @file 54:
+[05/25 14:32:22     20s] @file 55: ## rc_corner
+[05/25 14:32:22     20s] @@file 56: create_rc_corner -name rc_corner_typ \
+[05/25 14:32:22     20s]     -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCTYP/qrcTechFile \
+[05/25 14:32:22     20s]     -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCTYP.captable \
+[05/25 14:32:22     20s]     -pre_route_res 1.0 \
+[05/25 14:32:22     20s]     -pre_route_cap 1.0 \
+[05/25 14:32:22     20s]     -pre_route_clock_res 0.0 \
+[05/25 14:32:22     20s]     -pre_route_clock_cap 0.0 \
+[05/25 14:32:22     20s]     -post_route_res {1.0 1.0 1.0} \
+[05/25 14:32:22     20s]     -post_route_cap {1.0 1.0 1.0} \
+[05/25 14:32:22     20s]     -post_route_cross_cap {1.0 1.0 1.0} \
+[05/25 14:32:22     20s]     -post_route_clock_res {1.0 1.0 1.0} \
+[05/25 14:32:22     20s]     -post_route_clock_cap {1.0 1.0 1.0}
+[05/25 14:32:22     20s] @@file 68: create_rc_corner -name rc_corner_min \
+[05/25 14:32:22     20s]     -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMIN/qrcTechFile \
+[05/25 14:32:22     20s]     -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable \
+[05/25 14:32:22     20s]     -pre_route_res 1.0 \
+[05/25 14:32:22     20s]     -pre_route_cap 1.0 \
+[05/25 14:32:22     20s]     -pre_route_clock_res 0.0 \
+[05/25 14:32:22     20s]     -pre_route_clock_cap 0.0 \
+[05/25 14:32:22     20s]     -post_route_res {1.0 1.0 1.0} \
+[05/25 14:32:22     20s]     -post_route_cap {1.0 1.0 1.0} \
+[05/25 14:32:22     20s]     -post_route_cross_cap {1.0 1.0 1.0} \
+[05/25 14:32:22     20s]     -post_route_clock_res {1.0 1.0 1.0} \
+[05/25 14:32:22     20s]     -post_route_clock_cap {1.0 1.0 1.0}
+[05/25 14:32:22     20s] @@file 80: create_rc_corner -name rc_corner_max \
+[05/25 14:32:22     20s]     -qrc_tech /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile \
+[05/25 14:32:22     20s]     -cap_table /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable \
+[05/25 14:32:22     20s]     -pre_route_res 1.0 \
+[05/25 14:32:22     20s]     -pre_route_cap 1.0 \
+[05/25 14:32:22     20s]     -pre_route_clock_res 0.0 \
+[05/25 14:32:22     20s]     -pre_route_clock_cap 0.0 \
+[05/25 14:32:22     20s]     -post_route_res {1.0 1.0 1.0} \
+[05/25 14:32:22     20s]     -post_route_cap {1.0 1.0 1.0} \
+[05/25 14:32:22     20s]     -post_route_cross_cap {1.0 1.0 1.0} \
+[05/25 14:32:22     20s]     -post_route_clock_res {1.0 1.0 1.0} \
+[05/25 14:32:22     20s]     -post_route_clock_cap {1.0 1.0 1.0}
+[05/25 14:32:22     20s] @file 92:
+[05/25 14:32:22     20s] @file 93: ## delay_corner
+[05/25 14:32:22     20s] @@file 94: create_delay_corner -name delay_corner_wcl_slow \
+[05/25 14:32:22     20s]     -early_timing_condition { timing_cond_wcl_slow } \
+[05/25 14:32:22     20s]     -late_timing_condition { timing_cond_wcl_slow } \
+[05/25 14:32:22     20s]     -early_rc_corner rc_corner_min \
+[05/25 14:32:22     20s]     -late_rc_corner rc_corner_max
+[05/25 14:32:22     20s] @@file 99: create_delay_corner -name delay_corner_wcl_fast \
+[05/25 14:32:22     20s]     -early_timing_condition { timing_cond_wcl_fast } \
+[05/25 14:32:22     20s]     -late_timing_condition { timing_cond_wcl_fast } \
+[05/25 14:32:22     20s]     -early_rc_corner rc_corner_min \
+[05/25 14:32:22     20s]     -late_rc_corner rc_corner_max
+[05/25 14:32:22     20s] @@file 104: create_delay_corner -name delay_corner_wcl_typical \
+[05/25 14:32:22     20s]     -early_timing_condition { timing_cond_wcl_typical } \
+[05/25 14:32:22     20s]     -late_timing_condition { timing_cond_wcl_typical } \
+[05/25 14:32:22     20s]     -early_rc_corner rc_corner_typ \
+[05/25 14:32:22     20s]     -late_rc_corner rc_corner_typ
+[05/25 14:32:22     20s] @file 109:
+[05/25 14:32:22     20s] @file 110: ## constraint_mode
+[05/25 14:32:22     20s] @@file 111: create_constraint_mode -name functional_wcl_slow \
+[05/25 14:32:22     20s]     -sdc_files { ../pnr/genus_output/pulpino_top.functional_wcl_slow.sdc }
+[05/25 14:32:22     20s] @@file 113: create_constraint_mode -name functional_wcl_fast \
+[05/25 14:32:22     20s]     -sdc_files { ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc }
+[05/25 14:32:22     20s] @@file 115: create_constraint_mode -name functional_wcl_typical \
+[05/25 14:32:22     20s]     -sdc_files { ../pnr/genus_output/pulpino_top.functional_wcl_typical.sdc }
+[05/25 14:32:22     20s] @file 117:
+[05/25 14:32:22     20s] @file 118: ## analysis_view
+[05/25 14:32:22     20s] @@file 119: create_analysis_view -name view_wcl_slow \
+[05/25 14:32:22     20s]     -constraint_mode functional_wcl_slow \
+[05/25 14:32:22     20s]     -delay_corner delay_corner_wcl_slow
+[05/25 14:32:22     20s] @@file 122: create_analysis_view -name view_wcl_fast \
+[05/25 14:32:22     20s]     -constraint_mode functional_wcl_fast \
+[05/25 14:32:22     20s]     -delay_corner delay_corner_wcl_fast
+[05/25 14:32:22     20s] @@file 125: create_analysis_view -name view_wcl_typical \
+[05/25 14:32:22     20s]     -constraint_mode functional_wcl_typical \
+[05/25 14:32:22     20s]     -delay_corner delay_corner_wcl_typical
+[05/25 14:32:22     20s] @file 128:
+[05/25 14:32:22     20s] @file 129: ## set_analysis_view
+[05/25 14:32:22     20s] @@file 130: set_analysis_view -setup { view_wcl_slow } \
+[05/25 14:32:22     20s]                   -hold { view_wcl_fast }
+[05/25 14:32:22     20s] #@ End verbose source ../pnr/genus_output/pulpino_top.mmmc.tcl
+[05/25 14:32:22     20s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib' ...
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1447)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1448)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1452)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1453)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3390)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3391)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3395)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3396)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5333)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5334)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5338)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5339)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7276)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7277)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7281)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7282)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7988)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7989)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7993)
+[05/25 14:32:22     20s] **ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7994)
+[05/25 14:32:22     20s] Message <TECHLIB-1204> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[05/25 14:32:24     22s] Read 866 cells in library 'CORE65LPLVT' 
+[05/25 14:32:24     22s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_wc_1.00V_125C_10y.lib' ...
+[05/25 14:32:24     22s] Read 110 cells in library 'CLOCK65LPLVT' 
+[05/25 14:32:24     22s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib' ...
+[05/25 14:32:24     22s] Read 10 cells in library 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z' 
+[05/25 14:32:24     22s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib' ...
+[05/25 14:32:24     22s] Read 33 cells in library 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z' 
+[05/25 14:32:24     22s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_wc_1.10V_125C_10y.lib' ...
+[05/25 14:32:24     22s] Read 2 cells in library 'SPHS100909' 
+[05/25 14:32:24     22s] Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_wc_1.00V_125C_10y.lib' ...
+[05/25 14:32:24     22s] Read 10 cells in library 'PRHS65' 
+[05/25 14:32:24     22s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_bc_1.25V_m40C.lib' ...
+[05/25 14:32:27     25s] Read 866 cells in library 'CORE65LPLVT' 
+[05/25 14:32:27     25s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_bc_1.25V_m40C.lib' ...
+[05/25 14:32:27     25s] Read 110 cells in library 'CLOCK65LPLVT' 
+[05/25 14:32:27     25s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_bc_1.25V_1.95V_m40C.lib' ...
+[05/25 14:32:27     25s] Read 10 cells in library 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z' 
+[05/25 14:32:27     25s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_bc_1.25V_m40C.lib' ...
+[05/25 14:32:27     25s] Read 33 cells in library 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z' 
+[05/25 14:32:27     25s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_bc_1.30V_m40C.lib' ...
+[05/25 14:32:27     25s] Read 2 cells in library 'SPHS100909' 
+[05/25 14:32:27     25s] Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_bc_1.25V_m40C.lib' ...
+[05/25 14:32:27     25s] Read 10 cells in library 'PRHS65' 
+[05/25 14:32:27     25s] Ending "PreSetAnalysisView" (total cpu=0:00:05.4, real=0:00:05.0, peak res=1056.5M, current mem=849.1M)
+[05/25 14:32:27     25s] @@file 11: read_physical -lef {/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/viarule_generate.lef /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/sites.lef /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/CADENCE/LEF/CORE65LPLVT_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/CADENCE/LEF/CLOCK65LPLVT_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/CADENCE/LEF/PRHS65_soc.lef /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/CADENCE/LEF/SPHS100909_soc.lef /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/CADENCE/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_soc_KW_FIX.lef}
+[05/25 14:32:27     25s] 
+[05/25 14:32:27     25s] Loading LEF file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/technology.lef ...
+[05/25 14:32:27     25s] 
+[05/25 14:32:27     25s] Loading LEF file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/viarule_generate.lef ...
+[05/25 14:32:27     25s] 
+[05/25 14:32:27     25s] Loading LEF file /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/LEF/sites.lef ...
+[05/25 14:32:27     25s] 
+[05/25 14:32:27     25s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/CADENCE/LEF/CORE65LPLVT_soc.lef ...
+[05/25 14:32:27     25s] Set DBUPerIGU to M2 pitch 200.
+[05/25 14:32:27     25s] 
+[05/25 14:32:27     25s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/CADENCE/LEF/CLOCK65LPLVT_soc.lef ...
+[05/25 14:32:27     25s] 
+[05/25 14:32:27     25s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/CADENCE/LEF/PRHS65_soc.lef ...
+[05/25 14:32:27     25s] 
+[05/25 14:32:27     25s] Loading LEF file /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/CADENCE/LEF/SPHS100909_soc.lef ...
+[05/25 14:32:27     25s] 
+[05/25 14:32:27     25s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef ...
+[05/25 14:32:27     25s] WARNING (LEFPARS-2002): NAMESCASESENSITIVE is a required statement in LEF files with version 5.5 and earlier.
+[05/25 14:32:27     25s] Without NAMESCASESENSITIVE defined, the LEF file is technically incorrect.
+[05/25 14:32:27     25s] Refer to the LEF/DEF 5.5 or earlier Language Reference manual on how to define this statement. See file /usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef at line 27188.
+[05/25 14:32:27     25s] 
+[05/25 14:32:27     25s] Loading LEF file /usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/CADENCE/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_soc_KW_FIX.lef ...
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDD_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDD_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDDE_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDDE_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RTCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RTCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RBCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RBCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LTCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LTCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LBCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LBCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCUTCELL_ALL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCUTCELL_ALL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCELL_TRIGGER_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCELL_TRIGGER_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'A0SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'A1SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'A2SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-200):	Pin 'A3SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-200' for more detail.
+[05/25 14:32:27     25s] **WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+[05/25 14:32:27     25s] To increase the message display limit, refer to the product command reference manual.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'DUMMYCONNECT' in macro 'IOFILLERCELL_DUMMYPAD_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'DUMMYPAD' in macro 'IOFILLERCELL_DUMMYPAD_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'DUMMYCONNECTIN1' in macro 'IOFILLERCELL_DUMMYPAD_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'DUMMYCONNECTOUT1' in macro 'IOFILLERCELL_DUMMYPAD_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'DUMMYPADIN1' in macro 'IOFILLERCELL_DUMMYPAD_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'DUMMYPADOUT1' in macro 'IOFILLERCELL_DUMMYPAD_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'IO' in macro 'BD8SCARUDQP_1V8_SF_LIN_50u' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD8SCARUDQP_1V8_SF_LIN_50u' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'IO' in macro 'BD8SCARUDQP_1V8_SF_LIN_40u' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD8SCARUDQP_1V8_SF_LIN_40u' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'IO' in macro 'BD8SCARUDQP_1V8_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD8SCARUDQP_1V8_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'IO' in macro 'BD8SCARUDQP_1V8_SF_2ROWS_25u_short' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD8SCARUDQP_1V8_SF_2ROWS_25u_short' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'IO' in macro 'BD8SCARUDQP_1V8_SF_2ROWS_25u_long' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD8SCARUDQP_1V8_SF_2ROWS_25u_long' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'IO' in macro 'BD8SCARUDQP_1V8_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD8SCARUDQP_1V8_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'IO' in macro 'BD4SCARUDQP_1V8_SF_LIN_50u' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD4SCARUDQP_1V8_SF_LIN_50u' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/25 14:32:27     25s] Type 'man IMPLF-201' for more detail.
+[05/25 14:32:27     25s] **WARN: (EMS-27):	Message (IMPLF-201) has exceeded the current message display limit of 20.
+[05/25 14:32:27     25s] To increase the message display limit, refer to the product command reference manual.
+[05/25 14:32:27     25s] 
+[05/25 14:32:27     25s] ##  Check design process and node:  
+[05/25 14:32:27     25s] ##  Both design process and tech node are not set.
+[05/25 14:32:27     25s] 
+[05/25 14:32:27     25s] @file 12:
+[05/25 14:32:27     25s] @@file 13: set_multi_cpu_usage -local_cpu 6 
+[05/25 14:32:27     25s] @file 14:
+[05/25 14:32:27     25s] @@file 15: read_netlist ../synth/outputs/pulpino_top_netlist.v
+[05/25 14:32:27     25s] #% Begin Load netlist data ... (date=05/25 14:32:27, mem=857.2M)
+[05/25 14:32:27     25s] *** Begin netlist parsing (mem=1153.2M) ***
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X9' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X9' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X4' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X4' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X27' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X27' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X18' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X18' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X9' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X9' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X4' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X4' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X35' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X35' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X27' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X27' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X18' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X18' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XNOR3X9' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XNOR3X9' is defined in LEF but not in the timing library.
+[05/25 14:32:27     25s] Type 'man IMPVL-159' for more detail.
+[05/25 14:32:27     25s] **WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+[05/25 14:32:27     25s] To increase the message display limit, refer to the product command reference manual.
+[05/25 14:32:27     25s] Created 1031 new cells from 12 timing libraries.
+[05/25 14:32:27     25s] Reading netlist ...
+[05/25 14:32:27     25s] Backslashed names will retain backslash and a trailing blank character.
+[05/25 14:32:28     26s] Reading verilog netlist '../synth/outputs/pulpino_top_netlist.v'
+[05/25 14:32:28     26s] 
+[05/25 14:32:28     26s] *** Memory Usage v#1 (Current mem = 1158.191M, initial mem = 484.035M) ***
+[05/25 14:32:28     26s] *** End netlist parsing (cpu=0:00:00.4, real=0:00:01.0, mem=1158.2M) ***
+[05/25 14:32:28     26s] #% End Load netlist data ... (date=05/25 14:32:28, total cpu=0:00:00.4, real=0:00:01.0, peak res=909.8M, current mem=909.8M)
+[05/25 14:32:28     26s] Top level cell is pulpino_top.
+[05/25 14:32:29     27s] Hooked 2062 DB cells to tlib cells.
+[05/25 14:32:29     27s] Ending "BindLib:" (total cpu=0:00:00.3, real=0:00:01.0, peak res=1013.5M, current mem=1013.5M)
+[05/25 14:32:29     27s] 3 empty module found.
+[05/25 14:32:29     27s] Starting recursive module instantiation check.
+[05/25 14:32:29     27s] No recursion found.
+[05/25 14:32:29     27s] Building hierarchical netlist for Cell pulpino_top ...
+[05/25 14:32:29     27s] *** Netlist is unique.
+[05/25 14:32:29     27s] Setting Std. cell height to 2600 DBU (smallest netlist inst).
+[05/25 14:32:29     27s] ** info: there are 3066 modules.
+[05/25 14:32:29     27s] ** info: there are 36300 stdCell insts.
+[05/25 14:32:29     27s] ** info: there are 23 Pad insts.
+[05/25 14:32:29     27s] ** info: there are 32 macros.
+[05/25 14:32:29     27s] 
+[05/25 14:32:29     27s] *** Memory Usage v#1 (Current mem = 1288.617M, initial mem = 484.035M) ***
+[05/25 14:32:29     27s] @file 16:
+[05/25 14:32:29     27s] @@file 17: init_design 
+[05/25 14:32:29     27s] Initializing I/O assignment ...
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_SF_TF_2ROWS' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_SF_2ROWS' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_TF_2ROWS' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_SF_LIN' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'IOPADSITE_TF_LIN' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'COREHD_QG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'COREHD_QV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'COREHV_QG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'COREHV_QV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'CORE_QG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'CORE_QV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'COREHD_TG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'COREHD_TV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'COREHV_TG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'COREHV_TV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'CORE_TG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'CORE_TV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'COREHD_DG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'COREHD_DV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (IMPFP-3961):	The techSite 'COREHD' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/25 14:32:29     27s] Type 'man IMPFP-3961' for more detail.
+[05/25 14:32:29     27s] **WARN: (EMS-27):	Message (IMPFP-3961) has exceeded the current message display limit of 20.
+[05/25 14:32:29     27s] To increase the message display limit, refer to the product command reference manual.
+[05/25 14:32:29     27s] Start create_tracks
+[05/25 14:32:29     27s] Extraction setup Started 
+[05/25 14:32:29     27s] 
+[05/25 14:32:29     27s] Trim Metal Layers:
+[05/25 14:32:29     27s] Initializing multi-corner RC extraction with 2 active RC Corners ...
+[05/25 14:32:29     27s] **WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for pre_route and post_route extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for pre_route and post_route (effort level medium/high/signoff) extraction engines.
+[05/25 14:32:29     27s] Type 'man IMPEXT-6202' for more detail.
+[05/25 14:32:29     27s] Reading Encrypted Capacitance Table File /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable ...
+[05/25 14:32:29     27s] Cap table was created using Encounter 14.23-s044_1.
+[05/25 14:32:29     27s] Process name: cmos065_7m4x0y2z_GL_RCMAX.
+[05/25 14:32:29     27s] Allocated an empty WireEdgeEnlargement table in rc_corner_max [6].
+[05/25 14:32:29     27s] Allocated an empty WireEdgeEnlargement table in rc_corner_max [7].
+[05/25 14:32:29     27s] Allocated an empty WireEdgeEnlargement table in rc_corner_max [8].
+[05/25 14:32:29     27s] Decrypted 57344 characters.
+[05/25 14:32:29     27s] Reading Encrypted Capacitance Table File /usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable ...
+[05/25 14:32:29     27s] Cap table was created using Encounter 14.23-s044_1.
+[05/25 14:32:29     27s] Process name: cmos065_7m4x0y2z_GL_RCMIN.
+[05/25 14:32:29     27s] Allocated an empty WireEdgeEnlargement table in rc_corner_min [6].
+[05/25 14:32:29     27s] Allocated an empty WireEdgeEnlargement table in rc_corner_min [7].
+[05/25 14:32:29     27s] Allocated an empty WireEdgeEnlargement table in rc_corner_min [8].
+[05/25 14:32:29     27s] Decrypted 53248 characters.
+[05/25 14:32:29     27s] Importing multi-corner RC tables ... 
+[05/25 14:32:29     27s] Summary of Active RC-Corners : 
+[05/25 14:32:29     27s]  
+[05/25 14:32:29     27s]  Analysis View: view_wcl_slow
+[05/25 14:32:29     27s]   Late RC-Corner
+[05/25 14:32:29     27s]     RC-Corner Name        : rc_corner_max
+[05/25 14:32:29     27s]     RC-Corner Index       : 0
+[05/25 14:32:29     27s]     RC-Corner Temperature : 25 Celsius
+[05/25 14:32:29     27s]     RC-Corner Cap Table   : '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable'
+[05/25 14:32:29     27s]     RC-Corner PreRoute Res Factor         : 1
+[05/25 14:32:29     27s]     RC-Corner PreRoute Cap Factor         : 1
+[05/25 14:32:29     27s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/25 14:32:29     27s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/25 14:32:29     27s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/25 14:32:29     27s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/25 14:32:29     27s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/25 14:32:29     27s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+[05/25 14:32:29     27s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+[05/25 14:32:29     27s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/25 14:32:29     27s]     RC-Corner Technology file: '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile'
+[05/25 14:32:29     27s]  
+[05/25 14:32:29     27s]   Early RC-Corner
+[05/25 14:32:29     27s]     RC-Corner Name        : rc_corner_min
+[05/25 14:32:29     27s]     RC-Corner Index       : 1
+[05/25 14:32:29     27s]     RC-Corner Temperature : 25 Celsius
+[05/25 14:32:29     27s]     RC-Corner Cap Table   : '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable'
+[05/25 14:32:29     27s]     RC-Corner PreRoute Res Factor         : 1
+[05/25 14:32:29     27s]     RC-Corner PreRoute Cap Factor         : 1
+[05/25 14:32:29     27s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/25 14:32:29     27s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/25 14:32:29     27s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/25 14:32:29     27s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/25 14:32:29     27s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/25 14:32:29     27s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+[05/25 14:32:29     27s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+[05/25 14:32:29     27s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/25 14:32:29     27s]     RC-Corner Technology file: '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMIN/qrcTechFile'
+[05/25 14:32:29     27s]  
+[05/25 14:32:29     27s]  Analysis View: view_wcl_fast
+[05/25 14:32:29     27s]   Late RC-Corner
+[05/25 14:32:29     27s]     RC-Corner Name        : rc_corner_max
+[05/25 14:32:29     27s]     RC-Corner Index       : 0
+[05/25 14:32:29     27s]     RC-Corner Temperature : 25 Celsius
+[05/25 14:32:29     27s]     RC-Corner Cap Table   : '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMAX.captable'
+[05/25 14:32:29     27s]     RC-Corner PreRoute Res Factor         : 1
+[05/25 14:32:29     27s]     RC-Corner PreRoute Cap Factor         : 1
+[05/25 14:32:29     27s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/25 14:32:29     27s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/25 14:32:29     27s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/25 14:32:29     27s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/25 14:32:29     27s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/25 14:32:29     27s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+[05/25 14:32:29     27s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+[05/25 14:32:29     27s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[05/25 14:32:29     27s]     RC-Corner Technology file: '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile'
+[05/25 14:32:29     27s]  
+[05/25 14:32:29     27s]   Early RC-Corner
+[05/25 14:32:29     27s]     RC-Corner Name        : rc_corner_min
+[05/25 14:32:29     27s]     RC-Corner Index       : 1
+[05/25 14:32:29     27s]     RC-Corner Temperature : 25 Celsius
+[05/25 14:32:29     27s]     RC-Corner Cap Table   : '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/CAP_TABLE/RCMIN.captable'
+[05/25 14:32:29     27s]     RC-Corner PreRoute Res Factor         : 1
+[05/25 14:32:29     27s]     RC-Corner PreRoute Cap Factor         : 1
+[05/25 14:32:29     27s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[05/25 14:32:29     27s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[05/25 14:32:29     27s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[05/25 14:32:29     27s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[05/25 14:32:29     27s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[05/25 14:32:29     27s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+[05/25 14:32:29     27s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+[05/25 14:32:29     27s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} [05/25 14:32:29     27s] Technology file '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMAX/qrcTechFile' associated with first view 'view_wcl_slow' will be used as the primary corner for the multi-corner extraction.
+
+[05/25 14:32:29     27s]     RC-Corner Technology file: '/usr/local-eit/cad2/cmpstm/etin35/etin35/tech/pdk/QRC_TECHFILE/RCMIN/qrcTechFile'
+[05/25 14:32:29     27s] 
+[05/25 14:32:29     27s] Trim Metal Layers:
+[05/25 14:32:29     27s] LayerId::1 widthSet size::5
+[05/25 14:32:29     27s] LayerId::2 widthSet size::4
+[05/25 14:32:29     27s] LayerId::3 widthSet size::4
+[05/25 14:32:29     27s] LayerId::4 widthSet size::4
+[05/25 14:32:29     27s] LayerId::5 widthSet size::4
+[05/25 14:32:29     27s] LayerId::6 widthSet size::4
+[05/25 14:32:29     27s] LayerId::7 widthSet size::4
+[05/25 14:32:29     27s] LayerId::8 widthSet size::2
+[05/25 14:32:29     27s] eee: pegSigSF::1.070000
+[05/25 14:32:29     27s] Updating RC grid for preRoute extraction ...
+[05/25 14:32:29     27s] Initializing multi-corner capacitance tables ... 
+[05/25 14:32:29     27s] Initializing multi-corner resistance tables ...
+[05/25 14:32:29     27s] Creating RPSQ from WeeR and WRes ...
+[05/25 14:32:29     27s] Creating RPSQ from WeeR and WRes ...
+[05/25 14:32:29     27s] eee: l::1 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/25 14:32:29     27s] eee: l::2 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/25 14:32:29     27s] eee: l::3 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/25 14:32:29     27s] eee: l::4 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/25 14:32:29     27s] eee: l::5 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/25 14:32:29     27s] eee: l::6 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/25 14:32:29     27s] eee: l::7 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/25 14:32:29     27s] eee: l::8 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[05/25 14:32:29     27s] {RT rc_corner_max 0 8 8 {6 0} {7 0} 2}
+[05/25 14:32:29     27s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.000000 uaWl=0.000000 uaWlH=0.000000 aWlH=0.000000 lMod=0 pMax=0.850000 pMod=82 wcR=0.559500 newSi=0.000000 wHLS=1.398750 siPrev=0 viaL=0.000000
+[05/25 14:32:29     27s] *Info: initialize multi-corner CTS.
+[05/25 14:32:29     27s] Ending "SetAnalysisView" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1320.1M, current mem=1008.6M)
+[05/25 14:32:30     27s] Reading timing constraints file '../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc' ...
+[05/25 14:32:30     27s] Current (total cpu=0:00:27.9, real=0:00:34.0, peak res=1320.1M, current mem=1298.4M)
+[05/25 14:32:30     27s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 9).
+[05/25 14:32:30     27s] 
+[05/25 14:32:30     27s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 10).
+[05/25 14:32:30     27s] 
+[05/25 14:32:30     27s] pulpino_top
+[05/25 14:32:30     28s] Multithreaded Timing Analysis is initialized with 6 threads
+[05/25 14:32:30     28s]  (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 15).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'clk_rst_gen_i/clk_sel_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 15).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'clk_rst_gen_i/testmode_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 16).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/\CORE.RISCV_CORE /core_clock_gate_i/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 17).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /aw_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 18).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /ar_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 19).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /w_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 20).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /r_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 21).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /b_buffer_i/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 22).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_aw_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 23).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_ar_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 24).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_w_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 25).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_r_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 26).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_b_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 27).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_aw_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 28).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_ar_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 29).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_w_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 30).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_r_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 31).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_b_buffer_LP/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 32).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_aw_buffer/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 33).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_ar_buffer/buffer_i/cg_cell/en_i' (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 34).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] Message <TCLCMD-1531> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit. (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 35).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1142):	Virtual clock 'VCLK_ASYNC' is being created with no source objects. (File ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc, Line 48).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] INFO (CTE): Reading of timing constraints file ../pnr/genus_output/pulpino_top.functional_wcl_fast.sdc completed, with 23 WARNING
+[05/25 14:32:30     28s] Ending "Constraint file reading stats" (total cpu=0:00:00.2, real=0:00:00.0, peak res=1411.0M, current mem=1411.0M)
+[05/25 14:32:30     28s] Current (total cpu=0:00:28.1, real=0:00:34.0, peak res=1411.0M, current mem=1411.0M)
+[05/25 14:32:30     28s] Reading timing constraints file '../pnr/genus_output/pulpino_top.functional_wcl_slow.sdc' ...
+[05/25 14:32:30     28s] Current (total cpu=0:00:28.1, real=0:00:34.0, peak res=1411.0M, current mem=1411.0M)
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_top.functional_wcl_slow.sdc, Line 9).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../pnr/genus_output/pulpino_top.functional_wcl_slow.sdc, Line 10).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] pulpino_top
+[05/25 14:32:30     28s] **WARN: (TCLCMD-1142):	Virtual clock 'VCLK_ASYNC' is being created with no source objects. (File ../pnr/genus_output/pulpino_top.functional_wcl_slow.sdc, Line 48).
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] INFO (CTE): Reading of timing constraints file ../pnr/genus_output/pulpino_top.functional_wcl_slow.sdc completed, with 3 WARNING
+[05/25 14:32:30     28s] Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1411.3M, current mem=1411.3M)
+[05/25 14:32:30     28s] Current (total cpu=0:00:28.2, real=0:00:34.0, peak res=1411.3M, current mem=1411.3M)
+[05/25 14:32:30     28s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) Begin ...
+[05/25 14:32:30     28s] Summary for sequential cells identification: 
+[05/25 14:32:30     28s]   Identified SBFF number: 210
+[05/25 14:32:30     28s]   Identified MBFF number: 0
+[05/25 14:32:30     28s]   Identified SB Latch number: 0
+[05/25 14:32:30     28s]   Identified MB Latch number: 0
+[05/25 14:32:30     28s]   Not identified SBFF number: 0
+[05/25 14:32:30     28s]   Not identified MBFF number: 0
+[05/25 14:32:30     28s]   Not identified SB Latch number: 0
+[05/25 14:32:30     28s]   Not identified MB Latch number: 0
+[05/25 14:32:30     28s]   Number of sequential cells which are not FFs: 45
+[05/25 14:32:30     28s] Total number of combinational cells: 721
+[05/25 14:32:30     28s] Total number of sequential cells: 255
+[05/25 14:32:30     28s] Total number of tristate cells: 10
+[05/25 14:32:30     28s] Total number of level shifter cells: 0
+[05/25 14:32:30     28s] Total number of power gating cells: 0
+[05/25 14:32:30     28s] Total number of isolation cells: 0
+[05/25 14:32:30     28s] Total number of power switch cells: 0
+[05/25 14:32:30     28s] Total number of pulse generator cells: 0
+[05/25 14:32:30     28s] Total number of always on buffers: 0
+[05/25 14:32:30     28s] Total number of retention cells: 0
+[05/25 14:32:30     28s] List of usable buffers: HS65_LL_CNBFX10 HS65_LL_CNBFX103 HS65_LL_CNBFX124 HS65_LL_CNBFX14 HS65_LL_CNBFX21 HS65_LL_CNBFX17 HS65_LL_CNBFX27 HS65_LL_CNBFX24 HS65_LL_CNBFX34 HS65_LL_CNBFX31 HS65_LL_CNBFX38 HS65_LL_CNBFX41 HS65_LL_CNBFX48 HS65_LL_CNBFX45 HS65_LL_CNBFX55 HS65_LL_CNBFX52 HS65_LL_CNBFX62 HS65_LL_CNBFX58 HS65_LL_CNBFX82 HS65_LL_BFX13 HS65_LL_BFX106 HS65_LL_BFX142 HS65_LL_BFX2 HS65_LL_BFX18 HS65_LL_BFX213 HS65_LL_BFX27 HS65_LL_BFX22 HS65_LL_BFX284 HS65_LL_BFX31 HS65_LL_BFX4 HS65_LL_BFX35 HS65_LL_BFX44 HS65_LL_BFX40 HS65_LL_BFX53 HS65_LL_BFX49 HS65_LL_BFX62 HS65_LL_BFX9 HS65_LL_BFX7 HS65_LL_BFX71
+[05/25 14:32:30     28s] Total number of usable buffers: 39
+[05/25 14:32:30     28s] List of unusable buffers: CLOCKTREE
+[05/25 14:32:30     28s] Total number of unusable buffers: 1
+[05/25 14:32:30     28s] List of usable inverters: HS65_LL_CNIVX10 HS65_LL_CNIVX103 HS65_LL_CNIVX124 HS65_LL_CNIVX14 HS65_LL_CNIVX21 HS65_LL_CNIVX17 HS65_LL_CNIVX24 HS65_LL_CNIVX3 HS65_LL_CNIVX27 HS65_LL_CNIVX34 HS65_LL_CNIVX31 HS65_LL_CNIVX41 HS65_LL_CNIVX38 HS65_LL_CNIVX48 HS65_LL_CNIVX45 HS65_LL_CNIVX55 HS65_LL_CNIVX52 HS65_LL_CNIVX58 HS65_LL_CNIVX7 HS65_LL_CNIVX62 HS65_LL_CNIVX82 HS65_LL_IVX13 HS65_LL_IVX106 HS65_LL_IVX142 HS65_LL_IVX2 HS65_LL_IVX18 HS65_LL_IVX213 HS65_LL_IVX27 HS65_LL_IVX22 HS65_LL_IVX284 HS65_LL_IVX31 HS65_LL_IVX4 HS65_LL_IVX35 HS65_LL_IVX44 HS65_LL_IVX40 HS65_LL_IVX53 HS65_LL_IVX49 HS65_LL_IVX62 HS65_LL_IVX9 HS65_LL_IVX7 HS65_LL_IVX71
+[05/25 14:32:30     28s] Total number of usable inverters: 41
+[05/25 14:32:30     28s] List of unusable inverters:
+[05/25 14:32:30     28s] Total number of unusable inverters: 0
+[05/25 14:32:30     28s] List of identified usable delay cells: HS65_LL_DLYIC2X4 HS65_LL_DLYIC2X9 HS65_LL_DLYIC2X7 HS65_LL_DLYIC4X4 HS65_LL_DLYIC4X9 HS65_LL_DLYIC4X7 HS65_LL_DLYIC6X4 HS65_LL_DLYIC6X7 HS65_LL_DLYIC6X9
+[05/25 14:32:30     28s] Total number of identified usable delay cells: 9
+[05/25 14:32:30     28s] List of identified unusable delay cells: HS65_LL_CNBFX38_0 HS65_LL_CNBFX38_1 HS65_LL_CNBFX38_10 HS65_LL_CNBFX38_11 HS65_LL_CNBFX38_12 HS65_LL_CNBFX38_13 HS65_LL_CNBFX38_14 HS65_LL_CNBFX38_15 HS65_LL_CNBFX38_16 HS65_LL_CNBFX38_17 HS65_LL_CNBFX38_18 HS65_LL_CNBFX38_19 HS65_LL_CNBFX38_2 HS65_LL_CNBFX38_20 HS65_LL_CNBFX38_21 HS65_LL_CNBFX38_22 HS65_LL_CNBFX38_23 HS65_LL_CNBFX38_3 HS65_LL_CNBFX38_4 HS65_LL_CNBFX38_5 HS65_LL_CNBFX38_6 HS65_LL_CNBFX38_7 HS65_LL_CNBFX38_8[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) End ...
+ HS65_LL_CNBFX38_9
+[05/25 14:32:30     28s] Total number of identified unusable delay cells: 24
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] TimeStamp Deleting Cell Server Begin ...
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] TimeStamp Deleting Cell Server End ...
+[05/25 14:32:30     28s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1414.5M, current mem=1414.5M)
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) Begin ...
+[05/25 14:32:30     28s] Summary for sequential cells identification: 
+[05/25 14:32:30     28s]   Identified SBFF number: 210
+[05/25 14:32:30     28s]   Identified MBFF number: 0
+[05/25 14:32:30     28s]   Identified SB Latch number: 0
+[05/25 14:32:30     28s]   Identified MB Latch number: 0
+[05/25 14:32:30     28s]   Not identified SBFF number: 0
+[05/25 14:32:30     28s]   Not identified MBFF number: 0
+[05/25 14:32:30     28s]   Not identified SB Latch number: 0
+[05/25 14:32:30     28s]   Not identified MB Latch number: 0
+[05/25 14:32:30     28s]   Number of sequential cells which are not FFs: 45
+[05/25 14:32:30     28s]  Visiting view : view_wcl_slow
+[05/25 14:32:30     28s]    : PowerDomain = none : Weighted F : unweighted  = 22.60 (1.000) with rcCorner = 0
+[05/25 14:32:30     28s]    : PowerDomain = none : Weighted F : unweighted  = 18.90 (1.000) with rcCorner = -1
+[05/25 14:32:30     28s]  Visiting view : view_wcl_fast
+[05/25 14:32:30     28s]    : PowerDomain = none : Weighted F : unweighted  = 7.90 (1.000) with rcCorner = 1
+[05/25 14:32:30     28s]    : PowerDomain = none : Weighted F : unweighted  = 6.70 (1.000) with rcCorner = -1
+[05/25 14:32:30     28s] TLC MultiMap info (StdDelay):
+[05/25 14:32:30     28s]   : delay_corner_wcl_fast + wcl_fast + 1 + no RcCorner := 6.7ps
+[05/25 14:32:30     28s]   : delay_corner_wcl_fast + wcl_fast + 1 + rc_corner_min := 7.9ps
+[05/25 14:32:30     28s]   : delay_corner_wcl_slow + wcl_slow + 1 + no RcCorner := 18.9ps
+[05/25 14:32:30     28s]   : delay_corner_wcl_slow + wcl_slow + 1 + rc_corner_max := 22.6ps
+[05/25 14:32:30     28s]  Setting StdDelay to: 22.6ps
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) End ...
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] TimeStamp Deleting Cell Server Begin ...
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] TimeStamp Deleting Cell Server End ...
+[05/25 14:32:30     28s] @file 18:
+[05/25 14:32:30     28s] @@file 19: read_io_file -no_die_size_adjust pad.io  
+[05/25 14:32:30     28s] Reading IO assignment file "pad.io" ...
+[05/25 14:32:30     28s] @file 20:
+[05/25 14:32:30     28s] @file 21: source floorplan.tcl
+[05/25 14:32:30     28s] #@ Begin verbose source floorplan.tcl (pre)
+[05/25 14:32:30     28s] @file 1:
+[05/25 14:32:30     28s] @file 2:
+[05/25 14:32:30     28s] @@file 3: set_db [get_db base_cells -if {.class == core}] .symmetry xy ;
+[05/25 14:32:30     28s] @file 3: # Issue with stdcells not having symmetry in lef files, forced xy to fix this. (NOT a nice solution) /KW
+[05/25 14:32:30     28s] @file 4:
+[05/25 14:32:30     28s] @file 5: # Set design attributes
+[05/25 14:32:30     28s] @@file 6: set_db design_process_node 65
+[05/25 14:32:30     28s] ##  Process: 65            (User Set)               
+[05/25 14:32:30     28s] ##     Node: (not set)                           
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] ##  Check design process and node:  
+[05/25 14:32:30     28s] ##  Design tech node is not set.
+[05/25 14:32:30     28s] 
+[05/25 14:32:30     28s] Applying the recommended capacitance filtering threshold values for 65nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+[05/25 14:32:30     28s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[05/25 14:32:30     28s] 	Capacitance filtering mode(extract_rc_cap_filter_mode option of the set_db) is 'relative_and_coupling' for all engines.
+[05/25 14:32:30     28s] 	The accuracy mode for post_route extract_rc_effort_level low extraction will be set to 'high'.
+[05/25 14:32:30     28s] 	Default value for EffortLevel(extract_rc_effort_level option of the set_db) in post_route extraction mode is 'medium'.
+[05/25 14:32:30     28s] @file 7:
+[05/25 14:32:30     28s] @@file 8: set_db design_top_routing_layer M7
+[05/25 14:32:30     28s] @@file 9: set_db design_bottom_routing_layer M2 
+[05/25 14:32:30     28s] @@file 10: set_db design_flow_effort standard ;
+[05/25 14:32:30     28s] @file 10: # {express standard extreme}
+[05/25 14:32:30     28s] @@file 11: set_db design_power_effort low ;
+[05/25 14:32:30     28s] @file 11: # {none low high}
+[05/25 14:32:30     28s] @@file 12: set_db place_global_place_io_pins true
+[05/25 14:32:30     28s] @file 13: # Set timing attributes
+[05/25 14:32:30     28s] @@file 14: set_db timing_analysis_cppr           both
+[05/25 14:32:30     28s] @@file 15: set_db timing_analysis_type           ocv
+[05/25 14:32:30     28s] @file 16:
+[05/25 14:32:30     28s] @file 17:
+[05/25 14:32:30     28s] @@file 18: set_preference CmdLogMode 2 ;
+[05/25 14:32:30     28s] @@file 19: set_db add_fillers_cells [get_db [get_db base_cells *HS65_LS_FILLERCELL*] .name] 
+[05/25 14:32:30     28s] @file 20:
+[05/25 14:32:30     28s] @file 21:
+[05/25 14:32:30     28s] @file 22: #core size
+[05/25 14:32:30     28s] @file 23: set core_dx [expr [get_db [lindex [get_db insts -if {.name == *sram*}] 0] .bbox.dx] * 10] ;
+[05/25 14:32:30     28s] @file 24: set core_dy 1410 ;
+[05/25 14:32:30     28s] @@file 25: create_floorplan -site CORE -core_size $core_dx $core_dy 40 40 40 40
+[05/25 14:32:30     28s] Start create_tracks
+[05/25 14:32:30     28s] **WARN: (IMPFP-325):	Floorplan of the design is resized. All current create_floorplan objects are automatically derived based on specified new create_floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+[05/25 14:32:30     28s] @file 26: #Set sram name
+[05/25 14:32:30     28s] @file 27: set sram0 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 0]
+[05/25 14:32:30     28s] @file 28: set sram1 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 1]
+[05/25 14:32:30     28s] @file 29: set sram2 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 2]
+[05/25 14:32:30     28s] @file 30: set sram3 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 3]
+[05/25 14:32:30     28s] @file 31: set sram4 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 4]
+[05/25 14:32:30     28s] @file 32: set sram5 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 5]
+[05/25 14:32:30     28s] @file 33: set sram6 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 6]
+[05/25 14:32:30     28s] @file 34: set sram7 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 7]
+[05/25 14:32:30     28s] @file 35: set sram8 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 8]
+[05/25 14:32:30     28s] @file 36: set sram9 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 9]
+[05/25 14:32:30     28s] @file 37: set sram10 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 10]
+[05/25 14:32:30     28s] @file 38: set sram11 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 11]
+[05/25 14:32:31     28s] @file 39: set sram12 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 12]
+[05/25 14:32:31     28s] @file 40: set sram13 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 13]
+[05/25 14:32:31     28s] @file 41: set sram14 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 14]
+[05/25 14:32:31     28s] @file 42: set sram15 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 15]
+[05/25 14:32:31     28s] @file 43: set sram16 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 16]
+[05/25 14:32:31     29s] @file 44: set sram17 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 17]
+[05/25 14:32:31     29s] @file 45: set sram18 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 18]
+[05/25 14:32:31     29s] @file 46: set sram19 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 19]
+[05/25 14:32:31     29s] @file 47: set sram20 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 20]
+[05/25 14:32:31     29s] @file 48: set sram21 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 21]
+[05/25 14:32:31     29s] @file 49: set sram22 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 22]
+[05/25 14:32:31     29s] @file 50: set sram23 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 23]
+[05/25 14:32:31     29s] @file 51: set sram24 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 24]
+[05/25 14:32:31     29s] @file 52: set sram25 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 25]
+[05/25 14:32:31     29s] @file 53: set sram26 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 26]
+[05/25 14:32:31     29s] @file 54: set sram27 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 27]
+[05/25 14:32:31     29s] @file 55: set sram28 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 28]
+[05/25 14:32:31     29s] @file 56: set sram29 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 29]
+[05/25 14:32:31     29s] @file 57: set sram30 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 30]
+[05/25 14:32:31     29s] @file 58: set sram31 [lindex [get_db [get_db insts -if {.name == *i_sram*}] .name ] 31]
+[05/25 14:32:31     29s] @file 59:
+[05/25 14:32:31     29s] @file 60:
+[05/25 14:32:31     29s] @file 61: #//To delete srams
+[05/25 14:32:31     29s] @file 62: #delete_inst -inst [get_db [get_db insts -if {.name == *i_sram*}] .name]
+[05/25 14:32:31     29s] @file 63:
+[05/25 14:32:31     29s] @file 64: #Placing the 32 srams
+[05/25 14:32:31     29s] @@file 65: create_relative_floorplan -place $sram0 -ref_type core_boundary -horizontal_edge_separate {1 0 1} -vertical_edge_separate {0 0 0}
+[05/25 14:32:31     29s] @file 66: for {set i 1} {$i < 10} {incr i} {
+[05/25 14:32:31     29s]     create_relative_floorplan -place [set sram$i] -ref_type object -ref [set sram[expr {$i-1}]] -horizontal_edge_separate {1 0 1} -vertical_edge_separate {2 0 0}
+[05/25 14:32:31     29s] }
+[05/25 14:32:31     29s] @file 69:
+[05/25 14:32:31     29s] @@file 70: create_relative_floorplan -place $sram10 -ref_type core_boundary -horizontal_edge_separate {3 0 3} -vertical_edge_separate {0 0 0} -orient {R180}
+[05/25 14:32:31     29s] @file 71: for {set i 11} {$i < 20} {incr i} {
+[05/25 14:32:31     29s]     create_relative_floorplan -place [set sram$i] -ref_type object -ref [set sram[expr {$i-1}]] -horizontal_edge_separate {3 0 3} -vertical_edge_separate {2 0 0} -orient {R180}
+[05/25 14:32:31     29s] }
+[05/25 14:32:31     29s] @file 74:
+[05/25 14:32:31     29s] @@file 75: create_relative_floorplan -place $sram20 -ref_type object -ref $sram0 -horizontal_edge_separate {3 -20 1} -vertical_edge_separate {0 0 0} -orient {R90}
+[05/25 14:32:31     29s] @file 76: for {set i 21} {$i < 26} {incr i} {
+[05/25 14:32:31     29s]     create_relative_floorplan -place [set sram$i] -ref_type object -ref [set sram[expr {$i-1}]] -horizontal_edge_separate {3 0 1} -vertical_edge_separate {0 0 0} -orient {R90}
+[05/25 14:32:31     29s] }
+[05/25 14:32:31     29s] @file 79:
+[05/25 14:32:31     29s] @@file 80: create_relative_floorplan -place $sram26 -ref_type object -ref $sram9 -horizontal_edge_separate {3 -20 1} -vertical_edge_separate {2 0 2}  -orient {R270}
+[05/25 14:32:31     29s] @file 81: for {set i 27} {$i < 32} {incr i} {
+[05/25 14:32:31     29s]     create_relative_floorplan -place [set sram$i] -ref_type object -ref [set sram[expr {$i-1}]] -horizontal_edge_separate {3 0 1} -vertical_edge_separate {2 0 2} -orient {R270}
+[05/25 14:32:31     29s] }
+[05/25 14:32:31     29s] @file 84:
+[05/25 14:32:31     29s] @file 85: #Fix the srams
+[05/25 14:32:31     29s] @@file 86: set_db [get_db insts -if {.name == *sram*}] .place_status fixed
+[05/25 14:32:31     29s] @file 87:
+[05/25 14:32:31     29s] @@file 88: create_place_halo -insts *sram* -halo_deltas {10 10 10 10}
+[05/25 14:32:31     29s] @file 89:
+[05/25 14:32:31     29s] @@file 90: select_obj [get_db insts -if {.name == *i_sram*}]
+[05/25 14:32:31     29s] @@file 91: split_row -selected
+[05/25 14:32:31     29s] @@file 92: deselect_obj -all
+[05/25 14:32:31     29s] @file 93:
+[05/25 14:32:31     29s] @file 94:
+[05/25 14:32:31     29s] @file 95: #Add power
+[05/25 14:32:31     29s] @@file 96: create_net -name VDD -power
+[05/25 14:32:31     29s] @@file 97: create_net -name GND -ground
+[05/25 14:32:31     29s] @@file 98: create_net -name GNDE -ground
+[05/25 14:32:31     29s] @@file 99: create_net -name VDDE -power
+[05/25 14:32:31     29s] @@file 100: create_net -name VDDE1V8 -power
+[05/25 14:32:31     29s] @file 101:
+[05/25 14:32:31     29s] @@file 102: delete_global_net_connections
+[05/25 14:32:31     29s] @file 103:
+[05/25 14:32:31     29s] @@file 104: connect_global_net VDD -type pg_pin -pin_base_name vdd -inst_base_name *
+[05/25 14:32:31     29s] @@file 105: connect_global_net GND -type pg_pin -pin_base_name gnd -inst_base_name *
+[05/25 14:32:31     29s] @@file 106: connect_global_net VDD -type tie_hi -pin_base_name vdd -inst_base_name *
+[05/25 14:32:31     29s] @@file 107: connect_global_net GND -type tie_lo -pin_base_name gnd -inst_base_name *
+[05/25 14:32:31     29s] @file 108:
+[05/25 14:32:31     29s] @@file 109: connect_global_net GND -type pg_pin -pin_base_name GND -inst_base_name *
+[05/25 14:32:31     29s] @@file 110: connect_global_net VDD -type pg_pin -pin_base_name VDD -inst_base_name *
+[05/25 14:32:31     29s] @@file 111: connect_global_net GND -type pg_pin -pin_base_name GNDE -inst_base_name *
+[05/25 14:32:31     29s] @@file 112: connect_global_net VDDE -type pg_pin -pin_base_name VDDE -inst_base_name *
+[05/25 14:32:31     29s] @@file 113: connect_global_net VDDE -type pg_pin -pin_base_name VDDE1V8 -inst_base_name *
+[05/25 14:32:31     29s] @file 114:
+[05/25 14:32:31     29s] @file 115:
+[05/25 14:32:31     29s] @file 116: #Add pad fillers
+[05/25 14:32:31     29s] @file 117: set leftPads [get_db [get_db io_constraints -if {.side == west}] .inst]
+[05/25 14:32:31     29s] @@file 118: deselect_obj -all
+[05/25 14:32:31     29s] @@file 119: select_obj $leftPads
+[05/25 14:32:31     29s] @@file 120: space_selected -space 98 -fix_side top
+[05/25 14:32:31     29s] @@file 121: add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side left -filler_orient R270
+[05/25 14:32:31     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER8_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:31     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER4_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:31     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER2_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:31     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER1_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:31     29s] Added 678 of filler cell 'IOFILLER8_ST_SF_LIN' on left side.
+[05/25 14:32:31     29s] Added 1 of filler cell 'IOFILLER4_ST_SF_LIN' on left side.
+[05/25 14:32:31     29s] Added 11 of filler cell 'IOFILLER2_ST_SF_LIN' on left side.
+[05/25 14:32:31     29s] Added 0 of filler cell 'IOFILLER1_ST_SF_LIN' on left side.
+[05/25 14:32:31     29s] @file 122:
+[05/25 14:32:31     29s] @file 123: set topPads [get_db [get_db io_constraints -if {.side == north}] .inst]
+[05/25 14:32:31     29s] @@file 124: deselect_obj -all
+[05/25 14:32:31     29s] @@file 125: select_obj $topPads
+[05/25 14:32:31     29s] @@file 126: space_selected -space 100 -fix_side right
+[05/25 14:32:31     29s] @@file 127: add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side top -filler_orient R180
+[05/25 14:32:31     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER8_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:31     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER4_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:31     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER2_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:31     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER1_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:31     29s] Added 674 of filler cell 'IOFILLER8_ST_SF_LIN' on top side.
+[05/25 14:32:31     29s] Added 9 of filler cell 'IOFILLER4_ST_SF_LIN' on top side.
+[05/25 14:32:31     29s] Added 1 of filler cell 'IOFILLER2_ST_SF_LIN' on top side.
+[05/25 14:32:31     29s] Added 0 of filler cell 'IOFILLER1_ST_SF_LIN' on top side.
+[05/25 14:32:31     29s] @file 128:
+[05/25 14:32:31     29s] @file 129: set rightPads [get_db [get_db io_constraints -if {.side == east}] .inst]
+[05/25 14:32:31     29s] @@file 130: deselect_obj -all
+[05/25 14:32:31     29s] @@file 131: select_obj $rightPads
+[05/25 14:32:31     29s] @@file 132: space_selected -space 150 -fix_side bottom
+[05/25 14:32:31     29s] @@file 133: add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side right -filler_orient R90
+[05/25 14:32:31     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER8_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:31     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER4_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:31     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER2_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:31     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER1_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:31     29s] Added 751 of filler cell 'IOFILLER8_ST_SF_LIN' on right side.
+[05/25 14:32:31     29s] Added 7 of filler cell 'IOFILLER4_ST_SF_LIN' on right side.
+[05/25 14:32:31     29s] Added 7 of filler cell 'IOFILLER2_ST_SF_LIN' on right side.
+[05/25 14:32:31     29s] Added 0 of filler cell 'IOFILLER1_ST_SF_LIN' on right side.
+[05/25 14:32:31     29s] @file 134:
+[05/25 14:32:31     29s] @file 135:
+[05/25 14:32:31     29s] @file 136: set bottomPads [get_db [get_db io_constraints -if {.side == south}] .inst]
+[05/25 14:32:31     29s] @@file 137: deselect_obj -all
+[05/25 14:32:31     29s] @@file 138: select_obj $bottomPads
+[05/25 14:32:31     29s] @@file 139: space_selected -space 130 -fix_side left
+[05/25 14:32:32     29s] @@file 140: add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side bottom -filler_orient R0
+[05/25 14:32:32     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER8_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:32     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER4_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:32     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER2_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:32     29s] **WARN: (IMPFP-127):	Incorrect LEF/OA class of cell 'IOFILLER1_ST_SF_LIN', expected cell with class 'PAD SPACER'.
+[05/25 14:32:32     29s] Added 676 of filler cell 'IOFILLER8_ST_SF_LIN' on bottom side.
+[05/25 14:32:32     29s] Added 1 of filler cell 'IOFILLER4_ST_SF_LIN' on bottom side.
+[05/25 14:32:32     30s] Added 9 of filler cell 'IOFILLER2_ST_SF_LIN' on bottom side.
+[05/25 14:32:32     30s] Added 0 of filler cell 'IOFILLER1_ST_SF_LIN' on bottom side.
+[05/25 14:32:32     30s] @file 141:
+[05/25 14:32:32     30s] @@file 142: suspend 
+[05/25 14:32:32     30s] **INFO(SUSPEND): The current script is stopped at 'suspend' command. Type 'resume' to continue.
+[05/25 14:32:32     30s] [SUSPEND]innovus 2> add_rings -spacing 4 -width 10 -layer {top M7 bottom M7 left M6 right M6} -jog_distance 0.07 -offset 0.1 -nets {VDD GND}
+#% Begin add_rings (date=05/25 14:32:53, mem=1454.4M)
+[05/25 14:32:53     35s] 
+[05/25 14:32:53     35s] 
+[05/25 14:32:53     35s] viaInitial starts at Mon May 25 14:32:53 2026
+[05/25 14:32:53     35s] viaInitial ends at Mon May 25 14:32:53 2026
+[05/25 14:32:53     35s] Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1804.7M)
+[05/25 14:32:53     35s] The power planner has cut rows, and such rows will be considered to be placement objects.
+[05/25 14:32:53     35s] Ring generation is complete.
+[05/25 14:32:53     35s] vias are now being generated.
+[05/25 14:32:53     35s] add_rings created 8 wires.
+[05/25 14:32:53     35s] ViaGen created 8 vias, deleted 0 via to avoid violation.
+[05/25 14:32:53     35s] +--------+----------------+----------------+
+[05/25 14:32:53     35s] |  Layer |     Created    |     Deleted    |
+[05/25 14:32:53     35s] +--------+----------------+----------------+
+[05/25 14:32:53     35s] |   M6   |        4       |       NA       |
+[05/25 14:32:53     35s] |  VIA6  |        8       |        0       |
+[05/25 14:32:53     35s] |   M7   |        4       |       NA       |
+[05/25 14:32:53     35s] +--------+----------------+----------------+
+[05/25 14:32:53     35s] #% End add_rings (date=05/25 14:32:53, total cpu=0:00:00.1, real=0:00:00.0, peak res=1477.3M, current mem=1468.2M)
+[05/25 14:32:53     35s] [SUSPEND]innovus 3> gui_select -point {609.29500 886.97100}
+[05/25 14:33:11     40s] [SUSPEND]innovus 4> select_obj [get_db insts -if {.name == *sram*}] ; # Select all macros named *sram*
+[SUSPEND]innovus 5> add_rings -around cluster -layer {top M7 bottom M7 left M6 r [1Gight M6} -nets {VDD GND} -skip_side {top left right} -spacing 4 -width 10 -type  [1Gblock_rings
+add_rings -around cluster -layer {top M7 bottom M7 left M6 right M6} -nets {VDD GND} -skip_side {top left right} -spacing 4 -width 10 -type block_rings
+[05/25 14:33:26     43s] #% Begin add_rings (date=05/25 14:33:26, mem=1469.2M)
+[05/25 14:33:26     43s] 
+[05/25 14:33:26     43s] Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1806.8M)
+[05/25 14:33:26     43s] The power planner has cut rows, and such rows will be considered to be placement objects.
+[05/25 14:33:26     43s] Ring generation is complete.
+[05/25 14:33:26     43s] vias are now being generated.
+[05/25 14:33:26     43s] add_rings created 4 wires.
+[05/25 14:33:26     43s] ViaGen created 4 vias, deleted 0 via to avoid violation.
+[05/25 14:33:26     43s] +--------+----------------+----------------+
+[05/25 14:33:26     43s] |  Layer |     Created    |     Deleted    |
+[05/25 14:33:26     43s] +--------+----------------+----------------+
+[05/25 14:33:26     43s] |  VIA6  |        4       |        0       |
+[05/25 14:33:26     43s] |   M7   |        4       |       NA       |
+[05/25 14:33:26     43s] +--------+----------------+----------------+
+[05/25 14:33:26     43s] #% End add_rings (date=05/25 14:33:26, total cpu=0:00:00.1, real=0:00:00.0, peak res=1469.2M, current mem=1468.4M)
+[05/25 14:33:26     43s] [SUSPEND]innovus 6> deselect_obj -alldeselect_obj -all
+[SUSPEND]innovus 7> route_special -connect pad_pin -nets {VDD} -pad_pin_layer_range {M5 M7} -inst [get_db [get_db insts -if {.base_cell == *VDD_*}] .name ]
+
+[05/25 14:34:43     59s] #% Begin route_special (date=05/25 14:34:43, mem=1469.2M)
+[05/25 14:34:43     59s] *** Begin SPECIAL ROUTE on Mon May 25 14:34:43 2026 ***
+[05/25 14:34:43     59s] SPECIAL ROUTE ran on directory: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr
+[05/25 14:34:43     59s] SPECIAL ROUTE ran on machine: fransg-1 (Linux 3.10.0-1160.119.1.el7.x86_64 x86_64 4.00Ghz)
+[05/25 14:34:43     59s] 
+[05/25 14:34:43     59s] Begin option processing ...
+[05/25 14:34:43     59s] srouteConnectPowerBump set to false
+[05/25 14:34:43     59s] routeSelectNet set to "VDD"
+[05/25 14:34:43     59s] routeSpecial set to true
+[05/25 14:34:43     59s] srouteConnectBlockPin set to false
+[05/25 14:34:43     59s] srouteConnectConverterPin set to false
+[05/25 14:34:43     59s] srouteConnectCorePin set to false
+[05/25 14:34:43     59s] srouteConnectStripe set to false
+[05/25 14:34:43     59s] srouteFollowCorePinEnd set to 3
+[05/25 14:34:43     59s] srouteFollowPadPin set to false
+[05/25 14:34:43     59s] srouteJogControl set to "preferWithChanges differentLayer"
+[05/25 14:34:43     59s] srouteMaxPadPinLayer set to 7
+[05/25 14:34:43     59s] srouteMinPadPinLayer set to 5
+[05/25 14:34:43     59s] sroutePadPinAllPorts set to true
+[05/25 14:34:43     59s] sroutePreserveExistingRoutes set to true
+[05/25 14:34:43     59s] srouteRoutePowerBarPortOnBothDir set to true
+[05/25 14:34:43     59s] srouteSelectBlock set to "< .feSelectedInst"
+[05/25 14:34:43     59s] End option processing: cpu: 0:00:00, real: 0:00:00, peak: 3320.00 megs.
+[05/25 14:34:43     59s] 
+[05/25 14:34:43     59s] Reading DB technology information...
+[05/25 14:34:43     59s] Finished reading DB technology information.
+[05/25 14:34:43     59s] Reading floorplan and netlist information...
+[05/25 14:34:43     59s] Finished reading floorplan and netlist information.
+[05/25 14:34:43     59s] **WARN: (IMPSR-4302):	Cap-table/qrcTechFile is found in the design, so the same information from the technology file will be ignored.
+[05/25 14:34:43     59s] Read in 17 layers, 8 routing layers, 1 overlap layer
+[05/25 14:34:43     59s] Read in 237 macros, 237 used
+[05/25 14:34:43     59s] Read in 3121 components
+[05/25 14:34:43     59s]   227 core components: 227 unplaced, 0 placed, 0 fixed
+[05/25 14:34:43     59s]   2858 pad components: 0 unplaced, 2825 placed, 33 fixed
+[05/25 14:34:43     59s]   32 block/ring components: 0 unplaced, 0 placed, 32 fixed
+[05/25 14:34:43     59s]   4 other components: 0 unplaced, 0 placed, 4 fixed
+[05/25 14:34:43     59s] Read in 25 logical pins
+[05/25 14:34:43     59s] Read in 33 blockages
+[05/25 14:34:43     59s] Read in 25 nets
+[05/25 14:34:43     59s] Read in 5 special nets, 2 routed
+[05/25 14:34:43     59s] Read in 11966 terminals
+[05/25 14:34:43     59s] 1 net selected.
+[05/25 14:34:43     59s] 
+[05/25 14:34:43     59s] Begin power routing ...
+[05/25 14:34:43     59s] 4 blocks selected.
+[05/25 14:34:43     59s] 
+[05/25 14:34:44     59s]   Number of IO ports routed: 4
+[05/25 14:34:44     59s] End power routing: cpu: 0:00:00, real: 0:00:01, peak: 3394.00 megs.
+[05/25 14:34:44     59s] 
+[05/25 14:34:44     59s] 
+[05/25 14:34:44     59s] 
+[05/25 14:34:44     59s]  Begin updating DB with routing results ...
+[05/25 14:34:44     59s]  Updating DB with 0 via definition ...Extracting standard cell pins and blockage ...... 
+[05/25 14:34:44     59s] Pin and blockage extraction finished
+[05/25 14:34:44     59s] 
+[05/25 14:34:44     59s] route_special created 18 wires.
+[05/25 14:34:44     59s] ViaGen created 18 vias, deleted 0 via to avoid violation.
+[05/25 14:34:44     59s] +--------+----------------+----------------+
+[05/25 14:34:44     59s] |  Layer |     Created    |     Deleted    |
+[05/25 14:34:44     59s] +--------+----------------+----------------+
+[05/25 14:34:44     59s] |   M5   |        6       |       NA       |
+[05/25 14:34:44     59s] |  VIA5  |       12       |        0       |
+[05/25 14:34:44     59s] |   M6   |       12       |       NA       |
+[05/25 14:34:44     59s] |  VIA6  |        6       |        0       |
+[05/25 14:34:44     59s] +--------+----------------+----------------+
+[05/25 14:34:44     59s] #% End route_special (date=05/25 14:34:44, total cpu=0:00:00.4, real=0:00:01.0, peak res=1563.6M, current mem=1481.2M)
+[05/25 14:34:44     59s] [SUSPEND]innovus 8> route_special -connect pad_pin -nets {GND} -pad_pin_layer_range {M7 M7} -inst [get_db [get_db insts -if {.base_cell == *GND_*}] .name ]
+
+[05/25 14:34:54     60s] #% Begin route_special (date=05/25 14:34:54, mem=1481.7M)
+[05/25 14:34:54     60s] *** Begin SPECIAL ROUTE on Mon May 25 14:34:54 2026 ***
+[05/25 14:34:54     60s] SPECIAL ROUTE ran on directory: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr
+[05/25 14:34:54     60s] SPECIAL ROUTE ran on machine: fransg-1 (Linux 3.10.0-1160.119.1.el7.x86_64 x86_64 4.00Ghz)
+[05/25 14:34:54     60s] 
+[05/25 14:34:54     60s] Begin option processing ...
+[05/25 14:34:54     60s] srouteConnectPowerBump set to false
+[05/25 14:34:54     60s] routeSelectNet set to "GND"
+[05/25 14:34:54     60s] routeSpecial set to true
+[05/25 14:34:54     60s] srouteConnectBlockPin set to false
+[05/25 14:34:54     60s] srouteConnectConverterPin set to false
+[05/25 14:34:54     60s] srouteConnectCorePin set to false
+[05/25 14:34:54     60s] srouteConnectStripe set to false
+[05/25 14:34:54     60s] srouteFollowCorePinEnd set to 3
+[05/25 14:34:54     60s] srouteFollowPadPin set to false
+[05/25 14:34:54     60s] srouteJogControl set to "preferWithChanges differentLayer"
+[05/25 14:34:54     60s] srouteMaxPadPinLayer set to 7
+[05/25 14:34:54     60s] srouteMinPadPinLayer set to 7
+[05/25 14:34:54     60s] sroutePadPinAllPorts set to true
+[05/25 14:34:54     60s] sroutePreserveExistingRoutes set to true
+[05/25 14:34:54     60s] srouteRoutePowerBarPortOnBothDir set to true
+[05/25 14:34:54     60s] srouteSelectBlock set to "< .feSelectedInst"
+[05/25 14:34:54     60s] End option processing: cpu: 0:00:00, real: 0:00:00, peak: 3394.00 megs.
+[05/25 14:34:54     60s] 
+[05/25 14:34:54     60s] Reading DB technology information...
+[05/25 14:34:54     60s] Finished reading DB technology information.
+[05/25 14:34:54     60s] Reading floorplan and netlist information...
+[05/25 14:34:54     60s] Finished reading floorplan and netlist information.
+[05/25 14:34:54     60s] **WARN: (IMPSR-4302):	Cap-table/qrcTechFile is found in the design, so the same information from the technology file will be ignored.
+[05/25 14:34:54     60s] Read in 17 layers, 8 routing layers, 1 overlap layer
+[05/25 14:34:54     60s] Read in 237 macros, 237 used
+[05/25 14:34:54     60s] Read in 3121 components
+[05/25 14:34:54     60s]   227 core components: 227 unplaced, 0 placed, 0 fixed
+[05/25 14:34:54     60s]   2858 pad components: 0 unplaced, 2825 placed, 33 fixed
+[05/25 14:34:54     60s]   32 block/ring components: 0 unplaced, 0 placed, 32 fixed
+[05/25 14:34:54     60s]   4 other components: 0 unplaced, 0 placed, 4 fixed
+[05/25 14:34:54     60s] Read in 25 logical pins
+[05/25 14:34:54     60s] Read in 33 blockages
+[05/25 14:34:54     60s] Read in 25 nets
+[05/25 14:34:54     60s] Read in 5 special nets, 2 routed
+[05/25 14:34:54     60s] Read in 11966 terminals
+[05/25 14:34:54     60s] 1 net selected.
+[05/25 14:34:54     60s] 
+[05/25 14:34:54     60s] Begin power routing ...
+[05/25 14:34:54     60s] 4 blocks selected.
+[05/25 14:34:54     60s] 
+[05/25 14:34:54     61s]   Number of IO ports routed: 4
+[05/25 14:34:54     61s] End power routing: cpu: 0:00:00, real: 0:00:00, peak: 3396.00 megs.
+[05/25 14:34:54     61s] 
+[05/25 14:34:54     61s] 
+[05/25 14:34:54     61s] 
+[05/25 14:34:54     61s]  Begin updating DB with routing results ...
+[05/25 14:34:54     61s]  Updating DB with 0 via definition ...
+[05/25 14:34:54     61s] route_special created 12 wires.
+[05/25 14:34:54     61s] ViaGen created 6 vias, deleted 0 via to avoid violation.
+[05/25 14:34:54     61s] +--------+----------------+----------------+
+[05/25 14:34:54     61s] |  Layer |     Created    |     Deleted    |
+[05/25 14:34:54     61s] +--------+----------------+----------------+
+[05/25 14:34:54     61s] |  VIA6  |        6       |        0       |
+[05/25 14:34:54     61s] |   M7   |       12       |       NA       |
+[05/25 14:34:54     61s] +--------+----------------+----------------+
+[05/25 14:34:54     61s] #% End route_special (date=05/25 14:34:54, total cpu=0:00:00.4, real=0:00:00.0, peak res=1565.5M, current mem=1484.7M)
+[05/25 14:34:54     61s] [SUSPEND]innovus 9> route_special -connect core_pin -nets {VDD GND}
+
+[05/25 14:35:02     61s] #% Begin route_special (date=05/25 14:35:02, mem=1484.7M)
+[05/25 14:35:02     61s] *** Begin SPECIAL ROUTE on Mon May 25 14:35:02 2026 ***
+[05/25 14:35:02     61s] SPECIAL ROUTE ran on directory: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr
+[05/25 14:35:02     61s] SPECIAL ROUTE ran on machine: fransg-1 (Linux 3.10.0-1160.119.1.el7.x86_64 x86_64 4.00Ghz)
+[05/25 14:35:02     61s] 
+[05/25 14:35:02     61s] Begin option processing ...
+[05/25 14:35:02     61s] srouteConnectPowerBump set to false
+[05/25 14:35:02     61s] routeSelectNet set to "VDD GND"
+[05/25 14:35:02     61s] routeSpecial set to true
+[05/25 14:35:02     61s] srouteConnectBlockPin set to false
+[05/25 14:35:02     61s] srouteConnectConverterPin set to false
+[05/25 14:35:02     61s] srouteConnectPadPin set to false
+[05/25 14:35:02     61s] srouteConnectStripe set to false
+[05/25 14:35:02     61s] srouteFollowCorePinEnd set to 3
+[05/25 14:35:02     61s] srouteFollowPadPin set to false
+[05/25 14:35:02     61s] srouteJogControl set to "preferWithChanges differentLayer"
+[05/25 14:35:02     61s] sroutePadPinAllPorts set to true
+[05/25 14:35:02     61s] sroutePreserveExistingRoutes set to true
+[05/25 14:35:02     61s] srouteRoutePowerBarPortOnBothDir set to true
+[05/25 14:35:02     61s] End option processing: cpu: 0:00:00, real: 0:00:00, peak: 3396.00 megs.
+[05/25 14:35:02     61s] 
+[05/25 14:35:02     61s] Reading DB technology information...
+[05/25 14:35:02     62s] Finished reading DB technology information.
+[05/25 14:35:02     62s] Reading floorplan and netlist information...
+[05/25 14:35:02     62s] Finished reading floorplan and netlist information.
+[05/25 14:35:02     62s] **WARN: (IMPSR-4302):	Cap-table/qrcTechFile is found in the design, so the same information from the technology file will be ignored.
+[05/25 14:35:02     62s] Read in 17 layers, 8 routing layers, 1 overlap layer
+[05/25 14:35:02     62s] Read in 1148 macros, 240 used
+[05/25 14:35:02     62s] Read in 3121 components
+[05/25 14:35:02     62s]   227 core components: 227 unplaced, 0 placed, 0 fixed
+[05/25 14:35:02     62s]   2858 pad components: 0 unplaced, 2825 placed, 33 fixed
+[05/25 14:35:02     62s]   32 block/ring components: 0 unplaced, 0 placed, 32 fixed
+[05/25 14:35:02     62s]   4 other components: 0 unplaced, 0 placed, 4 fixed
+[05/25 14:35:02     62s] Read in 25 logical pins
+[05/25 14:35:02     62s] Read in 33 blockages
+[05/25 14:35:02     62s] Read in 25 nets
+[05/25 14:35:02     62s] Read in 5 special nets, 2 routed
+[05/25 14:35:02     62s] Read in 11966 terminals
+[05/25 14:35:02     62s] 2 nets selected.
+[05/25 14:35:02     62s] 
+[05/25 14:35:02     62s] Begin power routing ...
+[05/25 14:35:02     62s] CPU time for VDD FollowPin 0 seconds
+[05/25 14:35:02     62s] CPU time for GND FollowPin 0 seconds
+[05/25 14:35:02     62s] **WARN: (IMPPP-531):	ViaGen Warning: Due to SPACING rule violation, viaGen fail to generate via on layer VIA5 at (1300.00, 567.64) (1310.00, 567.95).
+[05/25 14:35:02     62s] **WARN: (IMPPP-531):	ViaGen Warning: Due to SPACING rule violation, viaGen fail to generate via on layer VIA5 at (1300.00, 567.64) (1310.00, 567.95).
+[05/25 14:35:02     62s] **WARN: (IMPPP-531):	ViaGen Warning: Due to SPACING rule violation, viaGen fail to generate via on layer VIA5 at (1300.00, 567.64) (1310.00, 567.95).
+[05/25 14:35:02     62s] **WARN: (IMPPP-531):	ViaGen Warning: Due to SPACING rule violation, viaGen fail to generate via on layer VIA5 at (320.00, 567.64) (330.00, 567.95).
+[05/25 14:35:02     62s] **WARN: (IMPPP-531):	ViaGen Warning: Due to SPACING rule violation, viaGen fail to generate via on layer VIA5 at (320.00, 567.64) (330.00, 567.95).
+[05/25 14:35:02     62s] **WARN: (IMPPP-531):	ViaGen Warning: Due to SPACING rule violation, viaGen fail to generate via on layer VIA5 at (320.00, 567.64) (330.00, 567.95).
+[05/25 14:35:02     62s] **WARN: (IMPPP-531):	ViaGen Warning: Due to SPACING rule violation, viaGen fail to generate via on layer VIA5 at (320.00, 567.64) (330.00, 567.95).
+[05/25 14:35:03     63s]   Number of Core ports routed: 798
+[05/25 14:35:03     63s]   Number of Followpin connections: 399
+[05/25 14:35:03     63s] End power routing: cpu: 0:00:01, real: 0:00:01, peak: 3396.00 megs.
+[05/25 14:35:03     63s] 
+[05/25 14:35:03     63s] 
+[05/25 14:35:03     63s] 
+[05/25 14:35:03     63s]  Begin updating DB with routing results ...
+[05/25 14:35:03     63s]  Updating DB with 0 via definition ...
+[05/25 14:35:03     63s] route_special created 2428 wires.
+[05/25 14:35:03     63s] ViaGen created 5222 vias, deleted 0 via to avoid violation.
+[05/25 14:35:03     63s] +--------+----------------+----------------+
+[05/25 14:35:03     63s] |  Layer |     Created    |     Deleted    |
+[05/25 14:35:03     63s] +--------+----------------+----------------+
+[05/25 14:35:03     63s] |   M1   |      1197      |       NA       |
+[05/25 14:35:03     63s] |  VIA1  |       798      |        0       |
+[05/25 14:35:03     63s] |  VIA2  |       798      |        0       |
+[05/25 14:35:03     63s] |   M3   |       616      |       NA       |
+[05/25 14:35:03     63s] |  VIA3  |       798      |        0       |
+[05/25 14:35:03     63s] |  VIA4  |       798      |        0       |
+[05/25 14:35:03     63s] |  VIA5  |       798      |        0       |
+[05/25 14:35:03     63s] |  VIA6  |      1232      |        0       |
+[05/25 14:35:03     63s] |   M7   |       615      |       NA       |
+[05/25 14:35:03     63s] +--------+----------------+----------------+
+[05/25 14:35:03     63s] #% End route_special (date=05/25 14:35:03, total cpu=0:00:01.5, real=0:00:01.0, peak res=1487.3M, current mem=1487.3M)
+[05/25 14:35:03     63s] [SUSPEND]innovus 10> set_db add_stripes_ignore_block_check false
+When breaking rings, the power planner will consider the existence of blocks.
+[05/25 14:35:29     66s] 1 false
+[05/25 14:35:29     66s] [SUSPEND]innovus 11> set_db add_stripes_break_at none
+set_db add_stripes_break_at none
+[05/25 14:35:29     66s] 1 none
+[05/25 14:35:29     66s] [SUSPEND]innovus 12> set_db add_stripes_route_over_rows_only false
+set_db add_stripes_route_over_rows_only false
+[05/25 14:35:29     66s] 1 false
+[05/25 14:35:29     66s] [SUSPEND]innovus 13> set_db add_stripes_rows_without_stripes_only false
+set_db add_stripes_rows_without_stripes_only false
+[05/25 14:35:29     66s] Stripes will not be created over regions without power planning wires.
+[05/25 14:35:29     66s] 1 false
+[05/25 14:35:29     66s] [SUSPEND]innovus 14> set_db add_stripes_extend_to_closest_target ring
+set_db add_stripes_extend_to_closest_target ring
+[05/25 14:35:29     66s] Setting stripe extending to closest ring.
+[05/25 14:35:29     66s] 1 ring
+[05/25 14:35:29     66s] [SUSPEND]innovus 15> set_db add_stripes_stop_at_last_wire_for_area true
+set_db add_stripes_stop_at_last_wire_for_area true
+[05/25 14:35:29     66s] Stripes will stop at the last wire target of the specified area.
+[05/25 14:35:29     66s] 1 true
+[05/25 14:35:29     66s] [SUSPEND]innovus 16> set_db add_stripes_spacing_type edge_to_edge
+set_db add_stripes_spacing_type edge_to_edge
+[05/25 14:35:29     66s] 1 edge_to_edge
+[05/25 14:35:29     66s] [SUSPEND]innovus 17> set_db add_stripes_spacing_from_block 0
+set_db add_stripes_spacing_from_block 0
+[05/25 14:35:29     66s] Offset for stripe breaking is set to 0.
+[05/25 14:35:29     66s] 1 0.0
+[05/25 14:35:29     66s] [SUSPEND]innovus 18> 
+
+[05/25 14:35:29     66s] [SUSPEND]innovus 18> set_db add_stripes_orthogonal_only true
+set_db add_stripes_orthogonal_only true
+[05/25 14:35:29     66s] 1 true
+[05/25 14:35:29     66s] [SUSPEND]innovus 19> set_db add_stripes_allow_jog { padcore_ring  block_ring set_db add_stripes_allow_jog { padcore_ring  block_ring }
+}
+[05/25 14:35:29     66s] add_stripes will allow jog to connect padcore ring and block ring.
+[05/25 14:35:29     66s] 
+[05/25 14:35:29     66s] 1 padcore_ring block_ring
+[05/25 14:35:29     66s] [SUSPEND]innovus 20> set_db add_stripes_skip_via_on_pin {  standardcell }
+set_db add_stripes_skip_via_on_pin {  standardcell }
+[05/25 14:35:29     66s] 1 standardcell
+[05/25 14:35:29     66s] [SUSPEND]innovus 21> set_db add_stripes_skip_via_on_wire_shape {  noshape   }set_db add_stripes_skip_via_on_wire_shape {  noshape   }
+
+[05/25 14:35:30     66s] 1 noshape
+[05/25 14:35:30     66s] [SUSPEND]innovus 22> set_db add_stripes_stacked_via_bottom_layer M4
+
+[05/25 14:35:39     67s] 1 M4
+[05/25 14:35:39     67s] [SUSPEND]innovus 23> add_stripes -nets {VDD GND} -layer M7 -direction horizontal -width 10 -spacing 4 -set_to_set_distance 70 -start_from top -start_offset 35 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
+
+[05/25 14:35:54     68s] #% Begin add_stripes (date=05/25 14:35:54, mem=1485.5M)
+[05/25 14:35:54     68s] 
+[05/25 14:35:54     68s] Initialize fgc environment(mem: 1835.8M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1835.8M)
+[05/25 14:35:55     69s] Loading cell geometries (cpu: 0:00:00.3, real: 0:00:01.0, peak mem: 1871.8M)
+[05/25 14:35:55     69s] Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1872.8M)
+[05/25 14:35:55     69s] Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1873.8M)
+[05/25 14:35:55     69s] Starting stripe generation ...
+[05/25 14:35:55     69s] Non-Default Mode Option Settings :
+[05/25 14:35:55     69s]   -stop_at_last_wire_for_area  1
+[05/25 14:35:55     69s]   -extend_to_closest_target  ring
+[05/25 14:35:55     69s] **WARN: (IMPPP-4055):	The run time of add_stripes will degrade with multiple cpu setting according to the number of stripe sets, ignore the setting of set_multi_cpu_usage in add_stripes.
+[05/25 14:35:55     69s] Type 'man IMPPP-4055' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 1325.000000 329.000000 1325.000000 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 1311.000000 329.000000 1311.000000 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 1255.000000 329.000000 1255.000000 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 1241.000000 329.000000 1241.000000 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 1192.400024 329.000000 1192.400024 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 1178.400024 329.000000 1178.400024 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 1122.400024 329.000000 1122.400024 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 1108.400024 329.000000 1108.400024 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 1059.800049 329.000000 1059.800049 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 1045.800049 329.000000 1045.800049 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 989.799988 329.000000 989.799988 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 975.799988 329.000000 975.799988 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 927.200012 329.000000 927.200012 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 913.200012 329.000000 913.200012 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 857.200012 329.000000 857.200012 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 843.200012 329.000000 843.200012 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 794.599976 329.000000 794.599976 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 780.599976 329.000000 780.599976 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 724.599976 329.000000 724.599976 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 152.000000 710.599976 329.000000 710.599976 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:35:55     69s] Type 'man IMPPP-354' for more detail.
+[05/25 14:35:55     69s] **WARN: (EMS-27):	Message (IMPPP-354) has exceeded the current message display limit of 20.
+[05/25 14:35:55     69s] To increase the message display limit, refer to the product command reference manual.
+[05/25 14:35:55     69s] Stripe generation is complete.
+[05/25 14:35:55     69s] vias are now being generated.
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (1468.24, 242.80) (1469.08, 328.27).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (1469.48, 242.80) (1470.32, 328.27).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (1470.72, 242.80) (1471.56, 328.27).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (1471.96, 242.80) (1472.80, 328.27).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (1473.20, 242.80) (1474.04, 328.27).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M7 & M5 at (141.90, 222.00) (149.73, 224.00).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (1126.48, 217.01) (1171.32, 217.85).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (1080.72, 222.09) (1212.13, 223.32).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (1080.72, 221.24) (1212.13, 221.85).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (596.09, 217.01) (640.92, 217.85).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (550.32, 222.09) (681.73, 223.32).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (550.32, 221.24) (681.73, 221.85).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (330.89, 217.01) (375.73, 217.85).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (285.12, 222.09) (416.53, 223.32).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (285.12, 221.24) (416.53, 221.85).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (198.29, 217.01) (243.12, 217.85).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (152.52, 222.09) (283.93, 223.32).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (152.52, 221.24) (283.93, 221.85).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (463.48, 217.01) (508.33, 217.85).
+[05/25 14:35:55     69s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M7 at (417.72, 222.09) (549.13, 223.32).
+[05/25 14:35:55     69s] **WARN: (EMS-27):	Message (IMPPP-532) has exceeded the current message display limit of 20.
+[05/25 14:35:55     69s] To increase the message display limit, refer to the product command reference manual.
+[05/25 14:35:55     69s] **WARN: (IMPPP-531):	ViaGen Warning: Due to SPACING rule violation, viaGen fail to generate via on layer VIA6 at (1463.28, 284.00) (1463.60, 294.00).
+[05/25 14:35:55     69s] add_stripes created 10 wires.
+[05/25 14:35:55     69s] ViaGen created 5451 vias, deleted 0 via to avoid violation.
+[05/25 14:35:55     69s] +--------+----------------+----------------+
+[05/25 14:35:55     69s] |  Layer |     Created    |     Deleted    |
+[05/25 14:35:55     69s] +--------+----------------+----------------+
+[05/25 14:35:55     69s] |  VIA5  |      2720      |        0       |
+[05/25 14:35:55     69s] |   M6   |        1       |       NA       |
+[05/25 14:35:55     69s] |  VIA6  |      2731      |        0       |
+[05/25 14:35:55     69s] |   M7   |        9       |       NA       |
+[05/25 14:35:55     69s] +--------+----------------+----------------+
+[05/25 14:35:55     69s] #% End add_stripes (date=05/25 14:35:55, total cpu=0:00:00.9, real=0:00:01.0, peak res=1545.5M, current mem=1545.5M)
+[05/25 14:35:55     69s] [SUSPEND]innovus 24> set_layer_preference M7 -is_visible 0
+[05/25 14:36:00     70s] [SUSPEND]innovus 25> add_stripes -nets {VDD GND} -layer M6 -direction vertical -width 10 -spacing 4 -set_to_set_distance 120 -start_from left -start_offset 55 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
+#% Begin add_stripes (date=05/25 14:36:29, mem=1542.2M)
+[05/25 14:36:29     75s] 
+[05/25 14:36:29     75s] Initialize fgc environment(mem: 1890.1M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1890.1M)
+[05/25 14:36:30     75s] Loading cell geometries (cpu: 0:00:00.2, real: 0:00:01.0, peak mem: 1890.1M)
+[05/25 14:36:30     75s] Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1890.1M)
+[05/25 14:36:30     75s] Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1890.1M)
+[05/25 14:36:30     75s] Starting stripe generation ...
+[05/25 14:36:30     75s] Non-Default Mode Option Settings :
+[05/25 14:36:30     75s]   -stop_at_last_wire_for_area  1
+[05/25 14:36:30     75s]   -extend_to_closest_target  ring
+[05/25 14:36:30     75s] **WARN: (IMPPP-4055):	The run time of add_stripes will degrade with multiple cpu setting according to the number of stripe sets, ignore the setting of set_multi_cpu_usage in add_stripes.
+[05/25 14:36:30     75s] Type 'man IMPPP-4055' for more detail.
+[05/25 14:36:30     75s] Stripe generation is complete.
+[05/25 14:36:30     75s] vias are now being generated.
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (213.01, 610.88) (213.85, 655.72).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (209.01, 610.88) (209.85, 655.72).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (213.01, 743.47) (213.85, 788.32).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (209.01, 743.47) (209.85, 788.32).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (213.01, 1273.88) (213.85, 1318.71).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (209.01, 1273.88) (209.85, 1318.71).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (213.01, 1008.67) (213.85, 1053.52).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (209.01, 1008.67) (209.85, 1053.52).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (213.01, 876.08) (213.85, 920.91).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (209.01, 876.08) (209.85, 920.91).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (213.01, 1141.28) (213.85, 1186.11).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (209.01, 1141.28) (209.85, 1186.11).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (1355.69, 615.68) (1356.54, 660.53).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (1359.69, 615.68) (1360.54, 660.53).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (1363.69, 615.68) (1364.54, 660.53).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (1355.69, 748.28) (1356.54, 793.12).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (1359.69, 748.28) (1360.54, 793.12).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (1363.69, 748.28) (1364.54, 793.12).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (1355.69, 1278.69) (1356.54, 1323.53).
+[05/25 14:36:30     75s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M5 & M6 at (1359.69, 1278.69) (1360.54, 1323.53).
+[05/25 14:36:30     75s] **WARN: (EMS-27):	Message (IMPPP-532) has exceeded the current message display limit of 20.
+[05/25 14:36:30     75s] To increase the message display limit, refer to the product command reference manual.
+[05/25 14:36:30     76s] add_stripes created 42 wires.
+[05/25 14:36:30     76s] ViaGen created 3238 vias, deleted 0 via to avoid violation.
+[05/25 14:36:30     76s] +--------+----------------+----------------+
+[05/25 14:36:30     76s] |  Layer |     Created    |     Deleted    |
+[05/25 14:36:30     76s] +--------+----------------+----------------+
+[05/25 14:36:30     76s] |  VIA5  |      2500      |        0       |
+[05/25 14:36:30     76s] |   M6   |       42       |       NA       |
+[05/25 14:36:30     76s] |  VIA6  |       738      |        0       |
+[05/25 14:36:30     76s] +--------+----------------+----------------+
+[05/25 14:36:30     76s] #% End add_stripes (date=05/25 14:36:30, total cpu=0:00:00.8, real=0:00:01.0, peak res=1550.0M, current mem=1550.0M)
+
+[05/25 14:36:30     76s] [SUSPEND]innovus 26> 
+[05/25 14:36:30     76s] [SUSPEND]innovus 26> set_db add_stripes_stripe_min_length 50 ; # We are blocking off the macros, but the core rings are outside. Use this to avoid getting a short stripe on the northern side that doesnt connect to anything
+AddStripe segment minimum length set to 50.000000
+[05/25 14:36:39     78s] 1 50
+[05/25 14:36:39     78s] [SUSPEND]innovus 27> # M7 - horizontal
+# M7 - horizontal
+[05/25 14:36:39     78s] [SUSPEND]innovus 28> add_stripes -width 10 -spacing 3 -direction horizontal -lay [1Ger M7 -nets {VDD GND}  -set_to_set_distance 150 -start_from bottom -start_offset [1G 50 -stop_offset 50 -area_blockage [get_db [get_db insts -if {.name == *sram*}]  [1G.bbox]
+add_stripes -width 10 -spacing 3 -direction horizontal -layer M7 -nets {VDD GND}  -set_to_set_distance 150 -start_from bottom -start_offset 50 -stop_offset 50 -area_blockage [get_db [get_db insts -if {.name == *sram*}] .bbox]
+[05/25 14:36:39     78s] #% Begin add_stripes (date=05/25 14:36:39, mem=1550.5M)
+[05/25 14:36:39     78s] 
+[05/25 14:36:39     78s] Initialize fgc environment(mem: 1895.6M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1895.6M)
+[05/25 14:36:39     78s] Loading cell geometries (cpu: 0:00:00.2, real: 0:00:00.0, peak mem: 1895.6M)
+[05/25 14:36:39     78s] Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1895.6M)
+[05/25 14:36:39     78s] Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1895.6M)
+[05/25 14:36:39     78s] Starting stripe generation ...
+[05/25 14:36:39     78s] Non-Default Mode Option Settings :
+[05/25 14:36:39     78s]   -stripe_min_length_is_width  0
+[05/25 14:36:39     78s]   -stop_at_last_wire_for_area  1
+[05/25 14:36:39     78s]   -extend_to_closest_target  ring
+[05/25 14:36:39     78s]   -stripe_min_length  50 
+[05/25 14:36:40     78s] **WARN: (IMPPP-4055):	The run time of add_stripes will degrade with multiple cpu setting according to the number of stripe sets, ignore the setting of set_multi_cpu_usage in add_stripes.
+[05/25 14:36:40     78s] Type 'man IMPPP-4055' for more detail.
+[05/25 14:36:40     78s] **WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 141.899994 207.000000 1478.099976 207.000000 with width 10.000000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+[05/25 14:36:40     78s] Type 'man IMPPP-354' for more detail.
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (132.90, 220.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (1496.10, 220.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (132.90, 670.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (340.65, 670.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (132.90, 970.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (340.65, 970.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (132.90, 1120.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (340.65, 1120.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (132.90, 1270.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (340.65, 1270.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (146.90, 657.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (340.65, 657.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (146.90, 807.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (340.65, 807.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (146.90, 957.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (340.65, 957.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (146.90, 1107.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (340.65, 1107.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (146.90, 1257.00).
+[05/25 14:36:40     78s] **WARN: (IMPPP-612):	The intersection area is insufficient to satisfy MINIMUMCUT rule, so no via was created between layer: M7 & AP, size: 10.00 x 10.00 at (340.65, 1257.00).
+[05/25 14:36:40     78s] **WARN: (EMS-27):	Message (IMPPP-612) has exceeded the current message display limit of 20.
+[05/25 14:36:40     78s] To increase the message display limit, refer to the product command reference manual.
+[05/25 14:36:40     79s] Stripe generation is complete.
+[05/25 14:36:40     79s] vias are now being generated.
+[05/25 14:36:40     79s] add_stripes created 18 wires.
+[05/25 14:36:40     79s] ViaGen created 19 vias, deleted 1 via to avoid violation.
+[05/25 14:36:40     79s] +--------+----------------+----------------+
+[05/25 14:36:40     79s] |  Layer |     Created    |     Deleted    |
+[05/25 14:36:40     79s] +--------+----------------+----------------+
+[05/25 14:36:40     79s] |   M6   |        2       |       NA       |
+[05/25 14:36:40     79s] |  VIA6  |       19       |        1       |
+[05/25 14:36:40     79s] |   M7   |       16       |       NA       |
+[05/25 14:36:40     79s] +--------+----------------+----------------+
+[05/25 14:36:40     79s] #% End add_stripes (date=05/25 14:36:40, total cpu=0:00:01.0, real=0:00:01.0, peak res=1553.8M, current mem=1553.8M)
+[05/25 14:36:40     79s] [SUSPEND]innovus 29> # M6 - vertica# M6 - vertical
+l
+[05/25 14:36:40     79s] [SUSPEND]innovus 30> set_db add_stripes_trim_antenna_back_to_shape block_ring ;  [1G# Avoid dangling wires near macros
+set_db add_stripes_trim_antenna_back_to_shape block_ring ; # Avoid dangling wires near macros
+[05/25 14:36:40     79s] The power planner will set stripe antenna targets to block ring.
+[05/25 14:36:40     79s] 1 block_ring
+[05/25 14:36:40     79s] [SUSPEND]innovus 31> add_stripes -width 10 -spacing 3 -direction vertical -layer [1G M6 -nets {VDD GND}  -set_to_set_distance 140 -start_from left -start_offset 100 [1G -stop_offset 50 -area_blockage [get_db [get_db insts -if {.name == *sram*}] .bb [1Gox]add_stripes -width 10 -spacing 3 -direction vertical -layer M6 -nets {VDD GND}  -set_to_set_distance 140 -start_from left -start_offset 100 -stop_offset 50 -area_blockage [get_db [get_db insts -if {.name == *sram*}] .bbox]
+
+[05/25 14:36:42     79s] #% Begin add_stripes (date=05/25 14:36:42, mem=1554.6M)
+[05/25 14:36:42     79s] 
+[05/25 14:36:42     79s] Initialize fgc environment(mem: 1900.4M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1900.4M)
+[05/25 14:36:43     80s] Loading cell geometries (cpu: 0:00:00.2, real: 0:00:01.0, peak mem: 1900.4M)
+[05/25 14:36:43     80s] Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1900.4M)
+[05/25 14:36:43     80s] Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1900.4M)
+[05/25 14:36:43     80s] Starting stripe generation ...
+[05/25 14:36:43     80s] Non-Default Mode Option Settings :
+[05/25 14:36:43     80s]   -stripe_min_length_is_width  0
+[05/25 14:36:43     80s]   -stop_at_last_wire_for_area  1
+[05/25 14:36:43     80s]   -extend_to_closest_target  ring
+[05/25 14:36:43     80s]   -stripe_min_length  50 
+[05/25 14:36:43     80s]   -trim_antenna_back_to_shape  block_ring
+[05/25 14:36:43     80s] **WARN: (IMPPP-4055):	The run time of add_stripes will degrade with multiple cpu setting according to the number of stripe sets, ignore the setting of set_multi_cpu_usage in add_stripes.
+[05/25 14:36:43     80s] Type 'man IMPPP-4055' for more detail.
+[05/25 14:36:43     80s] Stripe generation is complete.
+[05/25 14:36:43     80s] vias are now being generated.
+[05/25 14:36:43     80s] add_stripes created 20 wires.
+[05/25 14:36:43     80s] ViaGen created 112 vias, deleted 0 via to avoid violation.
+[05/25 14:36:43     80s] +--------+----------------+----------------+
+[05/25 14:36:43     80s] |  Layer |     Created    |     Deleted    |
+[05/25 14:36:43     80s] +--------+----------------+----------------+
+[05/25 14:36:43     80s] |   M6   |       19       |       NA       |
+[05/25 14:36:43     80s] |  VIA6  |       112      |        0       |
+[05/25 14:36:43     80s] |   M7   |        1       |       NA       |
+[05/25 14:36:43     80s] +--------+----------------+----------------+
+[05/25 14:36:43     80s] #% End add_stripes (date=05/25 14:36:43, total cpu=0:00:00.9, real=0:00:01.0, peak res=1574.1M, current mem=1563.4M)
+[05/25 14:36:43     80s] [SUSPEND]innovus 32> add_stripes -width 3 -spacing 2 -direction horizontal -layer M5 -nets {VDD GND}  -set_to_set_distance 60 -start_from top -start_offset 20 -stop_offset 0 -area_blockage [get_db [get_db insts -if {.name == *sram*}] .bbox]
+
+[05/25 14:36:52     83s] #% Begin add_stripes (date=05/25 14:36:52, mem=1563.8M)
+[05/25 14:36:52     83s] 
+[05/25 14:36:52     83s] Initialize fgc environment(mem: 1910.9M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1910.9M)
+[05/25 14:36:52     83s] Loading cell geometries (cpu: 0:00:00.2, real: 0:00:00.0, peak mem: 1910.9M)
+[05/25 14:36:52     83s] Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1910.9M)
+[05/25 14:36:52     83s] Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1910.9M)
+[05/25 14:36:52     83s] Starting stripe generation ...
+[05/25 14:36:52     83s] Non-Default Mode Option Settings :
+[05/25 14:36:52     83s]   -stripe_min_length_is_width  0
+[05/25 14:36:52     83s]   -stop_at_last_wire_for_area  1
+[05/25 14:36:52     83s]   -extend_to_closest_target  ring
+[05/25 14:36:52     83s]   -stripe_min_length  50 
+[05/25 14:36:52     83s]   -trim_antenna_back_to_shape  block_ring
+[05/25 14:36:52     83s] **WARN: (IMPPP-4055):	The run time of add_stripes will degrade with multiple cpu setting according to the number of stripe sets, ignore the setting of set_multi_cpu_usage in add_stripes.
+[05/25 14:36:52     83s] Type 'man IMPPP-4055' for more detail.
+[05/25 14:36:52     83s] Completing 10% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1910.9M)
+[05/25 14:36:52     83s] Completing 20% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1910.9M)
+[05/25 14:36:52     83s] Completing 30% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1910.9M)
+[05/25 14:36:52     83s] Completing 40% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1910.9M)
+[05/25 14:36:52     83s] Completing 50% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1910.9M)
+[05/25 14:36:52     83s] Completing 60% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1910.9M)
+[05/25 14:36:52     83s] Completing 70% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1910.9M)
+[05/25 14:36:52     83s] Completing 80% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1910.9M)
+[05/25 14:36:52     83s] Completing 90% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1910.9M)
+[05/25 14:36:53     83s] Completing 100% stripe generation(cpu: 0:00:00.0, real: 0:00:01.0, peak mem: 1910.9M)
+[05/25 14:36:53     84s] Stripe generation is complete.
+[05/25 14:36:53     84s] vias are now being generated.
+[05/25 14:36:53     84s] add_stripes created 36 wires.
+[05/25 14:36:53     84s] ViaGen created 296 vias, deleted 6 vias to avoid violation.
+[05/25 14:36:53     84s] +--------+----------------+----------------+
+[05/25 14:36:53     84s] |  Layer |     Created    |     Deleted    |
+[05/25 14:36:53     84s] +--------+----------------+----------------+
+[05/25 14:36:53     84s] |   M5   |       36       |       NA       |
+[05/25 14:36:53     84s] |  VIA5  |       296      |        6       |
+[05/25 14:36:53     84s] +--------+----------------+----------------+
+[05/25 14:36:53     84s] #% End add_stripes (date=05/25 14:36:53, total cpu=0:00:01.5, real=0:00:01.0, peak res=1574.7M, current mem=1568.3M)
+[05/25 14:36:53     84s] [SUSPEND]innovus 33> set_db add_stripes_stacked_via_bottom_layer M3
+1 M3
+[05/25 14:37:22     93s] [SUSPEND]innovus 34> set_db add_stripes_trim_antenna_back_to_shape {block_ring}
+set_db add_stripes_trim_antenna_back_to_shape {block_ring}
+[05/25 14:37:22     93s] The power planner will set stripe antenna targets to block ring.
+[05/25 14:37:22     93s] 1 block_ring
+[05/25 14:37:22     93s] [SUSPEND]innovus 35> set_db add_stripes_trim_antenna_max_distance 10set_db add_stripes_trim_antenna_max_distance 10
+
+[05/25 14:37:22     93s] The power planner will set the trim antenna value threshold to 10.000000.
+[05/25 14:37:22     93s] 1 10.0
+[05/25 14:37:22     93s] [SUSPEND]innovus 36> set macroLowerLeftY [lindex [lindex [get_db [get_db insts - [1Gif {.name == *sram*}] .bbox] 0] 10]
+set macroLowerLeftY [lindex [lindex [get_db [get_db insts -if {.name == *sram*}] .bbox] 0] 10]
+[05/25 14:37:22     93s] [SUSPEND]innovus 37> set macroUpperRightY [lindex [lindex [get_db [get_db insts  [1G-if {.name == *sram*}] .bbox] 0] 9]
+set macroUpperRightY [lindex [lindex [get_db [get_db insts -if {.name == *sram*}] .bbox] 0] 9]
+[05/25 14:37:22     93s] [SUSPEND]innovus 38> add_stripes -width 3 -spacing 2 -direction vertical -layer  [1GM4 -nets {VDD GND}  -set_to_set_distance 60 -start_from left -start_offset 10 -s [1Gtop_offset 10 -area_blockage [list 0 $macroLowerLeftY 800 $macroUpperRightY]
+add_stripes -width 3 -spacing 2 -direction vertical -layer M4 -nets {VDD GND}  -set_to_set_distance 60 -start_from left -start_offset 10 -stop_offset 10 -area_blockage [list 0 $macroLowerLeftY 800 $macroUpperRightY]
+[05/25 14:37:22     93s] #% Begin add_stripes (date=05/25 14:37:22, mem=1568.7M)
+[05/25 14:37:22     93s] 
+[05/25 14:37:22     93s] Initialize fgc environment(mem: 1913.7M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1913.7M)
+[05/25 14:37:23     93s] Loading cell geometries (cpu: 0:00:00.3, real: 0:00:01.0, peak mem: 1913.7M)
+[05/25 14:37:23     93s] Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1913.7M)
+[05/25 14:37:23     93s] Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1913.7M)
+[05/25 14:37:23     93s] Starting stripe generation ...
+[05/25 14:37:23     93s] Non-Default Mode Option Settings :
+[05/25 14:37:23     93s]   -stripe_min_length_is_width  0
+[05/25 14:37:23     93s]   -stop_at_last_wire_for_area  1
+[05/25 14:37:23     93s]   -extend_to_closest_target  ring
+[05/25 14:37:23     93s]   -stripe_min_length  50 
+[05/25 14:37:23     93s]   -trim_antenna_back_to_shape  block_ring
+[05/25 14:37:23     93s]   -trim_antenna_max_distance  10.00
+[05/25 14:37:23     93s] **WARN: (IMPPP-4055):	The run time of add_stripes will degrade with multiple cpu setting according to the number of stripe sets, ignore the setting of set_multi_cpu_usage in add_stripes.
+[05/25 14:37:23     93s] Type 'man IMPPP-4055' for more detail.
+[05/25 14:37:23     93s] Completing 10% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1913.7M)
+[05/25 14:37:23     93s] Completing 20% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1913.7M)
+[05/25 14:37:23     93s] Completing 30% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1913.7M)
+[05/25 14:37:23     93s] Completing 40% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1913.7M)
+[05/25 14:37:23     93s] Completing 50% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1913.7M)
+[05/25 14:37:23     93s] Completing 60% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1913.7M)
+[05/25 14:37:23     93s] Completing 70% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1913.7M)
+[05/25 14:37:23     93s] Completing 80% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1913.7M)
+[05/25 14:37:23     93s] Completing 90% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1913.7M)
+[05/25 14:37:23     93s] Completing 100% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1913.7M)
+[05/25 14:37:23     94s] Stripe generation is complete.
+[05/25 14:37:23     94s] vias are now being generated.
+[05/25 14:37:23     94s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M4 & M6 at (342.00, 558.40) (345.00, 662.00).
+[05/25 14:37:23     94s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M4 & M6 at (402.00, 331.20) (402.00, 1382.80).
+[05/25 14:37:23     94s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M4 & M6 at (822.00, 331.20) (822.00, 1382.80).
+[05/25 14:37:23     94s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M4 & M6 at (1242.00, 331.20) (1242.00, 1382.80).
+[05/25 14:37:23     94s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M4 & M6 at (1362.00, 558.40) (1365.00, 568.40).
+[05/25 14:37:23     94s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M4 & M6 at (227.00, 331.20) (230.00, 554.40).
+[05/25 14:37:23     94s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M4 & M6 at (407.00, 331.20) (410.00, 1382.80).
+[05/25 14:37:23     94s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M4 & M6 at (827.00, 331.20) (830.00, 1382.80).
+[05/25 14:37:23     94s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M4 & M6 at (1247.00, 331.20) (1250.00, 1382.80).
+[05/25 14:37:23     94s] **WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer M4 & M6 at (1370.00, 544.40) (1370.00, 554.40).
+[05/25 14:37:23     94s] add_stripes created 44 wires.
+[05/25 14:37:23     94s] ViaGen created 1312 vias, deleted 22 vias to avoid violation.
+[05/25 14:37:23     94s] +--------+----------------+----------------+
+[05/25 14:37:23     94s] |  Layer |     Created    |     Deleted    |
+[05/25 14:37:23     94s] +--------+----------------+----------------+
+[05/25 14:37:23     94s] |   M4   |       44       |       NA       |
+[05/25 14:37:23     94s] |  VIA4  |       825      |        0       |
+[05/25 14:37:23     94s] |  VIA5  |       257      |        0       |
+[05/25 14:37:23     94s] |  VIA6  |       230      |       22       |
+[05/25 14:37:23     94s] +--------+----------------+----------------+
+[05/25 14:37:23     94s] #% End add_stripes (date=05/25 14:37:23, total cpu=0:00:01.0, real=0:00:01.0, peak res=1580.9M, current mem=1574.4M)
+[05/25 14:37:23     94s] [SUSPEND]innovus 39> set_db add_stripes_stacked_via_bottom_layer M3
+1 M3
+[05/25 14:38:00    103s] [SUSPEND]innovus 40> set_db add_stripes_trim_antenna_back_to_shape {block_ring}
+set_db add_stripes_trim_antenna_back_to_shape {block_ring}
+[05/25 14:38:00    103s] The power planner will set stripe antenna targets to block ring.
+[05/25 14:38:00    103s] 1 block_ring
+[05/25 14:38:00    103s] [SUSPEND]innovus 41> set_db add_stripes_trim_antenna_max_distance 10
+set_db add_stripes_trim_antenna_max_distance 10
+[05/25 14:38:00    103s] The power planner will set the trim antenna value threshold to 10.000000.
+[05/25 14:38:00    103s] 1 10.0
+[05/25 14:38:00    103s] [SUSPEND]innovus 42> set macroLowerLeftY [lindex [lindex [get_db [get_db insts - [1Gif {.name == *sram*}] .bbox] 0] 10]
+set macroLowerLeftY [lindex [lindex [get_db [get_db insts -if {.name == *sram*}] .bbox] 0] 10]
+[05/25 14:38:00    103s] [SUSPEND]innovus 43> set macroUpperRightY [lindex [lindex [get_db [get_db insts  [1G-if {.name == *sram*}] .bbox] 0] 9]
+set macroUpperRightY [lindex [lindex [get_db [get_db insts -if {.name == *sram*}] .bbox] 0] 9]
+[05/25 14:38:00    103s] [SUSPEND]innovus 44> add_stripes -width 3 -spacing 2 -direction vertical -layer  [1GM4 -nets {VDD GND}  -set_to_set_distance 60 -start_from left -start_offset 10 -s [1Gtop_offset 10 -area_blockage [list 0 $macroLowerLeftY 800 $macroUpperRightY]
+add_stripes -width 3 -spacing 2 -direction vertical -layer M4 -nets {VDD GND}  -set_to_set_distance 60 -start_from left -start_offset 10 -stop_offset 10 -area_blockage [list 0 $macroLowerLeftY 800 $macroUpperRightY]
+[05/25 14:38:00    103s] #% Begin add_stripes (date=05/25 14:38:00, mem=1575.8M)
+[05/25 14:38:00    103s] 
+[05/25 14:38:00    104s] Initialize fgc environment(mem: 1920.2M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:00    104s] Loading cell geometries (cpu: 0:00:00.3, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:00    104s] Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:00    104s] Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:01    104s] Starting stripe generation ...
+[05/25 14:38:01    104s] Non-Default Mode Option Settings :
+[05/25 14:38:01    104s]   -stripe_min_length_is_width  0
+[05/25 14:38:01    104s]   -stop_at_last_wire_for_area  1
+[05/25 14:38:01    104s]   -extend_to_closest_target  ring
+[05/25 14:38:01    104s]   -stripe_min_length  50 
+[05/25 14:38:01    104s]   -trim_antenna_back_to_shape  block_ring
+[05/25 14:38:01    104s]   -trim_antenna_max_distance  10.00
+[05/25 14:38:01    104s] **WARN: (IMPPP-4055):	The run time of add_stripes will degrade with multiple cpu setting according to the number of stripe sets, ignore the setting of set_multi_cpu_usage in add_stripes.
+[05/25 14:38:01    104s] Type 'man IMPPP-4055' for more detail.
+[05/25 14:38:01    104s] Completing 10% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:01    104s] Completing 20% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:01    104s] Completing 30% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:01    104s] Completing 40% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:01    104s] Completing 50% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:01    104s] Completing 60% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:01    104s] Completing 70% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:01    104s] Completing 80% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:01    104s] Completing 90% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:01    104s] Completing 100% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1920.2M)
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (163.500000, 331.200012) (163.500000, 568.400024) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (223.500000, 331.200012) (223.500000, 568.400024) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (283.500000, 344.700012) (283.500000, 568.400024) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (343.500000, 331.200012) (343.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (403.500000, 331.200012) (403.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (463.500000, 331.200012) (463.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (523.500000, 331.200012) (523.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (583.500000, 331.200012) (583.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (643.500000, 331.200012) (643.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (703.500000, 331.200012) (703.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (763.500000, 331.200012) (763.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (823.500000, 331.200012) (823.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (883.500000, 331.200012) (883.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (943.500000, 331.200012) (943.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (1003.500000, 331.200012) (1003.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (1063.500000, 331.200012) (1063.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (1123.500000, 331.200012) (1123.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (1183.500000, 331.200012) (1183.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (1243.500000, 331.200012) (1243.500000, 1382.800049) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (IMPPP-170):	The power planner failed to create a wire at (1303.500000, 331.200012) (1303.500000, 568.400024) because same wire already exists.
+[05/25 14:38:01    104s] **WARN: (EMS-27):	Message (IMPPP-170) has exceeded the current message display limit of 20.
+[05/25 14:38:01    104s] To increase the message display limit, refer to the product command reference manual.
+[05/25 14:38:01    104s] Stripe generation is complete.
+[05/25 14:38:01    104s] #% End add_stripes (date=05/25 14:38:01, total cpu=0:00:00.9, real=0:00:01.0, peak res=1582.8M, current mem=1574.4M)
+[05/25 14:38:01    104s] [SUSPEND]innovus 45> delete_inst -inst *WELLTAP* ; # In case any well taps has been placed prior, delete these
+**WARN: (IMPSYC-295):	Found no instance name matching wildcard "*WELLTAP*"
+[05/25 14:38:11    107s] [SUSPEND]innovus 46> # Set well tap cell to be used
+# Set well tap cell to be used
+[05/25 14:38:11    107s] [SUSPEND]innovus 47> set_db add_well_taps_cell HS65_LH_FILLERNPWPFP4
+set_db add_well_taps_cell HS65_LH_FILLERNPWPFP4
+[05/25 14:38:11    107s] 1 HS65_LH_FILLERNPWPFP4
+
+[05/25 14:38:11    107s] [SUSPEND]innovus 48> 
+[05/25 14:38:11    107s] [SUSPEND]innovus 48> # Create well taps
+# Create well taps
+[05/25 14:38:11    107s] [SUSPEND]innovus 49> # Explanation : We need to add well taps, to bias the bulk  [1Gof the transistors to the correct potential
+# Explanation : We need to add well taps, to bias the bulk of the transistors to the correct potential
+[05/25 14:38:11    107s] [SUSPEND]innovus 50> #               According to the documentation, the maximum [1G distance a cell can have to a well tap is 30um.
+#               According to the documentation, the maximum distance a cell can have to a well tap is 30um.
+[05/25 14:38:11    107s] [SUSPEND]innovus 51> #               This means that if we space the well taps w [1Gith 60um, all cells will be within the 30um range of a tap.
+#               This means that if we space the well taps with 60um, all cells will be within the 30um range of a tap.
+[05/25 14:38:11    107s] [SUSPEND]innovus 52> add_well_taps -cell_interval 60
+add_well_taps -cell_interval 60
+[05/25 14:38:11    107s] OPERPROF: Starting DPlace-Init-For-Physical at level 1, MEM:1922.0M, EPOCH TIME: 1779712691.158215
+[05/25 14:38:11    107s] OPERPROF:   Starting DPlace-Init at level 2, MEM:1922.0M, EPOCH TIME: 1779712691.158400
+[05/25 14:38:11    107s] # Init pin-track-align, new floorplan.
+[05/25 14:38:11    107s] Processing tracks to init pin-track alignment.
+[05/25 14:38:11    107s] z: 2, totalTracks: 1
+[05/25 14:38:11    107s] z: 4, totalTracks: 1
+[05/25 14:38:11    107s] z: 6, totalTracks: 1
+[05/25 14:38:11    107s] z: 8, totalTracks: 1
+[05/25 14:38:11    107s] #spOpts: N=65 VtWidth hrOri=1 hrSnap=1 rpCkHalo=4 
+[05/25 14:38:11    107s] All LLGs are deleted
+[05/25 14:38:11    107s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/25 14:38:11    107s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/25 14:38:11    107s] OPERPROF:     Starting spSiteCleanup(true) at level 3, MEM:1922.0M, EPOCH TIME: 1779712691.236087
+[05/25 14:38:11    107s] OPERPROF:     Finished spSiteCleanup(true) at level 3, CPU:0.000, REAL:0.001, MEM:1922.0M, EPOCH TIME: 1779712691.237081
+[05/25 14:38:11    107s] # Building pulpino_top llgBox search-tree.
+[05/25 14:38:11    107s] OPERPROF:     Starting spInitSiteArr at level 3, MEM:1922.0M, EPOCH TIME: 1779712691.238142
+[05/25 14:38:11    107s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/25 14:38:11    107s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/25 14:38:11    107s] OPERPROF:       Starting spiInitFpSiteArr at level 4, MEM:2018.0M, EPOCH TIME: 1779712691.241993
+[05/25 14:38:11    107s] Max number of tech site patterns supported in site array is 256.
+[05/25 14:38:11    107s] Core basic site is CORE
+[05/25 14:38:11    107s] **WARN: (IMPSP-362):	Site 'CORE' has one std.Cell height, so ignoring its X-symmetry.
+[05/25 14:38:11    107s] Type 'man IMPSP-362' for more detail.
+[05/25 14:38:11    107s] OPERPROF:         Starting spiCheckSiteIfFastDPInitAvailable at level 5, MEM:2018.0M, EPOCH TIME: 1779712691.264273
+[05/25 14:38:11    107s] After signature check, allow fast init is false, keep pre-filter is false.
+[05/25 14:38:11    107s] After signature check and other controls, allow fast init is false, keep pre-filter is false.
+[05/25 14:38:11    107s] OPERPROF:         Finished spiCheckSiteIfFastDPInitAvailable at level 5, CPU:0.010, REAL:0.004, MEM:2050.0M, EPOCH TIME: 1779712691.267858
+[05/25 14:38:11    107s] Use non-trimmed site array because memory saving is not enough.
+[05/25 14:38:11    107s] SiteArray: non-trimmed site array dimensions = 398 x 6630
+[05/25 14:38:11    107s] SiteArray: use 13,246,464 bytes
+[05/25 14:38:11    107s] SiteArray: current memory after site array memory allocation 2062.7M
+[05/25 14:38:11    107s] SiteArray: FP blocked sites are writable
+[05/25 14:38:11    107s] Estimated cell power/ground rail width = 0.325 um
+[05/25 14:38:11    107s] Layer info - lib-1st H=1, V=2.  Cell-FPin=1. Top-pin=2
+[05/25 14:38:11    107s] OPERPROF:         Starting RoutingBlockageFromWireViaStBox at level 5, MEM:2030.7M, EPOCH TIME: 1779712691.286398
+[05/25 14:38:11    107s] Process 9207 wires and vias for routing blockage analysis
+[05/25 14:38:11    107s] OPERPROF:         Finished RoutingBlockageFromWireViaStBox at level 5, CPU:0.030, REAL:0.008, MEM:2062.7M, EPOCH TIME: 1779712691.294191
+[05/25 14:38:11    107s] SiteArray: number of non floorplan blocked sites for llg default is 2051560
+[05/25 14:38:11    107s] Atter site array init, number of instance map data is 0.
+[05/25 14:38:11    107s] OPERPROF:       Finished spiInitFpSiteArr at level 4, CPU:0.310, REAL:0.095, MEM:2062.7M, EPOCH TIME: 1779712691.337220
+[05/25 14:38:11    107s] 
+[05/25 14:38:11    107s]  Pre_CCE_Colorizing is not ON! (0:0:1129:0)
+[05/25 14:38:11    107s] OPERPROF:     Finished spInitSiteArr at level 3, CPU:0.330, REAL:0.121, MEM:1966.6M, EPOCH TIME: 1779712691.359072
+[05/25 14:38:11    107s] OPERPROF:     Starting PlacementInitSBTree at level 3, MEM:1966.6M, EPOCH TIME: 1779712691.359152
+[05/25 14:38:11    107s] OPERPROF:     Finished PlacementInitSBTree at level 3, CPU:0.010, REAL:0.002, MEM:1966.6M, EPOCH TIME: 1779712691.360684
+[05/25 14:38:11    107s] [CPU] DPlace-Init (cpu=0:00:00.4, real=0:00:00.0, mem=1966.6MB).
+[05/25 14:38:11    107s] OPERPROF:   Finished DPlace-Init at level 2, CPU:0.420, REAL:0.205, MEM:1966.6M, EPOCH TIME: 1779712691.363755
+[05/25 14:38:11    107s] OPERPROF: Finished DPlace-Init-For-Physical at level 1, CPU:0.420, REAL:0.206, MEM:1966.6M, EPOCH TIME: 1779712691.363805
+[05/25 14:38:11    107s] For 7270 new insts, [05/25 14:38:11    107s] OPERPROF: Starting spDPlaceCleanup(full) at level 1, MEM:2035.7M, EPOCH TIME: 1779712691.454186
+[05/25 14:38:11    107s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:8522).
+[05/25 14:38:11    107s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/25 14:38:11    107s] All LLGs are deleted
+[05/25 14:38:11    107s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/25 14:38:11    107s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[05/25 14:38:11    107s] OPERPROF:   Starting spSiteCleanup(true) at level 2, MEM:1971.7M, EPOCH TIME: 1779712691.468650
+[05/25 14:38:11    107s] OPERPROF:   Finished spSiteCleanup(true) at level 2, CPU:0.010, REAL:0.003, MEM:1959.1M, EPOCH TIME: 1779712691.471906
+[05/25 14:38:11    107s] OPERPROF: Finished spDPlaceCleanup(full) at level 1, CPU:0.040, REAL:0.020, MEM:1959.1M, EPOCH TIME: 1779712691.474070
+Inserted 7270 well-taps <HS65_LH_FILLERNPWPFP4> cells (prefix WELLTAP).
+[05/25 14:38:11    107s] [SUSPEND]innovus 53> check_connectivity
+
+[05/25 14:40:08    133s] VERIFY_CONNECTIVITY use new engine.
+[05/25 14:40:08    133s] 
+[05/25 14:40:08    133s] ******** Start: VERIFY CONNECTIVITY ********
+[05/25 14:40:08    133s] Start Time: Mon May 25 14:40:08 2026
+[05/25 14:40:08    133s] 
+[05/25 14:40:08    133s] Design Name: pulpino_top
+[05/25 14:40:08    133s] Database Units: 1000
+[05/25 14:40:08    133s] Design Boundary: (0.0000, 0.0000) (1630.0000, 1714.0000)
+[05/25 14:40:08    133s] Error Limit = 1000; Warning Limit = 50
+[05/25 14:40:08    133s] Check all nets
+[05/25 14:40:08    133s] Use 6 pthreads
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin A of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_10 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g4947 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin A of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_10 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g4942 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin B of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_10 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g4915 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin Z of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_10 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g4902 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin B of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_10 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g2675 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin A of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_10 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g4868 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin Z of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_0 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g2749 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin B of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_0 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g2748 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin B of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_0 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g2747 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin B of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_0 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g2746 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin B of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_0 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g2745 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin Z of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_27 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g4893 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin A of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_27 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g4889 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin B of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_0 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g2744 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin Z of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_1 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g5030 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin B of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_1 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g5029 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin Z of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_13 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g4944 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin C of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_27 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g4850 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (EMS-27):	Message (IMPVFC-96) has exceeded the current message display limit of 20.
+[05/25 14:40:08    133s] To increase the message display limit, refer to the product command reference manual.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin B of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_13 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g4941 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] **WARN: (IMPVFC-96):	Instance pin B of net peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/n_0 has not been placed. Please make sure instance peripherals_i/periph_bus_i/apb_node_wrap_i/apb_node_i/g2743 is placed and rerun check_connectivity.
+[05/25 14:40:08    133s] Net core_region_i/data_mem/n_44: no routing.
+[05/25 14:40:08    133s] Net core_region_i/data_mem/n_73: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem/n_47: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem/n_64: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem/sp_ram_wrap_i/n_42: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem/sp_ram_wrap_i/n_60: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem/sp_ram_wrap_i/n_41: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem/sp_ram_wrap_i/n_78: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_addr[10]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_addr[4]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[30]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[24]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[18]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[12]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[6]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[0]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_addr[7]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[27]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[21]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[15]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[9]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[3]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_addr[11]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_addr[5]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_addr[7]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[31]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[25]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[27]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[19]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[13]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[7]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[21]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[1]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[15]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[9]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_addr[8]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[3]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_addr[2]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[28]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[22]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_addr[10]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[16]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[10]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_addr[4]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[4]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[30]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[24]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[18]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[12]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[6]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[0]: no routing.
+[05/25 14:40:08    134s] **WARN: (IMPVFC-97):	IO pin sda_pad_i of net sda_pad_i has not been assigned. Please make sure it is assigned and rerun check_connectivity.
+[05/25 14:40:08    134s] Net clk_int: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem/n_55: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem/sp_ram_wrap_i/n_40: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem/sp_ram_wrap_i/n_69: no routing.
+[05/25 14:40:08    134s] Net VDD: dangling Wire.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_addr[12]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_addr[6]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[26]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[20]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[14]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[8]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[2]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_addr[9]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_addr[3]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[29]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[23]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[17]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[11]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[5]: no routing.
+[05/25 14:40:08    134s] **WARN: (IMPVFC-97):	IO pin scl_pad_i of net scl_pad_i has not been assigned. Please make sure it is assigned and rerun check_connectivity.
+[05/25 14:40:08    134s] Net core_region_i/data_mem/n_45: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem/n_82: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem/sp_ram_wrap_i/n_43: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_addr[9]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_addr[3]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[29]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[23]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[17]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[11]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[5]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_addr[12]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_addr[6]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[26]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[20]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[14]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[8]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[2]: no routing.
+[05/25 14:40:08    134s] Net GND: has an unconnected terminal, has special routes with opens, has regular routing with opens, dangling Wire.
+[05/25 14:40:08    134s] Net core_region_i/data_mem/n_46: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem/sp_ram_wrap_i/n_51: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_addr[8]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_addr[2]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[28]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[22]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[16]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[10]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/data_mem_wdata[4]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_addr[11]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_addr[5]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[31]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[25]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[19]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[13]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[7]: no routing.
+[05/25 14:40:08    134s] Net core_region_i/instr_mem_wdata[1]: no routing.
+[05/25 14:40:08    134s] 
+[05/25 14:40:08    134s] Begin Summary 
+[05/25 14:40:08    134s]     103 Problem(s) (IMPVFC-98): Net has no global routing and no special routing.
+[05/25 14:40:08    134s]     6 Problem(s) (IMPVFC-96): Terminal(s) are not connected.
+[05/25 14:40:08    134s]     1 Problem(s) (IMPVFC-200): Special Wires: Pieces of the net are not connected together.
+[05/25 14:40:08    134s]     1 Problem(s) (IMPVFC-92): Pieces of the net are not connected together.
+[05/25 14:40:08    134s]     185 Problem(s) (IMPVFC-94): The net has dangling wire(s).
+[05/25 14:40:08    134s]     296 total info(s) created.
+[05/25 14:40:08    134s] End Summary
+[05/25 14:40:08    134s] 
+[05/25 14:40:08    134s] End Time: Mon May 25 14:40:08 2026
+[05/25 14:40:08    134s] Time Elapsed: 0:00:00.0
+[05/25 14:40:08    134s] 
+[05/25 14:40:08    134s] ******** End: VERIFY CONNECTIVITY ********
+[05/25 14:40:08    134s]   Verification Complete : 296 Viols.  0 Wrngs.
+[05/25 14:40:08    134s]   (CPU Time: 0:00:00.7  MEM: 0.008M)
+[05/25 14:40:08    134s] 
+[05/25 14:40:08    134s] 1
+[05/25 14:40:08    134s] [SUSPEND]innovus 54> exit
+
+[05/25 14:40:25    137s] 
+[05/25 14:40:25    137s] *** Memory Usage v#1 (Current mem = 1956.602M, initial mem = 484.035M) ***
+[05/25 14:40:25    137s] 
+[05/25 14:40:25    137s] *** Summary of all messages that are not suppressed in this session:
+[05/25 14:40:25    137s] Severity  ID               Count  Summary                                  
+[05/25 14:40:25    137s] WARNING   IMPLF-200          264  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/25 14:40:25    137s] WARNING   IMPLF-201           73  Pin '%s' in macro '%s' has no ANTENNADIF...
+[05/25 14:40:25    137s] WARNING   IMPFP-127           16  Incorrect LEF/OA class of cell '%s', exp...
+[05/25 14:40:25    137s] WARNING   IMPFP-325            1  Floorplan of the design is resized. All ...
+[05/25 14:40:25    137s] WARNING   IMPFP-3961          50  The techSite '%s' has no related standar...
+[05/25 14:40:25    137s] WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+[05/25 14:40:25    137s] WARNING   IMPSYC-295           1  Found no instance name matching wildcard...
+[05/25 14:40:25    137s] WARNING   IMPVL-159         2578  Pin '%s' of cell '%s' is defined in LEF ...
+[05/25 14:40:25    137s] WARNING   IMPVFC-96        147818  Instance pin %s of net %s has not been p...
+[05/25 14:40:25    137s] WARNING   IMPVFC-97            2  IO pin %s of net %s has not been assigne...
+[05/25 14:40:25    137s] WARNING   IMPPP-531            8  ViaGen Warning: Due to %s rule violation...
+[05/25 14:40:25    137s] WARNING   IMPPP-532          319  ViaGen Warning: The top layer and bottom...
+[05/25 14:40:25    137s] WARNING   IMPPP-354           49  The power planner did not generate the %...
+[05/25 14:40:25    137s] WARNING   IMPPP-612          568  The intersection area is insufficient to...
+[05/25 14:40:25    137s] WARNING   IMPPP-170           44  The power planner failed to create a wir...
+[05/25 14:40:25    137s] WARNING   IMPPP-4055           7  The run time of add_stripes will degrade...
+[05/25 14:40:25    137s] WARNING   IMPSR-4302           3  Cap-table/qrcTechFile is found in the de...
+[05/25 14:40:25    137s] WARNING   IMPSP-362            1  Site '%s' has %s std.Cell height, so ign...
+[05/25 14:40:25    137s] WARNING   TCLCMD-1142          2  Virtual clock '%s' is being created with...
+[05/25 14:40:25    137s] WARNING   TCLCMD-1461          4  Skipped unsupported command: %s          
+[05/25 14:40:25    137s] WARNING   TCLCMD-1531         58  '%s' has been applied on hierarchical pi...
+[05/25 14:40:25    137s] ERROR     TECHLIB-1204      8146  Illegal value '%s' defined for attribute...
+[05/25 14:40:25    137s] *** Message Summary: 151867 warning(s), 8146 error(s)
+[05/25 14:40:25    137s] 
+[05/25 14:40:25    137s] --- Ending "Innovus" (totcpu=0:02:17, real=0:08:29, mem=1956.6M) ---

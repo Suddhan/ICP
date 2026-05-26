@@ -25,7 +25,7 @@
 ::db::check_and_set_root_attr design_flow_effort standard
 ::db::check_and_set_root_attr design_power_effort low
 ::db::check_and_set_root_attr design_top_routing_layer M7
-::db::check_and_set_root_attr extract_design_signature 79948883
+::db::check_and_set_root_attr extract_design_signature 49228666
 ::db::check_and_set_root_attr extract_rc_coupled true
 ::db::check_and_set_root_attr extract_rc_coupling_cap_threshold 0.1
 ::db::check_and_set_root_attr extract_rc_model_file ${::IMEX::libVar}/misc/rc_model.bin

@@ -1,0 +1,140 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Fri May 22 14:24:10 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.35-s114_1 NR220912-2004/21_15-UB (database version 18.20.592_1) {superthreading v2.17}
+#@(#)CDS: AAE 21.15-s039 (64bit) 10/13/2022 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+#@(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+#@(#)CDS: CPE v21.15-s076
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+
+read_db pnrf4.db
+gui_select -point {-88.19400 374.75200}
+set_layer_preference violation -is_visible 1
+set_layer_preference PO -is_visible 0
+set_layer_preference CO -is_visible 0
+set_layer_preference M1 -is_visible 0
+set_layer_preference VIA1 -is_visible 0
+set_layer_preference M2 -is_visible 0
+set_layer_preference VIA2 -is_visible 0
+set_layer_preference M3 -is_visible 0
+set_layer_preference VIA3 -is_visible 0
+set_layer_preference M4 -is_visible 0
+set_layer_preference VIA4 -is_visible 0
+set_layer_preference VIA5 -is_visible 0
+set_layer_preference M6 -is_visible 0
+set_layer_preference VIA6 -is_visible 0
+set_layer_preference M7 -is_visible 0
+set_layer_preference pinObj -is_visible 1
+set_layer_preference M6 -is_visible 1
+set_layer_preference VIA5 -is_visible 1
+set_layer_preference net -is_visible 0
+set_layer_preference pgPower -is_visible 0
+set_layer_preference node_layer -is_visible 1
+gui_pan -0.75600 1078.38100
+gui_pan 3.91600 1068.88900
+gui_pan 0.12900 1049.80700
+gui_pan -0.96300 1027.95700
+gui_pan -0.57900 1006.68500
+gui_pan -1.67100 988.43400
+gui_pan 0.06500 966.90600
+gui_pan -0.12800 939.59300
+gui_pan -0.06400 919.09200
+gui_pan -0.06400 890.36500
+gui_pan 0.12800 870.70000
+gui_pan -0.06400 843.58100
+gui_pan -1.36300 782.57900
+gui_pan 0.80100 738.02300
+gui_pan 0.71200 718.54300
+gui_pan -0.38000 633.52900
+delete_all_power_preroutes 
+delete_all_power_preroutes
+set_db add_stripes_stacked_via_top_layer AP ;
+add_rings -spacing 4 -width 10 -layer {top M7 bottom M7 left M6 right M6} -jog_distance 0.07 -offset 0.1 -nets {VDD GND}
+select_obj [get_db insts -if {.name == *sram*}] ;
+add_rings -around cluster -layer {top M7 bottom M7 left M6 right M6} -nets {VDD GND} -skip_side {top left right} -spacing 4 -width 10 -type block_rings
+deselect_obj -all
+set_layer_preference M5 -is_visible 0
+set_layer_preference M5 -is_visible 1
+set_layer_preference M5 -is_visible 0
+set_layer_preference node_layer -is_visible 1
+set_layer_preference node_layer -is_visible 0
+set_layer_preference M4 -is_visible 1
+set_layer_preference cellBlkgObj -is_visible 1
+set_layer_preference M4 -is_visible 0
+set_layer_preference M5 -is_visible 1
+set_layer_preference M6 -is_visible 1
+set_layer_preference M5 -is_visible 0
+set_layer_preference M7 -is_visible 1
+gui_select -point {256.80600 864.58600}
+set_db add_stripes_stacked_via_bottom_layer M5
+add_stripes -nets {VDD GND} -layer M7 -direction horizontal -width 10 -spacing 4 -set_to_set_distance 70 -start_from top -start_offset 35 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
+set_layer_preference M5 -is_visible 1
+set_layer_preference VIA6 -is_visible 1
+set_layer_preference VIA5 -is_visible 1
+gui_pan 0.33600 706.46700
+gui_pan 4.20800 759.57400
+delete_all_power_preroutes
+set_db add_stripes_stacked_via_top_layer AP ;
+add_rings -spacing 4 -width 10 -layer {top M7 bottom M7 left M6 right M6} -jog_distance 0.07 -offset 0.1 -nets {VDD GND}
+select_obj [get_db insts -if {.name == *sram*}] ;
+add_rings -around cluster -layer {top M7 bottom M7 left M6 right M6} -nets {VDD GND} -skip_side {top left right} -spacing 4 -width 10 -type block_rings
+deselect_obj -all
+set_db add_stripes_ignore_block_check false
+set_db add_stripes_break_at none
+set_db add_stripes_route_over_rows_only false
+set_db add_stripes_rows_without_stripes_only false
+set_db add_stripes_extend_to_closest_target ring
+set_db add_stripes_stop_at_last_wire_for_area true
+set_db add_stripes_spacing_type edge_to_edge
+set_db add_stripes_spacing_from_block 0
+set_db add_stripes_orthogonal_only true
+set_db add_stripes_allow_jog { padcore_ring  block_ring }
+set_db add_stripes_skip_via_on_pin {  standardcell }
+set_db add_stripes_skip_via_on_wire_shape {  noshape   }
+set_db add_stripes_stacked_via_bottom_layer M5
+add_stripes -nets {VDD GND} -layer M7 -direction horizontal -width 10 -spacing 4 -set_to_set_distance 50 -start_from top -start_offset 35 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
+gui_select -point {216.95800 1317.45200}
+delete_all_power_preroutes
+set_db add_stripes_stacked_via_top_layer AP ;
+add_rings -spacing 4 -width 10 -layer {top M7 bottom M7 left M6 right M6} -jog_distance 0.07 -offset 0.1 -nets {VDD GND}
+select_obj [get_db insts -if {.name == *sram*}] ;
+add_rings -around cluster -layer {top M7 bottom M7 left M6 right M6} -nets {VDD GND} -skip_side {top left right} -spacing 4 -width 10 -type block_rings
+deselect_obj -all
+set_db add_stripes_ignore_block_check false
+set_db add_stripes_break_at none
+set_db add_stripes_route_over_rows_only false
+set_db add_stripes_rows_without_stripes_only false
+set_db add_stripes_extend_to_closest_target ring
+set_db add_stripes_stop_at_last_wire_for_area true
+set_db add_stripes_spacing_type edge_to_edge
+set_db add_stripes_spacing_from_block 0
+set_db add_stripes_orthogonal_only true
+set_db add_stripes_allow_jog { padcore_ring  block_ring }
+set_db add_stripes_skip_via_on_pin {  standardcell }
+set_db add_stripes_skip_via_on_wire_shape {  noshape   }
+set_db add_stripes_stacked_via_bottom_layer M5
+add_stripes -nets {VDD GND} -layer M7 -direction vertical -width 10 -spacing 4 -set_to_set_distance 70 -start_from top -start_offset 35 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
+set_layer_preference M7 -is_visible 0
+set_layer_preference M7 -is_visible 1
+set_layer_preference M7 -is_visible 0
+set_layer_preference M7 -is_visible 1
+set_layer_preference M7 -is_visible 0
+set_layer_preference M7 -is_visible 1
+set_layer_preference M7 -is_visible 0
+set_layer_preference M7 -is_visible 1
+set_layer_preference M7 -is_visible 0
+set_layer_preference M7 -is_visible 1
+set_layer_preference M5 -is_visible 0
+set_layer_preference M5 -is_visible 1
+add_stripes -nets {VDD GND} -layer M7 -direction vertical -width 10 -spacing 4 -set_to_set_distance 70 -start_from top -start_offset 35 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
+delete_all_power_preroutes
+add_stripes -nets {VDD GND} -layer M7 -direction horizontal -width 10 -spacing 4 -set_to_set_distance 70 -start_from top -start_offset 35 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
+add_stripes -nets {VDD GND} -layer M7 -direction vertical -width 10 -spacing 4 -set_to_set_distance 70 -start_from top -start_offset 35 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
+add_stripes -nets {VDD GND} -layer M6 -direction vertical -width 10 -spacing 4 -set_to_set_distance 120 -start_from left -start_offset 55 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
+exit

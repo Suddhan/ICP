@@ -123,7 +123,7 @@ add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}]
 set topPads [get_db [get_db io_constraints -if {.side == north}] .inst]
 deselect_obj -all
 select_obj $topPads
-space_selected -space 150 -fix_side right
+space_selected -space 100 -fix_side right
 add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side top -filler_orient R180
 
 set rightPads [get_db [get_db io_constraints -if {.side == east}] .inst]
@@ -139,7 +139,7 @@ select_obj $bottomPads
 space_selected -space 130 -fix_side left
 add_io_fillers -cells [get_db [get_db base_cells -if {.name == *IOFILLER?_*LIN}] .name] -side bottom -filler_orient R0
 
-
+suspend 
 
 ######################################
 #           Power routing
@@ -193,8 +193,8 @@ set_db add_stripes_allow_jog { padcore_ring  block_ring }
 set_db add_stripes_skip_via_on_pin {  standardcell }
 set_db add_stripes_skip_via_on_wire_shape {  noshape   }
 
-# Connect to power pins in M5
-set_db add_stripes_stacked_via_bottom_layer M5
+# Connect to power pins in M4
+set_db add_stripes_stacked_via_bottom_layer M4
 # Horzontal, m7
 add_stripes -nets {VDD GND} -layer M7 -direction horizontal -width 10 -spacing 4 -set_to_set_distance 70 -start_from top -start_offset 35 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
 # Vertical, M6
@@ -208,12 +208,12 @@ set_db add_stripes_stripe_min_length 50 ; # We are blocking off the macros, but 
 add_stripes -width 10 -spacing 3 -direction horizontal -layer M7 -nets {VDD GND}  -set_to_set_distance 150 -start_from bottom -start_offset 50 -stop_offset 50 -area_blockage [get_db [get_db insts -if {.name == *sram*}] .bbox]
 # M6 - vertical
 set_db add_stripes_trim_antenna_back_to_shape block_ring ; # Avoid dangling wires near macros
-add_stripes -width 10 -spacing 3 -direction vertical -layer M6 -nets {VDD GND}  -set_to_set_distance 140 -start_from left -start_offset 100 -stop_offset 50 -area_blockage [get_db [get_db insts -if {.name == *sram*}] .bbox]
+add_stripes -width 10 -spacing 3 -direction horizontal -layer M6 -nets {VDD GND}  -set_to_set_distance 140 -start_from left -start_offset 100 -stop_offset 50 -area_blockage [get_db [get_db insts -if {.name == *sram*}] .bbox]
 
 
 
 # M5 - horizontal
-add_stripes -width 3 -spacing 2 -direction horizontal -layer M5 -nets {VDD GND}  -set_to_set_distance 60 -start_from top -start_offset 20 -stop_offset 0
+add_stripes -width 3 -spacing 2 -direction horizontal -layer M5 -nets {VDD GND}  -set_to_set_distance 60 -start_from top -start_offset 20 -stop_offset 0 -area_blockage [get_db [get_db insts -if {.name == *sram*}] .bbox]
 # M4 - vertical
 set_db add_stripes_stacked_via_bottom_layer M3
 set_db add_stripes_trim_antenna_back_to_shape {block_ring}
@@ -233,6 +233,6 @@ set_db add_well_taps_cell HS65_LH_FILLERNPWPFP4
 #               This means that if we space the well taps with 60um, all cells will be within the 30um range of a tap.
 add_well_taps -cell_interval 60
 
-
+suspend
 
 

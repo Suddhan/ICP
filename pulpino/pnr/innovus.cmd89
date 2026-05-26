@@ -1,0 +1,120 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Mon May 25 12:56:00 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.35-s114_1 NR220912-2004/21_15-UB (database version 18.20.592_1) {superthreading v2.17}
+#@(#)CDS: AAE 21.15-s039 (64bit) 10/13/2022 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+#@(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+#@(#)CDS: CPE v21.15-s076
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+
+read_db pnrf4.db
+set_layer_preference violation -is_visible 1
+read_db pnrf5.db
+gui_select -point {160.37500 431.23100}
+delete_selected_from_floorplan
+gui_select -point {158.96200 431.11800}
+gui_select -point {159.25600 429.48800}
+gui_select -point {158.65800 428.50900}
+gui_select -point {160.75600 430.29500}
+gui_select -point {159.81100 431.28300}
+set_layer_preference node_cell -is_visible 1
+set_layer_preference node_cell -is_visible 0
+set_layer_preference node_cell -is_visible 1
+set_layer_preference node_module -is_visible 0
+set_layer_preference node_module -is_visible 1
+set_layer_preference node_inst -is_visible 0
+gui_select -point {160.31400 431.25700}
+delete_selected_from_floorplan
+gui_select -point {160.31400 431.25700}
+delete_selected_from_floorplan
+set_layer_preference node_inst -is_visible 1
+set_layer_preference node_inst -is_visible 0
+gui_select -point {1469.03100 473.17000}
+delete_selected_from_floorplan
+gui_select -point {1469.02200 473.17000}
+delete_selected_from_floorplan
+set_layer_preference violation -is_visible 0
+set_layer_preference violation -is_visible 1
+set_layer_preference node_inst -is_visible 1
+set_layer_preference node_inst -is_visible 0
+set_layer_preference violation -is_visible 0
+set_layer_preference violation -is_visible 1
+set_layer_preference node_inst -is_visible 1
+check_connectivity
+set_layer_preference PO -is_visible 0
+set_layer_preference CO -is_visible 0
+set_layer_preference M1 -is_visible 0
+set_layer_preference VIA1 -is_visible 0
+set_layer_preference VIA2 -is_visible 0
+set_layer_preference VIA4 -is_visible 0
+set_layer_preference M4 -is_visible 0
+set_layer_preference VIA3 -is_visible 0
+set_layer_preference M2 -is_visible 0
+set_layer_preference M3 -is_visible 0
+set_layer_preference M7 -is_visible 0
+set_layer_preference M6 -is_visible 0
+set_layer_preference M7 -is_visible 1
+gui_select -point {236.57700 1352.33800}
+gui_select -point {240.30600 1354.85900}
+set_layer_preference node_layer -is_visible 1
+set_layer_preference node_layer -is_visible 0
+set_layer_preference M7 -is_visible 1
+set_layer_preference M5 -is_visible 1
+set_layer_preference node_layer -is_visible 1
+set_layer_preference node_layer -is_visible 0
+set_layer_preference M4 -is_visible 1
+set_layer_preference M4 -is_visible 0
+set_layer_preference M3 -is_visible 1
+set_layer_preference M3 -is_visible 0
+set_layer_preference VIA5 -is_visible 1
+set_layer_preference VIA5 -is_visible 0
+set_layer_preference M5 -is_visible 1
+set_layer_preference M5 -is_visible 0
+set_layer_preference M4 -is_visible 1
+set_layer_preference M4 -is_visible 0
+gui_select -point {209.35600 1515.58100}
+delete_all_power_preroutes
+set_layer_preference node_layer -is_visible 1
+add_rings -spacing 4 -width 10 -layer {top M7 bottom M7 left M6 right M6} -jog_distance 0.07 -offset 0.1 -nets {VDD GND}
+select_obj [get_db insts -if {.name == *sram*}]
+add_rings -around cluster -layer {top M7 bottom M7 left M6 right M6} -nets {VDD GND} -skip_side {top left right} -spacing 4 -width 10 -type block_rings
+deselect_obj -all
+route_special -connect pad_pin -nets {VDD} -pad_pin_layer_range {M5 M7} -inst [get_db [get_db insts -if {.base_cell == *VDD_*}] .name ]
+route_special -connect pad_pin -nets {GND} -pad_pin_layer_range {M7 M7} -inst [get_db [get_db insts -if {.base_cell == *GND_*}] .name ]
+route_special -connect core_pin -nets {VDD GND}  
+set_db add_stripes_ignore_block_check false
+set_db add_stripes_break_at none
+set_db add_stripes_route_over_rows_only false
+set_db add_stripes_rows_without_stripes_only false
+set_db add_stripes_extend_to_closest_target ring
+set_db add_stripes_stop_at_last_wire_for_area true
+set_db add_stripes_spacing_type edge_to_edge
+set_db add_stripes_spacing_from_block 0
+set_db add_stripes_orthogonal_only true
+set_db add_stripes_allow_jog { padcore_ring  block_ring }
+set_db add_stripes_skip_via_on_pin {  standardcell }
+set_db add_stripes_skip_via_on_wire_shape {  noshape   }
+set_db add_stripes_stacked_via_bottom_layer M4
+add_stripes -nets {VDD GND} -layer M7 -direction horizontal -width 10 -spacing 4 -set_to_set_distance 70 -start_from top -start_offset 35 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
+add_stripes -nets {VDD GND} -layer M6 -direction vertical -width 10 -spacing 4 -set_to_set_distance 120 -start_from left -start_offset 55 -insts [get_db [get_db insts -if {.name == *sram*}] .name]
+set_db add_stripes_stripe_min_length 50 ;
+add_stripes -width 10 -spacing 3 -direction horizontal -layer M7 -nets {VDD GND}  -set_to_set_distance 150 -start_from bottom -start_offset 50 -stop_offset 50 -area_blockage [get_db [get_db insts -if {.name == *sram*}] .bbox]
+set_db add_stripes_trim_antenna_back_to_shape block_ring ;
+add_stripes -width 10 -spacing 3 -direction vertical -layer M6 -nets {VDD GND}  -set_to_set_distance 140 -start_from left -start_offset 100 -stop_offset 50 -area_blockage [get_db [get_db insts -if {.name == *sram*}] .bbox]
+add_stripes -width 3 -spacing 2 -direction horizontal -layer M5 -nets {VDD GND}  -set_to_set_distance 60 -start_from top -start_offset 20 -stop_offset 0 -area_blockage [get_db [get_db insts -if {.name == *sram*}] .bbox]
+set_layer_preference M5 -is_visible 0
+set_layer_preference M5 -is_visible 1
+set_layer_preference M5 -is_visible 0
+set_layer_preference M5 -is_visible 1
+set_layer_preference M5 -is_visible 0
+set_layer_preference M5 -is_visible 1
+check_connectivity
+delete_all_power_preroutes
+delete_global_net_connections
+exit

@@ -1,0 +1,2104 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+Options:	-stylus 
+Date:		Tue May 26 13:20:55 2026
+Host:		fransg-2 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[13:20:55.324481] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_27166_fransg-2_su2577su-s_FYiz5X.
+
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[INFO] Loading PVS 21.10 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+@innovus 1> set_analysis_view -setup  { view_wcl_typical } -hold { view_wcl_typical }
+**ERROR: (TCLCMD-1230):	The command set_analysis_view is called before the design is initialized and not from init_design.
+
+
+@innovus 2> read_db pnrf4.db
+
+#% Begin load design ... (date=05/26 13:22:48, mem=755.2M)
+AAE_INFO: switching -siAware from false to true ...
+AAE_INFO: The setting is changed from false to true in setDelayCalMode -SIAware
+##  Process: 65            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 65nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(extract_rc_cap_filter_mode option of the set_db) is 'relative_and_coupling' for all engines.
+	The accuracy mode for post_route extract_rc_effort_level low extraction will be set to 'high'.
+	Default value for EffortLevel(extract_rc_effort_level option of the set_db) in post_route extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+**WARN: (IMPUDM-33):	Global variable "timing_enable_separate_device_slew_effect_sensitivities" is obsolete and will be removed in a future release. The obsolete variable still works in this release, but to avoid this warning and to ensure compatibility with future releases, remove the obsolete variable from your script.
+**WARN: (IMPUDM-33):	Global variable "timing_enable_separate_device_slew_effect_sensitivities" is obsolete and will be removed in a future release. The obsolete variable still works in this release, but to avoid this warning and to ensure compatibility with future releases, remove the obsolete variable from your script.
+**WARN: (IMPDBTCL-321):	The attribute 'timing_enable_separate_device_slew_effect_sensitivities' still works but will be obsolete in a future major release. You should remove it from your script before the next major release to avoid errors.
+**WARN: (IMPUDM-33):	Global variable "timing_enable_separate_device_slew_effect_sensitivities" is obsolete and will be removed in a future release. The obsolete variable still works in this release, but to avoid this warning and to ensure compatibility with future releases, remove the obsolete variable from your script.
+Loading design 'pulpino_top' saved by 'Innovus' '21.35-s114_1' on 'Mon May 25 14:08:50 2026'.
+Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib' ...
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1447)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1448)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1452)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 1453)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3390)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3391)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3395)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 3396)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5333)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5334)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5338)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 5339)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7276)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7277)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7281)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7282)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7988)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_ground_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7989)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_provides'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7993)
+**ERROR: (TECHLIB-1204):	Illegal value '' defined for attribute 'drc_power_pin_requires'. The attribute will be ignored. (File /usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_wc_1.00V_125C_10y.lib, Line 7994)
+Message <TECHLIB-1204> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+Read 866 cells in library 'CORE65LPLVT' 
+Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_wc_1.00V_125C_10y.lib' ...
+Read 110 cells in library 'CLOCK65LPLVT' 
+Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_wc_1.00V_1.65V_125C_10y.lib' ...
+Read 10 cells in library 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z' 
+Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_wc_1.00V_125C_10y.lib' ...
+Read 33 cells in library 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z' 
+Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_wc_1.10V_125C_10y.lib' ...
+Read 2 cells in library 'SPHS100909' 
+Reading wcl_slow timing library '/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_wc_1.00V_125C_10y.lib' ...
+Read 10 cells in library 'PRHS65' 
+Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_bc_1.25V_m40C.lib' ...
+Read 866 cells in library 'CORE65LPLVT' 
+Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_bc_1.25V_m40C.lib' ...
+Read 110 cells in library 'CLOCK65LPLVT' 
+Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_bc_1.25V_1.95V_m40C.lib' ...
+Read 10 cells in library 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z' 
+Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_bc_1.25V_m40C.lib' ...
+Read 33 cells in library 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z' 
+Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_bc_1.30V_m40C.lib' ...
+Read 2 cells in library 'SPHS100909' 
+Reading wcl_fast timing library '/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_bc_1.25V_m40C.lib' ...
+Read 10 cells in library 'PRHS65' 
+timing_cond_wcl_typical timing_cond_wcl_slow timing_cond_wcl_fast
+rc_corner_typ rc_corner_min rc_corner_max
+
+Loading LEF file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/lef/technology.lef ...
+
+Loading LEF file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/lef/viarule_generate.lef ...
+
+Loading LEF file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/lef/sites.lef ...
+
+Loading LEF file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/lef/CORE65LPLVT_soc.lef ...
+Set DBUPerIGU to M2 pitch 200.
+
+Loading LEF file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/lef/CLOCK65LPLVT_soc.lef ...
+
+Loading LEF file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/lef/PRHS65_soc.lef ...
+
+Loading LEF file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/lef/SPHS100909_soc.lef ...
+
+Loading LEF file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/lef/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef ...
+WARNING (LEFPARS-2002): NAMESCASESENSITIVE is a required statement in LEF files with version 5.5 and earlier.
+Without NAMESCASESENSITIVE defined, the LEF file is technically incorrect.
+Refer to the LEF/DEF 5.5 or earlier Language Reference manual on how to define this statement. See file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/lef/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef at line 27188.
+
+Loading LEF file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/lef/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_soc_KW_FIX.lef ...
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDD_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDD_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDDE_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'VDDE_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RTCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RTCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RBCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'RBCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LTCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LTCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LBCORNERCELL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'LBCORNERCELL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCUTCELL_ALL_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCUTCELL_ALL_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCELL_TRIGGER_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'DUMMY' in macro 'IOFILLERCELL_TRIGGER_ST_SF_2ROWS' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'A0SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'A1SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'A2SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'A3SRCCORE' in macro 'IOFILLERCELL_REF_ASRC_ST_SF_LIN' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**WARN: (IMPLF-201):	Pin 'DUMMYCONNECT' in macro 'IOFILLERCELL_DUMMYPAD_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'DUMMYPAD' in macro 'IOFILLERCELL_DUMMYPAD_ST_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'DUMMYCONNECTIN1' in macro 'IOFILLERCELL_DUMMYPAD_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'DUMMYCONNECTOUT1' in macro 'IOFILLERCELL_DUMMYPAD_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'DUMMYPADIN1' in macro 'IOFILLERCELL_DUMMYPAD_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'DUMMYPADOUT1' in macro 'IOFILLERCELL_DUMMYPAD_ST_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'IO' in macro 'BD8SCARUDQP_1V8_SF_LIN_50u' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD8SCARUDQP_1V8_SF_LIN_50u' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'IO' in macro 'BD8SCARUDQP_1V8_SF_LIN_40u' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD8SCARUDQP_1V8_SF_LIN_40u' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'IO' in macro 'BD8SCARUDQP_1V8_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD8SCARUDQP_1V8_SF_LIN' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'IO' in macro 'BD8SCARUDQP_1V8_SF_2ROWS_25u_short' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD8SCARUDQP_1V8_SF_2ROWS_25u_short' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'IO' in macro 'BD8SCARUDQP_1V8_SF_2ROWS_25u_long' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD8SCARUDQP_1V8_SF_2ROWS_25u_long' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'IO' in macro 'BD8SCARUDQP_1V8_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD8SCARUDQP_1V8_SF_2ROWS' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'IO' in macro 'BD4SCARUDQP_1V8_SF_LIN_50u' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'ZI' in macro 'BD4SCARUDQP_1V8_SF_LIN_50u' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (EMS-27):	Message (IMPLF-201) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Loading view definition file from /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/viewDefinition.tcl
+% Begin Load netlist data ... (date=05/26 13:22:54, mem=824.8M)
+*** Begin netlist parsing (mem=1152.6M) ***
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X9' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X9' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X27' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X27' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR3X18' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR3X18' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X9' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X9' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X35' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X35' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X27' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X27' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XOR2X18' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XOR2X18' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'HS65_LL_XNOR3X9' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'HS65_LL_XNOR3X9' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Created 1031 new cells from 12 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/pulpino_top.v.bin'
+
+*** Memory Usage v#1 (Current mem = 1158.582M, initial mem = 484.035M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=1158.6M) ***
+% End Load netlist data ... (date=05/26 13:22:54, total cpu=0:00:00.1, real=0:00:00.0, peak res=862.7M, current mem=862.7M)
+Top level cell is pulpino_top.
+Hooked 2062 DB cells to tlib cells.
+3 empty module found.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell pulpino_top ...
+*** Netlist is unique.
+** info: there are 3066 modules.
+** info: there are 41807 stdCell insts.
+** info: there are 23 Pad insts.
+** info: there are 32 macros.
+
+*** Memory Usage v#1 (Current mem = 1302.508M, initial mem = 484.035M) ***
+*info: set bottom ioPad orient R0
+Initializing I/O assignment ...
+**WARN: (IMPFP-3961):	The techSite 'IOPADSITE_SF_TF_2ROWS' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOPADSITE_SF_2ROWS' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOPADSITE_TF_2ROWS' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOPADSITE_SF_LIN' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOPADSITE_TF_LIN' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'COREHD_QG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'COREHD_QV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'COREHV_QG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'COREHV_QV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'CORE_QG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'CORE_QV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'COREHD_TG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'COREHD_TV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'COREHV_TG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'COREHV_TV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'CORE_TG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'CORE_TV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'COREHD_DG' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'COREHD_DV' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'COREHD' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (EMS-27):	Message (IMPFP-3961) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Start create_tracks
+Loading preference file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/gui.pref.tcl ...
+##  Process: 65            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 65nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(extract_rc_cap_filter_mode option of the set_db) is 'relative_and_coupling' for all engines.
+	The accuracy mode for post_route extract_rc_effort_level low extraction will be set to 'high'.
+	Default value for EffortLevel(extract_rc_effort_level option of the set_db) in post_route extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+**INFO: Hold fixing will be done using "HS65_LL_BFX9 HS65_LL_BFX71 HS65_LL_BFX7 HS65_LL_BFX62 HS65_LL_BFX53 HS65_LL_BFX49 HS65_LL_BFX44 HS65_LL_BFX40 HS65_LL_BFX4 HS65_LL_BFX35 HS65_LL_BFX31 HS65_LL_BFX284 HS65_LL_BFX27 HS65_LL_BFX22 HS65_LL_BFX213 HS65_LL_BFX2 HS65_LL_BFX18 HS65_LL_BFX142 HS65_LL_BFX13 HS65_LL_BFX106" only.
+Effort level <high> specified for tdgp_reg2reg_default path_group
+Effort level <high> specified for reg2reg path_group
+Effort level <high> specified for reg2cgate path_group
+**WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+add_stripes will allow jog to connect padcore ring and block ring.
+
+Setting stripe extending to closest ring.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not be created over regions without power planning wires.
+Offset for stripe breaking is set to 0.
+Stripes will stop at the last wire target of the specified area.
+AddStripe segment minimum length set to 50.000000
+The power planner will set stripe antenna targets to block ring.
+The power planner will set the trim antenna value threshold to 10.000000.
+Change floorplan default-technical-site to 'CORE'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 721
+Total number of sequential cells: 255
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: CLOCKTREE HS65_LL_CNBFX10 HS65_LL_CNBFX103 HS65_LL_CNBFX124 HS65_LL_CNBFX14 HS65_LL_CNBFX21 HS65_LL_CNBFX17 HS65_LL_CNBFX27 HS65_LL_CNBFX24 HS65_LL_CNBFX34 HS65_LL_CNBFX31 HS65_LL_CNBFX38 HS65_LL_CNBFX41 HS65_LL_CNBFX48 HS65_LL_CNBFX45 HS65_LL_CNBFX55 HS65_LL_CNBFX52 HS65_LL_CNBFX62 HS65_LL_CNBFX58 HS65_LL_CNBFX82 HS65_LL_BFX13 HS65_LL_BFX106 HS65_LL_BFX142 HS65_LL_BFX2 HS65_LL_BFX18 HS65_LL_BFX213 HS65_LL_BFX27 HS65_LL_BFX22 HS65_LL_BFX284 HS65_LL_BFX31 HS65_LL_BFX4 HS65_LL_BFX35 HS65_LL_BFX44 HS65_LL_BFX40 HS65_LL_BFX53 HS65_LL_BFX49 HS65_LL_BFX62 HS65_LL_BFX9 HS65_LL_BFX7 HS65_LL_BFX71
+Total number of usable buffers: 40
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: HS65_LL_CNIVX10 HS65_LL_CNIVX103 HS65_LL_CNIVX124 HS65_LL_CNIVX14 HS65_LL_CNIVX21 HS65_LL_CNIVX17 HS65_LL_CNIVX24 HS65_LL_CNIVX3 HS65_LL_CNIVX27 HS65_LL_CNIVX34 HS65_LL_CNIVX31 HS65_LL_CNIVX41 HS65_LL_CNIVX38 HS65_LL_CNIVX48 HS65_LL_CNIVX45 HS65_LL_CNIVX55 HS65_LL_CNIVX52 HS65_LL_CNIVX58 HS65_LL_CNIVX7 HS65_LL_CNIVX62 HS65_LL_CNIVX82 HS65_LL_IVX13 HS65_LL_IVX106 HS65_LL_IVX142 HS65_LL_IVX2 HS65_LL_IVX18 HS65_LL_IVX213 HS65_LL_IVX27 HS65_LL_IVX22 HS65_LL_IVX284 HS65_LL_IVX31 HS65_LL_IVX4 HS65_LL_IVX35 HS65_LL_IVX44 HS65_LL_IVX40 HS65_LL_IVX53 HS65_LL_IVX49 HS65_LL_IVX62 HS65_LL_IVX9 HS65_LL_IVX7 HS65_LL_IVX71
+Total number of usable inverters: 41
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: HS65_LL_CNBFX38_0 HS65_LL_CNBFX38_1 HS65_LL_CNBFX38_10 HS65_LL_CNBFX38_11 HS65_LL_CNBFX38_12 HS65_LL_CNBFX38_13 HS65_LL_CNBFX38_14 HS65_LL_CNBFX38_15 HS65_LL_CNBFX38_16 HS65_LL_CNBFX38_17 HS65_LL_CNBFX38_18 HS65_LL_CNBFX38_19 HS65_LL_CNBFX38_2 HS65_LL_CNBFX38_20 HS65_LL_CNBFX38_21 HS65_LL_CNBFX38_22 HS65_LL_CNBFX38_23 HS65_LL_CNBFX38_3 HS65_LL_CNBFX38_4 HS65_LL_CNBFX38_5 HS65_LL_CNBFX38_6 HS65_LL_CNBFX38_7 HS65_LL_CNBFX38_8 HS65_LL_CNBFX38_9 HS65_LL_DLYIC2X4 HS65_LL_DLYIC2X9 HS65_LL_DLYIC2X7 HS65_LL_DLYIC4X4 HS65_LL_DLYIC4X9 HS65_LL_DLYIC4X7 HS65_LL_DLYIC6X4 HS65_LL_DLYIC6X7 HS65_LL_DLYIC6X9
+Total number of identified usable delay cells: 33
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+Reading floorplan file - /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/pulpino_top.fp.gz (mem = 1622.8M).
+% Begin Load floorplan data ... (date=05/26 13:22:56, mem=1320.8M)
+*info: reset 71320 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 1630000 1714000)
+Start create_tracks
+ ... processed partition successfully.
+Reading binary special route file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/pulpino_top.fp.spr.gz (Created by Innovus v21.35-s114_1 on Mon May 25 14:08:47 2026, version: 1)
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1323.0M, current mem=1323.0M)
+There are 2859 io inst loaded
+There are 627 nets with weight being set
+There are 633 nets with bottomPreferredRoutingLayer being set
+There are 909 nets with avoidDetour being set
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Delete all existing relative floorplan constraints.
+% End Load floorplan data ... (date=05/26 13:22:57, total cpu=0:00:00.1, real=0:00:01.0, peak res=1325.7M, current mem=1325.7M)
+Reading congestion map file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/pulpino_top.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=05/26 13:22:57, mem=1326.1M)
+Suppress "**WARN ..." messages.
+Un-suppress "**WARN ..." messages.
+% End Load SymbolTable ... (date=05/26 13:22:57, total cpu=0:00:00.4, real=0:00:00.0, peak res=1370.4M, current mem=1370.4M)
+Loading place ...
+% Begin Load placement data ... (date=05/26 13:22:57, mem=1370.4M)
+Reading placement file - /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/pulpino_top.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v21.35-s114_1 on Mon May 25 14:08:47 2026, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Checked 9 GNC rules.
+*** applyConnectGlobalNets disabled.
+*** Completed restorePlace (cpu=0:00:00.7 real=0:00:01.0 mem=1771.2M) ***
+Total net length = 1.547e+06 (7.609e+05 7.857e+05) (ext = 0.000e+00)
+% End Load placement data ... (date=05/26 13:22:58, total cpu=0:00:00.7, real=0:00:01.0, peak res=1480.5M, current mem=1478.1M)
+Reading PG file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/pulpino_top.pg.gz, version#2, (Created by Innovus v21.35-s114_1 on       Mon May 25 14:08:47 2026)
+*** Completed restorePGFile (cpu=0:00:00.1 real=0:00:00.0 mem=1775.2M) ***
+% Begin Load routing data ... (date=05/26 13:22:58, mem=1485.8M)
+Reading routing file - /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/pulpino_top.route.gz.
+Reading Innovus routing data (Created by Innovus v21.35-s114_1 on Mon May 25 14:08:48 2026 Format: 20.1) ...
+*** Total 44212 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.3 real=0:00:01.0 mem=1844.2M) ***
+% End Load routing data ... (date=05/26 13:22:59, total cpu=0:00:00.3, real=0:00:01.0, peak res=1556.7M, current mem=1555.7M)
+Loading Drc markers ...
+... 100 markers are loaded ...
+... 1 geometry drc markers are loaded ...
+... 0 antenna drc markers are loaded ...
+TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+Reading property file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/pulpino_top.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1848.2M) ***
+Reading dirtyarea snapshot file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/pulpino_top.db.da.gz (Create by Innovus v21.35-s114_1 on Mon May 25 14:08:48 2026, version: 4).
+add_stripes will allow jog to connect padcore ring and block ring.
+
+Setting stripe extending to closest ring.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not be created over regions without power planning wires.
+Offset for stripe breaking is set to 0.
+Stripes will stop at the last wire target of the specified area.
+AddStripe segment minimum length set to 50.000000
+The power planner will set stripe antenna targets to block ring.
+The power planner will set the trim antenna value threshold to 10.000000.
+Change floorplan default-technical-site to 'CORE'.
+**INFO: Hold fixing will be done using "HS65_LL_BFX9 HS65_LL_BFX71 HS65_LL_BFX7 HS65_LL_BFX62 HS65_LL_BFX53 HS65_LL_BFX49 HS65_LL_BFX44 HS65_LL_BFX40 HS65_LL_BFX4 HS65_LL_BFX35 HS65_LL_BFX31 HS65_LL_BFX284 HS65_LL_BFX27 HS65_LL_BFX22 HS65_LL_BFX213 HS65_LL_BFX2 HS65_LL_BFX18 HS65_LL_BFX142 HS65_LL_BFX13 HS65_LL_BFX106" only.
+** WARN:  (VOLTUS_POWR-3212): The 'set_power_analysis_mode -leakage_power_view |-dynamic_power_view|-analysis_view' will be obsolete in 18.20 release. Use 'set_analysis_view -leakage <> | -dynamic <>' to set leakage and dynamic power views.
+
+Extraction setup Started 
+Initializing multi-corner RC extraction with 2 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for pre_route and post_route extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for pre_route and post_route (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Encrypted Capacitance Table File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/RCMAX.captable ...
+Cap table was created using Encounter 14.23-s044_1.
+Process name: cmos065_7m4x0y2z_GL_RCMAX.
+Allocated an empty WireEdgeEnlargement table in rc_corner_max [6].
+Allocated an empty WireEdgeEnlargement table in rc_corner_max [7].
+Allocated an empty WireEdgeEnlargement table in rc_corner_max [8].
+Decrypted 53248 characters.
+Reading Encrypted Capacitance Table File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/RCMIN.captable ...
+Cap table was created using Encounter 14.23-s044_1.
+Process name: cmos065_7m4x0y2z_GL_RCMIN.
+Allocated an empty WireEdgeEnlargement table in rc_corner_min [6].
+Allocated an empty WireEdgeEnlargement table in rc_corner_min [7].
+Allocated an empty WireEdgeEnlargement table in rc_corner_min [8].
+Decrypted 57344 characters.
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: view_wcl_slow
+  Late RC-Corner
+    RC-Corner Name        : rc_corner_max
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/RCMAX.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/rc_corner_max/qrcTechFile'
+ 
+  Early RC-Corner
+    RC-Corner Name        : rc_corner_min
+    RC-Corner Index       : 1
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/RCMIN.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/rc_corner_min/qrcTechFile'
+ 
+ Analysis View: view_wcl_fast
+  Late RC-Corner
+    RC-Corner Name        : rc_corner_max
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/RCMAX.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/rc_corner_max/qrcTechFile'
+ 
+  Early RC-Corner
+    RC-Corner Name        : rc_corner_min
+    RC-Corner Index       : 1
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/RCMIN.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/rc_corner_min/qrcTechFile'
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Creating RPSQ from WeeR and WRes ...
+The lower process node is set using set_design_mode and the technology file for TQuantus extraction specified. Therefore, the default value for PostRoute extraction mode's extract_rc_effort_level(extract_rc_effort_leveloption of the set_db) changed from 'low' to 'medium'.
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Via generation completed.
+% Begin Load power constraints ... (date=05/26 13:23:02, mem=1618.5M)
+source /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/pulpino_top_power_constraints.tcl
+'set_default_switching_activity' finished successfully.
+** WARN:  (VOLTUS_POWR-3212): The 'set_power_analysis_mode -leakage_power_view |-dynamic_power_view|-analysis_view' will be obsolete in 18.20 release. Use 'set_analysis_view -leakage <> | -dynamic <>' to set leakage and dynamic power views.
+
+% End Load power constraints ... (date=05/26 13:23:02, total cpu=0:00:00.0, real=0:00:00.0, peak res=1625.0M, current mem=1625.0M)
+delay_corner_wcl_slow delay_corner_wcl_typical delay_corner_wcl_fast
+% Begin load AAE data ... (date=05/26 13:23:02, mem=1668.6M)
+AAE DB initialization (MEM=2007.13 CPU=0:00:00.1 REAL=0:00:01.0) 
+% End load AAE data ... (date=05/26 13:23:03, total cpu=0:00:00.6, real=0:00:01.0, peak res=1691.0M, current mem=1691.0M)
+Restoring CCOpt config...
+  Extracting original clock gating for SPI_CLK...
+    clock_tree SPI_CLK contains 495 sinks and 21 clock gates.
+  Extracting original clock gating for SPI_CLK done.
+  Extracting original clock gating for JTAG_CLK...
+    clock_tree JTAG_CLK contains 409 sinks and 21 clock gates.
+  Extracting original clock gating for JTAG_CLK done.
+  Extracting original clock gating for CLK...
+    clock_tree CLK contains 7877 sinks and 494 clock gates.
+  Extracting original clock gating for CLK done.
+  The skew group CLK/functional_wcl_fast was created. It contains 7877 sinks and 1 sources.
+  The skew group CLK/functional_wcl_slow was created. It contains 7877 sinks and 1 sources.
+  The skew group JTAG_CLK/functional_wcl_fast was created. It contains 409 sinks and 1 sources.
+  The skew group JTAG_CLK/functional_wcl_slow was created. It contains 409 sinks and 1 sources.
+  The skew group SPI_CLK/functional_wcl_fast was created. It contains 495 sinks and 1 sources.
+  The skew group SPI_CLK/functional_wcl_slow was created. It contains 495 sinks and 1 sources.
+  The skew group CLK/functional_wcl_fast was created. It contains 7877 sinks and 1 sources.
+  The skew group JTAG_CLK/functional_wcl_fast was created. It contains 409 sinks and 1 sources.
+  The skew group SPI_CLK/functional_wcl_fast was created. It contains 495 sinks and 1 sources.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (IMPCCOPT-2332):	The attribute locked_originally is deprecated. It still works, but it may be removed in a future release.
+**WARN: (EMS-27):	Message (IMPCCOPT-2332) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Restoring CCOpt config done.
+Total number of combinational cells: 721
+Total number of sequential cells: 255
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: HS65_LL_CNBFX10 HS65_LL_CNBFX103 HS65_LL_CNBFX124 HS65_LL_CNBFX14 HS65_LL_CNBFX21 HS65_LL_CNBFX17 HS65_LL_CNBFX27 HS65_LL_CNBFX24 HS65_LL_CNBFX34 HS65_LL_CNBFX31 HS65_LL_CNBFX38 HS65_LL_CNBFX41 HS65_LL_CNBFX48 HS65_LL_CNBFX45 HS65_LL_CNBFX55 HS65_LL_CNBFX52 HS65_LL_CNBFX62 HS65_LL_CNBFX58 HS65_LL_CNBFX82 HS65_LL_BFX13 HS65_LL_BFX106 HS65_LL_BFX142 HS65_LL_BFX2 HS65_LL_BFX18 HS65_LL_BFX213 HS65_LL_BFX27 HS65_LL_BFX22 HS65_LL_BFX284 HS65_LL_BFX31 HS65_LL_BFX4 HS65_LL_BFX35 HS65_LL_BFX44 HS65_LL_BFX40 HS65_LL_BFX53 HS65_LL_BFX49 HS65_LL_BFX62 HS65_LL_BFX9 HS65_LL_BFX7 HS65_LL_BFX71
+Total number of usable buffers: 39
+List of unusable buffers: CLOCKTREE
+Total number of unusable buffers: 1
+List of usable inverters: HS65_LL_CNIVX10 HS65_LL_CNIVX103 HS65_LL_CNIVX124 HS65_LL_CNIVX14 HS65_LL_CNIVX21 HS65_LL_CNIVX17 HS65_LL_CNIVX24 HS65_LL_CNIVX3 HS65_LL_CNIVX27 HS65_LL_CNIVX34 HS65_LL_CNIVX31 HS65_LL_CNIVX41 HS65_LL_CNIVX38 HS65_LL_CNIVX48 HS65_LL_CNIVX45 HS65_LL_CNIVX55 HS65_LL_CNIVX52 HS65_LL_CNIVX58 HS65_LL_CNIVX7 HS65_LL_CNIVX62 HS65_LL_CNIVX82 HS65_LL_IVX13 HS65_LL_IVX106 HS65_LL_IVX142 HS65_LL_IVX2 HS65_LL_IVX18 HS65_LL_IVX213 HS65_LL_IVX27 HS65_LL_IVX22 HS65_LL_IVX284 HS65_LL_IVX31 HS65_LL_IVX4 HS65_LL_IVX35 HS65_LL_IVX44 HS65_LL_IVX40 HS65_LL_IVX53 HS65_LL_IVX49 HS65_LL_IVX62 HS65_LL_IVX9 HS65_LL_IVX7 HS65_LL_IVX71
+Total number of usable inverters: 41
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: HS65_LL_DLYIC2X4 HS65_LL_DLYIC2X9 HS65_LL_DLYIC2X7 HS65_LL_DLYIC4X4 HS65_LL_DLYIC4X9 HS65_LL_DLYIC4X7 HS65_LL_DLYIC6X4 HS65_LL_DLYIC6X7 HS65_LL_DLYIC6X9
+Total number of identified usable delay cells: 9
+List of identified unusable delay cells: HS65_LL_CNBFX38_0 HS65_LL_CNBFX38_1 HS65_LL_CNBFX38_10 HS65_LL_CNBFX38_11 HS65_LL_CNBFX38_12 HS65_LL_CNBFX38_13 HS65_LL_CNBFX38_14 HS65_LL_CNBFX38_15 HS65_LL_CNBFX38_16 HS65_LL_CNBFX38_17 HS65_LL_CNBFX38_18 HS65_LL_CNBFX38_19 HS65_LL_CNBFX38_2 HS65_LL_CNBFX38_20 HS65_LL_CNBFX38_21 HS65_LL_CNBFX38_22 HS65_LL_CNBFX38_23 HS65_LL_CNBFX38_3 HS65_LL_CNBFX38_4 HS65_LL_CNBFX38_5 HS65_LL_CNBFX38_6 HS65_LL_CNBFX38_7 HS65_LL_CNBFX38_8 HS65_LL_CNBFX38_9
+Total number of identified unusable delay cells: 24
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version . They will be removed in the next release. 
+timing_enable_separate_device_slew_effect_sensitivities
+#% End load design ... (date=05/26 13:23:03, total cpu=0:00:13.7, real=0:00:15.0, peak res=1716.5M, current mem=1693.3M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200          264  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPLF-201           73  Pin '%s' in macro '%s' has no ANTENNADIF...
+WARNING   IMPFP-3961          50  The techSite '%s' has no related standar...
+WARNING   IMPDBTCL-321         1  The attribute '%s' still works but will ...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+WARNING   IMPVL-159         2578  Pin '%s' of cell '%s' is defined in LEF ...
+WARNING   IMPCCOPT-2332       35  The attribute %s is deprecated. It still...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+WARNING   IMPUDM-33            3  Global variable "%s" is obsolete and wil...
+ERROR     TECHLIB-1204      8146  Illegal value '%s' defined for attribute...
+*** Message Summary: 3007 warning(s), 8146 error(s)
+
+0
+@innovus 3> set_analysis_view -setup  { view_wcl_typical } -hold { view_wcl_typical }
+
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for pre_route and post_route extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for pre_route and post_route (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Encrypted Capacitance Table File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/RCTYP.captable ...
+Cap table was created using Encounter 14.23-s044_1.
+Process name: cmos065_7m4x0y2z_GL_RCTYP.
+Allocated an empty WireEdgeEnlargement table in rc_corner_typ [6].
+Allocated an empty WireEdgeEnlargement table in rc_corner_typ [6].
+Allocated an empty WireEdgeEnlargement table in rc_corner_typ [7].
+Allocated an empty WireEdgeEnlargement table in rc_corner_typ [7].
+Allocated an empty WireEdgeEnlargement table in rc_corner_typ [8].
+Allocated an empty WireEdgeEnlargement table in rc_corner_typ [8].
+Decrypted 53248 characters.
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: view_wcl_typical
+    RC-Corner Name        : rc_corner_typ
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/RCTYP.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 	[Derived from postRoute_xcap (effortLevel medium)]
+    RC-Corner Technology file: '/h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/rc_corner_typ/qrcTechFile'
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+*Info: initialize multi-corner CTS.
+Reading wcl_typical timing library '/usr/local-eit/cad2/cmpstm/s65v58/CORE65LPLVT/5.2/libs/CORE65LPLVT_nom_1.10V_25C.lib' ...
+Read 866 cells in library 'CORE65LPLVT' 
+Reading wcl_typical timing library '/usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/libs/CLOCK65LPLVT_nom_1.10V_25C.lib' ...
+Read 110 cells in library 'CLOCK65LPLVT' 
+Reading wcl_typical timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/libs/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_nom_1.10V_1.80V_25C.lib' ...
+Read 10 cells in library 'IO65LPHVT_SF_1V8_50A_7M4X0Y2Z' 
+Reading wcl_typical timing library '/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/libs/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_nom_1.10V_25C.lib' ...
+Read 33 cells in library 'IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z' 
+Reading wcl_typical timing library '/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/libs/SPHS100909_nom_1.20V_25C.lib' ...
+Read 2 cells in library 'SPHS100909' 
+Reading wcl_typical timing library '/usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs/PRHS65_nom_1.10V_25C.lib' ...
+Read 10 cells in library 'PRHS65' 
+Reading timing constraints file '/h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc' ...
+Current (total cpu=0:01:01, real=0:02:27, peak res=1789.4M, current mem=1724.7M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 9).
+
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 10).
+
+pulpino_top
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'clk_rst_gen_i/clk_sel_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 15).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'clk_rst_gen_i/testmode_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 16).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/\CORE.RISCV_CORE /core_clock_gate_i/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 17).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /aw_buffer_i/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 18).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /ar_buffer_i/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 19).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /w_buffer_i/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 20).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /r_buffer_i/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 21).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/axi_slice_core2axi/\WITH_SLICE.axi_slice_i /b_buffer_i/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 22).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_aw_buffer_LP/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 23).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_ar_buffer_LP/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 24).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_w_buffer_LP/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 25).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_r_buffer_LP/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 26).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/instr_mem_axi_if/axi_mem_if_SP_i/Slave_b_buffer_LP/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 27).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_aw_buffer_LP/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 28).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_ar_buffer_LP/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 29).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_w_buffer_LP/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 30).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_r_buffer_LP/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 31).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'core_region_i/data_mem_axi_if/axi_mem_if_SP_i/Slave_b_buffer_LP/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 32).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_aw_buffer/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 33).
+
+**WARN: (TCLCMD-1531):	'set_case_analysis' has been applied on hierarchical pin 'peripherals_i/axi2apb_i/\genblk1.axi2apb_i /Slave_ar_buffer/buffer_i/cg_cell/en_i' (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 34).
+
+Message <TCLCMD-1531> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit. (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 35).
+
+**WARN: (TCLCMD-1142):	Virtual clock 'VCLK_ASYNC' is being created with no source objects. (File /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc, Line 48).
+
+INFO (CTE): Reading of timing constraints file /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/pulpino_top.functional_wcl_typical.sdc completed, with 23 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.2, real=0:00:00.0, peak res=1800.7M, current mem=1800.7M)
+Current (total cpu=0:01:01, real=0:02:27, peak res=1800.7M, current mem=1800.7M)
+Total number of combinational cells: 721
+Total number of sequential cells: 255
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: HS65_LL_CNBFX10 HS65_LL_CNBFX103 HS65_LL_CNBFX124 HS65_LL_CNBFX14 HS65_LL_CNBFX21 HS65_LL_CNBFX17 HS65_LL_CNBFX27 HS65_LL_CNBFX24 HS65_LL_CNBFX34 HS65_LL_CNBFX31 HS65_LL_CNBFX38 HS65_LL_CNBFX41 HS65_LL_CNBFX48 HS65_LL_CNBFX45 HS65_LL_CNBFX55 HS65_LL_CNBFX52 HS65_LL_CNBFX62 HS65_LL_CNBFX58 HS65_LL_CNBFX82 HS65_LL_BFX13 HS65_LL_BFX106 HS65_LL_BFX142 HS65_LL_BFX2 HS65_LL_BFX18 HS65_LL_BFX213 HS65_LL_BFX27 HS65_LL_BFX22 HS65_LL_BFX284 HS65_LL_BFX31 HS65_LL_BFX4 HS65_LL_BFX35 HS65_LL_BFX44 HS65_LL_BFX40 HS65_LL_BFX53 HS65_LL_BFX49 HS65_LL_BFX62 HS65_LL_BFX9 HS65_LL_BFX7 HS65_LL_BFX71
+Total number of usable buffers: 39
+List of unusable buffers: CLOCKTREE
+Total number of unusable buffers: 1
+List of usable inverters: HS65_LL_CNIVX10 HS65_LL_CNIVX103 HS65_LL_CNIVX124 HS65_LL_CNIVX14 HS65_LL_CNIVX21 HS65_LL_CNIVX17 HS65_LL_CNIVX24 HS65_LL_CNIVX3 HS65_LL_CNIVX27 HS65_LL_CNIVX34 HS65_LL_CNIVX31 HS65_LL_CNIVX41 HS65_LL_CNIVX38 HS65_LL_CNIVX48 HS65_LL_CNIVX45 HS65_LL_CNIVX55 HS65_LL_CNIVX52 HS65_LL_CNIVX58 HS65_LL_CNIVX7 HS65_LL_CNIVX62 HS65_LL_CNIVX82 HS65_LL_IVX13 HS65_LL_IVX106 HS65_LL_IVX142 HS65_LL_IVX2 HS65_LL_IVX18 HS65_LL_IVX213 HS65_LL_IVX27 HS65_LL_IVX22 HS65_LL_IVX284 HS65_LL_IVX31 HS65_LL_IVX4 HS65_LL_IVX35 HS65_LL_IVX44 HS65_LL_IVX40 HS65_LL_IVX53 HS65_LL_IVX49 HS65_LL_IVX62 HS65_LL_IVX9 HS65_LL_IVX7 HS65_LL_IVX71
+Total number of usable inverters: 41
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: HS65_LL_DLYIC2X4 HS65_LL_DLYIC2X9 HS65_LL_DLYIC2X7 HS65_LL_DLYIC4X4 HS65_LL_DLYIC4X9 HS65_LL_DLYIC4X7 HS65_LL_DLYIC6X4 HS65_LL_DLYIC6X7 HS65_LL_DLYIC6X9
+Total number of identified usable delay cells: 9
+List of identified unusable delay cells: HS65_LL_CNBFX38_0 HS65_LL_CNBFX38_1 HS65_LL_CNBFX38_10 HS65_LL_CNBFX38_11 HS65_LL_CNBFX38_12 HS65_LL_CNBFX38_13 HS65_LL_CNBFX38_14 HS65_LL_CNBFX38_15 HS65_LL_CNBFX38_16 HS65_LL_CNBFX38_17 HS65_LL_CNBFX38_18 HS65_LL_CNBFX38_19 HS65_LL_CNBFX38_2 HS65_LL_CNBFX38_20 HS65_LL_CNBFX38_21 HS65_LL_CNBFX38_22 HS65_LL_CNBFX38_23 HS65_LL_CNBFX38_3 HS65_LL_CNBFX38_4 HS65_LL_CNBFX38_5 HS65_LL_CNBFX38_6 HS65_LL_CNBFX38_7 HS65_LL_CNBFX38_8 HS65_LL_CNBFX38_9
+Total number of identified unusable delay cells: 24
+0
+@innovus 4> read_activity_file -format SAIF core_power.saif -scope tb_pl/top_i 
+Begin Processing SAIF file
+
+ parseSimpleAttributes::default:3: Parse Error, unexpected string found 1129 - at 208440
+
+ parseSimpleAttributes::default:3: Parse Error, unexpected string found 1129 1 at 208440
+
+ parseSimpleAttributes::default:3: Parse Error, unexpected string found 1129 \] at 208440
+
+ parseSimpleAttributes::default:3: Parse Error, unexpected string found 1129 - at 229613
+
+ parseSimpleAttributes::default:3: Parse Error, unexpected string found 1129 1 at 229613
+
+ parseSimpleAttributes::default:3: Parse Error, unexpected string found 1129 \] at 229613
+
+ parseSimpleAttributes::default:3: Parse Error, unexpected string found 1129 - at 229623
+
+ parseSimpleAttributes::default:3: Parse Error, unexpected string found 1129 1 at 229623
+
+ parseSimpleAttributes::default:3: Parse Error, unexpected string found 1129 \] at 229623
+Ended Processing SAIF file: (cpu=0:00:01, real=0:00:01,
+mem(process/total/peak)=1838.00MB/3775.93MB/1838.02MB)
+
+'read_activity_file' finished successfully.
+1
+@innovus 5> report_power -out_file power_core.rpt
+[4C
+env CDS_WORKAREA is set to /h/d9/g/su2577su-s/etin35_project/pulpino/pnr
+** ERROR: (VOLTUS_POWR-2029): The view 'view_wcl_slow' selected for power calculation is not active. Use report_analysis_views -type active
+to get the list of active views and re-run power calculation with the desired view.
+0
+0
+@innovus 6> setPowerAnalysisMode -analysisView view_wcl_typical
+
+invalid command name "setPowerAnalysisMode"
+invalid command name "setPowerAnalysisMode"
+@innovus 7> set_power_analysis_mode -view view_wcl_typical
+
+invalid command name "set_power_analysis_mode"
+invalid command name "set_power_analysis_mode"
+@innovus 8> report_power
+
+env CDS_WORKAREA is set to /h/d9/g/su2577su-s/etin35_project/pulpino/pnr
+** ERROR: (VOLTUS_POWR-2029): The view 'view_wcl_slow' selected for power calculation is not active. Use report_analysis_views -type active
+to get the list of active views and re-run power calculation with the desired view.
+0
+0
+@innovus 9> report_power -in 
+[1C
+**ERROR: (IMPTCM-168):	Ambiguous option name "-in" matches more than one option: "-include_sequential_in_clock -inst_list_file -insts". You must use the full option name, or a unique prefix of one of the legal options.
+
+Usage: report_power [-help] [-cap] [-cap_unit <string>] [-cell <string>]
+                    [-cell_list_file <string>] [-cell_type <string>]
+                    [-clock_domain <string>] [-clock_gating_efficiency]
+                    [-clock_network <string>] [-cluster_gating_efficiency]
+                    [-combinational_sequential_power_distribution]
+                    [-compress <integer>] [-distribute]
+                    [-exclude_cells <string>] [-exclude_cells_file <string>]
+                    [-exclude_instances_file <string>] [-exclude_insts <string>]
+                    [-float_precision <float>] [-format <string>]
+                    [-group_type <string>] [-hierarchical_instances <string>]
+                    [-hierarchy <string>] [-include_sequential_in_clock]
+                    [-inst_list_file <string>] [-insts <string>] [-leakage]
+                    [-net] [-no_wrap] [-nworst <string>] [-out_dir <string>]
+                    [-out_dir <string>] [-out_file <string>] [-pg_net <string>]
+                    [-pg_pin] [-power_db_directory <string>]
+                    [-power_density_tiles <string>]
+                    [-power_density_tiles_row_column <string>]
+                    [-power_density_tiles_size <string>]
+                    [-power_domain <string>] [-power_unit <string>]
+                    [-print_memory_power] [-register_gating_efficiency]
+                    [-report_prefix <string>] [-sort <string>]
+                    [-thermal_conductivity_inputs <string>]
+                    [-thermal_leakage_temperature <string>]
+                    [-thermal_leakage_temperature_scale_table <string>]
+                    [-thermal_leakage_temperature_scale_table_file <string>]
+                    [-thermal_material_file <string>]
+                    [-thermal_power_map_bottom_layer <string>]
+                    [-thermal_power_map_density_table_tiles <string>]
+                    [-thermal_power_map_file <string>]
+                    [-thermal_power_map_format <string>]
+                    [-thermal_power_map_format_version <string>]
+                    [-thermal_power_map_header_include_file <string>]
+                    [-thermal_power_map_power_table_tiles <string>]
+                    [-thermal_power_map_si_unit <string>]
+                    [-thermal_power_map_tiles <string>]
+                    [-thermal_power_map_top_layer <string>]
+                    [-threshold <string>] [-threshold_voltage_group <string>]
+                    [-time_based_report] [-time_unit <string>] [-toggle_rate]
+                    [-use_geometry_cell_size <string>] [-view <string>]
+
+**ERROR: (IMPTCM-48):	"-in" is not a legal option for command "report_power". Either the current option or an option prior to it is not specified correctly.
+
+
+@innovus 10> get_db analysis_views 
+
+analysis_view:pulpino_top/view_wcl_slow analysis_view:pulpino_top/view_wcl_typical analysis_view:pulpino_top/view_wcl_fast
+@innovus 11> report_power -view view_wcl_typical
+
+env CDS_WORKAREA is set to /h/d9/g/su2577su-s/etin35_project/pulpino/pnr
+
+Power Net Detected:
+        Voltage	    Name
+             1V	    VDDE1V8
+           1.8V	    VDDE
+             0V	    GNDE
+             0V	    GND
+           1.1V	    VDD
+Using Power View: view_wcl_typical.
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE DB initialization (MEM=2245.56 CPU=0:00:00.0 REAL=0:00:00.0) 
+AAE_INFO: resetNetProps viewIdx 0 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: pulpino_top
+# Design Mode: 65nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+#create default rule from bind_ndr_rule rule=0x7efe97139b30 0x7efe456b4568
+#WARNING (NRIG-34) Power/Ground pin TRIGGER of instance p_clk is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin REFIO1V8 of instance p_clk is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin BOOST of instance p_clk is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A6SRC1V8 of instance p_clk is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A5SRC1V8 of instance p_clk is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A4SRC1V8 of instance p_clk is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A3SRC1V8 of instance p_clk is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A2SRC1V8 of instance p_clk is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A1SRC1V8 of instance p_clk is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A0SRC1V8 of instance p_clk is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin TRIGGER of instance p_fetch_enable_i is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin REFIO1V8 of instance p_fetch_enable_i is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin BOOST of instance p_fetch_enable_i is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A6SRC1V8 of instance p_fetch_enable_i is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A5SRC1V8 of instance p_fetch_enable_i is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A4SRC1V8 of instance p_fetch_enable_i is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A3SRC1V8 of instance p_fetch_enable_i is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A2SRC1V8 of instance p_fetch_enable_i is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A1SRC1V8 of instance p_fetch_enable_i is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (NRIG-34) Power/Ground pin A0SRC1V8 of instance p_fetch_enable_i is not connected to any power/ground net. Use command connect_global_net to connect the power/ground pin to a power/ground net.
+#WARNING (EMS-27) Message (NRIG-34) has exceeded the current message display limit of 20.
+#To increase the message display limit, refer to the product command reference manual.
+#Invoke dbWirePreImport deleteTR=0 convert_unrouted=0 selected_only=0 (nr_selected_net=0)
+#num needed restored net=0
+#need_extraction net=0 (total=71325)
+#Extract in post route mode
+#Finish check_net_pin_list step Enter extract_rc_in_nr_cmd
+#Fast data preparation for tQuantus.
+#Start routing data preparation on Tue May 26 13:54:08 2026
+#
+# M1           H   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.1900
+# M2           V   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.2000
+# M3           H   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.2000
+# M4           V   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.2000
+# M5           H   Track-Pitch = 0.2000    Line-2-Via Pitch = 0.2000
+# M6           V   Track-Pitch = 0.8000    Line-2-Via Pitch = 0.8000
+# M7           H   Track-Pitch = 0.8000    Line-2-Via Pitch = 0.8000
+# AP           V   Track-Pitch = 5.0000    Line-2-Via Pitch = 5.7000
+#WARNING (NRAG-44) Track pitch is too small compared with line-2-via pitch.
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer M3's pitch = 0.2000.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2147.07 (MB), peak = 2155.15 (MB)
+#Start routing data preparation on Tue May 26 13:54:08 2026
+#
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 1.950.
+#Voltage range [0.000 - 1.100] has 70809 nets.
+#Voltage range [0.000 - 0.000] has 513 nets.
+#Voltage range [1.100 - 1.250] has 1 net.
+#Voltage range [1.100 - 1.950] has 1 net.
+#Voltage range [1.100 - 1.100] has 1 net.
+#Build and mark too close pins for the same net.
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer M3's pitch = 0.2000.
+#Using automatically generated G-grids.
+#(check_and_prepare_match_target_file) no match_target_file in constraint. quit
+#Done routing data preparation.
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 2172.29 (MB), peak = 2172.29 (MB)
+#
+#Start tQuantus RC extraction...
+#Start building rc corner(s)...
+#Number of RC Corner = 1
+#Corner rc_corner_typ /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCTYP/qrcTechFile 25.000000 (real) 
+#M1_FINAL -> M1 (1)
+#M2X_FINAL -> M2 (2)
+#M3X_FINAL -> M3 (3)
+#M4X_FINAL -> M4 (4)
+#M5X_FINAL -> M5 (5)
+#M6Z_FINAL -> M6 (6)
+#M7Z_FINAL -> M7 (7)
+#ALUCAP_FINAL -> AP (8)
+#SADV-On
+# Corner(s) : 
+#rc_corner_typ [25.00]
+# Corner id: 0
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+#SADV-Off
+#
+#layer[8] tech width 3000 != ict width 2000.0
+#total pattern=120 [8, 324]
+#Reading previously stored rc_model file ( /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/misc/rc_model.bin ) ...
+#number model r/c [0,0] [0,0] read
+#failed to find CAPMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCTYP/qrcTechFile 
+#failed to find RESMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCTYP/qrcTechFile 25.000000 
+#RC model cannot be found and requires a rebuild
+#rc model rebuild is required for this corner(s)
+#1 rcmodel(s) requires rebuild
+#SADV-On
+# Corner(s) : 
+#rc_corner_typ [25.00]
+# Corner id: 0
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+#SADV-Off
+#
+#layer[8] tech width 3000 != ict width 2000.0
+#total pattern=120 [8, 324]
+#Reading previously stored rc_model file ( /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/misc/rc_model.bin ) ...
+#number model r/c [0,0] [0,0] read
+#failed to find CAPMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCTYP/qrcTechFile 
+#failed to find RESMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCTYP/qrcTechFile 25.000000 
+#RC model cannot be found and requires a rebuild
+#rc model rebuild is required for this corner(s)
+#1 rcmodel(s) requires rebuild
+#Rebuild RC model file for all corners.
+#Start building rc corner(s)...
+#Number of RC Corner = 3
+#Corner rc_corner_typ /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCTYP/qrcTechFile 25.000000 (real) 
+#Corner rc_corner_min /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCMIN/qrcTechFile 25.000000 (real) 
+#Corner rc_corner_max /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCMAX/qrcTechFile 25.000000 (real) 
+#M1_FINAL -> M1 (1)
+#M2X_FINAL -> M2 (2)
+#M3X_FINAL -> M3 (3)
+#M4X_FINAL -> M4 (4)
+#M5X_FINAL -> M5 (5)
+#M6Z_FINAL -> M6 (6)
+#M7Z_FINAL -> M7 (7)
+#ALUCAP_FINAL -> AP (8)
+#SADV-On
+# Corner(s) : 
+#rc_corner_typ [25.00] 
+#rc_corner_min [25.00] 
+#rc_corner_max [25.00]
+# Corner id: 0
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+# Corner id: 1
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+# Corner id: 2
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+#SADV-Off
+#
+#layer[8] tech width 3000 != ict width 2000.0
+#total pattern=120 [24, 972]
+#Reading previously stored rc_model file ( /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/misc/rc_model.bin ) ...
+#found CAPMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCMIN/qrcTechFile
+#found CAPMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCMAX/qrcTechFile
+#found RESMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCMIN/qrcTechFile 25.000000 
+#found RESMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCMAX/qrcTechFile 25.000000 
+#number model r/c [2,2] [16,648] read
+#failed to find CAPMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCTYP/qrcTechFile 
+#failed to find RESMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCTYP/qrcTechFile 25.000000 
+#RC model cannot be found and requires a rebuild
+#rc model rebuild is required for this corner(s)
+#1 rcmodel(s) requires rebuild
+#SADV-On
+# Corner(s) : 
+#rc_corner_typ [25.00] 
+#rc_corner_min [25.00] 
+#rc_corner_max [25.00]
+# Corner id: 0
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+# Corner id: 1
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+# Corner id: 2
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+#SADV-Off
+#
+#layer[8] tech width 3000 != ict width 2000.0
+#total pattern=120 [24, 972]
+#Reading previously stored rc_model file ( /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/misc/rc_model.bin ) ...
+#found CAPMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCMIN/qrcTechFile
+#found CAPMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCMAX/qrcTechFile
+#found RESMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCMIN/qrcTechFile 25.000000 
+#found RESMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCMAX/qrcTechFile 25.000000 
+#number model r/c [2,2] [16,648] read
+#failed to find CAPMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCTYP/qrcTechFile 
+#failed to find RESMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCTYP/qrcTechFile 25.000000 
+#RC model cannot be found and requires a rebuild
+#Generating the tQuantus model file automatically.
+#num_tile=8888 avg_aspect_ratio=0.998150 
+#Vertical num_row 33 per_row= 264 halo= 90625 
+#hor_num_col = 147 final aspect_ratio= 0.369701
+#Build RC corners: cpu time = 00:00:17, elapsed time = 00:00:27, memory = 2240.72 (MB), peak = 2381.20 (MB)
+#Start building rc corner(s)...
+#Number of RC Corner = 1
+#Corner rc_corner_typ /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCTYP/qrcTechFile 25.000000 (real) 
+#M1_FINAL -> M1 (1)
+#M2X_FINAL -> M2 (2)
+#M3X_FINAL -> M3 (3)
+#M4X_FINAL -> M4 (4)
+#M5X_FINAL -> M5 (5)
+#M6Z_FINAL -> M6 (6)
+#M7Z_FINAL -> M7 (7)
+#ALUCAP_FINAL -> AP (8)
+#SADV-On
+# Corner(s) : 
+#rc_corner_typ [25.00]
+# Corner id: 0
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+#SADV-Off
+#
+#layer[8] tech width 3000 != ict width 2000.0
+#total pattern=120 [8, 324]
+#Reading previously stored rc_model file ( rc_model.bin ) ...
+#found CAPMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCTYP/qrcTechFile
+#found RESMODEL /usr/local-eit/cad2/cmpstm/s65v58/Foundation_Cadence_TechnoKit_cmos065_7m4x0y2z_AP/5.4-00/QRC_TECHFILE/RCTYP/qrcTechFile 25.000000 
+#number model r/c [1,1] [8,324] read
+#0 rcmodel(s) requires rebuild
+#Build RC corners: cpu time = 00:00:01, elapsed time = 00:00:01, memory = 2240.16 (MB), peak = 2381.20 (MB)
+#Finish check_net_pin_list step Enter extract
+#Start init net ripin tree building
+#Finish init net ripin tree building
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.28 (MB)
+#Total memory = 2240.44 (MB)
+#Peak memory = 2381.20 (MB)
+#begin processing metal fill model file
+#end processing metal fill model file
+#Length limit = 200 pitches
+#opt mode = 2
+#Finish check_net_pin_list step Fix net pin list
+#Start generate extraction boxes.
+#
+#Extract using 30 x 30 Hboxes
+#20x21 initial hboxes
+#Use area based hbox pruning.
+#0/0 hboxes pruned.
+#Complete generating extraction boxes.
+#Extract 218 hboxes with single thread on machine with  Core_i5 3.10GHz 9216KB Cache 6CPU...
+#Process 0 special clock nets for rc extraction
+#WARNING (NREX-80) Net peripherals_i/apb_uart_i/UART_RX/iFSIN does not have a driver pin. It may have incomplete route.
+#WARNING (NREX-80) Net peripherals_i/apb_uart_i/UART_RX/iBaudStep does not have a driver pin. It may have incomplete route.
+#WARNING (NREX-80) Net peripherals_i/apb_uart_i/UART_RX/iBaudCount[3] does not have a driver pin. It may have incomplete route.
+#Total 43637 nets were built. 10151 nodes added to break long wires. 0 net(s) have incomplete routes.
+#Run Statistics for Extraction:
+#   Cpu time = 00:00:26, elapsed time = 00:00:26 .
+#   Increased memory =   138.21 (MB), total memory =  2379.38 (MB), peak memory =  2381.20 (MB)
+#Register nets and terms for rcdb /tmp/innovus_temp_27166_fransg-2_su2577su-s_FYiz5X/nr27166_Jy0Al2.rcdb.d
+#Finish registering nets and terms for rcdb.
+#Simplify RC tree: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2379.89 (MB), peak = 2381.20 (MB)
+#RC Statistics: 325622 Res, 208214 Ground Cap, 151694 XCap (Edge to Edge)
+#RC V/H edge ratio: 0.58, Avg V/H Edge Length: 3140.53 (202596), Avg L-Edge Length: 5547.97 (81857)
+#Nets and terms are pre-registered for rcdb /tmp/innovus_temp_27166_fransg-2_su2577su-s_FYiz5X/nr27166_Jy0Al2.rcdb.d.
+#Start writing RC data.
+#Finish writing RC data
+#Finish writing rcdb with 369290 nodes, 325653 edges, and 315322 xcaps
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 2368.92 (MB), peak = 2391.00 (MB)
+Restoring parasitic data from file '/tmp/innovus_temp_27166_fransg-2_su2577su-s_FYiz5X/nr27166_Jy0Al2.rcdb.d' ...
+Reading RCDB with compressed RC data.
+Reading RCDB with compressed RC data.
+Begin read_parasitics... (cpu: 0:00:00.0 real: 0:00:00.0 mem: 2874.016M)
+Following multi-corner parasitics specified:
+	/tmp/innovus_temp_27166_fransg-2_su2577su-s_FYiz5X/nr27166_Jy0Al2.rcdb.d (rcdb)
+Reading RCDB with compressed RC data.
+		Cell pulpino_top has rcdb /tmp/innovus_temp_27166_fransg-2_su2577su-s_FYiz5X/nr27166_Jy0Al2.rcdb.d specified
+Cell pulpino_top, hinst 
+Reading RCDB with compressed RC data.
+Done read_parasitics... (cpu: 0:00:01.2 real: 0:00:00.0 mem: 2874.016M)
+#
+#Restore RCDB.
+#
+#Complete tQuantus RC extraction.
+#Cpu time = 00:00:49
+#Elapsed time = 00:01:00
+#Increased memory = 198.00 (MB)
+#Total memory = 2370.54 (MB)
+#Peak memory = 2391.00 (MB)
+#
+#10151 inserted nodes are removed
+#	no debugging net set
+#Start Inst Signature in MT(0)
+#Start Net Signature in MT(52435474)
+#Calculate SNet Signature in MT (111785606)
+#Run time and memory report for RC extraction:
+#RC extraction running on  Core_i5 4.10GHz 9216KB Cache 6CPU.
+#Run Statistics for snet signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.01 (MB), total memory =  2084.74 (MB), peak memory =  2391.00 (MB)
+#Run Statistics for Net Final Signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2084.73 (MB), peak memory =  2391.00 (MB)
+#Run Statistics for Net launch:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2084.73 (MB), peak memory =  2391.00 (MB)
+#Run Statistics for Net init_dbsNet_slist:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2084.55 (MB), peak memory =  2391.00 (MB)
+#Run Statistics for net signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.18 (MB), total memory =  2084.73 (MB), peak memory =  2391.00 (MB)
+#Run Statistics for inst signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =    -0.48 (MB), total memory =  2084.55 (MB), peak memory =  2391.00 (MB)
+AAE_INFO: 1 threads acquired from CTE.
+Start delay calculation (fullDC) (1 T). (MEM=2665.12)
+Reading RCDB with compressed RC data.
+**WARN: (IMPESI-3095):	Net: 'clk' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'clk' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'rst_n' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'rst_n' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'tck_i' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'tck_i' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'trstn_i' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'trstn_i' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'tms_i' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'tms_i' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'tdi_i' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'tdi_i' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'uart_rx' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'uart_rx' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'spi_clk_i' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'spi_clk_i' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'spi_cs_i' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'spi_cs_i' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'spi_sdi0_i' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'spi_sdi0_i' has no receivers. SI analysis is not performed.
+**WARN: (EMS-27):	Message (IMPESI-3095) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Total number of fetched objects 44244
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 71325,  63.4 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2831.57 CPU=0:00:13.4 REAL=0:00:13.0)
+End delay calculation (fullDC). (MEM=2756.79 CPU=0:00:14.6 REAL=0:00:14.0)
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2764.8M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.1, REAL = 0:00:00.0, MEM = 2764.8M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=2694.91)
+Glitch Analysis: View view_wcl_typical -- Total Number of Nets Skipped = 1996. 
+Glitch Analysis: View view_wcl_typical -- Total Number of Nets Analyzed = 44244. 
+Total number of fetched objects 44244
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 71325,  0.9 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2738.6 CPU=0:00:00.5 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2738.6 CPU=0:00:00.6 REAL=0:00:00.0)
+Load RC corner of view view_wcl_typical
+
+Begin Power Analysis
+
+             1V	    VDDE1V8
+           1.8V	    VDDE
+             0V	    GNDE
+             0V	    GND
+           1.1V	    VDD
+
+Begin Processing Timing Library for Power Calculation
+
+Begin Processing Timing Library for Power Calculation
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2309.86MB/4380.78MB/2368.79MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+CLK(125MHz) CK: assigning clock CLK to net clk
+SPI_CLK(25MHz) CK: assigning clock SPI_CLK to net spi_clk_i
+VCLK_ASYNC(10MHz) JTAG_CLK(10MHz) CK: assigning clock JTAG_CLK to net tck_i
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2312.28MB/4380.78MB/2368.79MB)
+
+** WARN:  (VOLTUS_POWR-1784): The SDC clock frequency 125MHz is being overwritten with the VCD clock frequency 25MHz for the clock 'CLK' associated with the net
+'clk' from the TCF file. If the SDC clock frequency is required for static power calculation, use the command
+'set_switching_activity -clock <clock name> -scale_factor <num>' to scale frequency of this clock.
+
+** WARN:  (VOLTUS_POWR-1784): The SDC clock frequency 25MHz is being overwritten with the VCD clock frequency 0.00388594MHz for the clock 'SPI_CLK' associated with the net
+'spi_clk_i' from the TCF file. If the SDC clock frequency is required for static power calculation, use the command
+'set_switching_activity -clock <clock name> -scale_factor <num>' to scale frequency of this clock.
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2312.36MB/4380.78MB/2368.79MB)
+
+Begin Processing Signal Activity
+
+
+Starting Levelizing
+2026-May-26 13:55:31 (2026-May-26 11:55:31 GMT)
+2026-May-26 13:55:31 (2026-May-26 11:55:31 GMT): 10%
+2026-May-26 13:55:32 (2026-May-26 11:55:32 GMT): 20%
+2026-May-26 13:55:32 (2026-May-26 11:55:32 GMT): 30%
+2026-May-26 13:55:32 (2026-May-26 11:55:32 GMT): 40%
+2026-May-26 13:55:32 (2026-May-26 11:55:32 GMT): 50%
+2026-May-26 13:55:32 (2026-May-26 11:55:32 GMT): 60%
+2026-May-26 13:55:32 (2026-May-26 11:55:32 GMT): 70%
+2026-May-26 13:55:32 (2026-May-26 11:55:32 GMT): 80%
+2026-May-26 13:55:32 (2026-May-26 11:55:32 GMT): 90%
+
+Finished Levelizing
+2026-May-26 13:55:32 (2026-May-26 11:55:32 GMT)
+
+Starting Activity Propagation
+2026-May-26 13:55:32 (2026-May-26 11:55:32 GMT)
+
+Finished Activity Propagation
+2026-May-26 13:55:33 (2026-May-26 11:55:33 GMT)
+
+Activity annotation summary:
+        Primary Inputs : 16/16 = 100%
+          Flop outputs : 9251/9251 = 100%
+  Memory/Macro outputs : 288/288 = 100%
+      Tristate outputs : 0/0 = 0%
+            Total Nets : 43703/43703 = 100%
+
+Ended Processing Signal Activity: (cpu=0:00:01, real=0:00:01, mem(process/total/peak)=2316.74MB/4380.78MB/2368.79MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 1
+      # of cell(s) missing leakage table: 0
+      ----------------------------------------------------------
+CellName                                  Missing Table(s)
+HS65_LH_ANTPROT1                          internal power, 
+
+
+
+Starting Calculating power
+2026-May-26 13:55:33 (2026-May-26 11:55:33 GMT)
+ ... Calculating switching power
+2026-May-26 13:55:33 (2026-May-26 11:55:33 GMT): 10%
+2026-May-26 13:55:33 (2026-May-26 11:55:33 GMT): 20%
+2026-May-26 13:55:33 (2026-May-26 11:55:33 GMT): 30%
+2026-May-26 13:55:33 (2026-May-26 11:55:33 GMT): 40%
+2026-May-26 13:55:33 (2026-May-26 11:55:33 GMT): 50%
+ ... Calculating internal and leakage power
+** WARN:  (VOLTUS_POWR-2047): The following cell(s) power_level (rail net name) cannot be mapped. Check if the connections of the power/ground pin to the external rails have been specified. The power will be distributed to the default rail.
+
+POWER LEVEL         CELL                              INSTANCE
+vdds                HS65_LL_DLYIC2X7                  FE_OFC9953_FE_OFN680_pad_spi_sdo3_o
+vdds                HS65_LL_CNIVX7                    FE_OFC9865_rstn_int
+vdds                HS65_LL_CNIVX3                    FE_OFC9854_rstn_int
+vdds                HS65_LL_IVX7                      FE_OFC9847_rstn_int
+vdds                HS65_LL_DLYIC2X4                  FE_OFC9836_rstn_int
+vdds                HS65_LL_CNIVX14                   FE_OFC9357_pad_spi_mode_o_0
+vdds                HS65_LL_CNBFX82                   CTS_ccl_a_buf_00067
+vdds                HS65_LL_CNBFX103                  CTS_ccl_a_buf_00076
+vdds                HS65_LL_CNBFX62                   CTS_ccl_a_buf_00064
+vdds                HS65_LL_CNBFX48                   CTS_ccl_a_buf_00075
+2026-May-26 13:55:34 (2026-May-26 11:55:34 GMT): 60%
+2026-May-26 13:55:37 (2026-May-26 11:55:37 GMT): 70%
+2026-May-26 13:55:39 (2026-May-26 11:55:39 GMT): 80%
+2026-May-26 13:55:41 (2026-May-26 11:55:41 GMT): 90%
+
+Finished Calculating power
+2026-May-26 13:55:42 (2026-May-26 11:55:42 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:09, real=0:00:09, mem(process/total/peak)=2318.17MB/4388.79MB/2368.79MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2318.18MB/4388.79MB/2368.79MB)
+
+Ended Power Analysis: (cpu=0:00:11, real=0:00:11, mem(process/total/peak)=2318.24MB/4388.79MB/2368.79MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2318.24MB/4388.79MB/2368.79MB)
+Begin Static Power Report Generation
+*----------------------------------------------------------------------------------------
+*	Innovus 21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+*	
+*
+* 	Date & Time:	2026-May-26 13:55:42 (2026-May-26 11:55:42 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: pulpino_top
+*
+*	Liberty Libraries used:
+*	        view_wcl_typical: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/CORE65LPLVT_nom_1.10V_25C.lib
+*	        view_wcl_typical: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/CLOCK65LPLVT_nom_1.10V_25C.lib
+*	        view_wcl_typical: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_nom_1.10V_1.80V_25C.lib
+*	        view_wcl_typical: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_nom_1.10V_25C.lib
+*	        view_wcl_typical: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/SPHS100909_nom_1.20V_25C.lib
+*	        view_wcl_typical: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/PRHS65_nom_1.10V_25C.lib
+*
+*	Parasitic Files used:
+*
+*       Power View : view_wcl_typical
+*
+*       User-Defined Activity : N.A.
+*
+*	Switching Activity File used:
+*	        core_power.saif
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs
+*
+*       report_power -view view_wcl_typical
+*
+-----------------------------------------------------------------------------------------
+  2 instances have no static power
+** WARN:  (VOLTUS_POWR-2152): Instance peripherals_i/axi_spi_slave_i/axi_spi_slave_i/u_rxreg/DIODE_3 (HS65_LH_ANTPROT1) has no static power. This might be because either the duty cycle and activity of all the connected nets
+is 0 or the instance is connected to power off rails. If this is not the expected behaviour and static power is required, ensure that the instance is connected
+to power on rails and that the duty cycle and activity of at least one net is not 0.
+
+** WARN:  (VOLTUS_POWR-2152): Instance peripherals_i/axi_spi_slave_i/axi_spi_slave_i/u_rxreg/DIODE_2 (HS65_LH_ANTPROT1) has no static power. This might be because either the duty cycle and activity of all the connected nets
+is 0 or the instance is connected to power off rails. If this is not the expected behaviour and static power is required, ensure that the instance is connected
+to power on rails and that the duty cycle and activity of at least one net is not 0.
+
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        3.90517692 	   90.4627%
+Total Switching Power:       0.29026148 	    6.7239%
+Total Leakage Power:         0.12145333 	    2.8134%
+Total Power:                 4.31689172
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                        0.3056      0.0125      0.0456      0.3637       8.426
+Macro                              3.376     0.01311     0.00928       3.399       78.74
+IO                               0.01114   0.0004078   0.0002625     0.01181      0.2737
+Physical-Only                          0           0   6.743e-05   6.743e-05    0.001562
+Combinational                     0.1138      0.2642     0.05846      0.4365       10.11
+Clock (Combinational)            0.04415           0    0.001922     0.04607       1.067
+Clock (Sequential)               0.05436           0    0.005166     0.05953       1.379
+-----------------------------------------------------------------------------------------
+Total                              3.905      0.2903      0.1208       4.316       99.98
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDDE                      1.8   0.006911   0.0004078   0.0009433    0.008262      0.1914
+VDD                       1.1      3.898      0.2899      0.1205       4.309       99.81
+
+
+Clock                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+SPI_CLK                        2.999e-06           0   0.0003264   0.0003294     0.00763
+CLK                               0.1088           0    0.006551      0.1153       2.672
+JTAG_CLK                               0           0   0.0002453   0.0002453    0.005682
+-----------------------------------------------------------------------------------------
+Total                             0.1088           0    0.007123      0.1159       2.685
+-----------------------------------------------------------------------------------------
+Clock: SPI_CLK
+Clock Period: 257.337750 usec 
+Clock Toggle Rate:     0.0078 Mhz 
+Clock Static Probability:  0.5000
+  
+Clock: CLK
+Clock Period: 0.040000 usec 
+Clock Toggle Rate:    50.0000 Mhz 
+Clock Static Probability:  0.5000
+  
+Clock: JTAG_CLK
+Clock Period: 0.100000 usec 
+Clock Toggle Rate:    20.0000 Mhz 
+Clock Static Probability:  0.5000
+  
+ 
+ 
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*              Highest Average Power: core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[1].i_sram (ST_SPHS_2048x8m8_L):           0.2011
+*              Highest Leakage Power: core_region_i/data_mem/rows[0].col[0].i_sram (ST_SPHS_2048x8m8_L):          0.00029
+*                Total Cap:      4.58901e-10 F
+*                Total instances in design: 41876
+*                Total instances in design with no power:     2
+*                Total instances in design with no activty:     2
+
+*                Total Fillers and Decap:    14
+-----------------------------------------------------------------------------------------
+ 
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2331.24MB/4388.79MB/2368.79MB)
+
+1
+@innovus 12> set_switching_activity -clock CLK -scale 5
+@innovus 13> read_activity_file -format SAIF core_power.saif -scope tb_pl/top_i
+
+'read_activity_file' finished successfully.
+1
+@innovus 14> report_power -out_file power_core.rpt
+
+env CDS_WORKAREA is set to /h/d9/g/su2577su-s/etin35_project/pulpino/pnr
+Using Power View: view_wcl_typical.
+Load RC corner of view view_wcl_typical
+
+Begin Power Analysis
+
+             1V	    VDDE1V8
+           1.8V	    VDDE
+             0V	    GNDE
+             0V	    GND
+           1.1V	    VDD
+Begin Processing Timing Library for Power Calculation
+
+Begin Processing Timing Library for Power Calculation
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2331.49MB/4388.79MB/2368.79MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+** WARN:  (VOLTUS_POWR-1608):   Found conflicting clock definitions for the same clock 'CLK' in the SDC file.
+  Retaining the last specified frequency of 125MHz.
+
+CK: assigning clock CLK to net clk
+** WARN:  (VOLTUS_POWR-1608):   Found conflicting clock definitions for the same clock 'SPI_CLK' in the SDC file.
+  Retaining the last specified frequency of 25MHz.
+
+CK: assigning clock SPI_CLK to net spi_clk_i
+CK: assigning clock JTAG_CLK to net tck_i
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2331.50MB/4388.79MB/2368.79MB)
+
+** WARN:  (VOLTUS_POWR-1784): The SDC clock frequency 125MHz is being overwritten with the VCD clock frequency 25MHz for the clock 'CLK' associated with the net
+'clk' from the TCF file. If the SDC clock frequency is required for static power calculation, use the command
+'set_switching_activity -clock <clock name> -scale_factor <num>' to scale frequency of this clock.
+
+** WARN:  (VOLTUS_POWR-1784): The SDC clock frequency 25MHz is being overwritten with the VCD clock frequency 0.00388594MHz for the clock 'SPI_CLK' associated with the net
+'spi_clk_i' from the TCF file. If the SDC clock frequency is required for static power calculation, use the command
+'set_switching_activity -clock <clock name> -scale_factor <num>' to scale frequency of this clock.
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2331.50MB/4388.79MB/2368.79MB)
+
+Begin Processing Signal Activity
+
+
+Starting Activity Propagation
+2026-May-26 13:56:58 (2026-May-26 11:56:58 GMT)
+
+Finished Activity Propagation
+2026-May-26 13:56:59 (2026-May-26 11:56:59 GMT)
+
+Activity annotation summary:
+        Primary Inputs : 16/16 = 100%
+          Flop outputs : 9251/9251 = 100%
+  Memory/Macro outputs : 288/288 = 100%
+      Tristate outputs : 0/0 = 0%
+            Total Nets : 43703/43703 = 100%
+
+Ended Processing Signal Activity: (cpu=0:00:01, real=0:00:01, mem(process/total/peak)=2331.78MB/4388.79MB/2368.79MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 1
+      # of cell(s) missing leakage table: 0
+      ----------------------------------------------------------
+CellName                                  Missing Table(s)
+HS65_LH_ANTPROT1                          internal power, 
+
+
+
+Starting Calculating power
+2026-May-26 13:56:59 (2026-May-26 11:56:59 GMT)
+ ... Calculating switching power
+2026-May-26 13:56:59 (2026-May-26 11:56:59 GMT): 10%
+2026-May-26 13:56:59 (2026-May-26 11:56:59 GMT): 20%
+2026-May-26 13:56:59 (2026-May-26 11:56:59 GMT): 30%
+2026-May-26 13:56:59 (2026-May-26 11:56:59 GMT): 40%
+2026-May-26 13:56:59 (2026-May-26 11:56:59 GMT): 50%
+ ... Calculating internal and leakage power
+2026-May-26 13:57:00 (2026-May-26 11:57:00 GMT): 60%
+2026-May-26 13:57:03 (2026-May-26 11:57:03 GMT): 70%
+2026-May-26 13:57:05 (2026-May-26 11:57:05 GMT): 80%
+2026-May-26 13:57:07 (2026-May-26 11:57:07 GMT): 90%
+
+Finished Calculating power
+2026-May-26 13:57:08 (2026-May-26 11:57:08 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:08, real=0:00:09, mem(process/total/peak)=2331.79MB/4388.79MB/2368.79MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2331.79MB/4388.79MB/2368.79MB)
+
+Ended Power Analysis: (cpu=0:00:10, real=0:00:10, mem(process/total/peak)=2331.79MB/4388.79MB/2368.79MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2331.79MB/4388.79MB/2368.79MB)
+Begin Static Power Report Generation
+  2 instances have no static power
+** WARN:  (VOLTUS_POWR-2152): Instance peripherals_i/axi_spi_slave_i/axi_spi_slave_i/u_rxreg/DIODE_3 (HS65_LH_ANTPROT1) has no static power. This might be because either the duty cycle and activity of all the connected nets
+is 0 or the instance is connected to power off rails. If this is not the expected behaviour and static power is required, ensure that the instance is connected
+to power on rails and that the duty cycle and activity of at least one net is not 0.
+
+** WARN:  (VOLTUS_POWR-2152): Instance peripherals_i/axi_spi_slave_i/axi_spi_slave_i/u_rxreg/DIODE_2 (HS65_LH_ANTPROT1) has no static power. This might be because either the duty cycle and activity of all the connected nets
+is 0 or the instance is connected to power off rails. If this is not the expected behaviour and static power is required, ensure that the instance is connected
+to power on rails and that the duty cycle and activity of at least one net is not 0.
+
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        3.90517692 	   90.4627%
+Total Switching Power:       0.29026148 	    6.7239%
+Total Leakage Power:         0.12145333 	    2.8134%
+Total Power:                 4.31689172
+-----------------------------------------------------------------------------------------
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2331.79MB/4388.79MB/2368.79MB)
+
+
+Output file is .//power_core.rpt
+1
+@innovus 15> set_switching_activity -clock CLK -scale 5
+
+@innovus 16> read_activity_file -format SAIF core_power.saif -scope tb_pl/top_i
+
+'read_activity_file' finished successfully.
+1
+@innovus 17> report_power -view view_wcl_typical
+
+env CDS_WORKAREA is set to /h/d9/g/su2577su-s/etin35_project/pulpino/pnr
+Using Power View: view_wcl_typical.
+Load RC corner of view view_wcl_typical
+
+Begin Power Analysis
+
+             1V	    VDDE1V8
+           1.8V	    VDDE
+             0V	    GNDE
+             0V	    GND
+           1.1V	    VDD
+Begin Processing Timing Library for Power Calculation
+
+Begin Processing Timing Library for Power Calculation
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2331.93MB/4388.79MB/2368.79MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+** WARN:  (VOLTUS_POWR-1608):   Found conflicting clock definitions for the same clock 'CLK' in the SDC file.
+  Retaining the last specified frequency of 125MHz.
+
+CK: assigning clock CLK to net clk
+** WARN:  (VOLTUS_POWR-1608):   Found conflicting clock definitions for the same clock 'SPI_CLK' in the SDC file.
+  Retaining the last specified frequency of 25MHz.
+
+CK: assigning clock SPI_CLK to net spi_clk_i
+CK: assigning clock JTAG_CLK to net tck_i
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2331.93MB/4388.79MB/2368.79MB)
+
+** WARN:  (VOLTUS_POWR-1784): The SDC clock frequency 125MHz is being overwritten with the VCD clock frequency 25MHz for the clock 'CLK' associated with the net
+'clk' from the TCF file. If the SDC clock frequency is required for static power calculation, use the command
+'set_switching_activity -clock <clock name> -scale_factor <num>' to scale frequency of this clock.
+
+** WARN:  (VOLTUS_POWR-1784): The SDC clock frequency 25MHz is being overwritten with the VCD clock frequency 0.00388594MHz for the clock 'SPI_CLK' associated with the net
+'spi_clk_i' from the TCF file. If the SDC clock frequency is required for static power calculation, use the command
+'set_switching_activity -clock <clock name> -scale_factor <num>' to scale frequency of this clock.
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2331.93MB/4388.79MB/2368.79MB)
+
+Begin Processing Signal Activity
+
+
+Starting Activity Propagation
+2026-May-26 13:57:51 (2026-May-26 11:57:51 GMT)
+
+Finished Activity Propagation
+2026-May-26 13:57:52 (2026-May-26 11:57:52 GMT)
+
+Activity annotation summary:
+        Primary Inputs : 16/16 = 100%
+          Flop outputs : 9251/9251 = 100%
+  Memory/Macro outputs : 288/288 = 100%
+      Tristate outputs : 0/0 = 0%
+            Total Nets : 43703/43703 = 100%
+
+Ended Processing Signal Activity: (cpu=0:00:01, real=0:00:01, mem(process/total/peak)=2331.93MB/4388.79MB/2368.79MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 1
+      # of cell(s) missing leakage table: 0
+      ----------------------------------------------------------
+CellName                                  Missing Table(s)
+HS65_LH_ANTPROT1                          internal power, 
+
+
+
+Starting Calculating power
+2026-May-26 13:57:52 (2026-May-26 11:57:52 GMT)
+ ... Calculating switching power
+2026-May-26 13:57:52 (2026-May-26 11:57:52 GMT): 10%
+2026-May-26 13:57:52 (2026-May-26 11:57:52 GMT): 20%
+2026-May-26 13:57:52 (2026-May-26 11:57:52 GMT): 30%
+2026-May-26 13:57:52 (2026-May-26 11:57:52 GMT): 40%
+2026-May-26 13:57:52 (2026-May-26 11:57:52 GMT): 50%
+ ... Calculating internal and leakage power
+2026-May-26 13:57:54 (2026-May-26 11:57:54 GMT): 60%
+2026-May-26 13:57:56 (2026-May-26 11:57:56 GMT): 70%
+2026-May-26 13:57:58 (2026-May-26 11:57:58 GMT): 80%
+2026-May-26 13:58:00 (2026-May-26 11:58:00 GMT): 90%
+
+Finished Calculating power
+2026-May-26 13:58:01 (2026-May-26 11:58:01 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:09, real=0:00:09, mem(process/total/peak)=2331.94MB/4388.79MB/2368.79MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2331.94MB/4388.79MB/2368.79MB)
+
+Ended Power Analysis: (cpu=0:00:10, real=0:00:10, mem(process/total/peak)=2331.94MB/4388.79MB/2368.79MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2331.94MB/4388.79MB/2368.79MB)
+Begin Static Power Report Generation
+*----------------------------------------------------------------------------------------
+*	Innovus 21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+*	
+*
+* 	Date & Time:	2026-May-26 13:58:01 (2026-May-26 11:58:01 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: pulpino_top
+*
+*	Liberty Libraries used:
+*	        view_wcl_typical: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/CORE65LPLVT_nom_1.10V_25C.lib
+*	        view_wcl_typical: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/CLOCK65LPLVT_nom_1.10V_25C.lib
+*	        view_wcl_typical: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z_nom_1.10V_1.80V_25C.lib
+*	        view_wcl_typical: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z_nom_1.10V_25C.lib
+*	        view_wcl_typical: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/SPHS100909_nom_1.20V_25C.lib
+*	        view_wcl_typical: /h/d9/g/su2577su-s/etin35_project/pulpino/pnr/pnrf4.db/libs/mmmc/PRHS65_nom_1.10V_25C.lib
+*
+*	Parasitic Files used:
+*
+*       Power View : view_wcl_typical
+*
+*       User-Defined Activity : N.A.
+*
+*	Switching Activity File used:
+*	        core_power.saif
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs
+*
+*       report_power -view view_wcl_typical
+*
+-----------------------------------------------------------------------------------------
+  2 instances have no static power
+** WARN:  (VOLTUS_POWR-2152): Instance peripherals_i/axi_spi_slave_i/axi_spi_slave_i/u_rxreg/DIODE_3 (HS65_LH_ANTPROT1) has no static power. This might be because either the duty cycle and activity of all the connected nets
+is 0 or the instance is connected to power off rails. If this is not the expected behaviour and static power is required, ensure that the instance is connected
+to power on rails and that the duty cycle and activity of at least one net is not 0.
+
+** WARN:  (VOLTUS_POWR-2152): Instance peripherals_i/axi_spi_slave_i/axi_spi_slave_i/u_rxreg/DIODE_2 (HS65_LH_ANTPROT1) has no static power. This might be because either the duty cycle and activity of all the connected nets
+is 0 or the instance is connected to power off rails. If this is not the expected behaviour and static power is required, ensure that the instance is connected
+to power on rails and that the duty cycle and activity of at least one net is not 0.
+
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        3.90517692 	   90.4627%
+Total Switching Power:       0.29026148 	    6.7239%
+Total Leakage Power:         0.12145333 	    2.8134%
+Total Power:                 4.31689172
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                        0.3056      0.0125      0.0456      0.3637       8.426
+Macro                              3.376     0.01311     0.00928       3.399       78.74
+IO                               0.01114   0.0004078   0.0002625     0.01181      0.2737
+Physical-Only                          0           0   6.743e-05   6.743e-05    0.001562
+Combinational                     0.1138      0.2642     0.05846      0.4365       10.11
+Clock (Combinational)            0.04415           0    0.001922     0.04607       1.067
+Clock (Sequential)               0.05436           0    0.005166     0.05953       1.379
+-----------------------------------------------------------------------------------------
+Total                              3.905      0.2903      0.1208       4.316       99.98
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDDE                      1.8   0.006911   0.0004078   0.0009433    0.008262      0.1914
+VDD                       1.1      3.898      0.2899      0.1205       4.309       99.81
+
+
+Clock                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+SPI_CLK                        2.999e-06           0   0.0003264   0.0003294     0.00763
+CLK                               0.1088           0    0.006551      0.1153       2.672
+JTAG_CLK                               0           0   0.0002453   0.0002453    0.005682
+-----------------------------------------------------------------------------------------
+Total                             0.1088           0    0.007123      0.1159       2.685
+-----------------------------------------------------------------------------------------
+Clock: SPI_CLK
+Clock Period: 257.337750 usec 
+Clock Toggle Rate:     0.0078 Mhz 
+Clock Static Probability:  0.5000
+  
+Clock: CLK
+Clock Period: 0.040000 usec 
+Clock Toggle Rate:    50.0000 Mhz 
+Clock Static Probability:  0.5000
+  
+Clock: JTAG_CLK
+Clock Period: 0.100000 usec 
+Clock Toggle Rate:    20.0000 Mhz 
+Clock Static Probability:  0.5000
+  
+ 
+ 
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*              Highest Average Power: core_region_i/instr_mem/sp_ram_wrap_i/rows[0].col[1].i_sram (ST_SPHS_2048x8m8_L):           0.2011
+*              Highest Leakage Power: core_region_i/data_mem/rows[0].col[0].i_sram (ST_SPHS_2048x8m8_L):          0.00029
+*                Total Cap:      4.58901e-10 F
+*                Total instances in design: 41876
+*                Total instances in design with no power:     2
+*                Total instances in design with no activty:     2
+
+*                Total Fillers and Decap:    14
+-----------------------------------------------------------------------------------------
+ 
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2331.94MB/4388.79MB/2368.79MB)
+
+1
+@innovus 18> report_power -out_file power_core.rpt
+
+env CDS_WORKAREA is set to /h/d9/g/su2577su-s/etin35_project/pulpino/pnr
+Using Power View: view_wcl_typical.
+Load RC corner of view view_wcl_typical
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2331.94MB/4388.79MB/2368.79MB)
+Begin Static Power Report Generation
+  2 instances have no static power
+** WARN:  (VOLTUS_POWR-2152): Instance peripherals_i/axi_spi_slave_i/axi_spi_slave_i/u_rxreg/DIODE_3 (HS65_LH_ANTPROT1) has no static power. This might be because either the duty cycle and activity of all the connected nets
+is 0 or the instance is connected to power off rails. If this is not the expected behaviour and static power is required, ensure that the instance is connected
+to power on rails and that the duty cycle and activity of at least one net is not 0.
+
+** WARN:  (VOLTUS_POWR-2152): Instance peripherals_i/axi_spi_slave_i/axi_spi_slave_i/u_rxreg/DIODE_2 (HS65_LH_ANTPROT1) has no static power. This might be because either the duty cycle and activity of all the connected nets
+is 0 or the instance is connected to power off rails. If this is not the expected behaviour and static power is required, ensure that the instance is connected
+to power on rails and that the duty cycle and activity of at least one net is not 0.
+
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        3.90517692 	   90.4627%
+Total Switching Power:       0.29026148 	    6.7239%
+Total Leakage Power:         0.12145333 	    2.8134%
+Total Power:                 4.31689172
+-----------------------------------------------------------------------------------------
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2331.94MB/4388.79MB/2368.79MB)
+
+
+Output file is .//power_core.rpt
+1
+@innovus 19> set_switching_activity -clock CLK -scale 5
+
+@innovus 20> get_db clocks
+
+clock:pulpino_top/view_wcl_typical/CLK clock:pulpino_top/view_wcl_typical/JTAG_CLK clock:pulpino_top/view_wcl_typical/SPI_CLK clock:pulpino_top/view_wcl_typical/VCLK_ASYNC
+@innovus 21> get_db clocks .multiply_by 
+
+no_value no_value no_value no_value
+@innovus 22> get_db 
+
+
+Usage: get_db [-help] {[<start> [<chain>] [<pattern>] [[-if <expression>] | [-expr <expression>]] [-dbu ] [-foreach <tcl_body>] [-index <index_name value ...>] [-invert ] [-regexp ] [-match_hier ] [-unique ] [-computed ]] [-category <category>] [-depth {[<min>] <max>}]}
+
+**ERROR: (IMPTCM-32):	Wrong number of arguments specified for command "get_db".
+
+
+@innovus 23> get_db clocks
+
+clock:pulpino_top/view_wcl_typical/CLK clock:pulpino_top/view_wcl_typical/JTAG_CLK clock:pulpino_top/view_wcl_typical/SPI_CLK clock:pulpino_top/view_wcl_typical/VCLK_ASYNC
+@innovus 24> set_switching_activity -clock clock:pulpino_top/view_wcl_typical/CLK -scale 5
+[9C
+@innovus 25> set_switching_activity -clock clock:pulpino_top/view_wcl_typical/CLKasdasdasd -scale 5
+[9C
+@innovus 26> set_switching_activity -clock clock:pulpino_top/view_wcl_typical/CLK -scale 5
+[9C
+@innovus 27> report_power -out_file power_core.rpt -view view_wcl_typical
+[16C
+env CDS_WORKAREA is set to /h/d9/g/su2577su-s/etin35_project/pulpino/pnr
+Using Power View: view_wcl_typical.
+Load RC corner of view view_wcl_typical
+
+Begin Power Analysis
+
+             1V	    VDDE1V8
+           1.8V	    VDDE
+             0V	    GNDE
+             0V	    GND
+           1.1V	    VDD
+Begin Processing Timing Library for Power Calculation
+
+Begin Processing Timing Library for Power Calculation
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2333.57MB/4388.79MB/2368.79MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+** WARN:  (VOLTUS_POWR-1608):   Found conflicting clock definitions for the same clock 'CLK' in the SDC file.
+  Retaining the last specified frequency of 125MHz.
+
+CK: assigning clock CLK to net clk
+** WARN:  (VOLTUS_POWR-1608):   Found conflicting clock definitions for the same clock 'SPI_CLK' in the SDC file.
+  Retaining the last specified frequency of 25MHz.
+
+CK: assigning clock SPI_CLK to net spi_clk_i
+CK: assigning clock JTAG_CLK to net tck_i
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2333.57MB/4388.79MB/2368.79MB)
+
+** WARN:  (VOLTUS_POWR-1784): The SDC clock frequency 125MHz is being overwritten with the VCD clock frequency 25MHz for the clock 'CLK' associated with the net
+'clk' from the TCF file. If the SDC clock frequency is required for static power calculation, use the command
+'set_switching_activity -clock <clock name> -scale_factor <num>' to scale frequency of this clock.
+
+** WARN:  (VOLTUS_POWR-1784): The SDC clock frequency 25MHz is being overwritten with the VCD clock frequency 0.00388594MHz for the clock 'SPI_CLK' associated with the net
+'spi_clk_i' from the TCF file. If the SDC clock frequency is required for static power calculation, use the command
+'set_switching_activity -clock <clock name> -scale_factor <num>' to scale frequency of this clock.
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2333.57MB/4388.79MB/2368.79MB)
+
+Begin Processing Signal Activity
+
+
+Starting Activity Propagation
+2026-May-26 14:03:51 (2026-May-26 12:03:51 GMT)
+
+Finished Activity Propagation
+2026-May-26 14:03:52 (2026-May-26 12:03:52 GMT)
+
+Activity annotation summary:
+        Primary Inputs : 16/16 = 100%
+          Flop outputs : 9251/9251 = 100%
+  Memory/Macro outputs : 288/288 = 100%
+      Tristate outputs : 0/0 = 0%
+            Total Nets : 43703/43703 = 100%
+
+Ended Processing Signal Activity: (cpu=0:00:01, real=0:00:01, mem(process/total/peak)=2333.57MB/4388.79MB/2368.79MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 1
+      # of cell(s) missing leakage table: 0
+      ----------------------------------------------------------
+CellName                                  Missing Table(s)
+HS65_LH_ANTPROT1                          internal power, 
+
+
+
+Starting Calculating power
+2026-May-26 14:03:52 (2026-May-26 12:03:52 GMT)
+ ... Calculating switching power
+2026-May-26 14:03:52 (2026-May-26 12:03:52 GMT): 10%
+2026-May-26 14:03:52 (2026-May-26 12:03:52 GMT): 20%
+2026-May-26 14:03:52 (2026-May-26 12:03:52 GMT): 30%
+2026-May-26 14:03:52 (2026-May-26 12:03:52 GMT): 40%
+2026-May-26 14:03:52 (2026-May-26 12:03:52 GMT): 50%
+ ... Calculating internal and leakage power
+2026-May-26 14:03:54 (2026-May-26 12:03:54 GMT): 60%
+2026-May-26 14:03:56 (2026-May-26 12:03:56 GMT): 70%
+2026-May-26 14:03:58 (2026-May-26 12:03:58 GMT): 80%
+2026-May-26 14:04:00 (2026-May-26 12:04:00 GMT): 90%
+
+Finished Calculating power
+2026-May-26 14:04:01 (2026-May-26 12:04:01 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:09, real=0:00:09, mem(process/total/peak)=2333.58MB/4388.79MB/2368.79MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2333.58MB/4388.79MB/2368.79MB)
+
+Ended Power Analysis: (cpu=0:00:10, real=0:00:10, mem(process/total/peak)=2333.58MB/4388.79MB/2368.79MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2333.58MB/4388.79MB/2368.79MB)
+Begin Static Power Report Generation
+  2 instances have no static power
+** WARN:  (VOLTUS_POWR-2152): Instance peripherals_i/axi_spi_slave_i/axi_spi_slave_i/u_rxreg/DIODE_3 (HS65_LH_ANTPROT1) has no static power. This might be because either the duty cycle and activity of all the connected nets
+is 0 or the instance is connected to power off rails. If this is not the expected behaviour and static power is required, ensure that the instance is connected
+to power on rails and that the duty cycle and activity of at least one net is not 0.
+
+** WARN:  (VOLTUS_POWR-2152): Instance peripherals_i/axi_spi_slave_i/axi_spi_slave_i/u_rxreg/DIODE_2 (HS65_LH_ANTPROT1) has no static power. This might be because either the duty cycle and activity of all the connected nets
+is 0 or the instance is connected to power off rails. If this is not the expected behaviour and static power is required, ensure that the instance is connected
+to power on rails and that the duty cycle and activity of at least one net is not 0.
+
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        3.90517692 	   90.4627%
+Total Switching Power:       0.29026148 	    6.7239%
+Total Leakage Power:         0.12145333 	    2.8134%
+Total Power:                 4.31689172
+-----------------------------------------------------------------------------------------
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2333.58MB/4388.79MB/2368.79MB)
+
+
+Output file is .//power_core.rpt
+1
+@innovus 28> gui_select -point {-126.33800 137.71400}
+@innovus 29> set_layer_preference violation -is_visible 1
+@innovus 30> gui_select -point {2214.34300 1760.23300}
+@innovus 31> set_layer_preference node_track -is_visible 1
+@innovus 32> set_layer_preference node_track -is_visible 0
+@innovus 33> set_layer_preference node_gird -is_visible 1
+@innovus 34> set_layer_preference node_gird -is_visible 0
+@innovus 35> set_layer_preference node_track -is_visible 1
+@innovus 36> set_layer_preference node_track -is_visible 0
+@innovus 37> set_layer_preference node_overlay -is_visible 1
+gui_set_power_rail_display -plot none
+
+
+
+@innovus 38> set_layer_preference node_overlay -is_visible 0
+@innovus 39> gui_select -point {238.57000 1171.06300}
+@innovus 40> gui_select -point {256.53400 1133.35500}
+@innovus 41> exit
+
+
+*** Memory Usage v#1 (Current mem = 2748.602M, initial mem = 484.035M) ***
+*** Message Summary: 3096 warning(s), 12223 error(s)
+
+--- Ending "Innovus" (totcpu=0:14:20, real=0:53:50, mem=2748.6M) ---

@@ -1,0 +1,69 @@
+[05/26 12:14:51      0s] 
+[05/26 12:14:51      0s] Cadence Innovus(TM) Implementation System.
+[05/26 12:14:51      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/26 12:14:51      0s] 
+[05/26 12:14:51      0s] Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+[05/26 12:14:51      0s] Options:	-stylus 
+[05/26 12:14:51      0s] Date:		Tue May 26 12:14:50 2026
+[05/26 12:14:51      0s] Host:		fransg-2 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+[05/26 12:14:51      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[05/26 12:14:51      0s] 
+[05/26 12:14:51      0s] License:
+[05/26 12:14:51      0s] 		[12:14:50.324457] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+[05/26 12:14:51      0s] 
+[05/26 12:14:51      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[05/26 12:14:51      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[05/26 12:15:02      8s] 
+[05/26 12:15:02      8s] 
+[05/26 12:15:10     13s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.35-s114_1 (64bit) 10/13/2022 12:11 (Linux 3.10.0-693.el7.x86_64)
+[05/26 12:15:15     16s] @(#)CDS: NanoRoute 21.35-s114_1 NR220912-2004/21_15-UB (database version 18.20.592_1) {superthreading v2.17}
+[05/26 12:15:15     16s] @(#)CDS: AAE 21.15-s039 (64bit) 10/13/2022 (Linux 3.10.0-693.el7.x86_64)
+[05/26 12:15:15     16s] @(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+[05/26 12:15:15     16s] @(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+[05/26 12:15:15     16s] @(#)CDS: CPE v21.15-s076
+[05/26 12:15:15     16s] @(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+[05/26 12:15:15     16s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[05/26 12:15:15     16s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[05/26 12:15:15     16s] @(#)CDS: RCDB 11.15.0
+[05/26 12:15:15     16s] @(#)CDS: STYLUS 21.12-s013_1 (08/15/2022 08:25 PDT)
+[05/26 12:15:15     16s] @(#)CDS: SystemPlanner-21.15Rel-8720 (21.15) (2022-08-22 18:31:54+0800)
+[05/26 12:15:15     16s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_13970_fransg-2_su2577su-s_FOSKgm.
+
+[05/26 12:15:15     16s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_13970_fransg-2_su2577su-s_FOSKgm.
+[05/26 12:15:15     16s] 
+[05/26 12:15:15     16s] Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[05/26 12:15:19     17s] [INFO] Loading PVS 21.10 fill procedures
+[05/26 12:15:21     19s] 
+[05/26 12:15:21     19s] **INFO:  MMMC transition support version v31-84 
+[05/26 12:15:21     19s] 
+[05/26 12:15:24     21s] @innovus 1> source run_power.tcl
+#@ Begin verbose source (pre): source run_power.tcl
+[05/26 12:15:38     25s] @file 1: # 1. Initialize the power analysis engine
+[05/26 12:15:38     25s] @file 2: set_power_analysis_mode -reset
+[05/26 12:15:38     25s] **ERROR: (IMPSE-110):	File 'run_power.tcl' line 2: invalid command name "set_power_analysis_mode".
+[05/26 12:15:38     25s] #@ End verbose source run_power.tcl
+[05/26 12:15:38     25s] invalid command name "set_power_analysis_mode"
+[05/26 12:15:38     25s] invalid command name "set_power_analysis_mode"
+[05/26 12:15:38     25s] @innovus 2> setPowerAnalysisMode -reset
+
+[05/26 12:16:08     32s] invalid command name "setPowerAnalysisMode"
+[05/26 12:16:08     32s] invalid command name "setPowerAnalysisMode"
+[05/26 12:16:08     32s] @innovus 3> set_power_analysis_mode -reset
+
+[05/26 12:16:19     34s] invalid command name "set_power_analysis_mode"
+[05/26 12:16:19     34s] invalid command name "set_power_analysis_mode"
+[05/26 12:16:19     34s] @innovus 4> init_power
+
+[05/26 12:16:38     38s] invalid command name "init_power"
+[05/26 12:16:38     38s] invalid command name "init_power"
+[05/26 12:16:38     38s] @innovus 5> exit
+
+[05/26 12:16:54     42s] 
+[05/26 12:16:54     42s] *** Memory Usage v#1 (Current mem = 1055.344M, initial mem = 484.035M) ***
+[05/26 12:16:54     42s] 
+[05/26 12:16:54     42s] *** Summary of all messages that are not suppressed in this session:
+[05/26 12:16:54     42s] Severity  ID               Count  Summary                                  
+[05/26 12:16:54     42s] ERROR     IMPSE-110            1  File '%s' line %s: %s.                   
+[05/26 12:16:54     42s] *** Message Summary: 0 warning(s), 1 error(s)
+[05/26 12:16:54     42s] 
+[05/26 12:16:54     42s] --- Ending "Innovus" (totcpu=0:00:42.7, real=0:02:04, mem=1055.3M) ---

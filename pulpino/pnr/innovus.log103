@@ -1,0 +1,762 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.35-s114_1, built Thu Oct 13 12:11:47 PDT 2022
+Options:	-stylus 
+Date:		Tue May 26 12:26:20 2026
+Host:		fransg-2 (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (6cores*6cpus*Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz 9216KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[12:26:20.324457] Configured Lic search path (21.01-s002): 5280@auctor.eit.lth.se
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_18530_fransg-2_su2577su-s_MkW3Bj.
+
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[INFO] Loading PVS 21.10 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+@innovus 1> read_activity_file -format SAIF core_power.saif -scope tb_pl/top_i/core_region_i
+Begin Processing SAIF file
+Innovus terminated by internal (SEGV) error/signal...
+*** Stack trace:
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus[0x18b1b32b]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(syStackTrace+0x9c)[0x18b1b7a7]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus[0x6a04536]
+/lib64/libpthread.so.0(+0xf62f)[0x7f24d444862f]
+/lib64/libc.so.6(+0x16f8c1)[0x7f24d3a438c1]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN7PM_SAIF6Parser14parseInstancesEv+0xcb)[0x262b2dcb]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN7PM_SAIF6Parser23parseStatementOrSectionEv+0x46f)[0x262b3aaf]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN7PM_SAIF6Parser5parseEv+0x834)[0x262b4774]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN19Pmio_PowerMeterData15fnParseSaifFileEPKcS1_S1_S1_fRP12Pmnl_NetlistP17Pmparser_ReporterbfP23Pmnli_MultiActivityData+0x419)[0x2629eb69]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_Z19CPEReadActivityFilePvP10Tcl_InterpiPPc+0x1f13)[0x25bf57c3]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus[0x1886ee97]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN10tcmBaseCmd7executeEP10Tcl_InterpiPPc+0x1a8)[0x1b77c778]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN6tcmMgr9cmdParserEPvP10Tcl_InterpiPPc+0x6c1)[0x1b76fc51]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(TclInvokeStringCommand+0x7a)[0x2926961a]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(TclNRRunCallbacks+0x71)[0x2926e111]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus[0x29270323]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(Tcl_EvalEx+0x12)[0x29270d72]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_Z17rdaEditCmdLineEndPc+0x334)[0x6affb94]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN9seConsole7sesMode9DoExecuteERKSsPv+0xee)[0x14d901de]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN7Redline9EmacsMode10AcceptLineEv+0x3f)[0x1642d71f]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN7Redline11ModeCommandINS_9EmacsModeEE15CommandFnNoKeysERKN5boost8functionIFvRS1_EEERNS_6EditorE+0x60)[0x16434ee0]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN5boost6detail8function26void_function_obj_invoker2INS_3_bi6bind_tINS3_11unspecifiedENS_8functionIFvRN7Redline6EditorEEEENS3_5list1INS_3argILi1EEEEEEEvS9_RKNS7_14KeyCombinationEE6invokeERNS1_15function_bufferES9_SJ_+0x1a)[0x1644307a]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZNK7Redline7Command3RunERNS_6EditorERKNS_14KeyCombinationE+0x1b)[0x1644289b]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN7Redline6Editor9Internals3RunEb+0xc6)[0x1642a456]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus[0x293722dd]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(Tcl_ServiceEvent+0x88)[0x29332ae8]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(Tcl_DoOneEvent+0x148)[0x29332df8]
+/usr/local-eit/cad2/cadence/inn2114/tools/lib/64bit/libtq.so(_ZN17TqEventDispatcher13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE+0x69)[0x7f24dc94a239]
+/usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5(_ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE+0xe9)[0x7f24dbaf30c9]
+/usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5(_ZN16QCoreApplication4execEv+0x83)[0x7f24dbafb953]
+/usr/local-eit/cad2/cadence/inn2114/tools/lib/64bit/libtq.so(_ZN13TqApplication4execEv+0x176)[0x7f24dc949896]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_Z12edi_app_initP10Tcl_Interp+0x2cb)[0x6adcf2b]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(Tcl_MainEx+0x17b)[0x2932d53b]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(main+0x800)[0x5e6e360]
+/lib64/libc.so.6(__libc_start_main+0xf4)[0x7f24d38f6554]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus[0x6a01ab6]
+========================================
+               pstack
+========================================
+Thread 16 (Thread 0x7f24c3297700 (LWP 18654)):
+#0  0x00007f24d44479dd in accept () from /lib64/libpthread.so.0
+#1  0x0000000027ae74ca in ProcessInfo::handleConnection(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 15 (Thread 0x7f24c2a96700 (LWP 18655)):
+#0  0x00007f24d39c9b43 in select () from /lib64/libc.so.6
+#1  0x0000000027ae00cb in ProcessInfo::sampleUsage(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 14 (Thread 0x7f24c2293700 (LWP 18658)):
+#0  0x00007f24d39c9b43 in select () from /lib64/libc.so.6
+#1  0x0000000018b3ea25 in syiMonitorStdOE(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 13 (Thread 0x7f24c188b700 (LWP 18659)):
+#0  0x00007f24d4447e9d in nanosleep () from /lib64/libpthread.so.0
+#1  0x0000000008ab1ccd in rdaiLicRecheck(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 12 (Thread 0x7f24c0788700 (LWP 18661)):
+#0  0x00007f24d39999fd in nanosleep () from /lib64/libc.so.6
+#1  0x00007f24d3999894 in sleep () from /lib64/libc.so.6
+#2  0x0000000018b34d9a in syiPeakMem(void*) ()
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 11 (Thread 0x7f24bfb66700 (LWP 18728)):
+#0  0x00007f24d39c7ddd in poll () from /lib64/libc.so.6
+#1  0x00007f24d871f022 in _xcb_conn_wait () from /lib64/libxcb.so.1
+#2  0x00007f24d8720c6f in xcb_wait_for_event () from /lib64/libxcb.so.1
+#3  0x00007f24bfbbba59 in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5XcbQpa.so.5
+#4  0x00007f24db91617a in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#5  0x0000000006e0f2e5 in create_head(void*) ()
+#6  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#7  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 10 (Thread 0x7f24b95a2700 (LWP 18729)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 9 (Thread 0x7f24b8da1700 (LWP 18730)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 8 (Thread 0x7f24b85a0700 (LWP 18731)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 7 (Thread 0x7f24b7c9f700 (LWP 18732)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 6 (Thread 0x7f24b749e700 (LWP 18733)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 5 (Thread 0x7f24b6c9d700 (LWP 18734)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 4 (Thread 0x7f24b6456700 (LWP 18735)):
+#0  0x00007f24d39c9b43 in select () from /lib64/libc.so.6
+#1  0x0000000029371fd8 in NotifierThreadProc ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 3 (Thread 0x7f24b55a5700 (LWP 18802)):
+#0  0x00007f24d44483c1 in sigwait () from /lib64/libpthread.so.0
+#1  0x0000000006a02400 in ctrlCHandle(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 2 (Thread 0x7f249642b700 (LWP 18824)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24db916fbb in QWaitCondition::wait(QMutex*, unsigned long) () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#2  0x00007f24db562e22 in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Widgets.so.5
+#3  0x00007f24db91617a in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#4  0x0000000006e0f2e5 in create_head(void*) ()
+#5  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#6  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 1 (Thread 0x7f24cb91d740 (LWP 18530)):
+#0  0x00007f24d3999659 in waitpid () from /lib64/libc.so.6
+#1  0x00007f24d3916f62 in do_system () from /lib64/libc.so.6
+#2  0x00007f24d3917311 in system () from /lib64/libc.so.6
+#3  0x0000000018b1b40e in syStackTraceDump(_IO_FILE*, bool) ()
+#4  0x0000000018b1b7a8 in syStackTrace ()
+#5  0x0000000006a04537 in rdaiErrorHandler(int, siginfo_t*, void*) ()
+#6  <signal handler called>
+#7  0x00007f24d3a438c1 in __strlen_sse2_pminub () from /lib64/libc.so.6
+#8  0x00000000262b2dcc in PM_SAIF::Parser::parseInstances() ()
+#9  0x00000000262b3ab0 in PM_SAIF::Parser::parseStatementOrSection() ()
+#10 0x00000000262b4775 in PM_SAIF::Parser::parse() ()
+#11 0x000000002629eb6a in Pmio_PowerMeterData::fnParseSaifFile(char const*, char const*, char const*, char const*, float, Pmnl_Netlist*&, Pmparser_Reporter*, bool, float, Pmnli_MultiActivityData*) ()
+#12 0x0000000025bf57c4 in CPEReadActivityFile(void*, Tcl_Interp*, int, char**) ()
+#13 0x000000001886ee98 in readActivityFileCmd(void*, Tcl_Interp*, int, char**) ()
+#14 0x000000001b77c779 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#15 0x000000001b76fc52 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#16 0x000000002926961b in TclInvokeStringCommand ()
+#17 0x000000002926e112 in TclNRRunCallbacks ()
+#18 0x0000000029270324 in TclEvalEx ()
+#19 0x0000000029270d73 in Tcl_EvalEx ()
+#20 0x0000000006affb95 in rdaEditCmdLineEnd(char*) ()
+#21 0x0000000014d901df in seConsole::sesMode::DoExecute(std::string const&, void*) ()
+#22 0x000000001642d720 in Redline::EmacsMode::AcceptLine() ()
+#23 0x0000000016434ee1 in Redline::ModeCommand<Redline::EmacsMode>::CommandFnNoKeys(boost::function<void (Redline::EmacsMode&)> const&, Redline::Editor&) ()
+#24 0x000000001644307b in boost::detail::function::void_function_obj_invoker2<boost::_bi::bind_t<boost::_bi::unspecified, boost::function<void (Redline::Editor&)>, boost::_bi::list1<boost::arg<1> > >, void, Redline::Editor&, Redline::KeyCombination const&>::invoke(boost::detail::function::function_buffer&, Redline::Editor&, Redline::KeyCombination const&) ()
+#25 0x000000001644289c in Redline::Command::Run(Redline::Editor&, Redline::KeyCombination const&) const ()
+#26 0x000000001642a457 in Redline::Editor::Internals::Run(bool) ()
+#27 0x00000000293722de in FileHandlerEventProc ()
+#28 0x0000000029332ae9 in Tcl_ServiceEvent ()
+#29 0x0000000029332df9 in Tcl_DoOneEvent ()
+#30 0x00007f24dc94a23a in TqEventDispatcher::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /usr/local-eit/cad2/cadence/inn2114/tools/lib/64bit/libtq.so
+#31 0x00007f24dbaf30ca in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#32 0x00007f24dbafb954 in QCoreApplication::exec() () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#33 0x00007f24dc949897 in TqApplication::exec() () from /usr/local-eit/cad2/cadence/inn2114/tools/lib/64bit/libtq.so
+#34 0x0000000006adcf2c in edi_app_init(Tcl_Interp*) ()
+#35 0x000000002932d53c in Tcl_MainEx ()
+#36 0x0000000005e6e361 in main ()
+========================================
+                gdb
+========================================
+Using: gdb
+[New LWP 18654]
+[New LWP 18655]
+[New LWP 18658]
+[New LWP 18659]
+[New LWP 18661]
+[New LWP 18728]
+[New LWP 18729]
+[New LWP 18730]
+[New LWP 18731]
+[New LWP 18732]
+[New LWP 18733]
+[New LWP 18734]
+[New LWP 18735]
+[New LWP 18802]
+[New LWP 18824]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+0x00007f24d3999659 in waitpid () from /lib64/libc.so.6
+
+Thread 16 (Thread 0x7f249642b700 (LWP 18824) "QFileInfoGather"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24db916fbb in QWaitCondition::wait(QMutex*, unsigned long) () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#2  0x00007f24db562e22 in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Widgets.so.5
+#3  0x00007f24db91617a in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#4  0x0000000006e0f2e5 in create_head(void*) ()
+#5  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#6  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 15 (Thread 0x7f24b55a5700 (LWP 18802) "innovus"):
+#0  0x00007f24d44483c1 in sigwait () from /lib64/libpthread.so.0
+#1  0x0000000006a02400 in ctrlCHandle(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 14 (Thread 0x7f24b6456700 (LWP 18735) "innovus"):
+#0  0x00007f24d39c9b43 in select () from /lib64/libc.so.6
+#1  0x0000000029371fd8 in NotifierThreadProc ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 13 (Thread 0x7f24b6c9d700 (LWP 18734) "llvmpipe-5"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 12 (Thread 0x7f24b749e700 (LWP 18733) "llvmpipe-4"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 11 (Thread 0x7f24b7c9f700 (LWP 18732) "llvmpipe-3"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 10 (Thread 0x7f24b85a0700 (LWP 18731) "llvmpipe-2"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 9 (Thread 0x7f24b8da1700 (LWP 18730) "llvmpipe-1"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 8 (Thread 0x7f24b95a2700 (LWP 18729) "llvmpipe-0"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 7 (Thread 0x7f24bfb66700 (LWP 18728) "QXcbEventReader"):
+#0  0x00007f24d39c7ddd in poll () from /lib64/libc.so.6
+#1  0x00007f24d871f022 in _xcb_conn_wait () from /lib64/libxcb.so.1
+#2  0x00007f24d8720c6f in xcb_wait_for_event () from /lib64/libxcb.so.1
+#3  0x00007f24bfbbba59 in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5XcbQpa.so.5
+#4  0x00007f24db91617a in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#5  0x0000000006e0f2e5 in create_head(void*) ()
+#6  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#7  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 6 (Thread 0x7f24c0788700 (LWP 18661) "innovus"):
+#0  0x00007f24d39999fd in nanosleep () from /lib64/libc.so.6
+#1  0x00007f24d3999894 in sleep () from /lib64/libc.so.6
+#2  0x0000000018b34d9a in syiPeakMem(void*) ()
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 5 (Thread 0x7f24c188b700 (LWP 18659) "innovus"):
+#0  0x00007f24d4447e9d in nanosleep () from /lib64/libpthread.so.0
+#1  0x0000000008ab1ccd in rdaiLicRecheck(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 4 (Thread 0x7f24c2293700 (LWP 18658) "innovus"):
+#0  0x00007f24d39c9b43 in select () from /lib64/libc.so.6
+#1  0x0000000018b3ea25 in syiMonitorStdOE(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 3 (Thread 0x7f24c2a96700 (LWP 18655) "innovus"):
+#0  0x00007f24d39c9b43 in select () from /lib64/libc.so.6
+#1  0x0000000027ae00cb in ProcessInfo::sampleUsage(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 2 (Thread 0x7f24c3297700 (LWP 18654) "innovus"):
+#0  0x00007f24d44479dd in accept () from /lib64/libpthread.so.0
+#1  0x0000000027ae74ca in ProcessInfo::handleConnection(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 1 (Thread 0x7f24cb91d740 (LWP 18530) "innovus"):
+#0  0x00007f24d3999659 in waitpid () from /lib64/libc.so.6
+#1  0x00007f24d3916f62 in do_system () from /lib64/libc.so.6
+#2  0x00007f24d3917311 in system () from /lib64/libc.so.6
+#3  0x0000000018b1b40e in syStackTraceDump(_IO_FILE*, bool) ()
+#4  0x0000000018b1b7a8 in syStackTrace ()
+#5  0x0000000006a04537 in rdaiErrorHandler(int, siginfo_t*, void*) ()
+#6  <signal handler called>
+#7  0x00007f24d3a438c1 in __strlen_sse2_pminub () from /lib64/libc.so.6
+#8  0x00000000262b2dcc in PM_SAIF::Parser::parseInstances() ()
+#9  0x00000000262b3ab0 in PM_SAIF::Parser::parseStatementOrSection() ()
+#10 0x00000000262b4775 in PM_SAIF::Parser::parse() ()
+#11 0x000000002629eb6a in Pmio_PowerMeterData::fnParseSaifFile(char const*, char const*, char const*, char const*, float, Pmnl_Netlist*&, Pmparser_Reporter*, bool, float, Pmnli_MultiActivityData*) ()
+#12 0x0000000025bf57c4 in CPEReadActivityFile(void*, Tcl_Interp*, int, char**) ()
+#13 0x000000001886ee98 in readActivityFileCmd(void*, Tcl_Interp*, int, char**) ()
+#14 0x000000001b77c779 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#15 0x000000001b76fc52 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#16 0x000000002926961b in TclInvokeStringCommand ()
+#17 0x000000002926e112 in TclNRRunCallbacks ()
+#18 0x0000000029270324 in TclEvalEx ()
+#19 0x0000000029270d73 in Tcl_EvalEx ()
+#20 0x0000000006affb95 in rdaEditCmdLineEnd(char*) ()
+#21 0x0000000014d901df in seConsole::sesMode::DoExecute(std::string const&, void*) ()
+#22 0x000000001642d720 in Redline::EmacsMode::AcceptLine() ()
+#23 0x0000000016434ee1 in Redline::ModeCommand<Redline::EmacsMode>::CommandFnNoKeys(boost::function<void (Redline::EmacsMode&)> const&, Redline::Editor&) ()
+#24 0x000000001644307b in boost::detail::function::void_function_obj_invoker2<boost::_bi::bind_t<boost::_bi::unspecified, boost::function<void (Redline::Editor&)>, boost::_bi::list1<boost::arg<1> > >, void, Redline::Editor&, Redline::KeyCombination const&>::invoke(boost::detail::function::function_buffer&, Redline::Editor&, Redline::KeyCombination const&) ()
+#25 0x000000001644289c in Redline::Command::Run(Redline::Editor&, Redline::KeyCombination const&) const ()
+#26 0x000000001642a457 in Redline::Editor::Internals::Run(bool) ()
+#27 0x00000000293722de in FileHandlerEventProc ()
+#28 0x0000000029332ae9 in Tcl_ServiceEvent ()
+#29 0x0000000029332df9 in Tcl_DoOneEvent ()
+#30 0x00007f24dc94a23a in TqEventDispatcher::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /usr/local-eit/cad2/cadence/inn2114/tools/lib/64bit/libtq.so
+#31 0x00007f24dbaf30ca in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#32 0x00007f24dbafb954 in QCoreApplication::exec() () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#33 0x00007f24dc949897 in TqApplication::exec() () from /usr/local-eit/cad2/cadence/inn2114/tools/lib/64bit/libtq.so
+#34 0x0000000006adcf2c in edi_app_init(Tcl_Interp*) ()
+#35 0x000000002932d53c in Tcl_MainEx ()
+#36 0x0000000005e6e361 in main ()
+A debugging session is active.
+
+	Inferior 1 [process 18530] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Inferior 1 (process 18530) detached]
+*** Stack trace:
+*** Stack trace in log file.
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus[0x18b1b286]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(syStackTrace+0xad)[0x18b1b7b8]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus[0x6a04536]
+/lib64/libpthread.so.0(+0xf62f)[0x7f24d444862f]
+/lib64/libc.so.6(+0x16f8c1)[0x7f24d3a438c1]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN7PM_SAIF6Parser14parseInstancesEv+0xcb)[0x262b2dcb]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN7PM_SAIF6Parser23parseStatementOrSectionEv+0x46f)[0x262b3aaf]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN7PM_SAIF6Parser5parseEv+0x834)[0x262b4774]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN19Pmio_PowerMeterData15fnParseSaifFileEPKcS1_S1_S1_fRP12Pmnl_NetlistP17Pmparser_ReporterbfP23Pmnli_MultiActivityData+0x419)[0x2629eb69]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_Z19CPEReadActivityFilePvP10Tcl_InterpiPPc+0x1f13)[0x25bf57c3]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus[0x1886ee97]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN10tcmBaseCmd7executeEP10Tcl_InterpiPPc+0x1a8)[0x1b77c778]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN6tcmMgr9cmdParserEPvP10Tcl_InterpiPPc+0x6c1)[0x1b76fc51]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(TclInvokeStringCommand+0x7a)[0x2926961a]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(TclNRRunCallbacks+0x71)[0x2926e111]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus[0x29270323]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(Tcl_EvalEx+0x12)[0x29270d72]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_Z17rdaEditCmdLineEndPc+0x334)[0x6affb94]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN9seConsole7sesMode9DoExecuteERKSsPv+0xee)[0x14d901de]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN7Redline9EmacsMode10AcceptLineEv+0x3f)[0x1642d71f]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN7Redline11ModeCommandINS_9EmacsModeEE15CommandFnNoKeysERKN5boost8functionIFvRS1_EEERNS_6EditorE+0x60)[0x16434ee0]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN5boost6detail8function26void_function_obj_invoker2INS_3_bi6bind_tINS3_11unspecifiedENS_8functionIFvRN7Redline6EditorEEEENS3_5list1INS_3argILi1EEEEEEEvS9_RKNS7_14KeyCombinationEE6invokeERNS1_15function_bufferES9_SJ_+0x1a)[0x1644307a]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZNK7Redline7Command3RunERNS_6EditorERKNS_14KeyCombinationE+0x1b)[0x1644289b]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_ZN7Redline6Editor9Internals3RunEb+0xc6)[0x1642a456]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus[0x293722dd]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(Tcl_ServiceEvent+0x88)[0x29332ae8]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(Tcl_DoOneEvent+0x148)[0x29332df8]
+/usr/local-eit/cad2/cadence/inn2114/tools/lib/64bit/libtq.so(_ZN17TqEventDispatcher13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE+0x69)[0x7f24dc94a239]
+/usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5(_ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE+0xe9)[0x7f24dbaf30c9]
+/usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5(_ZN16QCoreApplication4execEv+0x83)[0x7f24dbafb953]
+/usr/local-eit/cad2/cadence/inn2114/tools/lib/64bit/libtq.so(_ZN13TqApplication4execEv+0x176)[0x7f24dc949896]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(_Z12edi_app_initP10Tcl_Interp+0x2cb)[0x6adcf2b]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(Tcl_MainEx+0x17b)[0x2932d53b]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus(main+0x800)[0x5e6e360]
+/lib64/libc.so.6(__libc_start_main+0xf4)[0x7f24d38f6554]
+/usr/local-eit/cad2/cadence/inn2114/tools/innovus/bin/64bit/innovus[0x6a01ab6]
+========================================
+               pstack
+========================================
+Thread 16 (Thread 0x7f24c3297700 (LWP 18654)):
+#0  0x00007f24d44479dd in accept () from /lib64/libpthread.so.0
+#1  0x0000000027ae74ca in ProcessInfo::handleConnection(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 15 (Thread 0x7f24c2a96700 (LWP 18655)):
+#0  0x00007f24d39c9b43 in select () from /lib64/libc.so.6
+#1  0x0000000027ae00cb in ProcessInfo::sampleUsage(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 14 (Thread 0x7f24c2293700 (LWP 18658)):
+#0  0x00007f24d39c9b43 in select () from /lib64/libc.so.6
+#1  0x0000000018b3ea25 in syiMonitorStdOE(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 13 (Thread 0x7f24c188b700 (LWP 18659)):
+#0  0x00007f24d4447e9d in nanosleep () from /lib64/libpthread.so.0
+#1  0x0000000008ab1ccd in rdaiLicRecheck(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 12 (Thread 0x7f24c0788700 (LWP 18661)):
+#0  0x00007f24d39999fd in nanosleep () from /lib64/libc.so.6
+#1  0x00007f24d3999894 in sleep () from /lib64/libc.so.6
+#2  0x0000000018b34d9a in syiPeakMem(void*) ()
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 11 (Thread 0x7f24bfb66700 (LWP 18728)):
+#0  0x00007f24d39c7ddd in poll () from /lib64/libc.so.6
+#1  0x00007f24d871f022 in _xcb_conn_wait () from /lib64/libxcb.so.1
+#2  0x00007f24d8720c6f in xcb_wait_for_event () from /lib64/libxcb.so.1
+#3  0x00007f24bfbbba59 in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5XcbQpa.so.5
+#4  0x00007f24db91617a in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#5  0x0000000006e0f2e5 in create_head(void*) ()
+#6  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#7  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 10 (Thread 0x7f24b95a2700 (LWP 18729)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 9 (Thread 0x7f24b8da1700 (LWP 18730)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 8 (Thread 0x7f24b85a0700 (LWP 18731)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 7 (Thread 0x7f24b7c9f700 (LWP 18732)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 6 (Thread 0x7f24b749e700 (LWP 18733)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 5 (Thread 0x7f24b6c9d700 (LWP 18734)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 4 (Thread 0x7f24b6456700 (LWP 18735)):
+#0  0x00007f24d39c9b43 in select () from /lib64/libc.so.6
+#1  0x0000000029371fd8 in NotifierThreadProc ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 3 (Thread 0x7f24b55a5700 (LWP 18802)):
+#0  0x00007f24d44483c1 in sigwait () from /lib64/libpthread.so.0
+#1  0x0000000006a02400 in ctrlCHandle(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 2 (Thread 0x7f249642b700 (LWP 18824)):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24db916fbb in QWaitCondition::wait(QMutex*, unsigned long) () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#2  0x00007f24db562e22 in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Widgets.so.5
+#3  0x00007f24db91617a in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#4  0x0000000006e0f2e5 in create_head(void*) ()
+#5  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#6  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+Thread 1 (Thread 0x7f24cb91d740 (LWP 18530)):
+#0  0x00007f24d3999659 in waitpid () from /lib64/libc.so.6
+#1  0x00007f24d3916f62 in do_system () from /lib64/libc.so.6
+#2  0x00007f24d3917311 in system () from /lib64/libc.so.6
+#3  0x0000000018b1b3b2 in syStackTraceDump(_IO_FILE*, bool) ()
+#4  0x0000000018b1b7b9 in syStackTrace ()
+#5  0x0000000006a04537 in rdaiErrorHandler(int, siginfo_t*, void*) ()
+#6  <signal handler called>
+#7  0x00007f24d3a438c1 in __strlen_sse2_pminub () from /lib64/libc.so.6
+#8  0x00000000262b2dcc in PM_SAIF::Parser::parseInstances() ()
+#9  0x00000000262b3ab0 in PM_SAIF::Parser::parseStatementOrSection() ()
+#10 0x00000000262b4775 in PM_SAIF::Parser::parse() ()
+#11 0x000000002629eb6a in Pmio_PowerMeterData::fnParseSaifFile(char const*, char const*, char const*, char const*, float, Pmnl_Netlist*&, Pmparser_Reporter*, bool, float, Pmnli_MultiActivityData*) ()
+#12 0x0000000025bf57c4 in CPEReadActivityFile(void*, Tcl_Interp*, int, char**) ()
+#13 0x000000001886ee98 in readActivityFileCmd(void*, Tcl_Interp*, int, char**) ()
+#14 0x000000001b77c779 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#15 0x000000001b76fc52 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#16 0x000000002926961b in TclInvokeStringCommand ()
+#17 0x000000002926e112 in TclNRRunCallbacks ()
+#18 0x0000000029270324 in TclEvalEx ()
+#19 0x0000000029270d73 in Tcl_EvalEx ()
+#20 0x0000000006affb95 in rdaEditCmdLineEnd(char*) ()
+#21 0x0000000014d901df in seConsole::sesMode::DoExecute(std::string const&, void*) ()
+#22 0x000000001642d720 in Redline::EmacsMode::AcceptLine() ()
+#23 0x0000000016434ee1 in Redline::ModeCommand<Redline::EmacsMode>::CommandFnNoKeys(boost::function<void (Redline::EmacsMode&)> const&, Redline::Editor&) ()
+#24 0x000000001644307b in boost::detail::function::void_function_obj_invoker2<boost::_bi::bind_t<boost::_bi::unspecified, boost::function<void (Redline::Editor&)>, boost::_bi::list1<boost::arg<1> > >, void, Redline::Editor&, Redline::KeyCombination const&>::invoke(boost::detail::function::function_buffer&, Redline::Editor&, Redline::KeyCombination const&) ()
+#25 0x000000001644289c in Redline::Command::Run(Redline::Editor&, Redline::KeyCombination const&) const ()
+#26 0x000000001642a457 in Redline::Editor::Internals::Run(bool) ()
+#27 0x00000000293722de in FileHandlerEventProc ()
+#28 0x0000000029332ae9 in Tcl_ServiceEvent ()
+#29 0x0000000029332df9 in Tcl_DoOneEvent ()
+#30 0x00007f24dc94a23a in TqEventDispatcher::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /usr/local-eit/cad2/cadence/inn2114/tools/lib/64bit/libtq.so
+#31 0x00007f24dbaf30ca in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#32 0x00007f24dbafb954 in QCoreApplication::exec() () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#33 0x00007f24dc949897 in TqApplication::exec() () from /usr/local-eit/cad2/cadence/inn2114/tools/lib/64bit/libtq.so
+#34 0x0000000006adcf2c in edi_app_init(Tcl_Interp*) ()
+#35 0x000000002932d53c in Tcl_MainEx ()
+#36 0x0000000005e6e361 in main ()
+========================================
+                gdb
+========================================
+Using: gdb
+[New LWP 18654]
+[New LWP 18655]
+[New LWP 18658]
+[New LWP 18659]
+[New LWP 18661]
+[New LWP 18728]
+[New LWP 18729]
+[New LWP 18730]
+[New LWP 18731]
+[New LWP 18732]
+[New LWP 18733]
+[New LWP 18734]
+[New LWP 18735]
+[New LWP 18802]
+[New LWP 18824]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+0x00007f24d3999659 in waitpid () from /lib64/libc.so.6
+
+Thread 16 (Thread 0x7f249642b700 (LWP 18824) "QFileInfoGather"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24db916fbb in QWaitCondition::wait(QMutex*, unsigned long) () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#2  0x00007f24db562e22 in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Widgets.so.5
+#3  0x00007f24db91617a in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#4  0x0000000006e0f2e5 in create_head(void*) ()
+#5  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#6  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 15 (Thread 0x7f24b55a5700 (LWP 18802) "innovus"):
+#0  0x00007f24d44483c1 in sigwait () from /lib64/libpthread.so.0
+#1  0x0000000006a02400 in ctrlCHandle(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 14 (Thread 0x7f24b6456700 (LWP 18735) "innovus"):
+#0  0x00007f24d39c9b43 in select () from /lib64/libc.so.6
+#1  0x0000000029371fd8 in NotifierThreadProc ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 13 (Thread 0x7f24b6c9d700 (LWP 18734) "llvmpipe-5"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 12 (Thread 0x7f24b749e700 (LWP 18733) "llvmpipe-4"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 11 (Thread 0x7f24b7c9f700 (LWP 18732) "llvmpipe-3"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 10 (Thread 0x7f24b85a0700 (LWP 18731) "llvmpipe-2"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 9 (Thread 0x7f24b8da1700 (LWP 18730) "llvmpipe-1"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 8 (Thread 0x7f24b95a2700 (LWP 18729) "llvmpipe-0"):
+#0  0x00007f24d4444a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f24bced20b3 in thread_function () from /usr/lib64/dri/swrast_dri.so
+#2  0x00007f24bced1c27 in impl_thrd_routine () from /usr/lib64/dri/swrast_dri.so
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 7 (Thread 0x7f24bfb66700 (LWP 18728) "QXcbEventReader"):
+#0  0x00007f24d39c7ddd in poll () from /lib64/libc.so.6
+#1  0x00007f24d871f022 in _xcb_conn_wait () from /lib64/libxcb.so.1
+#2  0x00007f24d8720c6f in xcb_wait_for_event () from /lib64/libxcb.so.1
+#3  0x00007f24bfbbba59 in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5XcbQpa.so.5
+#4  0x00007f24db91617a in ?? () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#5  0x0000000006e0f2e5 in create_head(void*) ()
+#6  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#7  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 6 (Thread 0x7f24c0788700 (LWP 18661) "innovus"):
+#0  0x00007f24d39999fd in nanosleep () from /lib64/libc.so.6
+#1  0x00007f24d3999894 in sleep () from /lib64/libc.so.6
+#2  0x0000000018b34d9a in syiPeakMem(void*) ()
+#3  0x0000000006e0f2e5 in create_head(void*) ()
+#4  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 5 (Thread 0x7f24c188b700 (LWP 18659) "innovus"):
+#0  0x00007f24d4447e9d in nanosleep () from /lib64/libpthread.so.0
+#1  0x0000000008ab1ccd in rdaiLicRecheck(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 4 (Thread 0x7f24c2293700 (LWP 18658) "innovus"):
+#0  0x00007f24d39c9b43 in select () from /lib64/libc.so.6
+#1  0x0000000018b3ea25 in syiMonitorStdOE(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 3 (Thread 0x7f24c2a96700 (LWP 18655) "innovus"):
+#0  0x00007f24d39c9b43 in select () from /lib64/libc.so.6
+#1  0x0000000027ae00cb in ProcessInfo::sampleUsage(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 2 (Thread 0x7f24c3297700 (LWP 18654) "innovus"):
+#0  0x00007f24d44479dd in accept () from /lib64/libpthread.so.0
+#1  0x0000000027ae74ca in ProcessInfo::handleConnection(void*) ()
+#2  0x0000000006e0f2e5 in create_head(void*) ()
+#3  0x00007f24d4440ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f24d39d2b0d in clone () from /lib64/libc.so.6
+
+Thread 1 (Thread 0x7f24cb91d740 (LWP 18530) "innovus"):
+#0  0x00007f24d3999659 in waitpid () from /lib64/libc.so.6
+#1  0x00007f24d3916f62 in do_system () from /lib64/libc.so.6
+#2  0x00007f24d3917311 in system () from /lib64/libc.so.6
+#3  0x0000000018b1b3b2 in syStackTraceDump(_IO_FILE*, bool) ()
+#4  0x0000000018b1b7b9 in syStackTrace ()
+#5  0x0000000006a04537 in rdaiErrorHandler(int, siginfo_t*, void*) ()
+#6  <signal handler called>
+#7  0x00007f24d3a438c1 in __strlen_sse2_pminub () from /lib64/libc.so.6
+#8  0x00000000262b2dcc in PM_SAIF::Parser::parseInstances() ()
+#9  0x00000000262b3ab0 in PM_SAIF::Parser::parseStatementOrSection() ()
+#10 0x00000000262b4775 in PM_SAIF::Parser::parse() ()
+#11 0x000000002629eb6a in Pmio_PowerMeterData::fnParseSaifFile(char const*, char const*, char const*, char const*, float, Pmnl_Netlist*&, Pmparser_Reporter*, bool, float, Pmnli_MultiActivityData*) ()
+#12 0x0000000025bf57c4 in CPEReadActivityFile(void*, Tcl_Interp*, int, char**) ()
+#13 0x000000001886ee98 in readActivityFileCmd(void*, Tcl_Interp*, int, char**) ()
+#14 0x000000001b77c779 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#15 0x000000001b76fc52 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#16 0x000000002926961b in TclInvokeStringCommand ()
+#17 0x000000002926e112 in TclNRRunCallbacks ()
+#18 0x0000000029270324 in TclEvalEx ()
+#19 0x0000000029270d73 in Tcl_EvalEx ()
+#20 0x0000000006affb95 in rdaEditCmdLineEnd(char*) ()
+#21 0x0000000014d901df in seConsole::sesMode::DoExecute(std::string const&, void*) ()
+#22 0x000000001642d720 in Redline::EmacsMode::AcceptLine() ()
+#23 0x0000000016434ee1 in Redline::ModeCommand<Redline::EmacsMode>::CommandFnNoKeys(boost::function<void (Redline::EmacsMode&)> const&, Redline::Editor&) ()
+#24 0x000000001644307b in boost::detail::function::void_function_obj_invoker2<boost::_bi::bind_t<boost::_bi::unspecified, boost::function<void (Redline::Editor&)>, boost::_bi::list1<boost::arg<1> > >, void, Redline::Editor&, Redline::KeyCombination const&>::invoke(boost::detail::function::function_buffer&, Redline::Editor&, Redline::KeyCombination const&) ()
+#25 0x000000001644289c in Redline::Command::Run(Redline::Editor&, Redline::KeyCombination const&) const ()
+#26 0x000000001642a457 in Redline::Editor::Internals::Run(bool) ()
+#27 0x00000000293722de in FileHandlerEventProc ()
+#28 0x0000000029332ae9 in Tcl_ServiceEvent ()
+#29 0x0000000029332df9 in Tcl_DoOneEvent ()
+#30 0x00007f24dc94a23a in TqEventDispatcher::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /usr/local-eit/cad2/cadence/inn2114/tools/lib/64bit/libtq.so
+#31 0x00007f24dbaf30ca in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#32 0x00007f24dbafb954 in QCoreApplication::exec() () from /usr/local-eit/cad2/cadence/inn2114/tools/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#33 0x00007f24dc949897 in TqApplication::exec() () from /usr/local-eit/cad2/cadence/inn2114/tools/lib/64bit/libtq.so
+#34 0x0000000006adcf2c in edi_app_init(Tcl_Interp*) ()
+#35 0x000000002932d53c in Tcl_MainEx ()
+#36 0x0000000005e6e361 in main ()
+A debugging session is active.
+
+	Inferior 1 [process 18530] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Inferior 1 (process 18530) detached]
+Crashed in AAE on net Unknown net.
+
+*** Memory Usage v#1 (Current mem = 1121.734M, initial mem = 484.035M) ***
+*** Message Summary: 0 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:20.1, real=0:00:49.0, mem=1121.7M) ---
