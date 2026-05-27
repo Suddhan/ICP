@@ -29,6 +29,7 @@ set_db / .init_lib_search_path ". \
 /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/libs \
 ../rtl \
 ../rtl/components \
+../rtl/conv_acc \
 ../rtl/includes \
 "
 
@@ -36,6 +37,7 @@ set_db / .init_lib_search_path ". \
 set_db init_hdl_search_path ". ../rtl \
 ../rtl/components \
 ../rtl/includes \
+../rtl/conv_acc \
 ../ips/riscv \
 ../ips/axi/core2axi \
 ../ips/axi/axi_slice \
@@ -67,6 +69,16 @@ set_db init_hdl_search_path ". ../rtl \
 " 
 
 set rtlList " \
+input_handler.sv \
+quantizer.sv \
+max_pool.sv \
+ofm_sram.sv \
+out_map.sv \
+partial_mult.sv \
+accum_partial.sv \
+filter_ctrl.sv \
+filter_top.sv \
+conv_top.sv \
 apu_defines.sv \
 apb_uart.sv \
 apb_uart_sv.sv \
@@ -200,6 +212,7 @@ core2axi_wrap.sv \
 core_region.sv \
 dp_ram_wrap.sv \
 instr_ram_wrap.sv \
+apb2conv_wrap.sv \
 periph_bus_wrap.sv \
 peripherals.sv \
 ram_mux.sv \
@@ -207,14 +220,15 @@ pulpino_top.sv \
 " 
 # Note: synthesizing the whole SoC, keeping: "sp_ram_wrap.sv ..."
 
-set_db max_cpus_per_server 4
+set_db max_cpus_per_server 8
 set_db information_level 9
 set_db pbs_mmmc_flow true
 set_db tns_opto true 
 set_db lp_insert_clock_gating true 
-
+set_db auto_ungroup none 
 set_db init_ground_nets {GND GNDE}
 set_db init_power_nets {VDD VDDE}
+set_db lib_lef_consistency_check_enable false
 
 # 4. Read Constraints (Make sure mmmc.tcl defines your clock)
 read_mmmc mmmc.tcl
@@ -228,6 +242,8 @@ read_physical -lef " \
 /usr/local-eit/cad2/cmpstm/s65v58/CLOCK65LPLVT/3.2/CADENCE/LEF/CLOCK65LPLVT_soc.lef \
 /usr/local-eit/cad2/cmpstm/s65v58/PRHS65/7.1/CADENCE/LEF/PRHS65_soc.lef \
 /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHS100909-40445@1.0/CADENCE/LEF/SPHS100909_soc.lef \
+/usr/local-eit/cad2/cmpstm/s65v58/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z/7.3/LEF/IO65LPHVT_SF_1V8_50A_7M4X0Y2Z.lef\
+/usr/local-eit/cad2/cmpstm/s65v58/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z/7.4-00/LEF/IO65LP_SF_BASIC_50A_ST_7M4X0Y2Z.lef\
 "
 
 # Set dont_use on cells 
@@ -236,16 +252,12 @@ set_db [get_db lib_cells *HS65_LLP_CNHLS*] .dont_use false
 
 set_db [get_db lib_cells -if {.name == *_SDF*}] .dont_use true 
 set_db lp_insert_discrete_clock_gating_logic true
-#Set to find blackbox
-set_db hdl_error_on_blackbox true
 
 # 6. READ AND ELABORATE
 read_hdl -language sv $rtlList
 read_hdl -language vhdl { 
   ../ips/apb/apb_uart/slib_input_sync.vhd
-  ../ips/apb/apb_uart/slib_counter.vhd
   ../ips/apb/apb_uart/slib_input_filter.vhd
-  ../ips/apb/apb_uart/slib_mv_filter.vhd
   ../ips/apb/apb_uart/slib_edge_detect.vhd
   ../ips/apb/apb_uart/slib_fifo.vhd
   ../ips/apb/apb_uart/slib_clock_div.vhd
@@ -255,15 +267,17 @@ read_hdl -language vhdl {
   ../ips/apb/apb_uart/uart_baudgen.vhd
   ../ips/apb/apb_uart/apb_uart.vhd  
 }
-#suspend
+
+read_hdl -language sv ../rtl/pulp_pads_top.sv
+suspend
 elaborate $DESIGN
 
 # 7. CRITICAL: Protect the SRAM Macros
 set_db [get_db designs:$DESIGN .insts rows[*].col[*].i_sram] .preserve true
-suspend
+#suspend
 init_design
 check_design -all
-suspend
+#suspend
 
 ####################################################################################################
 ## Synthesizing the design
