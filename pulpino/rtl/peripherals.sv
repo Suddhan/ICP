@@ -12,7 +12,6 @@
 `include "apb_bus.sv"
 `include "debug_bus.sv"
 `include "config.sv"
-//`include "../Conv_ACC/conv_acc/RTL/conv_top.sv"
 
 module peripherals
   #(
@@ -98,10 +97,14 @@ module peripherals
     output logic [31:0] [5:0] pad_cfg_o,
     output logic       [31:0] pad_mux_o,
     output logic       [31:0] boot_addr_o
+
+	/*input logic 		[31:0] s_conv_output,
+	output logic				p_enable, 
+	output logic		[31:0] s_conv_input*/
   );
 
   localparam APB_ADDR_WIDTH  = 32;
-  localparam APB_NUM_SLAVES  = 8;
+  localparam APB_NUM_SLAVES  = 10;
 
   APB_BUS s_apb_bus();
 
@@ -123,6 +126,9 @@ module peripherals
   logic         s_uart_event;
   logic         i2c_event;
   logic         s_gpio_event;
+  /*logic 		[31:0] s_conv_output;//added here newly
+  logic				p_enable;
+  logic		[31:0] s_conv_input;*/
 
   //////////////////////////////////////////////////////////////////
   ///                                                            ///
@@ -552,37 +558,43 @@ module peripherals
 
   //////////////////////////////////////////////////////////////////
   ///                                                            ///
-  /// APB Slave 9: APB2PER for conv_acc                          ///
+  /// APB Slave 9: Convolution Accelerator                       ///
   ///                                                            ///
   //////////////////////////////////////////////////////////////////
 
-  apb2conv
+  apb2conv_wrap
   #(
-    .PER_ADDR_WIDTH ( 15             ),
-    .APB_ADDR_WIDTH ( APB_ADDR_WIDTH )
+    .APB_ADDR_WIDTH ( 12 )
   )
+
+
   apb2conv_i
+
+
   (
-    .clk_i          ( clk_i                    ),
-    .rst_ni         ( rst_n                    ),
-    
-    .PADDR        ( s_conv_acc_bus.paddr    ),
+    .CLK        ( clk_i                    ),
+    .RSTN       ( rst_n                    ),
+
+    .PADDR        ( s_conv_acc_bus.paddr[11:0]    ),
     .PWDATA       ( s_conv_acc_bus.pwdata   ),
     .PWRITE       ( s_conv_acc_bus.pwrite   ),
     .PSEL         ( s_conv_acc_bus.psel     ),
     .PENABLE      ( s_conv_acc_bus.penable  ),
     .PRDATA       ( s_conv_acc_bus.prdata   ),
     .PREADY       ( s_conv_acc_bus.pready   ),
-    .PSLVERR      ( s_conv_acc_bus.pslverr  ),
-    
-    .conv_input_o   ( s_conv_input  ),
-    .conv_output_i  ( s_conv_output )
+    .PSLVERR      ( s_conv_acc_bus.pslverr  )
+
+    /*.conv_input_o   ( s_conv_input[31:0]  ),
+    .conv_output_i  ( s_conv_output[31:0] ),
+	.p_enable_wrap		(p_enable)*/
   );
 
-  conv_top conv_top_i (
+
+/*  conv_top conv_top_i (
     .clk             ( clk_i          ),
     .rst             ( ~rst_n         ),
+	.p_enable		 (p_enable),
     .apb_input       ( s_conv_input   ),
     .apb_output      ( s_conv_output  )
-  );
+  );*/
 endmodule
