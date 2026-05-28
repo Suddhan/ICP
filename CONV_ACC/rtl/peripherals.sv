@@ -580,18 +580,7 @@ module peripherals
     .PRDATA       ( s_conv_acc_bus.prdata   ),
     .PREADY       ( s_conv_acc_bus.pready   ),
     .PSLVERR      ( s_conv_acc_bus.pslverr  ),
-
-    .conv_input_o   ( s_conv_input[31:0]  ),
-    .conv_output_i  ( s_conv_output[31:0] ),
-	.p_enable_wrap		(p_enable)
+	  .p_enable_wrap		(p_enable)
   );
 
-
-  conv_top conv_top_i (
-    .clk             ( clk_i          ),
-    .rst             ( ~rst_n         ),
-	.p_enable		 (p_enable),
-    .apb_input       ( s_conv_input   ),
-    .apb_output      ( s_conv_output  )
-  );
 endmodule

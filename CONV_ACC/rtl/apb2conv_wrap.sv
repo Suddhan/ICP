@@ -14,18 +14,19 @@ module apb2conv_wrap
     output logic                      PREADY,
     output logic                      PSLVERR,
     
+
+    logic					   p_enable_wrap,
     // Convolution Accelerator Interface
-    output logic [31:0]                conv_input_o,
-	output logic					   p_enable_wrap,
-    input  logic [31:0]                conv_output_i
+     logic [31:0]                conv_input_o,
+     logic [31:0]                conv_output_i
 );
 
     logic [31:0] regs_w, regs_r;
 	logic regs_en;
 
  assign regs_en = PENABLE;
-    // register write logic
-    always_comb
+    
+    always_comb //write logic apb->acc
     begin
         regs_w = 0;
         if (PSEL && PENABLE && PWRITE)
@@ -33,7 +34,9 @@ module apb2conv_wrap
             regs_w = PWDATA[31:0]; // Write the convolution output to the register
         end
     end
-    always_comb
+
+
+    always_comb  //read logic acc->apb
     begin
        regs_r = 0;
 
@@ -42,6 +45,8 @@ module apb2conv_wrap
             regs_r = conv_output_i; // Read the convolution output to the register;
         end
     end
+
+
     always_ff @(posedge CLK, negedge RSTN)
     begin
         if(~RSTN)
@@ -58,13 +63,19 @@ module apb2conv_wrap
                 conv_input_o <= regs_w; // Send the input data to the convolution accelerator
             end else if(PSEL && PENABLE && !PWRITE) begin
                 conv_input_o <= 0; // Clear the input data when reading
-                PRDATA <= conv_output_i; // Output the convolution result
+                PRDATA <= regs_r; // Output the convolution result
 
             end
         end
     end
     assign PREADY  = 1'b1;
     assign PSLVERR = 1'b0;
-
+conv_top conv_top_i (
+    .clk             ( clk_i          ),
+    .rst             ( ~rst_n         ),
+	  .p_enable		      (p_enable),
+    .apb_input       ( conv_input_o   ),
+    .apb_output      ( conv_output_i  )
+  );
 
 endmodule
