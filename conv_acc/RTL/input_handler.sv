@@ -1,5 +1,6 @@
 module input_handler(
     input logic [31:0] input_data,
+	input logic p_enable,
     input logic clk,
     input logic rst,
 
@@ -13,7 +14,7 @@ module input_handler(
 
 //logic enable,next_enable;
 logic [7:0] data1, data2, data3, data6;
-logic counter; // send data every 2 cycles.
+logic [1:0] counter, next_counter; // send data every 2 cycles.
 always_ff @( posedge clk ) begin
     if(rst)begin
         data_out1 <= 0;
@@ -22,7 +23,9 @@ always_ff @( posedge clk ) begin
         data_out4 <= 0;
         data_out5 <= 0;
         filter_data <= 0; 
+		next_counter <= 0;
         counter <= 0;
+		valid <= 0;
         filter_enable <= 0;
         current_state <= off;
         //enable <= 0;
@@ -32,7 +35,8 @@ always_ff @( posedge clk ) begin
         case(current_state) //moving of data based on state
             filter_load : begin
                 filter_data <= data3;
-                filter_enable <= 1;
+				if(p_enable) filter_enable <= 1;
+				else filter_enable <= 0;
             end
             ifm_active : begin
                 data_out1 <= data_out4;
@@ -43,12 +47,19 @@ always_ff @( posedge clk ) begin
                 data6 <= data3;
                 filter_enable <= 0;
                 //logic for valid output
-                valid <= (counter == 1) ? 1 : 0; // valid every 2 cycles
-                counter <= (counter == 1) ? 0: 1;
+                valid <= (counter == 1 && p_enable) ? 1 : 0; // valid every 2 cycles
+				if(p_enable) begin
+					counter <= next_counter;
+					if(next_counter == 2'd2) valid <= 1;
+					else valid <= 0;
+				else 
+
+					
+			
 
             end
             default: begin
-                valid = 0;
+                valid <= 0;
                 data_out1 <= 0;
                 data_out2 <= 0;
                 data_out3 <= 0;
@@ -62,6 +73,11 @@ always_ff @( posedge clk ) begin
     end
        
         //enable <= 0;
+end
+
+always_comb begin : counter
+	if(p_enable) next_counter = (counter == 2'd2) ? 0 : counter + 1;
+	else next_counter = counter;
 end
 
 //shouldnt need enable with state based approach.
