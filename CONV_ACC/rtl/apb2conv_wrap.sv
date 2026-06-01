@@ -71,9 +71,9 @@ module apb2conv_wrap
     assign PREADY  = 1'b1;
     assign PSLVERR = 1'b0;
 conv_top conv_top_i (
-    .clk             ( clk_i          ),
-    .rst             ( ~rst_n         ),
-	  .p_enable		      (p_enable),
+	.clk             ( CLK        ),
+	.rst             ( ~RSTN         ),
+	.p_enable		      (p_enable_wrap),
     .apb_input       ( conv_input_o   ),
     .apb_output      ( conv_output_i  )
   );
