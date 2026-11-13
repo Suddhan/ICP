@@ -1,0 +1,356 @@
+// Copyright 2017 ETH Zurich and University of Bologna.
+// Copyright and related rights are licensed under the Solderpad Hardware
+// License, Version 0.51 (the “License”);
+// you may not use this file except in
+// compliance with the License.
+// You may obtain a copy of the License at
+// http://solderpad.org/licenses/SHL-0.51.
+// Unless required by applicable law
+// or agreed to in writing, software, hardware and materials distributed under
+// this License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR
+// CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the
+// specific language governing permissions and limitations under the License.
+`include "config.sv"
+`include "tb_jtag_pkg.sv"
+
+`define REF_CLK_PERIOD   (2*15.25us)  // 32.786 kHz --> FLL reset value --> 50 MHz
+`define CLK_PERIOD       10.00ns      // 125 MHz
+
+`define EXIT_SUCCESS  0
+`define EXIT_FAIL     1
+`define EXIT_ERROR   -1
+
+module tb_pl;
+  timeunit      1ns;
+  timeprecision 1ps;
+
+  // +MEMLOAD= valid values are "SPI", "STANDALONE" "PRELOAD", "" (no load of L2)
+  parameter  SPI            = "QUAD";
+  // valid values are "SINGLE", "QUAD"
+  parameter  BAUDRATE       = 781250*4; //5*781250
+  // 1562500
+  parameter  CLK_USE_FLL    = 0;
+  // 0 or 1
+  parameter  TEST           = "";
+  //valid values are "" (NONE), "DEBUG"
+  parameter  USE_ZERO_RISCY = 0;
+  parameter  RISCY_RV32F    = 0;
+  parameter  ZERO_RV32M     = 1;
+  parameter  ZERO_RV32E     = 0;
+  int           exit_status = `EXIT_ERROR;
+  // modelsim exit code, will be overwritten when successful
+
+  string        memload;
+  logic         s_clk   = 1'b0;
+  logic         s_rst_n = 1'b0;
+  logic         fetch_enable_i = 1'b0;
+
+  logic [1:0]   padmode_spi_master;
+  logic         spi_sck   = 1'b0;
+  logic         spi_csn   = 1'b1;
+  logic [1:0]   spi_mode;
+  logic         spi_sdo0;
+  logic         spi_sdo1;
+  logic         spi_sdo2;
+  logic         spi_sdo3;
+  logic         spi_sdi0;
+  logic         spi_sdi1;
+  logic         spi_sdi2;
+  logic         spi_sdi3;
+
+  // CHANGED: Converted to wire to allow safe hookup to netlist inout ports
+  wire          uart_tx;
+  wire          uart_rx;
+
+  logic         s_uart_dtr;
+  logic         s_uart_rts;
+  logic         scl_pad_i;
+  logic         scl_pad_o;
+  logic         scl_padoen_o;
+
+  logic         sda_pad_i;
+  logic         sda_pad_o;
+  logic         sda_padoen_o;
+  tri1          scl_io;
+  tri1          sda_io;
+
+  logic [31:0]  gpio_in = '0;
+  logic [31:0]  gpio_dir; // Kept for structural compatibility
+  wire [31:0]  gpio_out;
+
+  logic [31:0]  recv_data;
+
+  jtag_i jtag_if();
+
+  adv_dbg_if_t adv_dbg_if = new(jtag_if);
+  // use 8N1
+  uart_bus
+  #(
+    .BAUD_RATE(BAUDRATE),
+    .PARITY_EN(0)
+  )
+  uart
+  (
+    .rx         ( uart_rx ),
+    .tx         ( uart_tx ),
+    .rx_en      ( 1'b1    )
+  );
+  spi_slave
+  spi_master();
+
+  // NOTE: The old external i2c_buf_i is removed because the I/O pad cells 
+  // are now integrated directly inside the new pulpino_top design.
+
+  i2c_eeprom_model
+  #(
+    .ADDRESS ( 7'b1010_000 )
+  )
+  i2c_eeprom_model_i
+  (
+    .scl_io ( scl_io  ),
+    .sda_io ( sda_io  ),
+    .rst_ni ( s_rst_n )
+  );
+
+  // Bidirectional wire vector for the new chip-level GPIO port
+  wire [31:0] pad_gpio;
+
+  // Tri-state bridge logic: safely drive pad_gpio from testbench gpio_in based on active test requirements
+  assign pad_gpio[0] = 1'bz; // Always an output driven by the core (gpio_out[0])
+  assign pad_gpio[1] = (TEST == "ARDUINO_INT") ? gpio_in[1] : 1'bz;
+  assign pad_gpio[2] = (TEST == "ARDUINO_INT") ? gpio_in[2] : 1'bz;
+  assign pad_gpio[3] = (TEST == "ARDUINO_SHIFT") ? gpio_in[3] : 1'bz;
+  assign pad_gpio[4] = (TEST == "ARDUINO_GPIO" || TEST == "ARDUINO_PULSEIN") ? gpio_in[4] : 1'bz;
+  assign pad_gpio[5] = 1'bz;
+  assign pad_gpio[6] = 1'bz;
+  assign pad_gpio[7] = (TEST == "ARDUINO_GPIO") ? gpio_in[7] : 1'bz;
+
+  generate
+    for (genvar i = 8; i < 32; i++) begin : gen_unused_gpio_pads
+      assign pad_gpio[i] = 1'bz;
+    end
+  endgenerate
+
+  // Map the top-level pad status back to gpio_out for testbench verification
+  assign gpio_out = pad_gpio;
+
+  pulpino_top top_i
+  (
+    .clk               ( s_clk        ),
+    .rst_n             ( s_rst_n      ),
+
+
+    .fetch_enable_i      ( fetch_enable_i ),
+
+    .spi_clk_i         ( spi_sck      ),
+    .spi_cs_i          ( spi_csn      ),
+    .spi_mode_o        ( spi_mode     ),
+    .spi_sdo0_o        ( spi_sdi0     ),
+    .spi_sdo1_o        ( spi_sdi1     ),
+    .spi_sdo2_o        ( spi_sdi2     ),
+    .spi_sdo3_o        ( spi_sdi3     ),
+    .spi_sdi0_i        ( spi_sdo0     ),
+    .spi_sdi1_i        ( spi_sdo1     ),
+    .spi_sdi2_i        ( spi_sdo2     ),
+    .spi_sdi3_i        ( spi_sdo3     ),
+
+
+
+
+    .uart_tx           ( uart_rx      ),
+    .uart_rx           ( uart_tx      ),
+
+
+    .pad_gpio          ( gpio_out[8]     ),
+
+
+    .tck_i             ( jtag_if.tck     ),
+    .trstn_i           ( jtag_if.trstn   ),
+    .tms_i             ( jtag_if.tms     ),
+    .tdi_i             ( jtag_if.tdi     ),
+    .tdo_o             ( jtag_if.tdo     )
+  );
+  generate
+    if (CLK_USE_FLL) begin
+      initial
+      begin
+        #(`REF_CLK_PERIOD/2);
+        s_clk = 1'b1;
+        forever s_clk = #(`REF_CLK_PERIOD/2) ~s_clk;
+      end
+    end else begin
+      initial
+      begin
+        #(`CLK_PERIOD/2);
+        s_clk = 1'b1;
+        forever s_clk = #(`CLK_PERIOD/2) ~s_clk;
+      end
+    end
+  endgenerate
+
+  logic use_qspi;
+  initial
+  begin
+    int i;
+
+    if(!$value$plusargs("MEMLOAD=%s", memload))
+      memload = "PRELOAD";
+    $display("Using MEMLOAD method: %s", memload);
+
+    $display("Using %s core", USE_ZERO_RISCY ? "zero-riscy" : "ri5cy");
+
+    use_qspi = SPI == "QUAD" ? 1'b1 : 1'b0;
+
+    s_rst_n      = 1'b0;
+    fetch_enable_i = 1'b0;
+
+    #500ns;
+
+    s_rst_n = 1'b1;
+
+    #500ns;
+    if (use_qspi)
+      spi_enable_qpi();
+
+    if (memload != "STANDALONE")
+    begin
+      /* Configure JTAG and set boot address */
+      adv_dbg_if.jtag_reset();
+      adv_dbg_if.jtag_softreset();
+      adv_dbg_if.init();
+      adv_dbg_if.axi4_write32(32'h1A10_7008, 1, 32'h0000_0000);
+    end
+
+    if (memload == "PRELOAD")
+    begin
+      // preload memories
+      //mem_preload();
+    end
+    else if (memload == "SPI")
+    begin
+      spi_load(use_qspi);
+      spi_check(use_qspi);
+    end
+
+    #200ns;
+    fetch_enable_i = 1'b1;
+
+    if(TEST == "DEBUG") begin
+      debug_tests();
+    end else if (TEST == "DEBUG_IRQ") begin
+      debug_irq_tests();
+    end else if (TEST == "MEM_DPI") begin
+      mem_dpi(4567);
+    end else if (TEST == "ARDUINO_UART") begin
+      if (~gpio_out[0])
+        wait(gpio_out[0]);
+      uart.send_char(8'h65);
+    end else if (TEST == "ARDUINO_GPIO") begin
+      // Here  test for GPIO Starts
+      if (~gpio_out[0])
+        wait(gpio_out[0]);
+      gpio_in[4]=1'b1;
+
+      if (~gpio_out[1])
+        wait(gpio_out[1]);
+      if (~gpio_out[2])
+        wait(gpio_out[2]);
+      if (~gpio_out[3])
+        wait(gpio_out[3]);
+      gpio_in[7]=1'b1;
+
+    end else if (TEST == "ARDUINO_SHIFT") begin
+
+      if (~gpio_out[0])
+        wait(gpio_out[0]);
+      //start TEST
+
+      if (~gpio_out[4])
+        wait(gpio_out[4]);
+      gpio_in[3]=1'b1;
+      if (gpio_out[4])
+        wait(~gpio_out[4]);
+
+      if (~gpio_out[4])
+        wait(gpio_out[4]);
+      gpio_in[3]=1'b1;
+      if (gpio_out[4])
+        wait(~gpio_out[4]);
+      if (~gpio_out[4])
+        wait(gpio_out[4]);
+      gpio_in[3]=1'b0;
+      if (gpio_out[4])
+        wait(~gpio_out[4]);
+
+      if (~gpio_out[4])
+        wait(gpio_out[4]);
+      gpio_in[3]=1'b0;
+      if (gpio_out[4])
+        wait(~gpio_out[4]);
+      if (~gpio_out[4])
+        wait(gpio_out[4]);
+      gpio_in[3]=1'b1;
+      if (gpio_out[4])
+        wait(~gpio_out[4]);
+
+      if (~gpio_out[4])
+        wait(gpio_out[4]);
+      gpio_in[3]=1'b0;
+      if (gpio_out[4])
+        wait(~gpio_out[4]);
+      if (~gpio_out[4])
+        wait(gpio_out[4]);
+      gpio_in[3]=1'b0;
+      if (gpio_out[4])
+        wait(~gpio_out[4]);
+
+      if (~gpio_out[4])
+        wait(gpio_out[4]);
+      gpio_in[3]=1'b1;
+      if (gpio_out[4])
+        wait(~gpio_out[4]);
+    end else if (TEST == "ARDUINO_PULSEIN") begin
+      if (~gpio_out[0])
+        wait(gpio_out[0]);
+      #50us;
+      gpio_in[4]=1'b1;
+      #500us;
+      gpio_in[4]=1'b0;
+      #1ms;
+      gpio_in[4]=1'b1;
+      #500us;
+      gpio_in[4]=1'b0;
+    end else if (TEST == "ARDUINO_INT") begin
+      if (~gpio_out[0])
+        wait(gpio_out[0]);
+      #50us;
+      gpio_in[1]=1'b1;
+      #20us;
+      gpio_in[1]=1'b0;
+      #20us;
+      gpio_in[1]=1'b1;
+      #20us;
+      gpio_in[2]=1'b1;
+      #20us;
+    end else if (TEST == "ARDUINO_SPI") begin
+      for(i = 0; i < 2; i++) begin
+        spi_master.wait_csn(1'b0);
+        spi_master.send(0, {>>{8'h38}});
+      end
+    end
+
+    // end of computation
+    if (~gpio_out[8])
+      wait(gpio_out[8]);
+    spi_check_return_codes(exit_status);
+
+    $fflush();
+    $stop();
+  end
+
+  `include "tb_spi_pkg.sv"
+  `include "spi_debug_test.svh"
+  `include "mem_dpi.svh"
+
+endmodule

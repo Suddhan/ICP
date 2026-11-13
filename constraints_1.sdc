@@ -1,116 +1,90 @@
 # ------------------------------------------------------------------------------
-# 1. Setup & Units
+# Specify units and design
 # ------------------------------------------------------------------------------
 set sdc_version 2.0
 set_units -time 1.0ns -capacitance 1.0pF
-current_design pulpino_top
+current_design top
 
 # ------------------------------------------------------------------------------
-# 2. Clock Definitions
+# Clock Definitions
 # ------------------------------------------------------------------------------
-set clk_period 8.0
-set jtag_clk_period 100.0
-set spi_clk_period 40.0
+# Define a clock for the synthesis, with the name `CLK`. 
+# We set the period to `5.0` time units (time units = 1.0ns), that is low on 0.0ns and goes high on 2.5ns
+# The clock `CLK` is defined to be located on the ports of clk, i.e. on the outside of the clock pad.
+set clk_freq 125.0 ; # MHz				//changed the clock frequency from 150->125 MHz
+set clk_period [expr 1000.0/${clk_freq}]
+create_clock -name "CLK" -period ${clk_period} -waveform [list 0.0 [expr ${clk_period}/2]] [get_ports clk]
 
-# Physical Clocks
-create_clock -name CLK       -period ${clk_period} [get_ports clk]
-create_clock -name JTAG_CLK  -period ${jtag_clk_period} [get_ports tck_i]
-create_clock -name SPI_CLK   -period ${spi_clk_period} [get_ports spi_clk_i]
+# Flash clock is generated from main clock every other clock cycle.
+# Thus, we define it with generate clock and divide down the freq. by 2.
+create_generated_clock -name FLASH_CLK \
+    -source [get_ports clk] \
+    -divide_by 2 \
+    [get_ports flash_clk]
 
-# Virtual Clocks (Models the timing of the external UART/SPI/JTAG devices)
-#create_clock -name VCLK_ASYNC -period 100.0
 
-# Define Asynchronous Relationships
-# This tells the tool these clocks have no phase relationship.
-# It effectively "cuts" the timing paths between them.
-set_clock_groups -asynchronous \
-  -group [get_clocks CLK] \
-  -group [get_clocks {JTAG_CLK}] \
-  -group [get_clocks {SPI_CLK}] 
-#  -group [get_clocks VCLK_ASYNC]
-
-# ------------------------------------------------------------------------------
-# 3. Case Analysis (Internal Signals)
-# ------------------------------------------------------------------------------
-set_case_analysis 0 [get_pins clk_rst_gen_i/clk_sel_i]
-set_case_analysis 0 [get_pins clk_rst_gen_i/testmode_i]
-set_case_analysis 1 [get_pins core_region_i/CORE.RISCV_CORE/core_clock_gate_i/en_i]
-set_case_analysis 1 [get_pins -hierarchical *cg_cell/en_i]
+#Emulating clock tree for more realistic synthesis results
+#Also adding source latency since clock is generated outside chip
+set_clock_uncertainty 0.4 [get_clocks CLK]
+set_false_path -from [get_ports resetn]			#added later
+set_clock_transition [expr ${clk_period}*0.04] [get_clocks CLK]
+set_clock_latency -source 0.1 [get_clocks CLK]
+set_clock_skew [expr ${clk_period}*0.02] [get_clocks CLK]
 
 # ------------------------------------------------------------------------------
-# 4. I/O Constraints
+# IO configuration 
+# Sets constant values to pins or ports to be used by timing engine
 # ------------------------------------------------------------------------------
-set delay_value [expr ${clk_period} * 0.2]
-set delay_value_jtag [expr ${jtag_clk_period} * 0.2]
-set delay_value_spi [expr ${spi_clk_period} * 0.2]
+set_case_analysis 1 [get_pins {clk_pad_in/EN clk_pad_in/PDN clk_pad_in/PUN}]
+set_case_analysis 0 [get_pins {clk_pad_in/TM clk_pad_in/TEN}]
 
-# 4a. Identify your asynchronous input pins
-#     NOTE: pad_gpio[8] removed — pad_gpio is a 1-bit output port, not an input
-#set async_inputs [get_ports {uart_rx spi_sdi0_i spi_sdi1_i spi_sdi2_i spi_sdi3_i \
-#                              spi_cs_i tms_i tdi_i trstn_i scl_pad_i sda_pad_i \
-#                              fetch_enable_i}]
-
-set spi_inputs  [get_ports {spi_sdi0_i spi_sdi1_i spi_sdi2_i spi_sdi3_i spi_cs_i}]
-set jtag_inputs [get_ports {tms_i tdi_i trstn_i}]
-set core_async  [get_ports {uart_rx scl_pad_i sda_pad_i fetch_enable_i}]
-
-# 4b. Synchronous Inputs (Only ports that actually transition with your CLK)
-# We remove the clock ports and the async ports from the "all_inputs" list
-set sync_inputs [remove_from_collection [all_inputs] \
-                  [concat [get_ports {clk tck_i spi_clk_i}] ${spi_inputs} ${jtag_inputs} ${core_async}]]
-if {[sizeof_collection ${sync_inputs}] > 0} {
-    set_input_delay -clock CLK ${delay_value} ${sync_inputs}
+set inputPads [get_db [get_db insts -if {.name ==*pad_in*}] .name]
+foreach pad $inputPads {
+    # Lets do the same thing for the other pads
+    set_case_analysis 1 [get_pins ${pad}/EN]
+    set_case_analysis 1 [get_pins ${pad}/PDN]
+    set_case_analysis 1 [get_pins ${pad}/PUN]
+    set_case_analysis 0 [get_pins ${pad}/HYST]
 }
 
-# 4c. Constrain Asynchronous Inputs using the Virtual Clock
-# This prevents large violations because they are no longer timed against CLK
-#set_input_delay ${delay_value} -clock VCLK_ASYNC ${async_inputs}[expr 40.0 * 0.2][expr 100.0 * 0.2]
+# ------------------------------------------------------------------------------
+# Input Delays (External Logic -> Chip)
+# ------------------------------------------------------------------------------
+# Signal traveling to other logic outside of chip, this takes some time
+# This isn't a real project, thus we have some "realistic dealy" but not based on a real physical component
+set INPUT_DELAY 1.6
 
-set_input_delay ${delay_value} -clock CLK ${core_async}
-set_false_path -from ${core_async}
+# Reset and IRQs - should be synch
+set_input_delay -clock CLK $INPUT_DELAY [get_ports {resetn irq_5 irq_6 irq_7}]
 
-set_input_delay ${delay_value_jtag} -clock SPI_CLK ${spi_inputs}
-set_input_delay ${delay_value_spi} -clock JTAG_CLK ${jtag_inputs}
+# Serial RX
+set_input_delay -clock CLK $INPUT_DELAY [get_ports ser_rx]
 
-# 4d. Outputs
-set_output_delay -clock CLK ${delay_value} [all_outputs]
+# Flash Inputs
+set_input_delay -clock CLK $INPUT_DELAY [get_ports {flash_io0_di flash_io1_di flash_io2_di flash_io3_di}]
 
-# Driving cell and load
-set_driving_cell -lib_cell HS65_LL_BFX2 -library CORE65LPLVT [all_inputs]
-set_load 0.05 [all_outputs]
+# Assume inputs are driven from an external chip that has a driver that looks lik BUFX40 from our library
+set_driving_cell -lib_cell *BFX40 -pin Z [get_ports {flash_io*_di* irq* resetn ser_rx}]
 
 # ------------------------------------------------------------------------------
-# 5. Timing Exceptions
+# Output Delays (Chip -> External Logic)
 # ------------------------------------------------------------------------------
-set_false_path -from [get_ports rst_n]
+# Signal traveling from chip to outside logic, this takes some time
+# This isn't a real project, thus we have some "realistic dealy" but not based on a real physical component
+set OUTPUT_DELAY 1.6
+
+# Serial TX
+set_output_delay -clock CLK $OUTPUT_DELAY [get_ports ser_tx]
+
+# Flash Control outputs
+set_output_delay -clock FLASH_CLK $OUTPUT_DELAY [get_ports flash_csb]
+
+# Flash Data Outputs
+set_output_delay -clock FLASH_CLK $OUTPUT_DELAY [get_ports {flash_io0_do flash_io1_do flash_io2_do flash_io3_do}]
+set_output_delay -clock FLASH_CLK $OUTPUT_DELAY [get_ports {flash_io?_oe}]
 
 # ------------------------------------------------------------------------------
-# 6. Pad Cell Constraints
+# Load
 # ------------------------------------------------------------------------------
-
-# Lock all pad cells — prevents Genus from remapping or optimizing them
-set_dont_touch [get_cells {
-    p_clk
-    p_rst_n
-    p_tck
-    p_trstn
-    p_tms
-    p_tdi
-    p_tdo
-    p_uart_tx
-    p_uart_rx
-    p_spis_clk
-    p_spis_cs
-    p_spi_sdi0_i
-    p_spi_sdi1_i
-    p_spi_sdi2_i
-    p_spi_sdi3_i
-    p_spi_sdo0_o
-    p_spi_sdo1_o
-    p_spi_sdo2_o
-    p_spi_sdo3_o
-    p_spis_mode0
-    p_spis_mode1
-    p_fetch_enable_i
-    p_gpio_8
-}]
+# Assume outputs drive a standard load (e.g., 10pF for PCB traces)
+set_load 2.0 [all_outputs]
