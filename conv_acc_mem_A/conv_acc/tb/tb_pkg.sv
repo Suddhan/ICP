@@ -1,3 +1,5 @@
+
+
 //------------------------------------------------------------------------------
 // Testbench package.
 //
@@ -39,6 +41,9 @@ package tb_pkg;
     `include "apb_driver.svh"
     `include "apb_monitor.svh"
     `include "apb_agent.svh"
+    // Include files from the register model
+    `include "conv_regs.sv"
+    `include "conv_reg_adapter.sv"
     // Include files from the TB
     `include "scoreboard.svh"
     `include "top_config.svh"
