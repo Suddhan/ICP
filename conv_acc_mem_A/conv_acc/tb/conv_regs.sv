@@ -125,10 +125,23 @@ class cnn_ifm_reg extends uvm_reg;
     p3 = uvm_reg_field::type_id::create("p3");
     // WO, not volatile, reset 0. Randomizable so sequences can generate images.
     //            parent size lsb access volatile reset  has_rst rand indiv
-    p0.configure(this,   8,  24, "WO",  0,       8'h0,  1,      1,   0);
-    p1.configure(this,   8,  16, "WO",  0,       8'h0,  1,      1,   0);
-    p2.configure(this,   8,   8, "WO",  0,       8'h0,  1,      1,   0);
-    p3.configure(this,   8,   0, "WO",  0,       8'h0,  1,      1,   0);
+    p0.configure(this,   8,  0, "WO",  0,       8'h0,  1,      1,   0);
+    p1.configure(this,   8,  8, "WO",  0,       8'h0,  1,      1,   0);
+    p2.configure(this,   8,   16, "WO",  0,       8'h0,  1,      1,   0);
+    p3.configure(this,   8,   24, "WO",  0,       8'h0,  1,      1,   0);
+  endfunction
+endclass
+
+class cnn_wgt2_reg extends uvm_reg:
+`uvm_object_utils(cnn_wgt2_reg)
+rand uvm_reg_field = w8;
+function new(string name="cnn_wgt2_reg")
+  super.new(name, 32,UVM_NO_COVERAGE)
+  endfunction
+virtual function void build();
+  wgt8 = uvm_reg_field::type_id::create("w8");
+
+  w8.configure(this, 8, 0, "WO", 0, 8'h0, 1, 1, 0);
   endfunction
 endclass
 
@@ -145,7 +158,7 @@ class cnn_reg_block extends uvm_reg_block;
   rand cnn_status_reg  status;
   rand cnn_wgt_reg     wgt0;
   rand cnn_wgt_reg     wgt1;
-  rand cnn_wgt_reg     wgt2;
+  rand cnn_wgt2_reg     wgt2;
   rand cnn_mac_dbg_reg mac_dbg;
 
   // Not declared 'rand': randomizing the block would otherwise randomize
