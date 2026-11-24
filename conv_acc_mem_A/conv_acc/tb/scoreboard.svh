@@ -36,7 +36,6 @@ class cnn_scoreboard extends uvm_scoreboard;
   localparam bit PIXELS_SIGNED  = 1'b0;   // 8-bit pixels unsigned?
   localparam bit WEIGHTS_SIGNED = 1'b1;   // 8-bit weights two's complement?
   localparam int W8_MSB         = 31;     // W8 sits in byte lane [31:24] of WGT2
-o.
 
   // ---- configuration knobs ---------------------------------------------
   bit enable_checks        = 1;
@@ -44,13 +43,13 @@ o.
                                  //    (CSV does not say; FIFO spec did)
   bit check_ofm            = 1;  // 0: skip OFM data compare (if the compute
                                  //    assumptions are not yet confirmed)
-  bit use_strobes          = 1;  // 0 for APB3, or a monitor that leaves strb unset
   int unsigned max_ofm_err_per_run = 10;
+  int m_ifm_cnt = 0;
 
   // ---- connections (set by the env) ------------------------------------
-  uvm_analysis_imp #(apb_item, cnn_scoreboard) apb_export;
+  uvm_analysis_imp #(apb_seq_item, cnn_scoreboard) apb_export;
   cnn_reg_block                 regmodel;
-  uvm_reg_predictor #(apb_item) predictor;
+  uvm_reg_predictor #(apb_seq_item) predictor;
 
   // ---- model state -----------------------------------------------------
   typedef enum { RG_NONE, RG_CTRL, RG_STATUS, RG_WGT, RG_MAC_DBG, RG_OFM, RG_IFM } region_e;
@@ -60,7 +59,7 @@ o.
 
   protected phase_e    m_phase;
   protected bit [31:0] m_ifm     [IFM_WORDS];   // what software has written
-  protected bit [31:0] m_ofm_exp [OFM_WORDS];   // computed at Start
+  protected bit [31:0] m_ofm_exp [OFM_WORDS];   // computed at Done
 
   // ---- statistics ------------------------------------------------------
   int unsigned n_items, n_starts, n_mirror_checks, n_status_checks;
@@ -77,7 +76,7 @@ o.
     reset_model();
   endfunction
 
-  function void configure(cnn_reg_block rm, uvm_reg_predictor #(apb_item) p);
+  function void configure(cnn_reg_block rm, uvm_reg_predictor #(apb_seq_item) p);
     regmodel  = rm;
     predictor = p;
   endfunction
@@ -86,14 +85,13 @@ o.
   function void reset_model();
     m_phase       = PH_RESET;
     m_ofm_err_run = 0;
-    foreach (m_ifm[i])     m_ifm[i]     = '0;   // CSV: reset 0
-    foreach (m_ofm_exp[i]) m_ofm_exp[i] = '0;
+    m_ifm_cnt = 0;
   endfunction
 
   // ===================================================================
   // Entry point: one call per completed bus transfer
   // ===================================================================
-  function void write(apb_item item);
+  function void write(apb_seq_item item);
     region_e rg;
 
     if (regmodel == null || predictor == null)
@@ -104,10 +102,10 @@ o.
 
     if (enable_checks) begin
       check_bus_response(item, rg);
-      if (!item.slverr) check_read_against_mirror(item, rg);   // OLD mirror
+      if (!item.resp) check_read_against_mirror(item, rg);   // OLD mirror
     end
 
-    if (!item.slverr) begin
+    if (!item.resp) begin
       if (item.write) model_write(item, rg);
       else if (enable_checks) model_read(item, rg);
     end
@@ -145,20 +143,20 @@ o.
   // ===================================================================
   // 1. Bus response
   // ===================================================================
-  function void check_bus_response(apb_item item, region_e rg);
+  function void check_bus_response(apb_seq_item item, region_e rg);
     // unaligned addresses, nor for writes to RO registers (assumed ignored,
     // no error). Off by default.
     if (!check_unmapped_resp) return;
-    if (rg == RG_NONE && !item.slverr)
+    if (rg == RG_NONE && !item.resp)
       err($sformatf("Unmapped address 0x%08h accepted without PSLVERR", item.addr));
-    if (rg != RG_NONE && item.slverr)
+    if (rg != RG_NONE && item.resp)
       err($sformatf("PSLVERR on mapped address 0x%08h", item.addr));
   endfunction
 
   // ===================================================================
   // 2. Non-volatile fields vs the mirror (here: WGT0..2)
   // ===================================================================
-  function void check_read_against_mirror(apb_item item, region_e rg);
+  function void check_read_against_mirror(apb_seq_item item, region_e rg);
     uvm_reg        reg_h;
     uvm_reg_field  flds[$];
     uvm_reg_data_t mask, exp_v, got_v;
@@ -185,14 +183,14 @@ o.
   // ===================================================================
   // 3a. Writes: IFM contents and the Start trigger
   // ===================================================================
-  function void model_write(apb_item item, region_e rg);
-    bit [3:0] be = use_strobes ? item.strb : 4'hF;
+  function void model_write(apb_seq_item item, region_e rg);
+    bit [3:0] be = 4'hF;
 
     case (rg)
       RG_IFM: begin
         int unsigned idx = (item.addr - IFM_BASE) >> 2;
         for (int b = 0; b < 4; b++)
-          if (be[b]) m_ifm[idx][8*b +: 8] = item.wdata[8*b +: 8];
+          if (be[b]) m_ifm[m_ifm_cnt++] = item.wdata[8*b +: 8];
       end
 
       RG_CTRL:
@@ -203,7 +201,7 @@ o.
     endcase
   endfunction
 
-  function void on_start();
+  function void on_done();
     compute_ofm();            // snapshot: weights from the mirror, IFM from m_ifm
     m_phase       = PH_RUNNING;
     m_ofm_err_run = 0;
@@ -230,14 +228,14 @@ o.
     r1 = regmodel.wgt1.w.get_mirrored_value();
     r2 = regmodel.wgt2.w.get_mirrored_value();
     for (int n = 0; n < 4; n++) begin
-      w[n]   = r0[31 - 8*n -: 8];     // W0..W3
-      w[4+n] = r1[31 - 8*n -: 8];     // W4..W7
+      w[n]   = r0[8*n +: 8];     // W0..W3
+      w[4+n] = r1[8*n +: 8];     // W4..W7
     end
-    w[8] = r2[W8_MSB -: 8];           // W8
+    w[8] = r2[7:0];           // W8
 
     // unpack the image: pixel 4i is the word's first (MSB) byte
     for (int p = 0; p < IFM_WORDS*4; p++)
-      pix[p] = m_ifm[p/4][31 - 8*(p%4) -: 8];
+      pix[p] = m_ifm[p/4][8*(p%4) +: 8];
 
     for (int r = 0; r < IMG_H; r++) begin
       for (int c = 0; c < IMG_W; c++) begin
@@ -262,7 +260,7 @@ o.
   // ===================================================================
   // 3b. Reads: Status, OFM, MAC_DBG
   // ===================================================================
-  function void model_read(apb_item item, region_e rg);
+  function void model_read(apb_seq_item item, region_e rg);
     case (rg)
       RG_STATUS:  check_status(item);
       RG_OFM:     check_ofm_read(item);
@@ -278,7 +276,7 @@ o.
   //                   busy=0,done=1 means the run has finished
   //   finished      : busy=0, done=1 until the next Start
   // right after Start may still show busy=0,done=0 (propagation delay).
-  function void check_status(apb_item item);
+  function void check_status(apb_seq_item item);
     bit busy = item.rdata[0];
     bit done = item.rdata[1];
 
@@ -301,14 +299,13 @@ o.
     endcase
   endfunction
 
-  function void check_ofm_read(apb_item item);
+  function void check_ofm_read(apb_seq_item item);
     int unsigned idx = (item.addr - OFM_BASE) >> 2;
     bit [31:0]   exp_v;
 
     if (!check_ofm) return;
 
-    case (m_phase)
-      PH_RESET: exp_v = '0;                 // CSV: reset value 0
+    case (m_phase)                // CSV: reset value 0
       PH_DONE:  exp_v = m_ofm_exp[idx];
       default: begin                        // PH_RUNNING: contents indeterminate
         n_ofm_skipped++;
@@ -332,7 +329,7 @@ o.
 
 
   // so only the reset value is checked.
-  function void check_mac_dbg(apb_item item);
+  function void check_mac_dbg(apb_seq_item item);
     if (m_phase == PH_RESET && item.rdata !== 32'h0)
       err($sformatf("MAC_DBG before any Start: 0x%08h, expected 0", item.rdata));
   endfunction
