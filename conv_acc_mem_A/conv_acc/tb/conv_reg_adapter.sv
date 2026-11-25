@@ -6,12 +6,12 @@ class conv_reg_adapter extends uvm_reg_adapter;
     endfunction
 
     virtual function uvm_sequence_item reg2bus(const ref uvm_reg_bus_op rw);
-        apb_seq_item = apb_seq_item::type_id::create("item");
+        apb_seq_item item= apb_seq_item::type_id::create("item");
 
         item.write = (rw.kind == UVM_WRITE);
         item.addr = rw.addr;
         item.wdata = (rw.kind == UVM_WRITE) ? rw.data[31:0] : '0;
-        return item
+        return item;
     endfunction
 
     virtual function void bus2reg(uvm_sequence_item bus_item, ref uvm_reg_bus_op rw);

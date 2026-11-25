@@ -201,7 +201,7 @@ class cnn_scoreboard extends uvm_scoreboard;
     endcase
   endfunction
 
-  function void on_done();
+  function void on_start();
     compute_ofm();            // snapshot: weights from the mirror, IFM from m_ifm
     m_phase       = PH_RUNNING;
     m_ofm_err_run = 0;
@@ -226,7 +226,7 @@ class cnn_scoreboard extends uvm_scoreboard;
     // weights from the register mirror (non-volatile, kept current by the predictor)
     r0 = regmodel.wgt0.w.get_mirrored_value();
     r1 = regmodel.wgt1.w.get_mirrored_value();
-    r2 = regmodel.wgt2.w.get_mirrored_value();
+    r2 = regmodel.wgt2.w8.get_mirrored_value();
     for (int n = 0; n < 4; n++) begin
       w[n]   = r0[8*n +: 8];     // W0..W3
       w[4+n] = r1[8*n +: 8];     // W4..W7

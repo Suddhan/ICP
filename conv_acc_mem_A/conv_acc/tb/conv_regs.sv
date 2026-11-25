@@ -132,14 +132,14 @@ class cnn_ifm_reg extends uvm_reg;
   endfunction
 endclass
 
-class cnn_wgt2_reg extends uvm_reg:
+class cnn_wgt2_reg extends uvm_reg;
 `uvm_object_utils(cnn_wgt2_reg)
-rand uvm_reg_field = w8;
-function new(string name="cnn_wgt2_reg")
-  super.new(name, 32,UVM_NO_COVERAGE)
+rand uvm_reg_field w8;
+function new(string name="cnn_wgt2_reg");
+  super.new(name, 32,UVM_NO_COVERAGE);
   endfunction
 virtual function void build();
-  wgt8 = uvm_reg_field::type_id::create("w8");
+  w8 = uvm_reg_field::type_id::create("w8");
 
   w8.configure(this, 8, 0, "WO", 0, 8'h0, 1, 1, 0);
   endfunction
@@ -177,7 +177,7 @@ class cnn_reg_block extends uvm_reg_block;
     status  = cnn_status_reg ::type_id::create("status");
     wgt0    = cnn_wgt_reg    ::type_id::create("wgt0");
     wgt1    = cnn_wgt_reg    ::type_id::create("wgt1");
-    wgt2    = cnn_wgt_reg    ::type_id::create("wgt2");
+    wgt2    = cnn_wgt2_reg    ::type_id::create("wgt2");
     mac_dbg = cnn_mac_dbg_reg::type_id::create("mac_dbg");
 
     ctrl   .configure(this, null, ""); ctrl   .build();
